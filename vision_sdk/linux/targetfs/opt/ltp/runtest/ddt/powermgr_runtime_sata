@@ -1,0 +1,7 @@
+# @name Power Manager Runtime Tests for SATA
+# @desc Tests to validate that SATA driver use runtime_pm
+# @requires sata
+# @setup_requires 
+
+POWERMGR_S_FUNC_RUNTIME_SATA source 'pm_runtime.sh'; notify_and_wait "Please make sure at least one SATA interface is idle before test starts in 20 seconds" 20; notify_and_wait "Starting Test..." 0; is_pm_runtime_enabled sata || die "pm_runtime is not enabled for SATA"; is_pm_runtime_suspending_device sata || die "pm_runtime is not suspending SATA"
+

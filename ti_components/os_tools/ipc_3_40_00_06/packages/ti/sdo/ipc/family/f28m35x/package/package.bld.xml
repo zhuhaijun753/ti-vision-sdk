@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ipc.family.f28m35x" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="IpcMgr"/>
+        <module name="NameServerBlock"/>
+        <module name="NotifyDriverCirc"/>
+        <module name="TransportCirc"/>
+    </units>
+    <sources>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/rel/ti_sdo_ipc_family_f28m35x.tar.gz.dep" src="package/rel/ti_sdo_ipc_family_f28m35x.xdc.inc"/>
+    </makefiles>
+    <targets>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ipc_family_f28m35x"
+        pname="ti_sdo_ipc_family_f28m35x.tar.gz"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="linkcmd.xdt"/>
+        <file name="IpcMgr.c"/>
+        <file name="NotifyDriverCirc.c"/>
+        <file name="NameServerBlock.c"/>
+        <file name="TransportCirc.c"/>
+        <file name="package/package.cfg.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

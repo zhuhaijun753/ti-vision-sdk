@@ -1,0 +1,14 @@
+Package: omap5-sgx-ddk-um-linux
+Version: 1.9.0.12-r10.0
+Description: omap5-sgx-ddk-um-linux version 1.9.0.12-r10
+ Userspace libraries for SGX
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: TI-TSPA
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: omap5-sgx-ddk-um-linux
+Homepage: http://downloads.ti.com/dsps/dsps_public_sw/gfxsdk
+Depends: wayland (>= 1.6.0), libstdc++6 (>= 4.7.3), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Replaces: libegl, libgles2, libgles1
+Source: git://git.ti.com/graphics/omap5-sgx-ddk-um-linux.git;protocol=git;branch=dra7/k3.14

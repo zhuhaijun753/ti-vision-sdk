@@ -1,0 +1,3 @@
+Dsp_vayu.cfg
+package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.cfg
+rpmsg_transport.cfg

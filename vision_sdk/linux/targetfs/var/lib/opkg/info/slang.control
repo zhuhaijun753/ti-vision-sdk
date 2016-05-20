@@ -1,0 +1,18 @@
+Package: slang
+Version: 2.2.4-r12.0
+Description: The shared library for the S-Lang extension language
+ S-Lang is an interpreted language and a programming library.  The S-Lang
+ language was designed so that it can be easily embedded into a program to
+ provide the program with a powerful extension language. The S-Lang
+ library, provided in this package, provides the S-Lang extension
+ language.  S-Lang's syntax resembles C, which makes it easy to recode
+ S-Lang procedures in C if you need to.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: slang
+Homepage: http://www.jedsoft.org/slang/
+Depends: libpcre1 (>= 8.34), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: ftp://space.mit.edu/pub/davis/slang/v2.2/slang-2.2.4.tar.bz2 file://rpathfix.patch file://fix-check-pcre.patch file://change-char-type-to-signed-char-in-macros.patch file://sprintf-bug-concerning-8-bit-characters.patch

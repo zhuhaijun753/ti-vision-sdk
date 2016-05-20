@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libmmrpc
+Description: MmRpc library for IPC
+Version: 3.0.0
+Requires:
+Libs: -L${libdir} -lmmrpc
+Cflags: -I${includedir}/ti/ipc/mm

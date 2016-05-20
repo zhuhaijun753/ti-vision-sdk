@@ -1,0 +1,18 @@
+# @name RTC set and get time test
+# @desc RTC set and get time test
+# @requires rtc 
+
+#default case of dec 31st counting down to jan 1st
+RTC_S_FUNC_SETGETTIME_0001 source 'common.sh'; do_cmd install_modules.sh 'rtc' ; DEV_NODE=`get_devnode.sh "rtc"` || die "error getting devnode for rtc"; do_cmd rtc_tests -device $DEV_NODE  -ioctltest setgettime
+
+#default case of dec 31st counting down to jan 1st but with readonly option - negative test
+RTC_S_FUNC_NEGATIVE_SETGETTIME_0001 source 'common.sh'; do_cmd install_modules.sh 'rtc' ; DEV_NODE=`get_devnode.sh "rtc"` || die "error getting devnode for rtc"; do_cmd rtc_tests -device $DEV_NODE  -ioctltest setgettime -readonly
+
+# 30th day of april counting down to may 1st
+RTC_S_FUNC_SETGETTIME_30DAY source 'common.sh'; do_cmd install_modules.sh 'rtc' ; DEV_NODE=`get_devnode.sh "rtc"` || die "error getting devnode for rtc"; do_cmd rtc_tests -device $DEV_NODE  -ioctltest setgettime -ioctltestarg 1
+
+# 28th day of february in leap year counting down to 29th february 
+RTC_S_FUNC_SETGETTIME_FEB_LEAP source 'common.sh'; do_cmd install_modules.sh 'rtc' ; DEV_NODE=`get_devnode.sh "rtc"` || die "error getting devnode for rtc"; do_cmd rtc_tests -device $DEV_NODE  -ioctltest setgettime -ioctltestarg 2
+
+#28th day of february in non-leap year counting down to 1st march 
+RTC_S_FUNC_SETGETTIME_FEB_NONLEAP source 'common.sh'; do_cmd install_modules.sh 'rtc' ; DEV_NODE=`get_devnode.sh "rtc"` || die "error getting devnode for rtc"; do_cmd rtc_tests -device $DEV_NODE  -ioctltest setgettime -ioctltestarg 3

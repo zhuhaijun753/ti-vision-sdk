@@ -1,0 +1,13 @@
+Package: rng-tools
+Version: 4-r0.0
+Description: Random number generator daemon
+ Random number generator daemon.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: rng-tools
+Depends: libc6 (>= 2.15)
+Recommends: update-rc.d
+Source: http://heanet.dl.sourceforge.net/sourceforge/gkernel/rng-tools-4.tar.gz file://init file://default

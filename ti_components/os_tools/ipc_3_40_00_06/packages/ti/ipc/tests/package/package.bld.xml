@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.ipc.tests" version="1, 0, 0" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.c"/>
+        <srcFile name="fault.c"/>
+        <srcFile name="ping_rpmsg.c"/>
+        <srcFile name="ping_tasks.c"/>
+        <srcFile name="ping_tasks_main.c"/>
+        <srcFile name="messageq_multi.c"/>
+        <srcFile name="messageq_multimulti.c"/>
+        <srcFile name="messageq_single.c"/>
+        <srcFile name="NameServerApp.c"/>
+        <srcFile name="test_omx.c"/>
+        <srcFile name="rpc_task.c"/>
+        <srcFile name="MxServer.c"/>
+        <srcFile name="gatempapp.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="rpmsg_transport.cfg"/>
+        <srcFile name="ping_rpmsg.cfg"/>
+        <srcFile name="nameserverapp.cfg"/>
+        <srcFile name="test_omx_ipu_vayu.cfg"/>
+        <srcFile name="gatempapp.cfg"/>
+        <srcFile name="test_omx_dsp_vayu.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.oem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.oe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.dep" src="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.cfg"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault/fault.oem4.dep" src="fault.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg/ping_rpmsg.oem4.dep" src="ping_rpmsg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks/ping_tasks.oem4.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks/ping_tasks_main.oem4.dep" src="ping_tasks_main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi/messageq_multi.oem4.dep" src="messageq_multi.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti/messageq_multimulti.oem4.dep" src="messageq_multimulti.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single/messageq_single.oem4.dep" src="messageq_single.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp/NameServerApp.oem4.dep" src="NameServerApp.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu/test_omx.oem4.dep" src="test_omx.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu/ping_tasks.oem4.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu/rpc_task.oem4.dep" src="rpc_task.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu/MxServer.oem4.dep" src="MxServer.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault/fault.oem4.dep" src="fault.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg/ping_rpmsg.oem4.dep" src="ping_rpmsg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks/ping_tasks.oem4.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks/ping_tasks_main.oem4.dep" src="ping_tasks_main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi/messageq_multi.oem4.dep" src="messageq_multi.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti/messageq_multimulti.oem4.dep" src="messageq_multimulti.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single/messageq_single.oem4.dep" src="messageq_single.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp/NameServerApp.oem4.dep" src="NameServerApp.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu.xem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu/test_omx.oem4.dep" src="test_omx.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu/ping_tasks.oem4.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu/rpc_task.oem4.dep" src="rpc_task.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu/MxServer.oem4.dep" src="MxServer.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault/fault.oe66.dep" src="fault.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg/ping_rpmsg.oe66.dep" src="ping_rpmsg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks/ping_tasks.oe66.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks/ping_tasks_main.oe66.dep" src="ping_tasks_main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp/gatempapp.oe66.dep" src="gatempapp.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi/messageq_multi.oe66.dep" src="messageq_multi.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti/messageq_multimulti.oe66.dep" src="messageq_multimulti.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single/messageq_single.oe66.dep" src="messageq_single.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp/NameServerApp.oe66.dep" src="NameServerApp.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu/test_omx.oe66.dep" src="test_omx.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu/ping_tasks.oe66.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu/rpc_task.oe66.dep" src="rpc_task.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu/MxServer.oe66.dep" src="MxServer.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault/fault.oe66.dep" src="fault.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg/ping_rpmsg.oe66.dep" src="ping_rpmsg.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks/ping_tasks.oe66.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks/ping_tasks_main.oe66.dep" src="ping_tasks_main.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi/messageq_multi.oe66.dep" src="messageq_multi.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti/messageq_multimulti.oe66.dep" src="messageq_multimulti.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single/messageq_single.oe66.dep" src="messageq_single.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp/NameServerApp.oe66.dep" src="NameServerApp.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu.xe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu/test_omx.oe66.dep" src="test_omx.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu/ping_tasks.oe66.dep" src="ping_tasks.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu/rpc_task.oe66.dep" src="rpc_task.c"/>
+        <srcFile name="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu/MxServer.oe66.dep" src="MxServer.c"/>
+        <srcFile name="package/rel/ti_ipc_tests.tar.gz.dep" src="package/rel/ti_ipc_tests.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,5.2,5"
+            rawVersion="5.2.5"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/ti-cgt-arm_5.2.5"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,7.4,2"
+            rawVersion="7.4.2"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/c6000_7_4_2"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/fault"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/fault.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4"
+        cfgScript="nameserverapp.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4"
+        cfgScript="test_omx_ipu_vayu.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/fault"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/fault.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4"
+        cfgScript="nameserverapp.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4"
+        cfgScript="test_omx_ipu_vayu.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/fault"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/fault.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66"
+        cfgScript="gatempapp.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66"
+        cfgScript="nameserverapp.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66"
+        cfgScript="test_omx_dsp_vayu.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/fault"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/fault.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66"
+        cfgScript="nameserverapp.cfg"
+        />
+    <configuration name="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        isPartial="false"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66"
+        cfgScript="test_omx_dsp_vayu.cfg"
+        />
+    </configurations>
+    <executables>
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/fault"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/fault.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/fault_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/messageq_single_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp_pem4"
+        cfgScript="nameserverapp.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu_pem4"
+        cfgScript="test_omx_ipu_vayu.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/fault"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/fault.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/fault_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks_pem4"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_single_pem4"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp_pem4"
+        cfgScript="nameserverapp.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu.xem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.evmDRA7XX:ipu1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu_pem4"
+        cfgScript="test_omx_ipu_vayu.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/fault"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/fault.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/fault_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/gatempapp_pe66"
+        cfgScript="gatempapp.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/messageq_single_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp_pe66"
+        cfgScript="nameserverapp.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp1"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66"
+        cfgScript="test_omx_dsp_vayu.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/fault"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/fault.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/fault_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks_pe66"
+        cfgScript="ping_rpmsg.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/messageq_single_pe66"
+        cfgScript="rpmsg_transport.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp_pe66"
+        cfgScript="nameserverapp.cfg"
+        />
+    <executable name="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu"
+        pname="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.evmDRA7XX:dsp2"
+        profile="debug"
+        xCfgScript="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66.cfg"
+        xCfgPrefix="package/cfg/bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu_pe66"
+        cfgScript="test_omx_dsp_vayu.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/fault.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/fault.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/ping_rpmsg.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/ping_tasks.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multi.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_multimulti.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/messageq_single.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/NameServerApp.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu2/test_omx_ipu2_vayu.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/fault.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/fault.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/ping_rpmsg.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/ping_tasks.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_multimulti.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/messageq_single.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/NameServerApp.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu.xem4"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_ipu1/test_omx_ipu1_vayu.xem4"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/fault.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/fault.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/ping_rpmsg.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/ping_tasks.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/gatempapp.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multi.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_multimulti.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/messageq_single.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/NameServerApp.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/fault.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/fault.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/ping_rpmsg.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/ping_tasks.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multi.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_multimulti.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/messageq_single.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/NameServerApp.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu.xe66"
+        args=""
+        groupName="bin/ti_platforms_evmDRA7XX_dsp2/test_omx_dsp2_vayu.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_ipc_tests"
+        pname="ti_ipc_tests.tar.gz"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="mmrpc_test.c"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

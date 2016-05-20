@@ -1,0 +1,15 @@
+Package: ltrace
+Version: 1:7.2+git0+f44b284219-r0.0
+Description: ltrace intercepts and records dynamic library calls
+ ltrace intercepts and records dynamic library calls which are called by
+ an executed process and the signals received by that process. It can also
+ intercept and print the system calls executed by the program.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: ltrace
+Homepage: http://ltrace.org/
+Depends: elfutils, libstdc++6 (>= 4.7.3), libgcc-s1 (>= 4.7.3), libelf1 (>= 0.148), libc6 (>= 2.15)
+Source: git://anonscm.debian.org/collab-maint/ltrace.git file://ltrace-0.7.2-unused-typedef.patch

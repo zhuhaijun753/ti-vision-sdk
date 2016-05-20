@@ -1,0 +1,8 @@
+# @name PCI plus suspend/resume
+# @desc PCI Read/Write test while doing power suspend/resume operations
+# @requires (pci || pcie) && power_mgr 
+# @setup_requires pciusbcard
+
+POWERMGR_S_FUNC_PCI_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/pci_usb_dd_rw -P $PLATFORM -s 'PCI_S_FUNC_USBHOST_DD_RW_10M '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "
+
+POWERMGR_M_FUNC_PCI_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/pci_usb_dd_rw -P $PLATFORM -s 'PCI_M_FUNC_USBHOST_DD_RW_100M '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_SUSPEND ' "

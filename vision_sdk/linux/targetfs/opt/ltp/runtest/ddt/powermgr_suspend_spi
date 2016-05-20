@@ -1,0 +1,8 @@
+# @name SPI plus suspend/resume
+# @desc SPI Read/Write test while doing power suspend/resume operations
+# @requires spi_master/mtd && power_mgr 
+# @setup_requires 
+
+POWERMGR_S_FUNC_SPI_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/spi_mtd_dd_rw -P $PLATFORM -s 'SPI_S_FUNC_DD_RW_ERASESIZE '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "
+
+POWERMGR_M_FUNC_SPI_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/spi_mtd_dd_rw -P $PLATFORM -s 'SPI_M_FUNC_DD_RW_BIGSIZE '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_SUSPEND ' "

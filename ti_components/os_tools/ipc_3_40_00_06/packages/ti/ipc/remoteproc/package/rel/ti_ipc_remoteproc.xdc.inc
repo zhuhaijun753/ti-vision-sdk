@@ -1,0 +1,16 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+package.bld
+rsc_types.h
+linkcmd.xdt
+rsc_table_omapl138.h
+rsc_table_tci6614.h
+rsc_table_tci6614_v3.3.h
+rsc_table_tci6638.h
+rsc_table_omap5_dsp.h
+rsc_table_omap5_ipu.h
+rsc_table_vayu_dsp.h
+rsc_table_vayu_ipu.h
+Resource.c
+package/package.cfg.xdc.inc

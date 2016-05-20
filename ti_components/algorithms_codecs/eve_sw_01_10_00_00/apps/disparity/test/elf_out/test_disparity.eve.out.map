@@ -1,0 +1,1166 @@
+******************************************************************************
+                   ARP32 Linker PC v1.0.7                      
+******************************************************************************
+>> Linked Wed Oct 07 00:50:38 2015
+
+OUTPUT FILE NAME:   <.\elf_out\test_disparity.eve.out>
+ENTRY POINT SYMBOL: "_reset_handler"  address: 80000100
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  VECMEM                80000000   00000100  00000028  000000d8  RWIX
+  CMDMEM                80000100   00001000  00000028  00000fd8  RWIX
+  EXTMEM                80001100   00020000  000161b4  00009e4c  RWIX
+
+PAGE 1:
+  DATMEM                40020000   00008000  0000674f  000018b1  RWIX
+  WMEM                  40040000   00007fe0  00007d00  000002e0  RWIX
+  IMEMLA                40050000   00004000  00004000  00000000  RWIX
+  IMEMHA                40054000   00004000  00004000  00000000  RWIX
+  IMEMLB                40070000   00004000  00004000  00000000  RWIX
+  IMEMHB                40074000   00004000  00004000  00000000  RWIX
+  L3MEM                 40300000   00100000  00000000  00100000  RWIX
+  GEM0_L2_MEM           40800000   00008000  00000000  00008000  RWIX
+  EXTDMEM               80030000   03000000  008061b0  027f9e50  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     1    40020000    00000000     UNINITIALIZED
+
+.init_array 
+*          1    40020000    00000000     UNINITIALIZED
+
+.intvecs   0    80000000    00000028     
+                  80000000    00000028     boot_arp32.obj (.intvecs)
+
+.inthandler 
+*          0    80000100    00000028     
+                  80000100    00000028     boot_arp32.obj (.inthandler)
+
+.rts_text 
+*          0    80001100    00006e2c     
+                  80001100    000004f8     rtsarp32_v200.lib : _scanfi.obj (.text:_scanfi)
+                  800015f8    000003a0                       : strtod.obj (.text:strtod)
+                  80001998    0000039c                       : strtold.obj (.text:strtold)
+                  80001d34    000002d8                       : strtoll.obj (.text:strtoll)
+                  8000200c    000002a0                       : _printfi.obj (.text:_setfield)
+                  800022ac    00000268                       : _scanfi.obj (.text:_sproc_int)
+                  80002514    00000260                       : _scanfi.obj (.text:_sset_arg)
+                  80002774    0000025c                       : _printfi.obj (.text:_pproc_fge)
+                  800029d0    0000025c                       : _printfi.obj (.text:ecvt)
+                  80002c2c    00000258                       : _printfi.obj (.text:fcvt)
+                  80002e84    0000024c                       : strtoull.obj (.text:strtoull)
+                  800030d0    0000022c                       : _printfi.obj (.text:_printfi)
+                  800032fc    00000220                       : _printfi.obj (.text:_pconv_e)
+                  8000351c    0000021c                       : fwrite.obj (.text:fwrite)
+                  80003738    00000208                       : _printfi.obj (.text:_getarg_diouxp)
+                  80003940    00000200                       : frcdivd.obj (.text:_frcdivd)
+                  80003b40    000001e4                       : divd.obj (.text:__arp32abi_divd)
+                  80003d24    000001cc                       : imath64.obj (.text:__arp32abi_divull)
+                  80003ef0    000001cc                       : strtol.obj (.text:strtol)
+                  800040bc    000001c8                       : mpyd.obj (.text:__arp32abi_mpyd)
+                  80004284    000001c8                       : fgets.obj (.text:_dofgets)
+                  8000444c    000001b8                       : addd.obj (.text:__arp32abi_addd)
+                  80004604    000001a0                       : strtoul.obj (.text:strtoul)
+                  800047a4    0000018c                       : _printfi.obj (.text:_pproc_diouxp)
+                  80004930    00000170                       : fputs.obj (.text:fputs)
+                  80004aa0    00000168                       : vcop_memory.obj (.text:vcop_memalign)
+                  80004c08    00000160                       : frcaddd.obj (.text:_frcaddd)
+                  80004d68    0000015c                       : _scanfi.obj (.text:_sproc_float)
+                  80004ec4    00000158                       : llmpy.obj (.text:__arp32abi_mpyll)
+                  8000501c    00000144                       : fread.obj (.text:fread)
+                  80005160    00000140                       : frcmpyd.obj (.text:_frcmpyd)
+                  800052a0    00000140                       : _scanfi.obj (.text:_sget_conv)
+                  800053e0    0000013c                       : _printfi.obj (.text:_pproc_fwp)
+                  8000551c    0000012c                       : fopen.obj (.text:_openfile)
+                  80005648    00000118                       : setvbuf.obj (.text:setvbuf)
+                  80005760    00000114                       : _printfi.obj (.text:_pconv_g)
+                  80005874    000000f4                       : _printfi.obj (.text:_pproc_str)
+                  80005968    000000ec                       : lowlev.obj (.text:open)
+                  80005a54    000000e8                       : fputc.obj (.text:fputc)
+                  80005b3c    000000dc                       : memcpy.obj (.text:memcpy)
+                  80005c18    000000cc                       : cmpd.obj (.text:__arp32abi_cmpd)
+                  80005ce4    000000c4                       : memory.obj (.text:mem_alloc)
+                  80005da8    000000bc                       : _printfi.obj (.text:_ltostr)
+                  80005e64    000000bc                       : _scanfi.obj (.text:_sproc_str)
+                  80005f20    000000b4                       : trgdrv.obj (.text:HOSTlseek)
+                  80005fd4    000000b4                       : _scanfi.obj (.text:_sproc_lb)
+                  80006088    000000ac                       : trgdrv.obj (.text:HOSTrename)
+                  80006134    000000a8                       : fopen.obj (.text:_search_fp)
+                  800061dc    000000a8                       : memset.obj (.text:memset)
+                  80006284    000000a0                       : lowlev.obj (.text:getdevice)
+                  80006324    0000009c                       : _bufread.obj (.text:_buff_read)
+                  800063c0    0000009c                       : _printfi.obj (.text:_mcpy)
+                  8000645c    00000098                       : trgdrv.obj (.text:HOSTopen)
+                  800064f4    00000098                       : vcop_memory.obj (.text:vcop_free)
+                  8000658c    00000094                       : sscanf.obj (.text:_chkmbc)
+                  80006620    00000094                       : memory.obj (.text:mem_free)
+                  800066b4    00000090                       : trgdrv.obj (.text:HOSTread)
+                  80006744    00000090                       : cvtdf.obj (.text:__arp32abi_cvtdf)
+                  800067d4    00000090                       : _printfi.obj (.text:_pproc_fflags)
+                  80006864    00000090                       : _io_perm.obj (.text:_wrt_ok)
+                  800068f4    00000090                       : fseek.obj (.text:fseek)
+                  80006984    00000090                       : ftell.obj (.text:ftell)
+                  80006a14    0000008c                       : trgdrv.obj (.text:HOSTwrite)
+                  80006aa0    00000088                       : lowlev.obj (.text:close)
+                  80006b28    00000084                       : _printfi.obj (.text:_ecpy)
+                  80006bac    00000080                       : _scanfi.obj (.text:_sget_scanset)
+                  80006c2c    00000080                       : printf.obj (.text:printf)
+                  80006cac    0000007c                       : fixdi.obj (.text:__arp32abi_fixdi)
+                  80006d28    0000007c                       : fclose.obj (.text:_closefile)
+                  80006da4    0000007c                       : atoi.obj (.text:atoi)
+                  80006e20    0000007c                       : fflush.obj (.text:fflush)
+                  80006e9c    00000078                       : trgdrv.obj (.text:HOSTunlink)
+                  80006f14    00000078                       : _printfi.obj (.text:_div)
+                  80006f8c    00000078                       : _printfi.obj (.text:_pconv_f)
+                  80007004    00000078                       : memory.obj (.text:minit)
+                  8000707c    00000074                       : trgdrv.obj (.text:HOSTclose)
+                  800070f0    00000074                       : fprintf.obj (.text:fprintf)
+                  80007164    00000070                       : autoinit.obj (.text:_auto_init)
+                  800071d4    00000070                       : vfprintf.obj (.text:vfprintf)
+                  80007244    0000006c                       : _io_perm.obj (.text:_rd_ok)
+                  800072b0    00000068                       : fltid.obj (.text:__arp32abi_fltid)
+                  80007318    00000068                       : boot.obj (.text:_c_int00)
+                  80007380    00000068                       : lowlev.obj (.text:lseek)
+                  800073e8    00000068                       : lowlev.obj (.text:read)
+                  80007450    00000068                       : lowlev.obj (.text:write)
+                  800074b8    00000064                       : imath64.obj (.text:_subcull)
+                  8000751c    00000064                       : ltoa.obj (.text:ltoa)
+                  80007580    00000060                       : llshift.obj (.text:__arp32abi_llshl)
+                  800075e0    00000060                       : fflush.obj (.text:_doflush)
+                  80007640    0000005c                       : isinf.obj (.text:__arp32abi_isinf)
+                  8000769c    0000005c                       : lowlev.obj (.text:tabinit)
+                  800076f8    0000005c                       : vcop_memory.obj (.text:vcop_minit)
+                  80007754    00000054                       : _printfi.obj (.text:_fcpy)
+                  800077a8    00000054                       : renormd.obj (.text:_renormd)
+                  800077fc    00000054                       : exit.obj (.text:exit)
+                  80007850    00000050                       : fopen.obj (.text:_cleanup)
+                  800078a0    00000050                       : lowlev.obj (.text:finddevice)
+                  800078f0    00000050                       : rand.obj (.text:rand)
+                  80007940    0000004c                       : fltud.obj (.text:__arp32abi_fltud)
+                  8000798c    0000004c                       : memory.obj (.text:malloc)
+                  800079d8    00000048                       : trgmsg.obj (.text:readmsg)
+                  80007a20    00000048                       : lowlev.obj (.text:unlink)
+                  80007a68    00000048                       : trgmsg.obj (.text:writemsg)
+                  80007ab0    00000040                       : args_main.obj (.text:_args_main)
+                  80007af0    00000040                       : sprintf.obj (.text:sprintf)
+                  80007b30    0000003c                       : _printfi.obj (.text:__arp32abi_isnan)
+                  80007b6c    0000003c                       : strasgi_c.obj (.text:__arp32abi_strasgi)
+                  80007ba8    0000003c                       : fopen.obj (.text:fopen)
+                  80007be4    00000038                       : assert.obj (.text:__arp32abi_abort_msg)
+                  80007c1c    00000038                       : imath64.obj (.text:__arp32abi_remull)
+                  80007c54    00000038                       : sscanf.obj (.text:sscanf)
+                  80007c8c    00000034                       : llshift.obj (.text:__arp32abi_llshru)
+                  80007cc0    00000030                       : fclose.obj (.text:fclose)
+                  80007cf0    00000030                       : rand.obj (.text:srand)
+                  80007d20    0000002c                       : subd.obj (.text:__arp32abi_subd)
+                  80007d4c    00000028                       : negd.obj (.text:__arp32abi_negd)
+                  80007d74    00000028                       : mult.obj (.text:_mpyl)
+                  80007d9c    00000024                       : llcmp.obj (.text:__arp32abi_cmplls)
+                  80007dc0    00000024                       : llcmp.obj (.text:__arp32abi_cmpllu)
+                  80007de4    00000020                       : memccpy.obj (.text:memccpy)
+                  80007e04    0000001c                       : lladdsub.obj (.text:__arp32abi_addll)
+                  80007e20    0000001c                       : sprintf.obj (.text:_outs)
+                  80007e3c    00000018                       : fgets.obj (.text:fgets)
+                  80007e54    00000014                       : lladdsub.obj (.text:__arp32abi_subll)
+                  80007e68    00000014                       : memory.obj (.text:free)
+                  80007e7c    00000010                       : lladdsub.obj (.text:__arp32abi_negll)
+                  80007e8c    00000010                       : sscanf.obj (.text:_inpchar)
+                  80007e9c    00000010                       : sprintf.obj (.text:_outc)
+                  80007eac    00000010                       : vcop_memory.obj (.text:vcop_malloc)
+                  80007ebc    0000000c                       : fprintf.obj (.text:_outc)
+                  80007ec8    0000000c                       : printf.obj (.text:_outc)
+                  80007ed4    0000000c                       : vfprintf.obj (.text:_outc)
+                  80007ee0    0000000c                       : fprintf.obj (.text:_outs)
+                  80007eec    0000000c                       : printf.obj (.text:_outs)
+                  80007ef8    0000000c                       : vfprintf.obj (.text:_outs)
+                  80007f04    0000000c                       : sscanf.obj (.text:_uninpchar)
+                  80007f10    0000000c                       : remove.obj (.text:remove)
+                  80007f1c    00000008                       : exit.obj (.text:abort)
+                  80007f24    00000004                       : _lock.obj (.text:_nop)
+                  80007f28    00000004                       : pre_init.obj (.text:_system_pre_init)
+
+.text      0    80007f2c    00005f14     
+                  80007f2c    00001420     disparity_tb.obj (.text:test_disparity)
+                  8000934c    00000d8c     ti_stats_collector.obj (.text:statCollectorControl)
+                  8000a0d8    000007cc     libevekernels.eve.lib : bam_disparityHamDist_exec_funcs.obj (.text:Bam_DisparityHamDist_initFrame)
+                  8000a8a4    000003e8     configparser.obj (.text:ParseContent)
+                  8000ac8c    000002f4     libevenatckernels.eve.lib : vcop_disparity_hammingDistance64_row_cn.obj (.text:vcop_disparity_hammingDistance64_first_row_cn)
+                  8000af80    000002e8                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_first_row_cn)
+                  8000b268    000002dc                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_nth_row_circ_cn)
+                  8000b544    000002b8                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_cn)
+                  8000b7fc    000002b0     libevekernels.eve.lib : bam_disparityHamDist_exec_funcs.obj (.text:BAM_DisparityHamDist_compute)
+                  8000baac    000002b0     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_circ_cn)
+                  8000bd5c    000002a8                               : vcop_disparity_hammingDistance64_row_cn.obj (.text:vcop_disparity_hammingDistance64_nth_row_cn)
+                  8000c004    00000290                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_nth_row_cn)
+                  8000c294    0000028c                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_first_row_circ_cn)
+                  8000c520    00000264                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_cn)
+                  8000c784    00000258                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_circ_cn)
+                  8000c9dc    0000023c     disparity_tb.obj (.text:main)
+                  8000cc18    00000234     eve_profile.obj (.text:profiler_end)
+                  8000ce4c    000001e4     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_hammingDistance_row_right_left_cn)
+                  8000d030    00000168     libevekernels.eve.lib : bam_natcDisparityHamDist_exec_funcs.obj (.text:Bam_natcDisparityHamDist_compute)
+                  8000d198    00000154     report_utils.obj (.text:report_printAppletInfo)
+                  8000d2ec    00000120     libevekernels.eve.lib : bam_disparityHamDist_helper_funcs.obj (.text:BAM_DisparityHamDist_getMemRecFunc)
+                  8000d40c    00000120                           : bam_natcDisparityHamDist_helper_funcs.obj (.text:BAM_natcDisparityHamDist_getMemRecFunc)
+                  8000d52c    000000f8     disparity_tb.obj (.text:vcop_disparity_hammingDistance_nth_row_cn)
+                  8000d624    000000e8     disparity_tb.obj (.text:vcop_disparity_hammingDistance_first_row_cn)
+                  8000d70c    000000d8     configparser.obj (.text:readparamfile)
+                  8000d7e4    000000c4     eve_profile.obj (.text:profiler_init)
+                  8000d8a8    000000c4     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.text:wrapper_vcop_disparity_hammingDistance32_nth_row_circ_cn)
+                  8000d96c    000000b8                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:wrapper_vcop_disparity_hammingDistance32_first_row_circ_cn)
+                  8000da24    000000b4                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:vcop_disparity_genPrevAndNextMinCost_cn)
+                  8000dad8    00000080                               : vcop_disparity_hammingDistance32_row_cn.obj (.text:hamming_32)
+                  8000db58    00000080                               : vcop_disparity_hammingDistance64_row_cn.obj (.text:hamming_64)
+                  8000dbd8    00000070     ti_stats_collector.obj (.text:statCollectorInit)
+                  8000dc48    0000005c     disparity_tb.obj (.text:TestApp_AllocMemRecords)
+                  8000dca4    00000058     ti_mem_manager.obj (.text:TI_GetMemoryChunk)
+                  8000dcfc    00000050     disparity_tb.obj (.text:TestApp_FreeMemRecords)
+                  8000dd4c    00000048     eve_profile.obj (.text:profiler_start)
+                  8000dd94    00000030     eve_profile.obj (.text:profiler_initStack)
+                  8000ddc4    00000018     libevekernels.eve.lib : bam_disparityHamDist_exec_funcs.obj (.text:BAM_DisparityHamDist_control)
+                  8000dddc    00000018                           : bam_natcDisparityHamDist_exec_funcs.obj (.text:BAM_natcDisparityHamDist_control)
+                  8000ddf4    00000018     eve_profile.obj (.text:profiler_getSP)
+                  8000de0c    00000010     eve_profile.obj (.text:profiler_end_print)
+                  8000de1c    0000000c     libevekernels.eve.lib : bam_natcDisparityHamDist_exec_funcs.obj (.text:Bam_natcDisparityHamDist_initFrame)
+                  8000de28    0000000c     ti_mem_manager.obj (.text:TI_CreateMemoryHandle)
+                  8000de34    0000000c     ti_mem_manager.obj (.text:TI_ResetMemoryHandle)
+
+.algo_text 
+*          0    8000de40    00005bd4     
+                  8000de40    000001f0     libevekernels.eve.lib : init_disparity_hammingDistance_row_params.obj (.text:init_disparity_hammingDistance_row_params)
+                  8000e030    000001f8                           : vcop_disparity_hammingDistance32_getPtr.obj (.text:vcop_disparity_hammingDistance32_nth_row_firstCall_getPtr)
+                  8000e228    000001d8                           : vcop_disparity_hammingDistance32_getPtr.obj (.text:vcop_disparity_hammingDistance32_nth_row_getPtr)
+                  8000e400    00000104                           : vcop_disparity_hammingDistance32_getPtr.obj (.text:vcop_disparity_hammingDistance32_nth_row_firstCall_setPtr)
+                  8000e504    000000cc                           : vcop_disparity_hammingDistance32_getPtr.obj (.text:vcop_disparity_hammingDistance32_nth_row_setPtr)
+                  8000e5d0    000005fc                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_nth_row_firstCall_init)
+                  8000ebcc    0000055c                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_nth_row_init)
+                  8000f128    000003f4                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_first_row_firstCall_init)
+                  8000f51c    00000354                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_first_row_init)
+                  8000f870    000001d0                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_nth_row_firstCall_vloops)
+                  8000fa40    00000184                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_nth_row_vloops)
+                  8000fbc4    00000134                           : vcop_disparity_hammingDistance32_row_kernel_wrapper.obj (.text:wrapper_vcop_disparity_hammingDistance32_nth_row_init)
+                  8000fcf8    00000128                           : vcop_disparity_hammingDistance32_row_kernel_wrapper.obj (.text:wrapper_vcop_disparity_hammingDistance32_nth_row_firstCall_init)
+                  8000fe20    00000110                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_first_row_firstCall_vloops)
+                  8000ff30    000000fc                           : vcop_disparity_hammingDistance32_row_kernel_wrapper.obj (.text:wrapper_vcop_disparity_hammingDistance32_first_row_init)
+                  8001002c    000000f0                           : vcop_disparity_hammingDistance32_row_kernel_wrapper.obj (.text:wrapper_vcop_disparity_hammingDistance32_first_row_firstCall_init)
+                  8001011c    000000e4                           : vcop_disparity_hammingDistance32_row_kernel.obj (.text:vcop_disparity_hammingDistance32_first_row_vloops)
+                  80010200    00000168                           : vcop_disparity_postprocess_kernel.obj (.text:vcop_disparity_genPrevAndNextMinCost_init)
+                  80010368    00000074                           : vcop_disparity_postprocess_kernel.obj (.text:vcop_disparity_genPrevAndNextMinCost_vloops)
+                  800103dc    00000658                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_firstCall_init)
+                  80010a34    00000568                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_init)
+                  80010f9c    000003f8                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_firstCall_init)
+                  80011394    00000348                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_init)
+                  800116dc    000001d0                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_firstCall_vloops)
+                  800118ac    00000184                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_nth_row_vloops)
+                  80011a30    00000110                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_firstCall_vloops)
+                  80011b40    000000e4                           : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.text:vcop_disparity_hammingDistance32_RL_first_row_vloops)
+                  80011c24    00000618     libeveDisparity.eve.lib : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_configure)
+                  8001223c    00000438                             : disparity_graph.obj (.text:DISPARITY_TI_initArgs)
+                  80012674    000002ec                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_triggerInChannel)
+                  80012960    000002e0                             : disparity_graph.obj (.text:DISPARITY_TI_dmaControl)
+                  80012c40    000001bc                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_getMemRecFunc)
+                  80012dfc    000001a8                             : disparity_graph.obj (.text:DISPARITY_TI_graphCreate)
+                  80012fa4    00000178                             : disparity_alg.obj (.text:DISPARITY_TI_init)
+                  8001311c    00000150                             : disparity_alg.obj (.text:DISPARITY_TI_process)
+                  8001326c    000000f8                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_update)
+                  80013364    000000f0                             : disparity_alg.obj (.text:DISPARITY_TI_alloc)
+                  80013454    000000ec                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_init)
+                  80013540    000000e8                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_setMemRecFunc)
+                  80013628    000000ac                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_triggerOutChannel)
+                  800136d4    00000078                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_waitInChannel)
+                  8001374c    0000006c                             : edma_disparity.obj (.text:DISPARITY_EDMA_TI_circLineBuffer_waitOutChannel)
+                  800137b8    0000005c                             : disparity_alg.obj (.text:DISPARITY_TI_activate)
+                  80013814    00000054                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_updateDDRptrInChannel)
+                  80013868    00000054                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_updateDDRptrOutChannel)
+                  800138bc    00000050                             : disparity_alg.obj (.text:DISPARITY_TI_deactivate)
+                  8001390c    0000004c                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_frameInitInChannel)
+                  80013958    00000044                             : bam_dma_disparity_node.obj (.text:BAM_DISPARITY_EDMA_TI_frameInitOutChannel)
+                  8001399c    00000020                             : disparity_alg.obj (.text:DISPARITY_TI_control)
+                  800139bc    00000020                             : disparity_graph.obj (.text:DISPARITY_TI_execute)
+                  800139dc    0000001c                             : disparity_graph.obj (.text:DISPARITY_TI_getGraphMemReq)
+                  800139f8    00000018                             : disparity_alg.obj (.text:DISPARITY_TI_free)
+                  80013a10    00000004                             : disparity_alg.obj (.text:DISPARITY_TI_numAlloc)
+
+.bam_text 
+*          0    80013a14    00003180     
+                  80013a14    00000810     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_initGraph)
+                  80014224    00000788                                : bam_construct_int.obj (.text:BAM_autoAllocMemRec)
+                  800149ac    00000544                                : bam_execute.obj (.text:BAM_execute)
+                  80014ef0    0000047c                                : bam_construct_int.obj (.text:BAM_finaliseGraph)
+                  8001536c    00000414                                : bam_construct_int.obj (.text:BAM_optimizeGraph)
+                  80015780    00000378                                : bam_construct_int.obj (.text:BAM_getMemRec)
+                  80015af8    000001cc                                : bam_construct.obj (.text:BAM_createGraph)
+                  80015cc4    00000158                                : bam_construct_int.obj (.text:BAM_updateNodes)
+                  80015e1c    00000150                                : bam_memory.obj (.text:bam_mem_alloc)
+                  80015f6c    00000140                                : bam_memory.obj (.text:bam_getMemPacket)
+                  800160ac    00000130                                : bam_execute.obj (.text:BAM_process)
+                  800161dc    00000120                                : bam_construct_int.obj (.text:BAM_setNodeMemRec)
+                  800162fc    0000010c                                : bam_construct_int.obj (.text:BAM_getGraphMemSize)
+                  80016408    000000e8                                : bam_construct_int.obj (.text:BAM_fillKernelInfo)
+                  800164f0    000000e8                                : bam_memory.obj (.text:bam_mem_free)
+                  800165d8    000000b4                                : bam_execute.obj (.text:BAM_activateGraph)
+                  8001668c    000000ac                                : bam_construct_int.obj (.text:BAM_copyIntMemRec2ExtMem)
+                  80016738    000000a8                                : bam_memory.obj (.text:bam_minit)
+                  800167e0    00000098                                : bam_execute.obj (.text:BAM_ARP32_computeWrapper)
+                  80016878    00000090                                : bam_memory.obj (.text:bam_releaseMemPacket)
+                  80016908    0000008c                                : bam_construct_int.obj (.text:BAM_copyNodeList)
+                  80016994    00000074                                : bam_execute.obj (.text:BAM_initGraphInstance)
+                  80016a08    00000068                                : bam_memory.obj (.text:bam_mcheck)
+                  80016a70    0000004c                                : bam_construct.obj (.text:BAM_initKernelDB)
+                  80016abc    0000003c                                : bam_execute.obj (.text:BAM_controlNode)
+                  80016af8    00000038                                : bam_construct_int.obj (.text:BAM_getMemPacket)
+                  80016b30    00000024                                : alg_osal.obj (.text:PRINTF)
+                  80016b54    00000024                                : alg_osal.obj (.text:TEST_PRINTF)
+                  80016b78    00000018                                : bam_execute.obj (.text:VCOP_SET_MEM_VIEW)
+                  80016b90    00000004                                : bam_execute.obj (.text:BAM_dummyKernelFunc)
+
+.starterware_text 
+*          0    80016b94    00000720     
+                  80016b94    000001c4     libevestarterware_eve.lib : dma_funcs.obj (.text:DMA_funcs_hardwareRegSetup)
+                  80016d58    00000178                               : dma_resource_allocator.obj (.text:DMA_resourceAllocator_allocateResources)
+                  80016ed0    000000cc                               : edma_utils_state.obj (.text:DMA_utils_updateStateStruct)
+                  80016f9c    00000090                               : edma_utils_memcpy.obj (.text:EDMA_UTILS_memcpy2D)
+                  8001702c    00000074                               : dma_funcs.obj (.text:DMA_funcs_writeTransferParams)
+                  800170a0    00000048                               : sctm.obj (.text:EVE_SCTM_CounterConfig)
+                  800170e8    00000040                               : edma_utils.obj (.text:EDMA_UTILS_globalReset)
+                  80017128    00000040                               : edma_utils_memcpy.obj (.text:EDMA_UTILS_memcpy2D_init)
+                  80017168    0000002c                               : dma_resource_allocator.obj (.text:DMA_resourceAllocator_initResources)
+                  80017194    0000002c                               : sctm.obj (.text:EVE_SCTM_CounterTimerEnable)
+                  800171c0    0000002c                               : sctm.obj (.text:EVE_SCTM_InpEvtSelect)
+                  800171ec    0000002c                               : sctm.obj (.text:EVE_SCTM_SamplingSelect)
+                  80017218    00000020                               : edma_utils_state.obj (.text:DMA_utils_resetStateStruct)
+                  80017238    0000001c                               : sctm.obj (.text:EVE_SCTM_CounterTimerDisable)
+                  80017254    00000018                               : sctm.obj (.text:EVE_SCTM_CounterRead)
+                  8001726c    00000018                               : sctm.obj (.text:EVE_SCTM_OverflowCheck)
+                  80017284    00000014                               : sctm.obj (.text:EVE_SCTM_Enable)
+                  80017298    0000000c                               : dma_resource_allocator.obj (.text:DMA_resourceAllocator_setEdma3RmHandle)
+                  800172a4    0000000c                               : edma_utils.obj (.text:EDMA_UTILS_setEdma3RmHandle)
+                  800172b0    00000004                               : edma3lld_support.obj (.text:EDMA3LLD_SUPPORT_requestResources)
+
+.algo_neardata 
+*          1    40020000    00000000     UNINITIALIZED
+
+.stack     1    40020000    00004000     UNINITIALIZED
+                  40020000    00000004     rtsarp32_v200.lib : boot.obj (.stack)
+                  40020004    00003ffc     --HOLE--
+
+.dmemSect 
+*          1    40024000    00002000     UNINITIALIZED
+                  40024000    00002000     disparity_tb.obj (.dmemSect)
+
+.rts_neardata 
+*          1    40026000    00000266     
+                  40026000    00000101     rtsarp32_v200.lib : ctype.obj (.const:.string:_ctypes_)
+                  40026101    00000003                       : assert.obj (.const:.string)
+                  40026104    00000050                       : strtod.obj (.const:digits)
+                  40026154    00000050                       : strtold.obj (.const:digits)
+                  400261a4    00000048                       : strtod.obj (.const:powerof10)
+                  400261ec    00000048                       : strtold.obj (.const:powerof10)
+                  40026234    00000023                       : _printfi.obj (.const:.string)
+                  40026257    00000001     --HOLE-- [fill = 0]
+                  40026258    00000007                       : _scanfi.obj (.const:.string:flit$1)
+                  4002625f    00000001     --HOLE-- [fill = 0]
+                  40026260    00000006                       : _scanfi.obj (.const:.string:barr$2)
+
+.bam_neardata 
+*          1    40026268    000001c5     
+                  40026268    00000008     libevealgframework.eve.lib : bam_construct_int.obj (.rodata)
+                  40026270    00000004                                : bam_execute.obj (.rodata)
+                  40026274    00000004                                : bam_memory.obj (.rodata)
+                  40026278    00000121                                : bam_construct_int.obj (.const:.string)
+                  40026399    00000090                                : bam_execute.obj (.const:.string)
+                  40026429    00000001     --HOLE-- [fill = 0]
+                  4002642a    00000003                                : bam_construct_int.obj (.const:.string:$P$T0$1)
+
+.cio       1    40026430    00000120     UNINITIALIZED
+                  40026430    00000120     rtsarp32_v200.lib : trgmsg.obj (.cio)
+
+.starterware_neardata 
+*          1    40026550    00000110     
+                  40026550    000000a8     libevestarterware_eve.lib : dma_resource_allocator.obj (.bss) [fill = 0]
+                  400265f8    00000060                               : edma_utils_state.obj (.bss) [fill = 0]
+                  40026658    00000004                               : dma_resource_allocator.obj (.data)
+                  4002665c    00000004                               : edma_utils.obj (.data)
+
+.bss       1    40026660    00000065     UNINITIALIZED
+                  40026660    00000048     eve_profile.obj (.bss)
+                  400266a8    00000018     libevealgframework.eve.lib : bam_memory.obj (.bss)
+                  400266c0    00000005     disparity_config.obj (.bss)
+
+.data      1    400266c8    0000002c     
+                  400266c8    00000020     boot_arp32.obj (.data)
+                  400266e8    00000005     libevealgframework.eve.lib : bam_memory.obj (.data)
+                  400266ed    00000001     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.data)
+                  400266ee    00000001                               : vcop_disparity_hammingDistance64_row_cn.obj (.data)
+                  400266ef    00000001     --HOLE-- [fill = 0]
+                  400266f0    00000004     eve_profile.obj (.data)
+
+.rodata    1    400266f4    00000060     
+                  400266f4    00000028     ti_stats_collector.obj (.rodata)
+                  4002671c    0000000c     disparity_tb.obj (.rodata)
+                  40026728    00000008     eve_profile.obj (.rodata)
+                  40026730    00000008     libevekernels.eve.lib : bam_disparityHamDist_exec_funcs.obj (.rodata)
+                  40026738    00000004     libeveDisparity.eve.lib : edma_disparity.obj (.rodata)
+                  4002673c    00000004     libevekernels.eve.lib : vcop_disparity_hammingDistance32_RL_row_kernel.obj (.rodata)
+                  40026740    00000004                           : vcop_disparity_hammingDistance32_getPtr.obj (.rodata)
+                  40026744    00000004                           : vcop_disparity_hammingDistance32_row_kernel.obj (.rodata)
+                  40026748    00000004     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.rodata)
+                  4002674c    00000004                               : vcop_disparity_hammingDistance64_row_cn.obj (.rodata)
+                  40026750    00000004     libevestarterware_eve.lib : edma_utils_memcpy.obj (.rodata)
+
+.wmem      1    40040000    00007d00     UNINITIALIZED
+                  40040000    00000008     rtsarp32_v200.lib : vcop_memory.obj (.wmem)
+                  40040008    00007cf8     --HOLE--
+
+.imemla    1    40050000    00004000     UNINITIALIZED
+                  40050000    00000008     rtsarp32_v200.lib : vcop_memory.obj (.imemla)
+                  40050008    00003ff8     --HOLE--
+
+.imemha    1    40054000    00004000     UNINITIALIZED
+                  40054000    00000008     rtsarp32_v200.lib : vcop_memory.obj (.imemha)
+                  40054008    00003ff8     --HOLE--
+
+.imemlb    1    40070000    00004000     UNINITIALIZED
+                  40070000    00000008     rtsarp32_v200.lib : vcop_memory.obj (.imemlb)
+                  40070008    00003ff8     --HOLE--
+
+.imemhb    1    40074000    00004000     UNINITIALIZED
+                  40074000    00000008     rtsarp32_v200.lib : vcop_memory.obj (.imemhb)
+                  40074008    00003ff8     --HOLE--
+
+.algo_fardata 
+*          1    80030000    00000000     UNINITIALIZED
+
+.sysmem    1    80030000    00800000     UNINITIALIZED
+                  80030000    00000008     rtsarp32_v200.lib : memory.obj (.sysmem)
+                  80030008    007ffff8     --HOLE--
+
+.far       1    80830000    000021c0     UNINITIALIZED
+                  80830000    00001f68     disparity_config.obj (.far)
+                  80831f68    00000100     libevenatckernels.eve.lib : vcop_disparity_hammingDistance32_row_cn.obj (.far)
+                  80832068    00000100                               : vcop_disparity_hammingDistance64_row_cn.obj (.far)
+                  80832168    00000028     ti_stats_collector.obj (.far)
+                  80832190    00000020     eve_profile.obj (.far)
+                  808321b0    00000010     disparity_tb.obj (.far)
+
+.const     1    808321c0    000020b0     
+                  808321c0    0000096a     disparity_config.obj (.const:.string)
+                  80832b2a    00000914     disparity_tb.obj (.const:.string)
+                  8083343e    000003d2     eve_profile.obj (.const:.string)
+                  80833810    00000252     configparser.obj (.const:.string)
+                  80833a62    00000220     libeveDisparity.eve.lib : bam_dma_disparity_node.obj (.const:.string)
+                  80833c82    000001a9                             : disparity_graph.obj (.const:.string)
+                  80833e2b    00000001     --HOLE-- [fill = 0]
+                  80833e2c    00000128     ti_stats_collector.obj (.const:.switchtab)
+                  80833f54    000000fd     report_utils.obj (.const:.string)
+                  80834051    000000c6     libeveDisparity.eve.lib : disparity_alg.obj (.const:.string)
+                  80834117    00000001     --HOLE-- [fill = 0]
+                  80834118    00000054                             : disparity_alg.obj (.const)
+                  8083416c    00000053     ti_mem_manager.obj (.const:.string)
+                  808341bf    00000043     ti_stats_collector.obj (.const:.string)
+                  80834202    00000002     --HOLE-- [fill = 0]
+                  80834204    00000030     libeveDisparity.eve.lib : disparity_graph.obj (.const:$P$T0$1)
+                  80834234    00000024                             : disparity_graph.obj (.const:$P$T1$2)
+                  80834258    0000000f     disparity_tb.obj (.const:.string:__FUNCTION__$1)
+                  80834267    00000001     --HOLE-- [fill = 0]
+                  80834268    00000008     configparser.obj (.const:.string:$P$T0$1)
+
+.fardata   1    80834270    0000195c     
+                  80834270    00001800     disparity_config.obj (.fardata:gsTokenMap_disparity)
+                  80835a70    00000068     libeveDisparity.eve.lib : bam_dma_disparity_node.obj (.fardata)
+                  80835ad8    00000040                             : disparity_graph.obj (.fardata:bamKernelExecFuncDB)
+                  80835b18    00000040                             : disparity_graph.obj (.fardata:bamKernelHostDB)
+                  80835b58    0000001c     libevekernels.eve.lib : bam_disparityHamDist_helper_funcs.obj (.fardata)
+                  80835b74    0000001c                           : bam_natcDisparityHamDist_helper_funcs.obj (.fardata)
+                  80835b90    00000018                           : bam_disparityHamDist_exec_funcs.obj (.fardata)
+                  80835ba8    00000018                           : bam_natcDisparityHamDist_exec_funcs.obj (.fardata)
+                  80835bc0    0000000c     libeveDisparity.eve.lib : disparity_graph.obj (.fardata)
+
+.rts_fardata 
+*          1    80835bcc    00000300     
+                  80835bcc    000000a0     rtsarp32_v200.lib : defs.obj (.far) [fill = 0]
+                  80835c6c    0000000c                       : memory.obj (.far) [fill = 0]
+                  80835c78    00000008                       : boot.obj (.far) [fill = 0]
+                  80835c80    00000008                       : trgdrv.obj (.far) [fill = 0]
+                  80835c88    000000f0                       : defs.obj (.fardata:_ftable)
+                  80835d78    00000078                       : lowlev.obj (.fardata:_device)
+                  80835df0    00000064                       : vcop_memory.obj (.fardata:vcop_mem)
+                  80835e54    00000050                       : lowlev.obj (.fardata:_stream)
+                  80835ea4    00000008                       : _lock.obj (.fardata)
+                  80835eac    00000005                       : vcop_memory.obj (.fardata)
+                  80835eb1    00000003     --HOLE-- [fill = 0]
+                  80835eb4    00000004                       : defs.obj (.fardata)
+                  80835eb8    00000004                       : errno.obj (.fardata)
+                  80835ebc    00000004                       : fopen.obj (.fardata)
+                  80835ec0    00000004                       : lowlev.obj (.fardata)
+                  80835ec4    00000004                       : memory.obj (.fardata)
+                  80835ec8    00000004                       : rand.obj (.fardata)
+
+.starterware_fardata 
+*          1    80835ecc    000001f4     
+                  80835ecc    000001f4     libevestarterware_eve.lib : cred.obj (.fardata:CRED_instVirtAddr)
+
+.bam_fardata 
+*          1    808360c0    000000f0     
+                  808360c0    00000078     libevealgframework.eve.lib : bam_memory.obj (.far) [fill = 0]
+                  80836138    0000000c                                : bam_execute.obj (.far) [fill = 0]
+                  80836144    00000008                                : bam_construct.obj (.far) [fill = 0]
+                  8083614c    00000064                                : bam_memory.obj (.fardata:vcop_mem)
+
+
+SEGMENT ATTRIBUTES
+
+    id tag      seg value
+    -- ---      --- -----
+     0 PHA_PAGE 3   1    
+     1 PHA_PAGE 4   1    
+     2 PHA_PAGE 5   1    
+     3 PHA_PAGE 6   1    
+     4 PHA_PAGE 7   1    
+     5 PHA_PAGE 8   1    
+     6 PHA_PAGE 9   1    
+     7 PHA_PAGE 10  1    
+     8 PHA_PAGE 11  1    
+     9 PHA_PAGE 12  1    
+    10 PHA_PAGE 13  1    
+    11 PHA_PAGE 14  1    
+    12 PHA_PAGE 15  1    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+800167e0   BAM_ARP32_computeWrapper
+8001390c   BAM_DISPARITY_EDMA_TI_frameInitInChannel
+80013958   BAM_DISPARITY_EDMA_TI_frameInitOutChannel
+80012c40   BAM_DISPARITY_EDMA_TI_getMemRecFunc
+80013540   BAM_DISPARITY_EDMA_TI_setMemRecFunc
+80013814   BAM_DISPARITY_EDMA_TI_updateDDRptrInChannel
+80013868   BAM_DISPARITY_EDMA_TI_updateDDRptrOutChannel
+800165d8   BAM_activateGraph
+80016abc   BAM_controlNode
+8001668c   BAM_copyIntMemRec2ExtMem
+80016908   BAM_copyNodeList
+80015af8   BAM_createGraph
+80016b90   BAM_dummyKernelFunc
+80016408   BAM_fillKernelInfo
+800162fc   BAM_getGraphMemSize
+80016af8   BAM_getMemPacket
+80013a14   BAM_initGraph
+80016994   BAM_initGraphInstance
+80016a70   BAM_initKernelDB
+8001536c   BAM_optimizeGraph
+800160ac   BAM_process
+80015cc4   BAM_updateNodes
+80007f1c   C$$EXIT
+80007aa8   C$$IO$$
+80835ecc   CRED_instVirtAddr
+80011c24   DISPARITY_EDMA_TI_circLineBuffer_configure
+80013454   DISPARITY_EDMA_TI_circLineBuffer_init
+80012674   DISPARITY_EDMA_TI_circLineBuffer_triggerInChannel
+80013628   DISPARITY_EDMA_TI_circLineBuffer_triggerOutChannel
+8001326c   DISPARITY_EDMA_TI_circLineBuffer_update
+800136d4   DISPARITY_EDMA_TI_circLineBuffer_waitInChannel
+8001374c   DISPARITY_EDMA_TI_circLineBuffer_waitOutChannel
+80834144   DISPARITY_TI_IRES
+80834118   DISPARITY_TI_VISION_FXNS
+800137b8   DISPARITY_TI_activate
+80013364   DISPARITY_TI_alloc
+8001399c   DISPARITY_TI_control
+800138bc   DISPARITY_TI_deactivate
+80012960   DISPARITY_TI_dmaControl
+800139bc   DISPARITY_TI_execute
+800139f8   DISPARITY_TI_free
+800139dc   DISPARITY_TI_getGraphMemReq
+80012dfc   DISPARITY_TI_graphCreate
+80012fa4   DISPARITY_TI_init
+80013a10   DISPARITY_TI_numAlloc
+8001311c   DISPARITY_TI_process
+80016b94   DMA_funcs_hardwareRegSetup
+8001702c   DMA_funcs_writeTransferParams
+80016d58   DMA_resourceAllocator_allocateResources
+80017168   DMA_resourceAllocator_initResources
+80017298   DMA_resourceAllocator_setEdma3RmHandle
+80017218   DMA_utils_resetStateStruct
+80016ed0   DMA_utils_updateStateStruct
+40024000   DMEM_SCRATCH
+800172b0   EDMA3LLD_SUPPORT_requestResources
+800170e8   EDMA_UTILS_globalReset
+80016f9c   EDMA_UTILS_memcpy2D
+800172a4   EDMA_UTILS_setEdma3RmHandle
+800170a0   EVE_SCTM_CounterConfig
+80017254   EVE_SCTM_CounterRead
+80017238   EVE_SCTM_CounterTimerDisable
+80017194   EVE_SCTM_CounterTimerEnable
+80017284   EVE_SCTM_Enable
+800171c0   EVE_SCTM_InpEvtSelect
+8001726c   EVE_SCTM_OverflowCheck
+800171ec   EVE_SCTM_SamplingSelect
+8000707c   HOSTclose
+80005f20   HOSTlseek
+8000645c   HOSTopen
+800066b4   HOSTread
+80006088   HOSTrename
+80006e9c   HOSTunlink
+80006a14   HOSTwrite
+00004000   IMEMH_SIZE
+00004000   IMEML_SIZE
+80016b30   PRINTF
+80016b54   TEST_PRINTF
+8000de28   TI_CreateMemoryHandle
+8000dca4   TI_GetMemoryChunk
+8000de34   TI_ResetMemoryHandle
+8000dc48   TestApp_AllocMemRecords
+8000dcfc   TestApp_FreeMemRecords
+00007d00   WMEM_SIZE
+40026430   __CIOBUF_
+UNDEFED    __TI_CINIT_Base
+UNDEFED    __TI_CINIT_Limit
+UNDEFED    __TI_Handler_Table_Base
+UNDEFED    __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+40024000   __TI_STACK_END
+00004000   __TI_STACK_SIZE
+40026268   __TI_STATIC_BASE
+00800000   __TI_SYSMEM_SIZE
+00000001   __TI_args_main
+00000001   __TI_exit
+80007be4   __arp32abi_abort_msg
+8000444c   __arp32abi_addd
+80007e04   __arp32abi_addll
+80005c18   __arp32abi_cmpd
+80007d9c   __arp32abi_cmplls
+80007dc0   __arp32abi_cmpllu
+80006744   __arp32abi_cvtdf
+80003b40   __arp32abi_divd
+80003d24   __arp32abi_divull
+80006cac   __arp32abi_fixdi
+800072b0   __arp32abi_fltid
+80007940   __arp32abi_fltud
+80007640   __arp32abi_isinf
+80007580   __arp32abi_llshl
+80007c8c   __arp32abi_llshru
+800040bc   __arp32abi_mpyd
+80004ec4   __arp32abi_mpyll
+80007d4c   __arp32abi_negd
+80007e7c   __arp32abi_negll
+80007c1c   __arp32abi_remull
+80007b6c   __arp32abi_strasgi
+80007d20   __arp32abi_subd
+80007e54   __arp32abi_subll
+ffffffff   __binit__
+ffffffff   __c_args__
+00000000   _algo_fardata_size
+00000000   _algo_neardata_size
+00005bd4   _algo_text_size
+80007ab0   _args_main
+80007164   _auto_init
+000000f0   _bam_fardata_size
+000001c5   _bam_neardata_size
+00003180   _bam_text_size
+80006324   _buff_read
+80007318   _c_int00
+80007850   _cleanup
+80835c78   _cleanup_ptr
+80006d28   _closefile
+40026000   _ctypes_
+800075e0   _doflush
+80835c7c   _dtors_ptr
+80000120   _dummy_handler
+80004c08   _frcaddd
+80003940   _frcdivd
+80005160   _frcmpyd
+80835eb4   _ft_end
+80835c88   _ftable
+40054000   _imemha_memory
+40074000   _imemhb_memory
+40050000   _imemla_memory
+40070000   _imemlb_memory
+80835ea4   _lock
+80007d74   _mpyl
+400266c8   _my_stack
+80007f24   _nop
+800030d0   _printfi
+80007244   _rd_ok
+800077a8   _renormd
+80000100   _reset_handler
+00000300   _rts_fardata_size
+00000266   _rts_neardata_size
+00006e2c   _rts_text_size
+80001100   _scanfi
+40020000   _stack
+000001f4   _starterware_fardata_size
+00000110   _starterware_neardata_size
+00000720   _starterware_text_size
+80030000   _sys_memory
+80007f28   _system_pre_init
+00005f14   _text_size
+80835bcc   _tmpnams
+80835ea8   _unlock
+80000000   _vec_table
+40040000   _wmem_memory
+80006864   _wrt_ok
+80007f1c   abort
+80006da4   atoi
+80015f6c   bam_getMemPacket
+80016a08   bam_mcheck
+80015e1c   bam_mem_alloc
+800164f0   bam_mem_free
+80016738   bam_minit
+80016878   bam_releaseMemPacket
+400266b4   bam_stat_num_packets
+ffffffff   binit
+80006aa0   close
+400266c0   disparity_numTestCases
+400266c4   disparity_skipValidation
+80835eb8   errno
+800077fc   exit
+80007cc0   fclose
+80006e20   fflush
+80007e3c   fgets
+80007ba8   fopen
+800070f0   fprintf
+80005a54   fputc
+80004930   fputs
+8000501c   fread
+80007e68   free
+800068f4   fseek
+80006984   ftell
+8000351c   fwrite
+80835b90   gBAM_TI_disparityHamDist_ExecFunc
+80835b6c   gBAM_TI_disparityHamDist_HelperFunc
+80835b58   gBAM_TI_disparityHamDist_Kernel
+80835a70   gBAM_TI_dmaDisparityReadKernel
+80835aa8   gBAM_TI_dmaDisparityReadKernelExecFunc
+80835a98   gBAM_TI_dmaDisparityReadKernelHelperFunc
+80835a84   gBAM_TI_dmaDisparityWriteKernel
+80835ac0   gBAM_TI_dmaDisparityWriteKernelExecFunc
+80835aa0   gBAM_TI_dmaDisparityWriteKernelHelperFunc
+80835ba8   gBAM_TI_natcDisparityHamDist_ExecFunc
+80835b88   gBAM_TI_natcDisparityHamDist_HelperFunc
+80835b74   gBAM_TI_natcDisparityHamDist_Kernel
+80830000   gConfig_disparity
+400265f8   gDmaUtilsStateStruct
+4002665c   gEdmaCc
+808321a0   gTest_TI_profileSctm
+4002668c   gTest_TI_profileTsc
+80834270   gsTokenMap_disparity
+8000dad8   hamming_32
+8000db58   hamming_64
+8000de40   init_disparity_hammingDistance_row_params
+80007380   lseek
+8000751c   ltoa
+8000c9dc   main
+8000798c   malloc
+808321b0   memObj_DMEM
+80005ce4   mem_alloc
+80006620   mem_free
+80007de4   memccpy
+80005b3c   memcpy
+800061dc   memset
+80007004   minit
+80005968   open
+80006c2c   printf
+8000cc18   profiler_end
+8000de0c   profiler_end_print
+8000ddf4   profiler_getSP
+8000d7e4   profiler_init
+8000dd94   profiler_initStack
+8000dd4c   profiler_start
+800078f0   rand
+800073e8   read
+800079d8   readmsg
+8000d70c   readparamfile
+80007f10   remove
+8000d198   report_printAppletInfo
+80005648   setvbuf
+80007af0   sprintf
+80007cf0   srand
+80007c54   sscanf
+8000934c   statCollectorControl
+8000dbd8   statCollectorInit
+800015f8   strtod
+80003ef0   strtol
+80001998   strtold
+80001d34   strtoll
+80004604   strtoul
+80002e84   strtoull
+80007f2c   test_disparity
+40026668   test_module_cyles
+80007a20   unlink
+8000da24   vcop_disparity_genPrevAndNextMinCost_cn
+80010200   vcop_disparity_genPrevAndNextMinCost_init
+80010368   vcop_disparity_genPrevAndNextMinCost_vloops
+8000c784   vcop_disparity_hammingDistance32_RL_first_row_circ_cn
+8000b544   vcop_disparity_hammingDistance32_RL_first_row_cn
+80010f9c   vcop_disparity_hammingDistance32_RL_first_row_firstCall_init
+80011a30   vcop_disparity_hammingDistance32_RL_first_row_firstCall_vloops
+80011394   vcop_disparity_hammingDistance32_RL_first_row_init
+80011b40   vcop_disparity_hammingDistance32_RL_first_row_vloops
+8000baac   vcop_disparity_hammingDistance32_RL_nth_row_circ_cn
+8000c520   vcop_disparity_hammingDistance32_RL_nth_row_cn
+800103dc   vcop_disparity_hammingDistance32_RL_nth_row_firstCall_init
+800116dc   vcop_disparity_hammingDistance32_RL_nth_row_firstCall_vloops
+80010a34   vcop_disparity_hammingDistance32_RL_nth_row_init
+800118ac   vcop_disparity_hammingDistance32_RL_nth_row_vloops
+8000c294   vcop_disparity_hammingDistance32_first_row_circ_cn
+8000af80   vcop_disparity_hammingDistance32_first_row_cn
+8000f128   vcop_disparity_hammingDistance32_first_row_firstCall_init
+8000fe20   vcop_disparity_hammingDistance32_first_row_firstCall_vloops
+8000f51c   vcop_disparity_hammingDistance32_first_row_init
+8001011c   vcop_disparity_hammingDistance32_first_row_vloops
+8000b268   vcop_disparity_hammingDistance32_nth_row_circ_cn
+8000c004   vcop_disparity_hammingDistance32_nth_row_cn
+8000e030   vcop_disparity_hammingDistance32_nth_row_firstCall_getPtr
+8000e5d0   vcop_disparity_hammingDistance32_nth_row_firstCall_init
+8000e400   vcop_disparity_hammingDistance32_nth_row_firstCall_setPtr
+8000f870   vcop_disparity_hammingDistance32_nth_row_firstCall_vloops
+8000e228   vcop_disparity_hammingDistance32_nth_row_getPtr
+8000ebcc   vcop_disparity_hammingDistance32_nth_row_init
+8000e504   vcop_disparity_hammingDistance32_nth_row_setPtr
+8000fa40   vcop_disparity_hammingDistance32_nth_row_vloops
+8000ac8c   vcop_disparity_hammingDistance64_first_row_cn
+8000bd5c   vcop_disparity_hammingDistance64_nth_row_cn
+8000d624   vcop_disparity_hammingDistance_first_row_cn
+8000d52c   vcop_disparity_hammingDistance_nth_row_cn
+8000ce4c   vcop_disparity_hammingDistance_row_right_left_cn
+800064f4   vcop_free
+80007eac   vcop_malloc
+80004aa0   vcop_memalign
+800076f8   vcop_minit
+800071d4   vfprintf
+8000d96c   wrapper_vcop_disparity_hammingDistance32_first_row_circ_cn
+8001002c   wrapper_vcop_disparity_hammingDistance32_first_row_firstCall_init
+8000ff30   wrapper_vcop_disparity_hammingDistance32_first_row_init
+8000d8a8   wrapper_vcop_disparity_hammingDistance32_nth_row_circ_cn
+8000fcf8   wrapper_vcop_disparity_hammingDistance32_nth_row_firstCall_init
+8000fbc4   wrapper_vcop_disparity_hammingDistance32_nth_row_init
+80007450   write
+80007a68   writemsg
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   _algo_fardata_size
+00000000   _algo_neardata_size
+00000001   __TI_args_main
+00000001   __TI_exit
+000000f0   _bam_fardata_size
+00000110   _starterware_neardata_size
+000001c5   _bam_neardata_size
+000001f4   _starterware_fardata_size
+00000266   _rts_neardata_size
+00000300   _rts_fardata_size
+00000720   _starterware_text_size
+00003180   _bam_text_size
+00004000   IMEMH_SIZE
+00004000   IMEML_SIZE
+00004000   __TI_STACK_SIZE
+00005bd4   _algo_text_size
+00005f14   _text_size
+00006e2c   _rts_text_size
+00007d00   WMEM_SIZE
+00800000   __TI_SYSMEM_SIZE
+40020000   _stack
+40024000   DMEM_SCRATCH
+40024000   __TI_STACK_END
+40026000   _ctypes_
+40026268   __TI_STATIC_BASE
+40026430   __CIOBUF_
+400265f8   gDmaUtilsStateStruct
+4002665c   gEdmaCc
+40026668   test_module_cyles
+4002668c   gTest_TI_profileTsc
+400266b4   bam_stat_num_packets
+400266c0   disparity_numTestCases
+400266c4   disparity_skipValidation
+400266c8   _my_stack
+40040000   _wmem_memory
+40050000   _imemla_memory
+40054000   _imemha_memory
+40070000   _imemlb_memory
+40074000   _imemhb_memory
+80000000   _vec_table
+80000100   _reset_handler
+80000120   _dummy_handler
+80001100   _scanfi
+800015f8   strtod
+80001998   strtold
+80001d34   strtoll
+80002e84   strtoull
+800030d0   _printfi
+8000351c   fwrite
+80003940   _frcdivd
+80003b40   __arp32abi_divd
+80003d24   __arp32abi_divull
+80003ef0   strtol
+800040bc   __arp32abi_mpyd
+8000444c   __arp32abi_addd
+80004604   strtoul
+80004930   fputs
+80004aa0   vcop_memalign
+80004c08   _frcaddd
+80004ec4   __arp32abi_mpyll
+8000501c   fread
+80005160   _frcmpyd
+80005648   setvbuf
+80005968   open
+80005a54   fputc
+80005b3c   memcpy
+80005c18   __arp32abi_cmpd
+80005ce4   mem_alloc
+80005f20   HOSTlseek
+80006088   HOSTrename
+800061dc   memset
+80006324   _buff_read
+8000645c   HOSTopen
+800064f4   vcop_free
+80006620   mem_free
+800066b4   HOSTread
+80006744   __arp32abi_cvtdf
+80006864   _wrt_ok
+800068f4   fseek
+80006984   ftell
+80006a14   HOSTwrite
+80006aa0   close
+80006c2c   printf
+80006cac   __arp32abi_fixdi
+80006d28   _closefile
+80006da4   atoi
+80006e20   fflush
+80006e9c   HOSTunlink
+80007004   minit
+8000707c   HOSTclose
+800070f0   fprintf
+80007164   _auto_init
+800071d4   vfprintf
+80007244   _rd_ok
+800072b0   __arp32abi_fltid
+80007318   _c_int00
+80007380   lseek
+800073e8   read
+80007450   write
+8000751c   ltoa
+80007580   __arp32abi_llshl
+800075e0   _doflush
+80007640   __arp32abi_isinf
+800076f8   vcop_minit
+800077a8   _renormd
+800077fc   exit
+80007850   _cleanup
+800078f0   rand
+80007940   __arp32abi_fltud
+8000798c   malloc
+800079d8   readmsg
+80007a20   unlink
+80007a68   writemsg
+80007aa8   C$$IO$$
+80007ab0   _args_main
+80007af0   sprintf
+80007b6c   __arp32abi_strasgi
+80007ba8   fopen
+80007be4   __arp32abi_abort_msg
+80007c1c   __arp32abi_remull
+80007c54   sscanf
+80007c8c   __arp32abi_llshru
+80007cc0   fclose
+80007cf0   srand
+80007d20   __arp32abi_subd
+80007d4c   __arp32abi_negd
+80007d74   _mpyl
+80007d9c   __arp32abi_cmplls
+80007dc0   __arp32abi_cmpllu
+80007de4   memccpy
+80007e04   __arp32abi_addll
+80007e3c   fgets
+80007e54   __arp32abi_subll
+80007e68   free
+80007e7c   __arp32abi_negll
+80007eac   vcop_malloc
+80007f10   remove
+80007f1c   C$$EXIT
+80007f1c   abort
+80007f24   _nop
+80007f28   _system_pre_init
+80007f2c   test_disparity
+8000934c   statCollectorControl
+8000ac8c   vcop_disparity_hammingDistance64_first_row_cn
+8000af80   vcop_disparity_hammingDistance32_first_row_cn
+8000b268   vcop_disparity_hammingDistance32_nth_row_circ_cn
+8000b544   vcop_disparity_hammingDistance32_RL_first_row_cn
+8000baac   vcop_disparity_hammingDistance32_RL_nth_row_circ_cn
+8000bd5c   vcop_disparity_hammingDistance64_nth_row_cn
+8000c004   vcop_disparity_hammingDistance32_nth_row_cn
+8000c294   vcop_disparity_hammingDistance32_first_row_circ_cn
+8000c520   vcop_disparity_hammingDistance32_RL_nth_row_cn
+8000c784   vcop_disparity_hammingDistance32_RL_first_row_circ_cn
+8000c9dc   main
+8000cc18   profiler_end
+8000ce4c   vcop_disparity_hammingDistance_row_right_left_cn
+8000d198   report_printAppletInfo
+8000d52c   vcop_disparity_hammingDistance_nth_row_cn
+8000d624   vcop_disparity_hammingDistance_first_row_cn
+8000d70c   readparamfile
+8000d7e4   profiler_init
+8000d8a8   wrapper_vcop_disparity_hammingDistance32_nth_row_circ_cn
+8000d96c   wrapper_vcop_disparity_hammingDistance32_first_row_circ_cn
+8000da24   vcop_disparity_genPrevAndNextMinCost_cn
+8000dad8   hamming_32
+8000db58   hamming_64
+8000dbd8   statCollectorInit
+8000dc48   TestApp_AllocMemRecords
+8000dca4   TI_GetMemoryChunk
+8000dcfc   TestApp_FreeMemRecords
+8000dd4c   profiler_start
+8000dd94   profiler_initStack
+8000ddf4   profiler_getSP
+8000de0c   profiler_end_print
+8000de28   TI_CreateMemoryHandle
+8000de34   TI_ResetMemoryHandle
+8000de40   init_disparity_hammingDistance_row_params
+8000e030   vcop_disparity_hammingDistance32_nth_row_firstCall_getPtr
+8000e228   vcop_disparity_hammingDistance32_nth_row_getPtr
+8000e400   vcop_disparity_hammingDistance32_nth_row_firstCall_setPtr
+8000e504   vcop_disparity_hammingDistance32_nth_row_setPtr
+8000e5d0   vcop_disparity_hammingDistance32_nth_row_firstCall_init
+8000ebcc   vcop_disparity_hammingDistance32_nth_row_init
+8000f128   vcop_disparity_hammingDistance32_first_row_firstCall_init
+8000f51c   vcop_disparity_hammingDistance32_first_row_init
+8000f870   vcop_disparity_hammingDistance32_nth_row_firstCall_vloops
+8000fa40   vcop_disparity_hammingDistance32_nth_row_vloops
+8000fbc4   wrapper_vcop_disparity_hammingDistance32_nth_row_init
+8000fcf8   wrapper_vcop_disparity_hammingDistance32_nth_row_firstCall_init
+8000fe20   vcop_disparity_hammingDistance32_first_row_firstCall_vloops
+8000ff30   wrapper_vcop_disparity_hammingDistance32_first_row_init
+8001002c   wrapper_vcop_disparity_hammingDistance32_first_row_firstCall_init
+8001011c   vcop_disparity_hammingDistance32_first_row_vloops
+80010200   vcop_disparity_genPrevAndNextMinCost_init
+80010368   vcop_disparity_genPrevAndNextMinCost_vloops
+800103dc   vcop_disparity_hammingDistance32_RL_nth_row_firstCall_init
+80010a34   vcop_disparity_hammingDistance32_RL_nth_row_init
+80010f9c   vcop_disparity_hammingDistance32_RL_first_row_firstCall_init
+80011394   vcop_disparity_hammingDistance32_RL_first_row_init
+800116dc   vcop_disparity_hammingDistance32_RL_nth_row_firstCall_vloops
+800118ac   vcop_disparity_hammingDistance32_RL_nth_row_vloops
+80011a30   vcop_disparity_hammingDistance32_RL_first_row_firstCall_vloops
+80011b40   vcop_disparity_hammingDistance32_RL_first_row_vloops
+80011c24   DISPARITY_EDMA_TI_circLineBuffer_configure
+80012674   DISPARITY_EDMA_TI_circLineBuffer_triggerInChannel
+80012960   DISPARITY_TI_dmaControl
+80012c40   BAM_DISPARITY_EDMA_TI_getMemRecFunc
+80012dfc   DISPARITY_TI_graphCreate
+80012fa4   DISPARITY_TI_init
+8001311c   DISPARITY_TI_process
+8001326c   DISPARITY_EDMA_TI_circLineBuffer_update
+80013364   DISPARITY_TI_alloc
+80013454   DISPARITY_EDMA_TI_circLineBuffer_init
+80013540   BAM_DISPARITY_EDMA_TI_setMemRecFunc
+80013628   DISPARITY_EDMA_TI_circLineBuffer_triggerOutChannel
+800136d4   DISPARITY_EDMA_TI_circLineBuffer_waitInChannel
+8001374c   DISPARITY_EDMA_TI_circLineBuffer_waitOutChannel
+800137b8   DISPARITY_TI_activate
+80013814   BAM_DISPARITY_EDMA_TI_updateDDRptrInChannel
+80013868   BAM_DISPARITY_EDMA_TI_updateDDRptrOutChannel
+800138bc   DISPARITY_TI_deactivate
+8001390c   BAM_DISPARITY_EDMA_TI_frameInitInChannel
+80013958   BAM_DISPARITY_EDMA_TI_frameInitOutChannel
+8001399c   DISPARITY_TI_control
+800139bc   DISPARITY_TI_execute
+800139dc   DISPARITY_TI_getGraphMemReq
+800139f8   DISPARITY_TI_free
+80013a10   DISPARITY_TI_numAlloc
+80013a14   BAM_initGraph
+8001536c   BAM_optimizeGraph
+80015af8   BAM_createGraph
+80015cc4   BAM_updateNodes
+80015e1c   bam_mem_alloc
+80015f6c   bam_getMemPacket
+800160ac   BAM_process
+800162fc   BAM_getGraphMemSize
+80016408   BAM_fillKernelInfo
+800164f0   bam_mem_free
+800165d8   BAM_activateGraph
+8001668c   BAM_copyIntMemRec2ExtMem
+80016738   bam_minit
+800167e0   BAM_ARP32_computeWrapper
+80016878   bam_releaseMemPacket
+80016908   BAM_copyNodeList
+80016994   BAM_initGraphInstance
+80016a08   bam_mcheck
+80016a70   BAM_initKernelDB
+80016abc   BAM_controlNode
+80016af8   BAM_getMemPacket
+80016b30   PRINTF
+80016b54   TEST_PRINTF
+80016b90   BAM_dummyKernelFunc
+80016b94   DMA_funcs_hardwareRegSetup
+80016d58   DMA_resourceAllocator_allocateResources
+80016ed0   DMA_utils_updateStateStruct
+80016f9c   EDMA_UTILS_memcpy2D
+8001702c   DMA_funcs_writeTransferParams
+800170a0   EVE_SCTM_CounterConfig
+800170e8   EDMA_UTILS_globalReset
+80017168   DMA_resourceAllocator_initResources
+80017194   EVE_SCTM_CounterTimerEnable
+800171c0   EVE_SCTM_InpEvtSelect
+800171ec   EVE_SCTM_SamplingSelect
+80017218   DMA_utils_resetStateStruct
+80017238   EVE_SCTM_CounterTimerDisable
+80017254   EVE_SCTM_CounterRead
+8001726c   EVE_SCTM_OverflowCheck
+80017284   EVE_SCTM_Enable
+80017298   DMA_resourceAllocator_setEdma3RmHandle
+800172a4   EDMA_UTILS_setEdma3RmHandle
+800172b0   EDMA3LLD_SUPPORT_requestResources
+80030000   _sys_memory
+80830000   gConfig_disparity
+808321a0   gTest_TI_profileSctm
+808321b0   memObj_DMEM
+80834118   DISPARITY_TI_VISION_FXNS
+80834144   DISPARITY_TI_IRES
+80834270   gsTokenMap_disparity
+80835a70   gBAM_TI_dmaDisparityReadKernel
+80835a84   gBAM_TI_dmaDisparityWriteKernel
+80835a98   gBAM_TI_dmaDisparityReadKernelHelperFunc
+80835aa0   gBAM_TI_dmaDisparityWriteKernelHelperFunc
+80835aa8   gBAM_TI_dmaDisparityReadKernelExecFunc
+80835ac0   gBAM_TI_dmaDisparityWriteKernelExecFunc
+80835b58   gBAM_TI_disparityHamDist_Kernel
+80835b6c   gBAM_TI_disparityHamDist_HelperFunc
+80835b74   gBAM_TI_natcDisparityHamDist_Kernel
+80835b88   gBAM_TI_natcDisparityHamDist_HelperFunc
+80835b90   gBAM_TI_disparityHamDist_ExecFunc
+80835ba8   gBAM_TI_natcDisparityHamDist_ExecFunc
+80835bcc   _tmpnams
+80835c78   _cleanup_ptr
+80835c7c   _dtors_ptr
+80835c88   _ftable
+80835ea4   _lock
+80835ea8   _unlock
+80835eb4   _ft_end
+80835eb8   errno
+80835ecc   CRED_instVirtAddr
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_CINIT_Base
+UNDEFED    __TI_CINIT_Limit
+UNDEFED    __TI_Handler_Table_Base
+UNDEFED    __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[308 symbols]

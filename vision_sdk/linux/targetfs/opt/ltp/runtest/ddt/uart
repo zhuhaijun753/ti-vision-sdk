@@ -1,0 +1,29 @@
+# @name UART Read/Write tests
+# @desc Use git://git.breakpoint.cc/bigeasy/serialcheck.git to validate UART at various rates
+# Since serialcheck relies on termbits.h rate definitions, it is not possible to go over 4M.
+# @requires 
+# @setup_requires 
+
+UART_S_FUNC_9600 source 'serialcheck.sh' -r 9600
+UART_S_FUNC_19200 source 'serialcheck.sh' -r 19200
+UART_S_FUNC_38400 source 'serialcheck.sh' -r 38400
+UART_S_FUNC_57600 source 'serialcheck.sh' -r 57600
+UART_XS_FUNC_115200 source 'serialcheck.sh' -r 115200
+UART_L_STRESS_115200 source 'serialcheck.sh' -r 115200 -l 1000
+UART_S_FUNC_230400 source 'serialcheck.sh' -r 230400
+UART_S_FUNC_460800 source 'serialcheck.sh' -r 460800
+UART_S_FUNC_500000 source 'serialcheck.sh' -r 500000
+UART_S_FUNC_576000 source 'serialcheck.sh' -r 576000
+UART_S_FUNC_921600 source 'serialcheck.sh' -r 921600
+UART_S_FUNC_1000000 source 'serialcheck.sh' -r 1000000
+UART_S_FUNC_1152000 source 'serialcheck.sh' -r 1152000
+UART_S_FUNC_1500000 source 'serialcheck.sh' -r 1500000
+UART_S_FUNC_2000000 source 'serialcheck.sh' -r 2000000
+UART_S_FUNC_2500000 source 'serialcheck.sh' -r 2500000
+UART_S_FUNC_3000000 source 'serialcheck.sh' -r 3000000
+UART_S_PERF_3000000 source 'serialcheck.sh' -r 3000000 -l 10000
+UART_S_FUNC_3500000 source 'serialcheck.sh' -r 3500000
+UART_L_STRESS_3500000 source 'serialcheck.sh' -r 3500000 -l 50000
+UART_XL_STRESS_3500000 source 'serialcheck.sh' -r 3500000 -l 250000
+UART_S_FUNC_4000000 source 'serialcheck.sh' -r 4000000
+

@@ -1,0 +1,22 @@
+# @name ALSA memory access type test
+# @desc Loopback the audio with Non-Interleaved format or mmap access.
+#       The playback tests in alsa_tests.sh will try to 
+#       fetch (if -u option is not specified) a file from server 
+#       http://gtopentest-server.gt.design.ti.com based on the
+#       sample format, rate and number of channels; if the fetch
+#       fails playback will use /dev/urandom as the source. It 
+#       is recommended to change the url to an existing server 
+#       in the test environment or to add the -u option in the 
+#       playback scenarios so that a valid audio source file is 
+#       used during playback tests.
+# @requires sound
+ALSA_XS_FUNC_LOOPBACK_ACCESSTYPE_NONINTER_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 0 -d 10'
+ALSA_S_FUNC_LOOPBACK_ACCESSTYPE_NONINTER_02 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 0 -d 60'
+ALSA_S_FUNC_LOOPBACK_ACCESSTYPE_NONINTER_03 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 0 -d 300'
+ALSA_XS_FUNC_LOOPBACK_ACCESSTYPE_MMAP_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 1 -d 10'
+ALSA_S_FUNC_LOOPBACK_ACCESSTYPE_MMAP_02 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 1 -d 60'
+ALSA_S_FUNC_LOOPBACK_ACCESSTYPE_MMAP_03 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -a 1 -d 300'
+ALSA_S_FUNC_PLAYBACK_ACCESSTYPE_NONINTER_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t playback -a 0 -F /home/root/ALSA_M_FUNC_PLAYBACK_ACCESSTYPE_NONINTER_01.wav'  
+ALSA_S_FUNC_PLAYBACK_ACCESSTYPE_MMAP_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t playback -a 1 -F /home/root/ALSA_M_FUNC_PLAYBACK_ACCESSTYPE_MMAP_01.wav'
+ALSA_XS_FUNC_CAPTURE_ACCESSTYPE_NONINTER_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t capture -a 0 -F ALSA_M_FUNC_CAPTURE_ACCESSTYPE_NONINTER_01.snd';do_cmd 'alsa_tests.sh -t playback -a 0 -F ALSA_M_FUNC_CAPTURE_ACCESSTYPE_NONINTER_01.snd'
+ALSA_XS_FUNC_CAPTURE_ACCESSTYPE_MMAP_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t capture -a 1 -F ALSA_M_FUNC_CAPTURE_ACCESSTYPE_MMAP_01.snd'; do_cmd 'alsa_tests.sh -t playback -a 1 -F ALSA_M_FUNC_CAPTURE_ACCESSTYPE_MMAP_01.snd'

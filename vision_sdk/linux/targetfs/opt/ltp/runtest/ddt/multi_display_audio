@@ -1,0 +1,58 @@
+# @name Multidisplay test . 
+# @desc Test cases corresponding to simultaneous display on all available
+#       outputs (hdmi, lcd, etc) 
+# @requires sound/playback/alsa
+
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080-"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080-"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080-"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080-"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080-"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080i_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080i"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080i_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080i"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080i_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080i"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080i_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080i"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_1920x1080i_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1920x1080i"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_1280x720_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720-"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720-"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720-"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720-"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720-"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_1280x720i_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720i"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720i_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720i"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720i_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720i"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720i_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720i"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_1280x720i_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1280x720i"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_1024x768_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1024x768"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_1024x768_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1024x768"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_1024x768_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1024x768"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_1024x768_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1024x768"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_1024x768_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "1024x768"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_800x600_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "800x600"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_800x600_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "800x600"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_800x600_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "800x600"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_800x600_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "800x600"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_800x600_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "800x600"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_720x576_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x576"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_720x576_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x576"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_720x576_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x576"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_720x576_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x576"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_720x576_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x576"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_720x480_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x480"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_720x480_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x480"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_720x480_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x480"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_720x480_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x480"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_720x480_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "720x480"; do_cmd 'disp_audio_test all modes 10 192000'
+
+MULTIDISP_S_FUNC_PLAYBACK_640x480_32KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "640x480"; do_cmd 'disp_audio_test all modes 10 32000'
+MULTIDISP_S_FUNC_PLAYBACK_640x480_44KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "640x480"; do_cmd 'disp_audio_test all modes 10 44100'
+MULTIDISP_S_FUNC_PLAYBACK_640x480_48KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "640x480"; do_cmd 'disp_audio_test all modes 10 48000'
+MULTIDISP_S_FUNC_PLAYBACK_640x480_96KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "640x480"; do_cmd 'disp_audio_test all modes 10 96000'
+MULTIDISP_S_FUNC_PLAYBACK_640x480_192KHz  source 'audio_display_functions.sh' ; get_multidisplay_modes modes "640x480"; do_cmd 'disp_audio_test all modes 10 192000'

@@ -1,0 +1,15 @@
+Package: libdce-dev
+Version: 3.00.08.02-r0.0
+Description: libdce version 3.00.08.02-r0 - Development files
+ Library used for remotely invoking the hw accelerated codec on IVA-HD
+ This package contains symbolic links, header files, and related items
+ necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libdce
+Depends: libdce1 (= 3.00.08.02-r0.0)
+Recommends: libc6-dev, libdrm-omap-dev, ti-ipc-dev, libdrm-dev
+Source: git://git.omapzoom.org/repo/libdce.git;protocol=git

@@ -1,0 +1,16 @@
+# @name Testing for various sampling irates
+# @desc Do capture and loopback for higher sample rates
+#       The playback tests in alsa_tests.sh will try to 
+#       fetch (if -u option is not specified) a file from server 
+#       http://gtopentest-server.gt.design.ti.com based on the
+#       sample format, rate and number of channels; if the fetch
+#       fails playback will use /dev/urandom as the source. It 
+#       is recommended to change the url to an existing server 
+#       in the test environment or to add the -u option in the 
+#       playback scenarios so that a valid audio source file is 
+#       used during playback tests.
+# @requires sound/capture/alsa/hisamplingrate
+# @requires sound/playback/alsa/hisamplingrate
+ALSA_XS_FUNC_CAP_SMPRT_192000 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t capture -r 192000 -F ALSA_M_FUNC_CAP_SMPRT_192000.snd -d 30'; do_cmd 'alsa_tests.sh -t playback -r 192000 -F ALSA_M_FUNC_CAP_SMPRT_192000.snd -d 30'
+ALSA_XS_FUNC_LOOPBK_SMPRT_192000 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -r 192000 -d 30'
+ALSA_S_FUNC_PLAYBACK_SMPRT_192000 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t playback -r 192000 -F /home/root/ALSA_M_FUNC_PLAYBACK_SMPRT_192000 -d 60'

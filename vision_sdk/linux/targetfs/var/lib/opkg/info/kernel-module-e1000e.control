@@ -1,0 +1,12 @@
+Package: kernel-module-e1000e
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: e1000e kernel module
+ e1000e kernel module; Intel(R) PRO/1000 Network Driver
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-3.14.49
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

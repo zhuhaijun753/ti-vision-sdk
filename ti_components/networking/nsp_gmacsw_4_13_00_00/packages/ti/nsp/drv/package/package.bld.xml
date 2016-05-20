@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.nsp.drv" version="4, 13, 00, 00" producerId="undefined">
+    <units>
+        <module name="GMACSW"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.nsp.drv.c"/>
+        <srcFile name="gmacsw/gmacsw.c"/>
+        <srcFile name="gmacsw/gmacsw_config.c"/>
+        <srcFile name="gmacsw/cpdma.c"/>
+        <srcFile name="gmacsw/ale.c"/>
+        <srcFile name="gmacsw/mac.c"/>
+        <srcFile name="gmacsw/mdio.c"/>
+        <srcFile name="gmacsw/stats.c"/>
+        <srcFile name="gmacsw/interrupts.c"/>
+        <srcFile name="gmacsw/port.c"/>
+        <srcFile name="gmacsw/cpts.c"/>
+        <srcFile name="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="ndk2nsp/gmacsw_sysbios_al.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/vayu/debug/ti.nsp.drv.gmacsw.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oa15fg.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oa15fg.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oa15fg.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oa15fg.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oa15fg.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oa15fg.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oa15fg.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oa15fg.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/port.oa15fg.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oa15fg.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oa15fg.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oa15fg.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oa15fg.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oa15fg.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oa15fg.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oa15fg.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oa15fg.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oa15fg.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oa15fg.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oa15fg.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/release/ti.nsp.drv.gmacsw.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oa15fg.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oa15fg.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oa15fg.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/ale.oa15fg.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/mac.oa15fg.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oa15fg.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/stats.oa15fg.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oa15fg.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/port.oa15fg.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oa15fg.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oa15fg.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oa15fg.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oa15fg.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oa15fg.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oa15fg.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oa15fg.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oa15fg.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oa15fg.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oa15fg.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oa15fg.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/debug/ti.nsp.drv.gmacsw.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/release/ti.nsp.drv.gmacsw.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/debug/ti.nsp.drv.gmacsw.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/release/ti.nsp.drv.gmacsw.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oea8f.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oea8f.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oea8f.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oea8f.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oea8f.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oea8f.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oea8f.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oea8f.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oea8f.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oea8f.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/debug/ti.nsp.drv.gmacsw.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/release/ti.nsp.drv.gmacsw.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/j5eco/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/debug/ti.nsp.drv.gmacsw.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/release/ti.nsp.drv.gmacsw.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem3.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem3.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem3.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem3.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem3.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem3.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem3.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem3.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem3.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/centaurus/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem3.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/debug/ti.nsp.drv.gmacsw.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem4.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem4.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem4.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/ale.oem4.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/mac.oem4.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/mdio.oem4.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/stats.oem4.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem4.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/port.oem4.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw/gmacsw/cpts.oem4.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem4.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem4.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem4.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem4.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem4.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem4.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem4.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem4.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem4.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/debug/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem4.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/release/ti.nsp.drv.gmacsw.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw.oem4.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/gmacsw_config.oem4.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/cpdma.oem4.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/ale.oem4.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/mac.oem4.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/mdio.oem4.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/stats.oem4.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/interrupts.oem4.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/port.oem4.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw/gmacsw/cpts.oem4.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw.oem4.dep" src="gmacsw/gmacsw.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/gmacsw_config.oem4.dep" src="gmacsw/gmacsw_config.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpdma.oem4.dep" src="gmacsw/cpdma.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/ale.oem4.dep" src="gmacsw/ale.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/mac.oem4.dep" src="gmacsw/mac.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/mdio.oem4.dep" src="gmacsw/mdio.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/stats.oem4.dep" src="gmacsw/stats.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/interrupts.oem4.dep" src="gmacsw/interrupts.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/port.oem4.dep" src="gmacsw/port.c"/>
+        <srcFile name="package/lib/lib/vayu/release/ti.nsp.drv.gmacsw_instr/gmacsw/cpts.oem4.dep" src="gmacsw/cpts.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oa15fg.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oa15fg.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oa15fg.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oa15fg.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oa15fg.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oa15fg.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oa15fg.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oa15fg.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oa15fg.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp_instr.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oa15fg.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oa15fg.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oa15fg.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oa15fg.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oea8f.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oea8f.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oea8f.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oea8f.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oea8f.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oea8f.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oea8f.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oea8f.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oea8f.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp_instr.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oea8f.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oea8f.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oea8f.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oea8f.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oem3.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oem3.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oem3.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oem3.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oem3.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oem3.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oem3.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oem3.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oem3.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp_instr.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oem3.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oem3.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oem3.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oem3.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oem4.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oem4.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oem4.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oem4.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oem4.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/debug/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oem4.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/nimu_ndk.oem4.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/ndk2nsp.oem4.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp/ndk2nsp/gmacsw_sysbios_al.oem4.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="lib/release/ti.nsp.drv.ndk2nsp_instr.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/package/package_ti.nsp.drv.oem4.dep" src="package/package_ti.nsp.drv.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/nimu_ndk.oem4.dep" src="ndk2nsp/nimu_ndk.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/ndk2nsp.oem4.dep" src="ndk2nsp/ndk2nsp.c"/>
+        <srcFile name="package/lib/lib/release/ti.nsp.drv.ndk2nsp_instr/ndk2nsp/gmacsw_sysbios_al.oem4.dep" src="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <srcFile name="package/rel/ti_nsp_drv.tar.dep" src="package/rel/ti_nsp_drv.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.arm.A15F"
+            version="gnu.targets.arm.A15F{1,0,4.7,4"
+            rawVersion="4.7.4"
+            platform="ti.platforms.sdp5430"
+            isa="v7A15"
+            suffix="a15fg"
+            rootDir="/opt/ti/ccsv6/tools/compiler/gcc-arm-none-eabi-4_7-2013q3"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.A8F"
+            version="ti.targets.arm.elf.A8F{1,0,5.1,7"
+            rawVersion="5.1.7"
+            platform="ti.platforms.evmDM8168"
+            isa="v7A"
+            suffix="ea8f"
+            rootDir="/opt/ti/ccsv6/tools/compiler/arm_5.1.7"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,5.1,7"
+            rawVersion="5.1.7"
+            platform="ti.platforms.simCM3"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/opt/ti/ccsv6/tools/compiler/arm_5.1.7"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,5.1,7"
+            rawVersion="5.1.7"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/opt/ti/ccsv6/tools/compiler/arm_5.1.7"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/vayu/debug/ti.nsp.drv.gmacsw"
+        pname="lib/vayu/debug/ti.nsp.drv.gmacsw.aa15fg"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aa15fg"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/vayu/release/ti.nsp.drv.gmacsw"
+        pname="lib/vayu/release/ti.nsp.drv.gmacsw.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/vayu/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/j5eco/debug/ti.nsp.drv.gmacsw"
+        pname="lib/j5eco/debug/ti.nsp.drv.gmacsw.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/j5eco/release/ti.nsp.drv.gmacsw"
+        pname="lib/j5eco/release/ti.nsp.drv.gmacsw.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/centaurus/debug/ti.nsp.drv.gmacsw"
+        pname="lib/centaurus/debug/ti.nsp.drv.gmacsw.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/centaurus/release/ti.nsp.drv.gmacsw"
+        pname="lib/centaurus/release/ti.nsp.drv.gmacsw.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/j5eco/debug/ti.nsp.drv.gmacsw"
+        pname="lib/j5eco/debug/ti.nsp.drv.gmacsw.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/j5eco/release/ti.nsp.drv.gmacsw"
+        pname="lib/j5eco/release/ti.nsp.drv.gmacsw.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/centaurus/debug/ti.nsp.drv.gmacsw"
+        pname="lib/centaurus/debug/ti.nsp.drv.gmacsw.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/centaurus/release/ti.nsp.drv.gmacsw"
+        pname="lib/centaurus/release/ti.nsp.drv.gmacsw.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/vayu/debug/ti.nsp.drv.gmacsw"
+        pname="lib/vayu/debug/ti.nsp.drv.gmacsw.aem4"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr"
+        pname="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aem4"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/vayu/release/ti.nsp.drv.gmacsw"
+        pname="lib/vayu/release/ti.nsp.drv.gmacsw.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/vayu/release/ti.nsp.drv.gmacsw_instr"
+        pname="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp.aa15fg"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp_instr.aa15fg"
+        profile="debug"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp"
+        pname="lib/release/ti.nsp.drv.ndk2nsp.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/release/ti.nsp.drv.ndk2nsp_instr.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp_instr.aea8f"
+        profile="debug"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp"
+        pname="lib/release/ti.nsp.drv.ndk2nsp.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/release/ti.nsp.drv.ndk2nsp_instr.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem3"
+        profile="debug"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp"
+        pname="lib/release/ti.nsp.drv.ndk2nsp.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/release/ti.nsp.drv.ndk2nsp_instr.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp.aem4"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/debug/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem4"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp"
+        pname="lib/release/ti.nsp.drv.ndk2nsp.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/release/ti.nsp.drv.ndk2nsp_instr"
+        pname="lib/release/ti.nsp.drv.ndk2nsp_instr.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_nsp_drv"
+        pname="ti_nsp_drv.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/vayu/debug/ti.nsp.drv.gmacsw.aa15fg"/>
+        <file name="package/package_ti.nsp.drv.c"/>
+        <file name="gmacsw/gmacsw.c"/>
+        <file name="gmacsw/gmacsw_config.c"/>
+        <file name="gmacsw/cpdma.c"/>
+        <file name="gmacsw/ale.c"/>
+        <file name="gmacsw/mac.c"/>
+        <file name="gmacsw/mdio.c"/>
+        <file name="gmacsw/stats.c"/>
+        <file name="gmacsw/interrupts.c"/>
+        <file name="gmacsw/port.c"/>
+        <file name="gmacsw/cpts.c"/>
+        <file name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aa15fg"/>
+        <file name="lib/vayu/release/ti.nsp.drv.gmacsw.aa15fg"/>
+        <file name="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aa15fg"/>
+        <file name="lib/j5eco/debug/ti.nsp.drv.gmacsw.aea8f"/>
+        <file name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aea8f"/>
+        <file name="lib/j5eco/release/ti.nsp.drv.gmacsw.aea8f"/>
+        <file name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aea8f"/>
+        <file name="lib/centaurus/debug/ti.nsp.drv.gmacsw.aea8f"/>
+        <file name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aea8f"/>
+        <file name="lib/centaurus/release/ti.nsp.drv.gmacsw.aea8f"/>
+        <file name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aea8f"/>
+        <file name="lib/j5eco/debug/ti.nsp.drv.gmacsw.aem3"/>
+        <file name="lib/j5eco/debug/ti.nsp.drv.gmacsw_instr.aem3"/>
+        <file name="lib/j5eco/release/ti.nsp.drv.gmacsw.aem3"/>
+        <file name="lib/j5eco/release/ti.nsp.drv.gmacsw_instr.aem3"/>
+        <file name="lib/centaurus/debug/ti.nsp.drv.gmacsw.aem3"/>
+        <file name="lib/centaurus/debug/ti.nsp.drv.gmacsw_instr.aem3"/>
+        <file name="lib/centaurus/release/ti.nsp.drv.gmacsw.aem3"/>
+        <file name="lib/centaurus/release/ti.nsp.drv.gmacsw_instr.aem3"/>
+        <file name="lib/vayu/debug/ti.nsp.drv.gmacsw.aem4"/>
+        <file name="lib/vayu/debug/ti.nsp.drv.gmacsw_instr.aem4"/>
+        <file name="lib/vayu/release/ti.nsp.drv.gmacsw.aem4"/>
+        <file name="lib/vayu/release/ti.nsp.drv.gmacsw_instr.aem4"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp.aa15fg"/>
+        <file name="ndk2nsp/nimu_ndk.c"/>
+        <file name="ndk2nsp/ndk2nsp.c"/>
+        <file name="ndk2nsp/gmacsw_sysbios_al.c"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aa15fg"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp.aa15fg"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp_instr.aa15fg"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp.aea8f"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aea8f"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp.aea8f"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp_instr.aea8f"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp.aem3"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem3"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp.aem3"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp_instr.aem3"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp.aem4"/>
+        <file name="lib/debug/ti.nsp.drv.ndk2nsp_instr.aem4"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp.aem4"/>
+        <file name="lib/release/ti.nsp.drv.ndk2nsp_instr.aem4"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

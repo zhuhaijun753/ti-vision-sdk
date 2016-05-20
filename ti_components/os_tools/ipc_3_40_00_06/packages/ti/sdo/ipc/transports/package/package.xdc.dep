@@ -1,0 +1,177 @@
+clean::
+	$(RM) package/ti.sdo.ipc.transports.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_transports.java
+	$(RM) package/ti_sdo_ipc_transports.class
+	$(RM) package/package_ti.sdo.ipc.transports.c
+	$(RM) package/package.defs.h
+	$(RM) TransportShm.h
+	$(RM) package/internal/TransportShm.xdc.h
+	$(RM) TransportShmSetup.h
+	$(RM) package/internal/TransportShmSetup.xdc.h
+	$(RM) TransportShmCirc.h
+	$(RM) package/internal/TransportShmCirc.xdc.h
+	$(RM) TransportShmCircSetup.h
+	$(RM) package/internal/TransportShmCircSetup.xdc.h
+	$(RM) TransportShmNotify.h
+	$(RM) package/internal/TransportShmNotify.xdc.h
+	$(RM) TransportShmNotifySetup.h
+	$(RM) package/internal/TransportShmNotifySetup.xdc.h
+	$(RM) TransportNullSetup.h
+	$(RM) package/internal/TransportNullSetup.xdc.h
+	$(RM) TransportNetworkDummy.h
+	$(RM) package/internal/TransportNetworkDummy.xdc.h
+	$(RM) package/ti.sdo.ipc.transports.ccs
+
+.interfaces: package/ti.sdo.ipc.transports.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_transports.java package/package_ti.sdo.ipc.transports.c package/package.defs.h TransportShm.h package/internal/TransportShm.xdc.h TransportShmSetup.h package/internal/TransportShmSetup.xdc.h TransportShmCirc.h package/internal/TransportShmCirc.xdc.h TransportShmCircSetup.h package/internal/TransportShmCircSetup.xdc.h TransportShmNotify.h package/internal/TransportShmNotify.xdc.h TransportShmNotifySetup.h package/internal/TransportShmNotifySetup.xdc.h TransportNullSetup.h package/internal/TransportNullSetup.xdc.h TransportNetworkDummy.h package/internal/TransportNetworkDummy.xdc.h package/ti.sdo.ipc.transports.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: TransportShm.xdc TransportShmSetup.xdc TransportShmCirc.xdc TransportShmCircSetup.xdc TransportShmNotify.xdc TransportShmNotifySetup.xdc TransportNullSetup.xdc TransportNetworkDummy.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+TransportShm.xs:
+package/package.xdc.inc: TransportShm.xs
+TransportShmSetup.xs:
+package/package.xdc.inc: TransportShmSetup.xs
+TransportShmCirc.xs:
+package/package.xdc.inc: TransportShmCirc.xs
+TransportShmCircSetup.xs:
+package/package.xdc.inc: TransportShmCircSetup.xs
+TransportShmNotify.xs:
+package/package.xdc.inc: TransportShmNotify.xs
+TransportShmNotifySetup.xs:
+package/package.xdc.inc: TransportShmNotifySetup.xs
+TransportNullSetup.xs:
+package/package.xdc.inc: TransportNullSetup.xs
+
+# schema update dependencies
+package/package.xdc.inc: TransportShm.xdc
+package/package.xdc.inc: TransportShmSetup.xdc
+package/package.xdc.inc: TransportShmCirc.xdc
+package/package.xdc.inc: TransportShmCircSetup.xdc
+package/package.xdc.inc: TransportShmNotify.xdc
+package/package.xdc.inc: TransportShmNotifySetup.xdc
+package/package.xdc.inc: TransportNullSetup.xdc
+package/package.xdc.inc: TransportNetworkDummy.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/Ipc.xdc
+ti/sdo/ipc/Ipc.xdc:
+vpath ti/sdo/ipc/Ipc.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/SharedRegion.xdc
+ti/sdo/ipc/SharedRegion.xdc:
+vpath ti/sdo/ipc/SharedRegion.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/GateMP.xdc
+ti/sdo/ipc/GateMP.xdc:
+vpath ti/sdo/ipc/GateMP.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/NameServer.xdc
+ti/sdo/utils/NameServer.xdc:
+vpath ti/sdo/utils/NameServer.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/gates/GateSwi.xdc
+ti/sysbios/gates/GateSwi.xdc:
+vpath ti/sysbios/gates/GateSwi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/INameServerRemote.xdc
+ti/sdo/utils/INameServerRemote.xdc:
+vpath ti/sdo/utils/INameServerRemote.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/knl/ISync.xdc
+xdc/runtime/knl/ISync.xdc:
+vpath xdc/runtime/knl/ISync.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/List.xdc
+ti/sdo/utils/List.xdc:
+vpath ti/sdo/utils/List.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/IGateMPSupport.xdc
+ti/sdo/ipc/interfaces/IGateMPSupport.xdc:
+vpath ti/sdo/ipc/interfaces/IGateMPSupport.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/ListMP.xdc
+ti/sdo/ipc/ListMP.xdc:
+vpath ti/sdo/ipc/ListMP.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Swi.xdc
+ti/sysbios/knl/Swi.xdc:
+vpath ti/sysbios/knl/Swi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Queue.xdc
+ti/sysbios/knl/Queue.xdc:
+vpath ti/sysbios/knl/Queue.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/IMessageQTransport.xdc
+ti/sdo/ipc/interfaces/IMessageQTransport.xdc:
+vpath ti/sdo/ipc/interfaces/IMessageQTransport.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/ITransport.xdc
+ti/sdo/ipc/interfaces/ITransport.xdc:
+vpath ti/sdo/ipc/interfaces/ITransport.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/ITransportSetup.xdc
+ti/sdo/ipc/interfaces/ITransportSetup.xdc:
+vpath ti/sdo/ipc/interfaces/ITransportSetup.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INetworkTransport.xdc
+ti/sdo/ipc/interfaces/INetworkTransport.xdc:
+vpath ti/sdo/ipc/interfaces/INetworkTransport.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: TransportShm.h
+TransportShm.h:
+package/package.xdc.inc: package/internal/TransportShm.xdc.h
+package/internal/TransportShm.xdc.h:
+package/package.xdc.inc: TransportShmSetup.h
+TransportShmSetup.h:
+package/package.xdc.inc: package/internal/TransportShmSetup.xdc.h
+package/internal/TransportShmSetup.xdc.h:
+package/package.xdc.inc: TransportShmCirc.h
+TransportShmCirc.h:
+package/package.xdc.inc: package/internal/TransportShmCirc.xdc.h
+package/internal/TransportShmCirc.xdc.h:
+package/package.xdc.inc: TransportShmCircSetup.h
+TransportShmCircSetup.h:
+package/package.xdc.inc: package/internal/TransportShmCircSetup.xdc.h
+package/internal/TransportShmCircSetup.xdc.h:
+package/package.xdc.inc: TransportShmNotify.h
+TransportShmNotify.h:
+package/package.xdc.inc: package/internal/TransportShmNotify.xdc.h
+package/internal/TransportShmNotify.xdc.h:
+package/package.xdc.inc: TransportShmNotifySetup.h
+TransportShmNotifySetup.h:
+package/package.xdc.inc: package/internal/TransportShmNotifySetup.xdc.h
+package/internal/TransportShmNotifySetup.xdc.h:
+package/package.xdc.inc: TransportNullSetup.h
+TransportNullSetup.h:
+package/package.xdc.inc: package/internal/TransportNullSetup.xdc.h
+package/internal/TransportNullSetup.xdc.h:
+package/package.xdc.inc: TransportNetworkDummy.h
+TransportNetworkDummy.h:
+package/package.xdc.inc: package/internal/TransportNetworkDummy.xdc.h
+package/internal/TransportNetworkDummy.xdc.h:
+

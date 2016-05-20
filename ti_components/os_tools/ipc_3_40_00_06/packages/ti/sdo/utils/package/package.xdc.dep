@@ -1,0 +1,111 @@
+clean::
+	$(RM) package/ti.sdo.utils.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_utils.java
+	$(RM) package/ti_sdo_utils.class
+	$(RM) package/package_ti.sdo.utils.c
+	$(RM) package/package.defs.h
+	$(RM) NameServer.h
+	$(RM) package/internal/NameServer.xdc.h
+	$(RM) INameServerRemote.h
+	$(RM) NameServerRemoteNull.h
+	$(RM) package/internal/NameServerRemoteNull.xdc.h
+	$(RM) MultiProc.h
+	$(RM) package/internal/MultiProc.xdc.h
+	$(RM) List.h
+	$(RM) package/internal/List.xdc.h
+	$(RM) package/NameServer_SetupProxy.h
+	$(RM) package/internal/NameServer_SetupProxy.xdc.h
+	$(RM) package/ti.sdo.utils.ccs
+
+.interfaces: package/ti.sdo.utils.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_utils.java package/package_ti.sdo.utils.c package/package.defs.h NameServer.h package/internal/NameServer.xdc.h INameServerRemote.h NameServerRemoteNull.h package/internal/NameServerRemoteNull.xdc.h MultiProc.h package/internal/MultiProc.xdc.h List.h package/internal/List.xdc.h package/NameServer_SetupProxy.h package/internal/NameServer_SetupProxy.xdc.h package/ti.sdo.utils.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: Build.xdc NameServer.xdc NameServerRemoteNull.xdc MultiProc.xdc List.xdc INameServerRemote.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+Build.xs:
+package/package.xdc.inc: Build.xs
+NameServer.xs:
+package/package.xdc.inc: NameServer.xs
+NameServerRemoteNull.xs:
+package/package.xdc.inc: NameServerRemoteNull.xs
+MultiProc.xs:
+package/package.xdc.inc: MultiProc.xs
+List.xs:
+package/package.xdc.inc: List.xs
+
+# schema update dependencies
+package/package.xdc.inc: Build.xdc
+package/package.xdc.inc: NameServer.xdc
+package/package.xdc.inc: NameServerRemoteNull.xdc
+package/package.xdc.inc: MultiProc.xdc
+package/package.xdc.inc: List.xdc
+package/package.xdc.inc: INameServerRemote.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/gates/GateSwi.xdc
+ti/sysbios/gates/GateSwi.xdc:
+vpath ti/sysbios/gates/GateSwi.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/knl/ISync.xdc
+xdc/runtime/knl/ISync.xdc:
+vpath xdc/runtime/knl/ISync.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: NameServer.h
+NameServer.h:
+package/package.xdc.inc: package/internal/NameServer.xdc.h
+package/internal/NameServer.xdc.h:
+package/package.xdc.inc: INameServerRemote.h
+INameServerRemote.h:
+package/package.xdc.inc: NameServerRemoteNull.h
+NameServerRemoteNull.h:
+package/package.xdc.inc: package/internal/NameServerRemoteNull.xdc.h
+package/internal/NameServerRemoteNull.xdc.h:
+package/package.xdc.inc: MultiProc.h
+MultiProc.h:
+package/package.xdc.inc: package/internal/MultiProc.xdc.h
+package/internal/MultiProc.xdc.h:
+package/package.xdc.inc: List.h
+List.h:
+package/package.xdc.inc: package/internal/List.xdc.h
+package/internal/List.xdc.h:
+package/package.xdc.inc: package/NameServer_SetupProxy.h
+package/NameServer_SetupProxy.h:
+package/package.xdc.inc: package/internal/NameServer_SetupProxy.xdc.h
+package/internal/NameServer_SetupProxy.xdc.h:
+

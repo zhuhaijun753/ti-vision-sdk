@@ -1,0 +1,12 @@
+Package: omapdrmtest
+Version: 1.0.0-r9.0
+Description: omapdrmtest version 1.0.0-r9
+ Test applications for OMAP DRM interface
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: omapdrmtest
+Depends: ti-ipc (>= 3.36.01.11), libavcodec53 (>= 0.8.9), libavformat53 (>= 0.8.9), libdrm2 (>= 2.4.41), libc6 (>= 2.15), libudev0 (>= 182), omap5-sgx-ddk-um-linux (>= 1.9.0.12), libdrm-omap1 (>= 2.4.41), libdce1 (>= 3.00.08.02), libavutil51 (>= 0.8.9), libgbm1 (>= 9.0.0)
+Source: git://git.ti.com/glsdk/omapdrmtest.git;protocol=git

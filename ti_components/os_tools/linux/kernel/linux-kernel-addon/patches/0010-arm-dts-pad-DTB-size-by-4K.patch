@@ -1,0 +1,33 @@
+From 7ccdefc781f47e5a87595c72894b5566d2918a32 Mon Sep 17 00:00:00 2001
+From: Venkateswara Rao Mandela <venkat.mandela@ti.com>
+Date: Wed, 5 Aug 2015 14:54:41 +0530
+Subject: [PATCH 10/12] arm: dts: pad DTB size by 4K.
+
+The padding helps when manipulating the device tree in SPL in place.
+Without padding, the device tree may need to be resized by SPL. As SPL
+does not have dcache support enabled, the resize operation might be
+costlier than loading an additional 4 KB from flash.
+
+Change-Id: Ice5eab91bf62320b9634ab851416fac0bd6a4425
+Signed-off-by: Venkateswara Rao Mandela <venkat.mandela@ti.com>
+---
+ arch/arm/boot/dts/Makefile |    3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 4a6bb50..5dbc2d7 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -352,6 +352,9 @@ targets += dtbs
+ targets += $(dtb-y)
+ endif
+ 
++# Pad DTB by 4KB to allow fdt manipulation in MLO
++DTC_FLAGS ?= -p 4096
++
+ # *.dtb used to be generated in the directory above. Clean out the
+ # old build results so people don't accidentally use them.
+ dtbs: $(addprefix $(obj)/, $(dtb-y))
+-- 
+1.7.9.5
+

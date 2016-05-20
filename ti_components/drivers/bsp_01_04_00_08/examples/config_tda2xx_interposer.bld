@@ -1,0 +1,112 @@
+/*
+ *  ======== config.bld ========
+ *  Build configuration script for BSP drivers
+ */
+
+/* load the required modules for the configuration */
+var M4 = xdc.useModule('ti.targets.arm.elf.M4');
+/* M4 compiler directory path                    */
+M4.rootDir = java.lang.System.getenv("CGTOOLS");
+
+/*
+Memory map
+
+DDR: 0x80000000 (Ist 512MB - Cached)
+
++-----------------+
+| Video M4 Code   | 2MB
++-----------------+
+| Video M4 Data   | 8MB
++-----------------+
+|                 |
+| Frame Buffer    | 246MB
++-----------------+
+
+DDR: 0xA0000000 (2nd 512MB - Non-Cached - but mapped to above 512MB physical)
+
++-----------------+
+| Mirrored Section| 256 MB (from 0x80000000)
++-----------------+
+| VPDMA Desc Mem  | 2MB
++-----------------+
+| Tiler Buffer    | 128MB (Not used)
++-----------------+
+
+*/
+
+var KB=1024;
+var MB=KB*KB;
+
+var DDR3_ADDR_0;
+var DDR3_ADDR_1;
+
+var VPSS_M4_CODE_ADDR;
+var VPSS_M4_CODE_SIZE;
+
+var VPSS_M4_DATA_ADDR;
+var VPSS_M4_DATA_SIZE;
+
+var FRAME_BUFFER_ADDR;
+var FRAME_BUFFER_SIZE;
+
+var VPS_DESC_ADDR;
+var VPS_DESC_SIZE;
+
+var TILER_BUFFER_ADDR;
+var TILER_BUFFER_SIZE;
+
+DDR3_ADDR_0             = 0x80000000;
+DDR3_ADDR_1             = 0xA0000000;
+
+VPSS_M4_CODE_SIZE       = 2*MB;
+VPSS_M4_DATA_SIZE       = 8*MB;
+FRAME_BUFFER_SIZE       = 246*MB;
+VPS_DESC_SIZE           = 2*MB;
+TILER_BUFFER_SIZE       = 128*MB;
+
+VPSS_M4_CODE_ADDR       = DDR3_ADDR_0;
+VPSS_M4_DATA_ADDR       = VPSS_M4_CODE_ADDR + VPSS_M4_CODE_SIZE;
+FRAME_BUFFER_ADDR       = VPSS_M4_DATA_ADDR + VPSS_M4_DATA_SIZE;
+
+VPS_DESC_ADDR           = DDR3_ADDR_1 + VPSS_M4_CODE_SIZE + VPSS_M4_DATA_SIZE + FRAME_BUFFER_SIZE;
+TILER_BUFFER_ADDR       = VPS_DESC_ADDR + VPS_DESC_SIZE;
+
+Build.platformTable["ti.platforms.evmDRA7XX"] =
+{
+    externalMemoryMap:
+    [
+        ["VPSS_M4_CODE_MEM", {
+            comment : "VPSS_M4_CODE_MEM",
+            name    : "VPSS_M4_CODE_MEM",
+            base    : VPSS_M4_CODE_ADDR,
+            len     : VPSS_M4_CODE_SIZE
+        }],
+        ["VPSS_M4_DATA_MEM", {
+            comment : "VPSS_M4_DATA_MEM",
+            name    : "VPSS_M4_DATA_MEM",
+            base    : VPSS_M4_DATA_ADDR,
+            len     : VPSS_M4_DATA_SIZE
+        }],
+        ["VPS_DESC_MEM", {
+            comment : "VPS_DESC_MEM",
+            name    : "VPS_DESC_MEM",
+            base    : VPS_DESC_ADDR,
+            len     : VPS_DESC_SIZE
+        }],
+        ["FRAME_BUFFER_MEM", {
+            comment : "FRAME_BUFFER_MEM",
+            name    : "FRAME_BUFFER_MEM",
+            base    : FRAME_BUFFER_ADDR,
+            len     : FRAME_BUFFER_SIZE
+        }],
+        ["TILER_BUFFER_MEM", {
+            comment : "TILER_BUFFER_MEM",
+            name    : "TILER_BUFFER_MEM",
+            base    : TILER_BUFFER_ADDR,
+            len     : TILER_BUFFER_SIZE
+        }],
+    ],
+    codeMemory: "VPSS_M4_CODE_MEM",
+    dataMemory: "VPSS_M4_DATA_MEM",
+    stackMemory: "VPSS_M4_DATA_MEM"
+};

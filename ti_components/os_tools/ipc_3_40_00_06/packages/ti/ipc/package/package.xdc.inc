@@ -1,0 +1,11 @@
+package.xdc
+package/ti.ipc.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b160
+package/.xdc-A75
+package/ti_ipc.java
+package/ti_ipc.class
+package/package_ti.ipc.c
+package/package.defs.h
+package/ti.ipc.ccs

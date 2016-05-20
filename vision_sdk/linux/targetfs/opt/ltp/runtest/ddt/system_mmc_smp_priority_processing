@@ -1,0 +1,7 @@
+# @name MMC Priority Processing with SMP CPU Affinity
+# @desc Check that processes can run on MMC device based on priority assigned and
+# cpu affinity for those processes can be set
+# @requires smp && mmc_host
+# @setup_requires
+MMC_S_FUNC_PRIORITY_PROCESSING_SMP_NO-LB_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && multi_run_processes.sh -s "time -p /opt/ltp/runltp -f ddt/mmc_dd_rw -P $PLATFORM -s MMC_S_FUNC_DD_RW_QUICK" -l "-n 1 -a 0x1 -d 0 -p -20" -s "time -p /opt/ltp/runltp -f ddt/mmc_dd_rw -P $PLATFORM -s MMC_S_FUNC_DD_RW_QUICK" -l "-n 1 -a 0x1 -d 0 -p 19" -v || die "Priority Test failed"
+

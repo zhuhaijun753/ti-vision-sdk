@@ -1,0 +1,8 @@
+# @name SATA plus standby/resume
+# @desc SATA Read/Write test while doing power standby/resume operations
+# @requires sata && power_mgr 
+# @setup_requires sata
+
+POWERMGR_S_FUNC_SATA_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/sata_dd_rw -P $PLATFORM -s 'SATA_S_FUNC_DD_RW_10M '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_STANDBY ' "
+
+POWERMGR_M_FUNC_SATA_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/sata_dd_rw -P $PLATFORM -s 'SATA_M_FUNC_DD_RW_100M '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_STANDBY ' "

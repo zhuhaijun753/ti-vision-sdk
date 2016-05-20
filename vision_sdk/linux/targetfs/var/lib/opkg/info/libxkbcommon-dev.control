@@ -1,0 +1,17 @@
+Package: libxkbcommon-dev
+Version: 0.4.0-r0.0
+Description: Generic XKB keymap library - Development files
+ libxkbcommon is a keymap compiler and support library which processes a
+ reduced subset of keymaps as defined by the XKB specification.  This
+ package contains symbolic links, header files, and related items
+ necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT & MIT-style
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libxkbcommon
+Homepage: http://www.xkbcommon.org
+Depends: libxkbcommon0 (= 0.4.0-r0.0)
+Recommends: libc6-dev, util-macros-dev
+Source: http://xkbcommon.org/download/libxkbcommon-0.4.0.tar.xz

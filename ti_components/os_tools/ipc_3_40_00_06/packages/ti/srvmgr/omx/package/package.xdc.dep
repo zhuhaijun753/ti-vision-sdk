@@ -1,0 +1,62 @@
+clean::
+	$(RM) package/ti.srvmgr.omx.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_srvmgr_omx.java
+	$(RM) package/ti_srvmgr_omx.class
+	$(RM) package/package_ti.srvmgr.omx.c
+	$(RM) package/package.defs.h
+	$(RM) OmxSrvMgr.h
+	$(RM) package/internal/OmxSrvMgr.xdc.h
+	$(RM) package/ti.srvmgr.omx.ccs
+
+.interfaces: package/ti.srvmgr.omx.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_srvmgr_omx.java package/package_ti.srvmgr.omx.c package/package.defs.h OmxSrvMgr.h package/internal/OmxSrvMgr.xdc.h package/ti.srvmgr.omx.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: OmxSrvMgr.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+OmxSrvMgr.xs:
+package/package.xdc.inc: OmxSrvMgr.xs
+
+# schema update dependencies
+package/package.xdc.inc: OmxSrvMgr.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: OmxSrvMgr.h
+OmxSrvMgr.h:
+package/package.xdc.inc: package/internal/OmxSrvMgr.xdc.h
+package/internal/OmxSrvMgr.xdc.h:
+

@@ -1,0 +1,12 @@
+Package: cpuburn-neon
+Version: 20140626-r0.0
+Description: CPU burn app that loads the NEON coprocessor fully
+ CPU burn app that loads the NEON coprocessor fully.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: cpuburn-neon
+Depends: libc6 (>= 2.15)
+Source: http://hardwarebug.org/files/burn.S;name=mru https://raw.githubusercontent.com/ssvb/cpuburn-arm/dd5c5ba58d2b0b23cfab4a286f9d3f5510000f20/cpuburn-a8.S;name=ssvb

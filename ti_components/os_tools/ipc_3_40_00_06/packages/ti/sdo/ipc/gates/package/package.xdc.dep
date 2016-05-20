@@ -1,0 +1,122 @@
+clean::
+	$(RM) package/ti.sdo.ipc.gates.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_gates.java
+	$(RM) package/ti_sdo_ipc_gates.class
+	$(RM) package/package_ti.sdo.ipc.gates.c
+	$(RM) package/package.defs.h
+	$(RM) GateAAMonitor.h
+	$(RM) package/internal/GateAAMonitor.xdc.h
+	$(RM) GateHWSem.h
+	$(RM) package/internal/GateHWSem.xdc.h
+	$(RM) GateHWSpinlock.h
+	$(RM) package/internal/GateHWSpinlock.xdc.h
+	$(RM) GatePeterson.h
+	$(RM) package/internal/GatePeterson.xdc.h
+	$(RM) GatePetersonN.h
+	$(RM) package/internal/GatePetersonN.xdc.h
+	$(RM) GateMPSupportNull.h
+	$(RM) package/internal/GateMPSupportNull.xdc.h
+	$(RM) package/ti.sdo.ipc.gates.ccs
+
+.interfaces: package/ti.sdo.ipc.gates.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_gates.java package/package_ti.sdo.ipc.gates.c package/package.defs.h GateAAMonitor.h package/internal/GateAAMonitor.xdc.h GateHWSem.h package/internal/GateHWSem.xdc.h GateHWSpinlock.h package/internal/GateHWSpinlock.xdc.h GatePeterson.h package/internal/GatePeterson.xdc.h GatePetersonN.h package/internal/GatePetersonN.xdc.h GateMPSupportNull.h package/internal/GateMPSupportNull.xdc.h package/ti.sdo.ipc.gates.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: GateAAMonitor.xdc GateHWSem.xdc GateHWSpinlock.xdc GatePeterson.xdc GatePetersonN.xdc GateMPSupportNull.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+GateAAMonitor.xs:
+package/package.xdc.inc: GateAAMonitor.xs
+GateHWSem.xs:
+package/package.xdc.inc: GateHWSem.xs
+GateHWSpinlock.xs:
+package/package.xdc.inc: GateHWSpinlock.xs
+GatePeterson.xs:
+package/package.xdc.inc: GatePeterson.xs
+GatePetersonN.xs:
+package/package.xdc.inc: GatePetersonN.xs
+GateMPSupportNull.xs:
+package/package.xdc.inc: GateMPSupportNull.xs
+
+# schema update dependencies
+package/package.xdc.inc: GateAAMonitor.xdc
+package/package.xdc.inc: GateHWSem.xdc
+package/package.xdc.inc: GateHWSpinlock.xdc
+package/package.xdc.inc: GatePeterson.xdc
+package/package.xdc.inc: GatePetersonN.xdc
+package/package.xdc.inc: GateMPSupportNull.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/Ipc.xdc
+ti/sdo/ipc/Ipc.xdc:
+vpath ti/sdo/ipc/Ipc.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/SharedRegion.xdc
+ti/sdo/ipc/SharedRegion.xdc:
+vpath ti/sdo/ipc/SharedRegion.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/IGateMPSupport.xdc
+ti/sdo/ipc/interfaces/IGateMPSupport.xdc:
+vpath ti/sdo/ipc/interfaces/IGateMPSupport.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: GateAAMonitor.h
+GateAAMonitor.h:
+package/package.xdc.inc: package/internal/GateAAMonitor.xdc.h
+package/internal/GateAAMonitor.xdc.h:
+package/package.xdc.inc: GateHWSem.h
+GateHWSem.h:
+package/package.xdc.inc: package/internal/GateHWSem.xdc.h
+package/internal/GateHWSem.xdc.h:
+package/package.xdc.inc: GateHWSpinlock.h
+GateHWSpinlock.h:
+package/package.xdc.inc: package/internal/GateHWSpinlock.xdc.h
+package/internal/GateHWSpinlock.xdc.h:
+package/package.xdc.inc: GatePeterson.h
+GatePeterson.h:
+package/package.xdc.inc: package/internal/GatePeterson.xdc.h
+package/internal/GatePeterson.xdc.h:
+package/package.xdc.inc: GatePetersonN.h
+GatePetersonN.h:
+package/package.xdc.inc: package/internal/GatePetersonN.xdc.h
+package/internal/GatePetersonN.xdc.h:
+package/package.xdc.inc: GateMPSupportNull.h
+GateMPSupportNull.h:
+package/package.xdc.inc: package/internal/GateMPSupportNull.xdc.h
+package/internal/GateMPSupportNull.xdc.h:
+

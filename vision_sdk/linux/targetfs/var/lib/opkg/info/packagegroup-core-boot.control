@@ -1,0 +1,15 @@
+Package: packagegroup-core-boot
+Version: 1.0-r17.0
+Description: Minimal boot requirements
+ The minimal set of packages required to boot the system
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: dra7xx_evm
+OE: packagegroup-core-boot
+Depends: busybox, modutils-initscripts, busybox-hwclock, initscripts, udev, sysvinit, netbase, base-files, init-ifupdown, update-alternatives-opkg, base-passwd
+Provides: task-core-boot
+Replaces: task-core-boot
+Conflicts: task-core-boot
+Source: None

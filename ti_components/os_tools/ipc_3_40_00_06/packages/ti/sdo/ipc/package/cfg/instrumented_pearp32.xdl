@@ -1,0 +1,152 @@
+/*
+ * Do not modify this file; it is automatically generated from the template
+ * linkcmd.xdt in the ti.targets.elf package and will be overwritten.
+ */
+
+/*
+ * put '"'s around paths because, without this, the linker
+ * considers '-' as minus operator, not a file name character.
+ */
+
+
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/ipc/package/cfg/instrumented_pearp32.src/ipc/ipc.aearp32"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/utils/lib/utils/instrumented/utils.aearp32"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arp32/rts/lib/ti.targets.arp32.rts.aearp32"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arp32/rts/lib/boot.aearp32"
+
+--retain="*(xdc.meta)"
+
+/* ARP32 Elf symbols */
+--symbol_map __TI_STACK_BASE=_stack
+--symbol_map __TI_cleanup_ptr=_cleanup_ptr
+--symbol_map __TI_dtors_ptr=_dtors_ptr
+
+
+
+--args 0x200
+-heap  0x1000
+-stack 0x1000
+
+MEMORY
+{
+    PAGE 1: DMEM (RW) : org = 0x40020000, len = 0x8000
+    PAGE 1: WBUF (RW) : org = 0x40040000, len = 0x8000
+    PAGE 1: IBUFLA (RW) : org = 0x40050000, len = 0x4000
+    PAGE 1: IBUFHA (RW) : org = 0x40054000, len = 0x4000
+    PAGE 1: IBUFLB (RW) : org = 0x40070000, len = 0x4000
+    PAGE 1: IBUFHB (RW) : org = 0x40074000, len = 0x4000
+    PAGE 1: L3MEM (RWX) : org = 0x40300000, len = 0x100000
+    PAGE 0: ARP32VECS : org = 0x80000000, len = 0x100
+    PAGE 1: ARP32 : org = 0x80000100, len = 0xfffff00
+}
+
+/*
+ * Linker command file contributions from all loaded packages:
+ */
+
+/* Content from xdc.services.global (null): */
+
+/* Content from xdc (null): */
+
+/* Content from xdc.corevers (null): */
+
+/* Content from xdc.shelf (null): */
+
+/* Content from xdc.services.spec (null): */
+
+/* Content from xdc.services.intern.xsr (null): */
+
+/* Content from xdc.services.intern.gen (null): */
+
+/* Content from xdc.services.intern.cmd (null): */
+
+/* Content from xdc.bld (null): */
+
+/* Content from ti.targets (null): */
+
+/* Content from ti.targets.arp32.elf (null): */
+
+/* Content from xdc.rov (null): */
+
+/* Content from xdc.runtime (null): */
+
+/* Content from ti.targets.arp32.rts (null): */
+
+/* Content from ti.sysbios.interfaces (null): */
+
+/* Content from ti.sysbios.family (null): */
+
+/* Content from ti.sysbios.knl (null): */
+
+/* Content from ti.sysbios.gates (null): */
+
+/* Content from ti.sysbios.family.arp32 (ti/sysbios/family/arp32/linkcmd.xdt): */
+--retain "*(.vecs)"
+
+/* Content from xdc.runtime.knl (null): */
+
+/* Content from ti.sdo.utils (null): */
+
+/* Content from ti.sdo.ipc.interfaces (null): */
+
+/* Content from ti.sysbios.syncs (null): */
+
+/* Content from xdc.services.getset (null): */
+
+/* Content from ti.sdo.ipc.family (null): */
+
+/* Content from ti.sysbios (null): */
+
+/* Content from ti.catalog.arp32 (null): */
+
+/* Content from ti.catalog (null): */
+
+/* Content from xdc.platform (null): */
+
+/* Content from xdc.cfg (null): */
+
+/* Content from ti.platforms.simARP32 (null): */
+
+/* Content from ti.sdo.ipc (ti/sdo/ipc/linkcmd.xdt): */
+
+SECTIONS
+{
+}
+
+/* Content from xdc.services.io (null): */
+
+/* Content from ti.sdo.ipc.notifyDrivers (null): */
+
+/* Content from ti.sysbios.hal (null): */
+
+/* Content from ti.sdo.ipc.family.ti81xx (null): */
+
+
+/*
+ * symbolic aliases for static instance objects
+ */
+xdc_runtime_Startup__EXECFXN__C = 1;
+xdc_runtime_Startup__RESETFXN__C = 1;
+
+SECTIONS
+{
+    .text: load >> ARP32 PAGE 1
+    .stack: load > DMEM PAGE 1
+    GROUP: load > DMEM PAGE 1
+    {
+        .bss:
+        .rodata:
+        .data:
+    }
+    .cinit: load > DMEM PAGE 1
+    .init_array: load > DMEM PAGE 1
+    .const: load > DMEM PAGE 1
+    .switch: load >> DMEM PAGE 1
+    .sysmem: load > DMEM PAGE 1
+    .far: load > DMEM PAGE 1
+    .args: load > DMEM PAGE 1 align = 0x4
+    .cio: load >> DMEM PAGE 1
+    .fardata: load > DMEM PAGE 1
+    xdc.meta: load > DMEM PAGE 1, type = COPY
+
+}

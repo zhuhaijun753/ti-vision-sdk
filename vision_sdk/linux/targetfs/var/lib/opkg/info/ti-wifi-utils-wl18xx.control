@@ -1,0 +1,16 @@
+Package: ti-wifi-utils-wl18xx
+Version: R8.5+git0+dcf0800f30-r3.0
+Description: ti-wifi-utils-wl18xx version R8.5+gitAUTOINC+dcf0800f30-r3
+ The calibrator and other useful utilities for TI wireless solution based
+ on wl12xx driver
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: ti-wifi-utils-wl18xx
+Depends: wl18xx-firmware, libnl-3-200 (>= 3.2.24), libnl-3-genl (>= 3.2.24), libc6 (>= 2.15)
+Provides: ti-wifi-utils
+Replaces: ti-wifi-utils
+Conflicts: ti-wifi-utils
+Source: git://git.ti.com/wilink8-wlan/18xx-ti-utils.git

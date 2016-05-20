@@ -1,0 +1,12 @@
+# @name Test i2c driver while changing cpu frequency
+# @desc Test i2c driver while the OPP is changed to cover all possible vallues
+# @requires i2c 
+
+SYSTEM_S_FUNC_OPP_I2C source 'common.sh'; run_processes.sh -c " /opt/ltp/runltp -f ddt/i2c_detect -P $PLATFORM -s 'I2C_S_FUNC_I2CDETECT' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC "
+
+SYSTEM_M_FUNC_OPP_I2C source 'common.sh'; run_processes.sh -c " /opt/ltp/runltp -f ddt/i2c_detect -P $PLATFORM -s 'I2C_M_FUNC_I2CDETECT_20TIMES' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC "
+
+SYSTEM_M_FUNC_OPP_I2C_ALL source 'common.sh'; i2c_bus_numbers=`get_i2c_test_busses.sh` || die "No I2C buses being found"; for i2c_bus in $i2c_bus_numbers; do echo "Testing i2c-$i2c_bus "; run_processes.sh -c " i2cdetect -y -r $i2c_bus # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC "; done
+
+
+

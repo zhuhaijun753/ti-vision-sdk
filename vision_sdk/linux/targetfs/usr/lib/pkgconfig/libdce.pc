@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libdce
+Description: distributed codec-engine
+Version: 1.0.0
+Requires: libdrm libdrm_omap
+Libs: -L${libdir} -ldce
+Cflags: -I${includedir}/dce

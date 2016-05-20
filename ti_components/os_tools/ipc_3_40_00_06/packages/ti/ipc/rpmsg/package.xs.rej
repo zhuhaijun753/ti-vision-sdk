@@ -1,0 +1,14 @@
+--- packages/ti/ipc/rpmsg/package.xs
++++ packages/ti/ipc/rpmsg/package.xs
+@@ -110,9 +110,11 @@
+     }
+ 
+     var BIOS = xdc.module('ti.sysbios.BIOS');
++/*
+     if (BIOS.smpEnabled == true) {
+         smp = "_smp";
+     }
++*/
+ 
+ 
+     switch (device) {

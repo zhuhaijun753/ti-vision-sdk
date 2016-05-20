@@ -1,0 +1,16 @@
+Package: acl-dev
+Version: 2.2.52-r0.0
+Description: Utilities for managing POSIX Access Control Lists - Development files
+ Utilities for managing POSIX Access Control Lists.  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.1+ & GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: acl
+Homepage: http://savannah.nongnu.org/projects/acl/
+Depends: acl (= 2.2.52-r0.0)
+Recommends: libc6-dev, libattr-dev, attr-dev, libacl-dev
+Source: http://download.savannah.gnu.org/releases/acl/acl-2.2.52.src.tar.gz file://run-ptest file://acl-fix-the-order-of-expected-output-of-getfacl.patch file://relative-libdir.patch;striplevel=0 file://add-missing-configure.ac.patch

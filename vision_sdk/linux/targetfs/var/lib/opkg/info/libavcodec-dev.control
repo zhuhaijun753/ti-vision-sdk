@@ -1,0 +1,14 @@
+Package: libavcodec-dev
+Version: 0.8.9-r0-arago0.0
+Description: libav avcodec development package
+ libav avcodec development package
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libav
+Homepage: http://libav.org/
+Depends: libavcodec53, libav-dev
+Recommends: libtheora-dev, libgcc-s-dev, libz-dev, libavutil-dev, libvorbis-dev, libc6-dev, libogg-dev, bzip2-dev
+Source: http://libav.org/releases/libav-0.8.9.tar.xz file://0001-configure-enable-pic-for-AArch64.patch

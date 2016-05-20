@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.srvmgr.omaprpc" version="1, 0, 0" producerId="undefined">
+    <units>
+        <module name="OmapRpc"/>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.srvmgr.omaprpc.c"/>
+        <srcFile name="OmapRpc.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/ti.srvmgr.omaprpc_smp.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.srvmgr.omaprpc_smp/package/package_ti.srvmgr.omaprpc.oem4.dep" src="package/package_ti.srvmgr.omaprpc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.srvmgr.omaprpc_smp/OmapRpc.oem4.dep" src="OmapRpc.c"/>
+        <srcFile name="lib/release/ti.srvmgr.omaprpc_smp.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.srvmgr.omaprpc_smp/package/package_ti.srvmgr.omaprpc.oem4.dep" src="package/package_ti.srvmgr.omaprpc.c"/>
+        <srcFile name="package/lib/lib/release/ti.srvmgr.omaprpc_smp/OmapRpc.oem4.dep" src="OmapRpc.c"/>
+        <srcFile name="lib/debug/ti.srvmgr.omaprpc.ae66.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/ti.srvmgr.omaprpc/package/package_ti.srvmgr.omaprpc.oe66.dep" src="package/package_ti.srvmgr.omaprpc.c"/>
+        <srcFile name="package/lib/lib/debug/ti.srvmgr.omaprpc/OmapRpc.oe66.dep" src="OmapRpc.c"/>
+        <srcFile name="lib/release/ti.srvmgr.omaprpc.ae66.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/release/ti.srvmgr.omaprpc/package/package_ti.srvmgr.omaprpc.oe66.dep" src="package/package_ti.srvmgr.omaprpc.c"/>
+        <srcFile name="package/lib/lib/release/ti.srvmgr.omaprpc/OmapRpc.oe66.dep" src="OmapRpc.c"/>
+        <srcFile name="package/rel/ti_srvmgr_omaprpc.tar.gz.dep" src="package/rel/ti_srvmgr_omaprpc.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,5.2,5"
+            rawVersion="5.2.5"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/ti-cgt-arm_5.2.5"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,7.4,2"
+            rawVersion="7.4.2"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/c6000_7_4_2"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/ti.srvmgr.omaprpc_smp"
+        pname="lib/debug/ti.srvmgr.omaprpc_smp.aem4"
+        profile="debug"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/release/ti.srvmgr.omaprpc_smp"
+        pname="lib/release/ti.srvmgr.omaprpc_smp.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/debug/ti.srvmgr.omaprpc"
+        pname="lib/debug/ti.srvmgr.omaprpc.ae66"
+        profile="debug"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/release/ti.srvmgr.omaprpc"
+        pname="lib/release/ti.srvmgr.omaprpc.ae66"
+        profile="release"
+        target="ti.targets.elf.C66"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_srvmgr_omaprpc"
+        pname="ti_srvmgr_omaprpc.tar.gz"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="OmapRpc.h"/>
+        <file name="package.bld"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/debug/ti.srvmgr.omaprpc_smp.aem4"/>
+        <file name="package/package_ti.srvmgr.omaprpc.c"/>
+        <file name="OmapRpc.c"/>
+        <file name="lib/release/ti.srvmgr.omaprpc_smp.aem4"/>
+        <file name="lib/debug/ti.srvmgr.omaprpc.ae66"/>
+        <file name="lib/release/ti.srvmgr.omaprpc.ae66"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

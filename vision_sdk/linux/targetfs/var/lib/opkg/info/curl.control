@@ -1,0 +1,13 @@
+Package: curl
+Version: 7.35.0-r0-arago2.0
+Description: Command line tool and library for client-side URL transfers
+ Command line tool and library for client-side URL transfers.
+Section: console/network
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: curl
+Homepage: http://curl.haxx.se/
+Depends: libcurl5 (>= 7.35.0), libcrypto1.0.0 (>= 1.0.1p), libz1 (>= 1.2.8), libc6 (>= 2.15), libssl1.0.0 (>= 1.0.1p)
+Source: http://curl.haxx.se/download/curl-7.35.0.tar.bz2 file://pkgconfig_fix.patch file://generate_code_for_disable_manual.patch file://remove_inappropriate_file_from_rel.patch file://CVE-2014-3613.patch file://CVE-2014-3620.patch file://configure_ac.patch

@@ -1,0 +1,62 @@
+#
+# This file was generated based on the configuration script:
+#     /datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/utils/smpNonInstrumented.cfg
+#
+# This makefile may be included in other makefiles that need to build
+# the libraries containing the compiled source files generated as
+# part of the configuration step.
+
+#
+# ======== GEN_SRC_DIR =========
+# The path to the sources generated during configuration
+#
+# This path must be either absolute or relative to the build directory.
+#
+# The absolute path to the generated source directory (at the time the
+# sources were generated) is:
+#    /datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/utils/package/cfg/smpNonInstrumented_pem4.src
+#
+GEN_SRC_DIR ?= package/cfg/smpNonInstrumented_pem4.src
+
+ifeq (,$(wildcard $(GEN_SRC_DIR)))
+$(error "ERROR: GEN_SRC_DIR must be set to the directory containing the generated sources")
+endif
+
+#
+# ======== .force ========
+# The .force goal is used to force the build of any goal that names it as
+# a prerequisite
+#
+.PHONY: .force
+      
+#
+# ======== library macros ========
+#
+utils_SRC = $(GEN_SRC_DIR)/utils
+utils_LIB = $(GEN_SRC_DIR)/utils.aem4
+
+#
+# ======== dependencies ========
+#
+all: $(utils_LIB)
+clean: .utils_clean
+
+
+# ======== convenient build goals ========
+.PHONY: utils
+utils: $(GEN_SRC_DIR)/utils.aem4
+
+# CDT managed make executables depend on $(OBJS)
+OBJS += $(utils_LIB)
+
+#
+# ======== rules ========
+#
+$(utils_LIB): .force 
+	@echo making $@ ...
+	@$(MAKE) -C $(utils_SRC)
+
+.utils_clean:
+	@echo cleaning $(utils_SRC) ...
+	-@$(MAKE) --no-print-directory -C $(utils_SRC) clean
+

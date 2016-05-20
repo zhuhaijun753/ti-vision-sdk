@@ -1,0 +1,18 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+sysconfdir=/etc
+localstatedir=/var
+PACKAGE=fontconfig
+confdir=@baseconfigdir@
+cachedir=${localstatedir}/cache/${PACKAGE}
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.11.0
+Requires:  freetype2
+Requires.private:  expat
+Libs: -L${libdir} -lfontconfig
+Libs.private: -lexpat  -lfreetype   
+Cflags: -I${includedir}  -I/sdk/glsdk/workdir/glsdk-nightly/release/dra7xx/yocto/tisdk/build/arago-tmp-external-linaro-toolchain/sysroots/dra7xx-evm/usr/include/freetype2   

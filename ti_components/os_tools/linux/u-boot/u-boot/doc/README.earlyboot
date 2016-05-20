@@ -1,0 +1,120 @@
+/*
+ * (C) Copyright 2015
+ * Texas Instruments Incorporated.
+ * Venkateswara Rao Mandela <venkat.mandela@ti.com>
+ *
+ * Documentation for Early Boot functionality
+ *
+ * SPDX-License-Identifier:	GPL-2.0+
+ */
+
+
+Using Early Boot on TI DRA7xx platforms
+=======================================
+
+"Early boot" as defined in the scope of this document is booting slave cores in
+a heteregeneous multiprocessor system before the main core running Linux is
+booted. In case of a DRA7xx SOC, this could be booting the M4 core or the DSP
+core before the A15 core has booted Linux. This feature is typically used to
+handle functionality that needs to be available immediately after boot. In the
+automotive domain, these functionalities could be responding to CAN messages,
+bringing up the rear view camera, playing out a chime as soon as the key is
+inserted. The "Early Boot" functionality is typically used along side a "late
+attach" feature in the Linux kernel. By doing a "late attach", the Linux kernel
+starts communicating and controlling an already running remotecore(M4/DSP)
+instead of a resetting, reloading and restarting the core.
+
+Current Support Status
+======================
+
+This version of U-Boot supports loading IPU1/IPU2/DSP1/DSP2 in the DRA7x SOC
+from the bootloader. The selected remotecores are booted from a ELF images in
+the FAT partition of the MMC/SD device or a specified eMMC partition. The MMU
+of the remotecore is setup in a manner expected by the Linux kernel.
+
+Configuration Options
+======================
+
+The below options should be set in include/configs/dra7xx_evm.h.
+
+CONFIG_LATE_ATTACH
+
+	Setting this option enables the early boot functionality in U-Boot.
+	This option automatically enables the ELF loader support and includes
+	the common/elf_remoteproc.c required for remoteproc support in the
+	build.
+
+IPU_LOAD_ADDR
+
+	This macro determines the address into which the IPU ELF image is
+	loaded from persistent storage before being passed to the ELF Loader.
+	Choose this address such that it does not trample on U-Boot code.
+
+DSP_LOAD_ADDR
+
+	This macro determines the address into which the DSP ELF image is
+	loaded from persistent storage before being passed to the ELF Loader.
+	Choose this address such that it does not trample on U-Boot code. For
+	now, this macro is aliased to the IPU_LOAD_ADDR.
+
+CONFIG_MMC_IPU1_PART_NAME
+
+	Setting this config option tells the early boot code the eMMC partition
+	name where the remote core image can be found for the IPU1. If this
+	option is configured, then the image is loaded from the specified eMMC
+	partition instead of from the FAT file system.
+
+CONFIG_MMC_IPU2_PART_NAME
+
+	Setting this config option tells the early boot code the eMMC partition
+	name where the remote core image can be found for the IPU2. If this
+	option is configured, then the image is loaded from the specified eMMC
+	partition instead of from the FAT file system.
+
+CONFIG_MMC_DSP1_PART_NAME
+
+	Setting this config option tells the early boot code the eMMC partition
+	name where the remote core image can be found for the DSP1. If this
+	option is configured, then the image is loaded from the specified eMMC
+	partition instead of from the FAT file system.
+
+CONFIG_MMC_DSP2_PART_NAME
+
+	Setting this config option tells the early boot code the eMMC partition
+	name where the remote core image can be found for the DSP2. If this
+	option is configured, then the image is loaded from the specified eMMC
+	partition instead of from the FAT file system.
+
+With these options enabled, the remotecores to be booted should be specified in
+the array cores_to_boot[] in common/spl/spl.c:board_init_r(). Only the cores
+specified in this array are booted by the bootloader and in the same order as
+specified in the array.
+
+void board_init_r(gd_t * dummy1, ulong dummy2)
+{
+	u32 boot_device;
+	u32 size;
+#ifdef CONFIG_LATE_ATTACH
+	u32 cores_to_boot[] = { IPU2, DSP1, DSP2, IPU1 };
+#endif
+
+Test Status
+===========
+
+Early boot by U-Boot and Late attach by Linux Kernel has been verified using
+IPC sample applications for RPMsg and MessageQ.
+
+Pending Development
+===================
+
+The pending features are listed in no specific priority.
+
+1. Currently we only support early booting the remotecores from SPL. Adding
+support for early booting from U-Boot is desirable for debug purposes.
+
+2. Linux kernel requires the device tree nodes part of the remotecore being
+early booted to be marked with specific attributes. Currently this done outside
+the boot loader by compiling a new DTB file. Add a feature to U-Boot to set the
+required attributes on the device tree  nodes before booting the kernel.
+
+3. Add support for loading the remotecore binaries from QSPI.

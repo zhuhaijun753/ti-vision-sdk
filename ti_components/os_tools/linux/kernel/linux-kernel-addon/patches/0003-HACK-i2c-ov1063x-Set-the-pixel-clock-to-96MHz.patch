@@ -1,0 +1,48 @@
+From ed5fdbb1fcedc95180dda84eed5a67a206bfa3f6 Mon Sep 17 00:00:00 2001
+From: Sathishkumar S <x0203598@ti.com>
+Date: Mon, 6 Jan 2014 15:27:50 +0530
+Subject: [PATCH 03/12] HACK: i2c: ov1063x: Set the pixel clock to 96MHz
+
+Existing camera driver calculates the PLL settings for the camera
+based on the capture size, FPS, etc.
+The calculated values for LVDS cameras are correct theoratically.
+But with this, the captured image shows noise and flickering
+green lines.
+
+The LVDS camera pixel clock is pushed to 96Mhz in case
+of 1280x720 capture. The PLL settings are hard-coded
+for now. The same settings work for 1280x720 onboard
+camera capture as well.
+
+Change-Id: Id2bd8b9e7d783e4632f714962fe7009bebccb5b9
+Signed-off-by: Sathishkumar S <x0203598@ti.com>
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ drivers/media/i2c/ov1063x.c |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/media/i2c/ov1063x.c b/drivers/media/i2c/ov1063x.c
+index c94b9fd..ccf76d1 100644
+--- a/drivers/media/i2c/ov1063x.c
++++ b/drivers/media/i2c/ov1063x.c
+@@ -456,6 +456,8 @@ static int ov1063x_set_params(struct i2c_client *client, u32 *width,
+ 	dev_dbg(&client->dev, "pclk=%d, hts=%d, vts=%d\n", pclk, hts, vts);
+ 	dev_dbg(&client->dev, "r3003=0x%X r3004=0x%X\n", r3003, r3004);
+ 
++	r3003 = 0x20;
++	r3004 = 0x3;
+ 	dev_err(&client->dev, "r3003 = %x , r3004 = %x\n", r3003, r3004);
+ 
+ 	/* Disable ISP & program all registers that we might modify */
+@@ -547,6 +549,8 @@ static int ov1063x_set_params(struct i2c_client *client, u32 *width,
+ 	if (ret)
+ 		return ret;
+ 
++	hts = 0x6f6;
++	vts = 0x380;
+ 	dev_err(&client->dev, "hts x vts = %x x %x\n", hts, vts);
+ 
+ 	ret = ov1063x_reg_write16(client, 0x380c, hts);
+-- 
+1.7.9.5
+

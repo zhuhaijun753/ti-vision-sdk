@@ -1,0 +1,16 @@
+Package: udev
+Version: 182-r7.0-arago4.0
+Description: /dev/ and hotplug management daemon
+ udev is a daemon which dynamically creates and removes device nodes from
+ /dev/, handles hotplug events and loads drivers at boot time.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2.0+
+Architecture: dra7xx_evm
+OE: udev
+Homepage: http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev/udev.html
+Depends: libkmod2 (>= 16+git0+36c4bb928a), libblkid1 (>= 2.24.1), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Recommends: update-rc.d, udev-cache, udev-utils
+Provides: hotplug
+Source: http://kernel.org/pub/linux/utils/kernel/hotplug/udev-182.tar.gz file://0001-Fixing-keyboard_force_release.sh-shell-script-path.patch file://avoid-mouse-autosuspend.patch file://run.rules file://udev.rules file://devfs-udev.rules file://links.conf file://permissions.rules file://local.rules file://udev-cache file://udev-cache.default file://add-install-ptest.patch file://run-ptest file://init file://omap-tty.rules file://usb1-rules.sh file://usb2-rules.sh

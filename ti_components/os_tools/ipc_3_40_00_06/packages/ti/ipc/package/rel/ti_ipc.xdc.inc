@@ -1,0 +1,16 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+GateMP.h
+HeapBufMP.h
+HeapMemMP.h
+HeapMultiBufMP.h
+Ipc.h
+ListMP.h
+MessageQ.h
+MultiProc.h
+NameServer.h
+Notify.h
+SharedRegion.h
+package.bld
+package/package.cfg.xdc.inc

@@ -1,0 +1,13 @@
+Package: libavfilter2
+Version: 0.8.9-r0-arago0.0
+Description: libav avfilter library
+ libav avfilter library
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libav
+Homepage: http://libav.org/
+Depends: libswscale2 (>= 0.8.9), libavcodec53 (>= 0.8.9), libavformat53 (>= 0.8.9), libc6 (>= 2.15), libavutil51 (>= 0.8.9), libgcc-s1 (>= 4.7.3)
+Source: http://libav.org/releases/libav-0.8.9.tar.xz file://0001-configure-enable-pic-for-AArch64.patch

@@ -1,0 +1,13 @@
+Package: gstreamer1.0-plugins-vpe
+Version: git-r2.6.0
+Description: gstreamer1.0-plugins-vpe version git-r2.6
+ GStreamer elements to use the Video Processing Engine (VPE) found on some
+ TI devices
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2
+Architecture: dra7xx_evm
+OE: gstreamer1.0-plugins-vpe
+Depends: ti-ipc (>= 3.36.01.11), libgstvideo-1.0-0 (>= 1.2.3), libdrm2 (>= 2.4.41), libffi6 (>= 3.0.13), libgstdrm-1.0-0 (>= 1.2.3), libgstdmabuf-1.0-0 (>= 1.2.3), libc6 (>= 2.15), libglib-2.0-0 (>= 2.38.2), libdrm-omap1 (>= 2.4.41), liborc-0.4-0 (>= 0.4.18), gstreamer1.0 (>= 1.2.3), libgcc-s1 (>= 4.7.3), libdce1 (>= 3.00.08.02)
+Source: git://git.ti.com/glsdk/gst-plugin-vpe.git;protocol=git file://ti-video.conf

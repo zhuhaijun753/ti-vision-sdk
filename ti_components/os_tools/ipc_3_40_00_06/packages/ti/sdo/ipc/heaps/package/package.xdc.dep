@@ -1,0 +1,119 @@
+clean::
+	$(RM) package/ti.sdo.ipc.heaps.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_heaps.java
+	$(RM) package/ti_sdo_ipc_heaps.class
+	$(RM) package/package_ti.sdo.ipc.heaps.c
+	$(RM) package/package.defs.h
+	$(RM) HeapBufMP.h
+	$(RM) package/internal/HeapBufMP.xdc.h
+	$(RM) HeapMultiBufMP.h
+	$(RM) package/internal/HeapMultiBufMP.xdc.h
+	$(RM) HeapMemMP.h
+	$(RM) package/internal/HeapMemMP.xdc.h
+	$(RM) package/ti.sdo.ipc.heaps.ccs
+
+.interfaces: package/ti.sdo.ipc.heaps.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_heaps.java package/package_ti.sdo.ipc.heaps.c package/package.defs.h HeapBufMP.h package/internal/HeapBufMP.xdc.h HeapMultiBufMP.h package/internal/HeapMultiBufMP.xdc.h HeapMemMP.h package/internal/HeapMemMP.xdc.h package/ti.sdo.ipc.heaps.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: HeapBufMP.xdc HeapMultiBufMP.xdc HeapMemMP.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+HeapBufMP.xs:
+package/package.xdc.inc: HeapBufMP.xs
+HeapMultiBufMP.xs:
+package/package.xdc.inc: HeapMultiBufMP.xs
+HeapMemMP.xs:
+package/package.xdc.inc: HeapMemMP.xs
+
+# schema update dependencies
+package/package.xdc.inc: HeapBufMP.xdc
+package/package.xdc.inc: HeapMultiBufMP.xdc
+package/package.xdc.inc: HeapMemMP.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/ListMP.xdc
+ti/sdo/ipc/ListMP.xdc:
+vpath ti/sdo/ipc/ListMP.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/NameServer.xdc
+ti/sdo/utils/NameServer.xdc:
+vpath ti/sdo/utils/NameServer.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/gates/GateSwi.xdc
+ti/sysbios/gates/GateSwi.xdc:
+vpath ti/sysbios/gates/GateSwi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/INameServerRemote.xdc
+ti/sdo/utils/INameServerRemote.xdc:
+vpath ti/sdo/utils/INameServerRemote.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/knl/ISync.xdc
+xdc/runtime/knl/ISync.xdc:
+vpath xdc/runtime/knl/ISync.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/List.xdc
+ti/sdo/utils/List.xdc:
+vpath ti/sdo/utils/List.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/GateMP.xdc
+ti/sdo/ipc/GateMP.xdc:
+vpath ti/sdo/ipc/GateMP.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/IGateMPSupport.xdc
+ti/sdo/ipc/interfaces/IGateMPSupport.xdc:
+vpath ti/sdo/ipc/interfaces/IGateMPSupport.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/SharedRegion.xdc
+ti/sdo/ipc/SharedRegion.xdc:
+vpath ti/sdo/ipc/SharedRegion.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/Ipc.xdc
+ti/sdo/ipc/Ipc.xdc:
+vpath ti/sdo/ipc/Ipc.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Startup.xdc
+xdc/runtime/Startup.xdc:
+vpath xdc/runtime/Startup.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: HeapBufMP.h
+HeapBufMP.h:
+package/package.xdc.inc: package/internal/HeapBufMP.xdc.h
+package/internal/HeapBufMP.xdc.h:
+package/package.xdc.inc: HeapMultiBufMP.h
+HeapMultiBufMP.h:
+package/package.xdc.inc: package/internal/HeapMultiBufMP.xdc.h
+package/internal/HeapMultiBufMP.xdc.h:
+package/package.xdc.inc: HeapMemMP.h
+HeapMemMP.h:
+package/package.xdc.inc: package/internal/HeapMemMP.xdc.h
+package/internal/HeapMemMP.xdc.h:
+

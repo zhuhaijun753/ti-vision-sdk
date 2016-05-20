@@ -1,0 +1,4 @@
+Dsp_vayu.cfg
+Dsp_vayu_power.cfg
+package/cfg/bin/ti_platforms_evmDRA7XX_dsp1/test_omx_dsp1_vayu_pe66.cfg
+test_omx_dsp_vayu.cfg

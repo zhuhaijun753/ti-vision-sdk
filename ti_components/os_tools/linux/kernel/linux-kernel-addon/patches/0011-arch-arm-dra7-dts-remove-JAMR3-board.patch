@@ -1,0 +1,33 @@
+From b21f99eb48e51a417c3893fb31c5b15d8093392d Mon Sep 17 00:00:00 2001
+From: Venkateswara Rao Mandela <venkat.mandela@ti.com>
+Date: Tue, 15 Sep 2015 11:33:29 +0530
+Subject: [PATCH 11/12] arch: arm: dra7: dts: remove JAMR3 board.
+
+JAMR3 board cannot be used along side the Vision daughter board.
+Removing the JAMR3 dts fragment from the device tree reduces kernel
+initialization time by avoiding probing for absent peripherals.
+
+Change-Id: Ic946641625ad050d2ab54f6fc271cd23a3aa9718
+Signed-off-by: Venkateswara Rao Mandela <venkat.mandela@ti.com>
+---
+ arch/arm/boot/dts/dra7-evm.dts |    7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/arch/arm/boot/dts/dra7-evm.dts b/arch/arm/boot/dts/dra7-evm.dts
+index 312121e..abadf65 100644
+--- a/arch/arm/boot/dts/dra7-evm.dts
++++ b/arch/arm/boot/dts/dra7-evm.dts
+@@ -1093,10 +1093,3 @@ video_in: &vin1a {
+ 		remote-endpoint = <&onboardLI>;
+ 	};
+ };
+-
+-#include "dra7xx-jamr3.dtsi"
+-
+-&tvp_5158{
+-	mux-gpios = <&pcf_hdmi 3 GPIO_ACTIVE_HIGH>,	/*CAM_FPD_MUX_S0*/
+-			<&pcf_jamr3_21 8 GPIO_ACTIVE_LOW>;	/*SEL_TVP_FPD*/
+-};
+-- 
+1.7.9.5
+

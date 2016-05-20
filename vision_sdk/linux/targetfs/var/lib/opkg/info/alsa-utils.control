@@ -1,0 +1,13 @@
+Package: alsa-utils
+Version: 1.0.27.2-r0.0
+Description: ALSA sound utilities
+ ALSA sound utilities.
+Section: console/utils
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: alsa-utils
+Homepage: http://www.alsa-project.org
+Depends: alsa-utils-alsamixer, alsa-utils-alsactl, alsa-utils-speakertest, alsa-utils-amixer, alsa-utils-midi, alsa-utils-aseqnet, alsa-utils-aconnect, alsa-utils-iecset, alsa-utils-alsaloop, alsa-utils-aplay, alsa-utils-alsaucm, alsa-utils-aseqdump
+Source: ftp://ftp.alsa-project.org/pub/utils/alsa-utils-1.0.27.2.tar.bz2 file://0001-alsactl-don-t-let-systemd-unit-restore-the-volume-wh.patch

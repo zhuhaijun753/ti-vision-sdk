@@ -1,0 +1,11 @@
+# @name 
+#	WL18XX ping test in station mode 
+# @desc 
+#       A router with SSID as mentioned in environment variable $WILINK_WLAN_OPEN_SSID needs to be available
+#	or if running from vatf, such an SSID needs to be defined in bench file as dut parameter 
+#	"wilink_wlan_open_ssid". For example, dut.wilink_wlan_open_ssid = "gtaccess-open"
+#	wl18xx demos are invoked to start/connect/stop station interface 
+# @setup_requires wlan
+
+WLAN_S_FUNC_PING-60s source 'common.sh'; do_cmd "wlan_station_setup.sh";gw=`get_eth_gateway.sh -i wlan0`|| die "Failed to find gateway for wlan0 interface"; echo "GW is $gw";  do_cmd "ping ${gw} -c 60"; do_cmd "wlan_station_teardown.sh"
+WLAN_L_STRESS_PING-3600s source 'common.sh'; do_cmd "wlan_station_setup.sh";gw=`get_eth_gateway.sh -i wlan0`|| die "Failed to find gateway for wlan0 interface"; echo "GW is $gw";  do_cmd "ping ${gw} -c 3600"; do_cmd "wlan_station_teardown.sh"

@@ -1,0 +1,8 @@
+# @name Multiple multimedia plus Suspend
+# @desc Test various Multimedia interfaces while doing suspend-standy/resume operations
+# @requires net && graphics && sound && power_mgr 
+# @setup_requires 
+
+SYSTEM_M_FUNC_SUSPEND_DISPLAY-ALSA source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/multi_display -P $PLATFORM -s 'MULTIDISP_S_FUNC_PLAYBACK_ANY ' # /opt/ltp/runltp -P $PLATFORM -f ddt/alsa_opmode -s 'ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 ' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SUSPEND_STANDBY '"; sleep 10 #Avoid alsa device busy error; run_processes.sh -c "/opt/ltp/runltp -f ddt/multi_display -P $PLATFORM -s 'MULTIDISP_S_FUNC_PLAYBACK_ANY ' # /opt/ltp/runltp -P $PLATFORM -f ddt/alsa_opmode -s 'ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 '"
+
+SYSTEM_M_FUNC_SUSPEND_ETH-DISPLAY-ALSA source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s 'ETH_S_PERF_IPERF_TCP_128K_1448B ' # /opt/ltp/runltp -f ddt/multi_display -P $PLATFORM -s 'MULTIDISP_S_FUNC_PLAYBACK_ANY ' # /opt/ltp/runltp -P $PLATFORM -f ddt/alsa_opmode -s 'ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 ' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SUSPEND_STANDBY '"; sleep 10 #Avoid alsa device busy error; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s 'ETH_S_PERF_IPERF_TCP_128K_1448B ' # /opt/ltp/runltp -f ddt/multi_display -P $PLATFORM -s 'MULTIDISP_S_FUNC_PLAYBACK_ANY ' # /opt/ltp/runltp -P $PLATFORM -f ddt/alsa_opmode -s 'ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 '";

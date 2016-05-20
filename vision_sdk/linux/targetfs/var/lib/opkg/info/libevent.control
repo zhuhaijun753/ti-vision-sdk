@@ -1,0 +1,13 @@
+Package: libevent
+Version: 2.0.21-r1.0
+Description: An asynchronous event notification library
+ An asynchronous event notification library.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libevent
+Homepage: http://libevent.org/
+Depends: libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: http://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz file://obsolete_automake_macros.patch file://disable_tests.patch

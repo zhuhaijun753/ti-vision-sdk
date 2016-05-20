@@ -1,0 +1,18 @@
+Package: wayland
+Version: 1.6.0-r0.0
+Description: Wayland, a protocol between a compositor and clients
+ Wayland is a protocol for a compositor to talk to its clients as well as
+ a C library implementation of that protocol. The compositor can be a
+ standalone display server running on Linux kernel modesetting and evdev
+ input devices, an X application, or a wayland client itself. The clients
+ can be traditional applications, X servers (rootless or fullscreen) or
+ other display servers.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: wayland
+Homepage: http://wayland.freedesktop.org
+Depends: libffi6 (>= 3.0.13), libc6 (>= 2.15)
+Source: http://wayland.freedesktop.org/releases/wayland-1.6.0.tar.xz

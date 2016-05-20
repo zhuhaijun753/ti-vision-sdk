@@ -1,0 +1,114 @@
+clean::
+	$(RM) package/ti.sdo.ipc.notifyDrivers.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_notifyDrivers.java
+	$(RM) package/ti_sdo_ipc_notifyDrivers.class
+	$(RM) package/package_ti.sdo.ipc.notifyDrivers.c
+	$(RM) package/package.defs.h
+	$(RM) NotifyDriverShm.h
+	$(RM) package/internal/NotifyDriverShm.xdc.h
+	$(RM) NotifyDriverCirc.h
+	$(RM) package/internal/NotifyDriverCirc.xdc.h
+	$(RM) NotifySetupNull.h
+	$(RM) package/internal/NotifySetupNull.xdc.h
+	$(RM) IInterrupt.h
+	$(RM) package/NotifyDriverShm_InterruptProxy.h
+	$(RM) package/internal/NotifyDriverShm_InterruptProxy.xdc.h
+	$(RM) package/NotifyDriverCirc_InterruptProxy.h
+	$(RM) package/internal/NotifyDriverCirc_InterruptProxy.xdc.h
+	$(RM) package/ti.sdo.ipc.notifyDrivers.ccs
+
+.interfaces: package/ti.sdo.ipc.notifyDrivers.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_notifyDrivers.java package/package_ti.sdo.ipc.notifyDrivers.c package/package.defs.h NotifyDriverShm.h package/internal/NotifyDriverShm.xdc.h NotifyDriverCirc.h package/internal/NotifyDriverCirc.xdc.h NotifySetupNull.h package/internal/NotifySetupNull.xdc.h IInterrupt.h package/NotifyDriverShm_InterruptProxy.h package/internal/NotifyDriverShm_InterruptProxy.xdc.h package/NotifyDriverCirc_InterruptProxy.h package/internal/NotifyDriverCirc_InterruptProxy.xdc.h package/ti.sdo.ipc.notifyDrivers.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: NotifyDriverShm.xdc NotifyDriverCirc.xdc NotifySetupNull.xdc IInterrupt.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+NotifyDriverShm.xs:
+package/package.xdc.inc: NotifyDriverShm.xs
+NotifyDriverCirc.xs:
+package/package.xdc.inc: NotifyDriverCirc.xs
+NotifySetupNull.xs:
+package/package.xdc.inc: NotifySetupNull.xs
+
+# schema update dependencies
+package/package.xdc.inc: NotifyDriverShm.xdc
+package/package.xdc.inc: NotifyDriverCirc.xdc
+package/package.xdc.inc: NotifySetupNull.xdc
+package/package.xdc.inc: IInterrupt.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INotifyDriver.xdc
+ti/sdo/ipc/interfaces/INotifyDriver.xdc:
+vpath ti/sdo/ipc/interfaces/INotifyDriver.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/Notify.xdc
+ti/sdo/ipc/Notify.xdc:
+vpath ti/sdo/ipc/Notify.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/List.xdc
+ti/sdo/utils/List.xdc:
+vpath ti/sdo/utils/List.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INotifySetup.xdc
+ti/sdo/ipc/interfaces/INotifySetup.xdc:
+vpath ti/sdo/ipc/interfaces/INotifySetup.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: NotifyDriverShm.h
+NotifyDriverShm.h:
+package/package.xdc.inc: package/internal/NotifyDriverShm.xdc.h
+package/internal/NotifyDriverShm.xdc.h:
+package/package.xdc.inc: NotifyDriverCirc.h
+NotifyDriverCirc.h:
+package/package.xdc.inc: package/internal/NotifyDriverCirc.xdc.h
+package/internal/NotifyDriverCirc.xdc.h:
+package/package.xdc.inc: NotifySetupNull.h
+NotifySetupNull.h:
+package/package.xdc.inc: package/internal/NotifySetupNull.xdc.h
+package/internal/NotifySetupNull.xdc.h:
+package/package.xdc.inc: IInterrupt.h
+IInterrupt.h:
+package/package.xdc.inc: package/NotifyDriverShm_InterruptProxy.h
+package/NotifyDriverShm_InterruptProxy.h:
+package/package.xdc.inc: package/internal/NotifyDriverShm_InterruptProxy.xdc.h
+package/internal/NotifyDriverShm_InterruptProxy.xdc.h:
+package/package.xdc.inc: package/NotifyDriverCirc_InterruptProxy.h
+package/NotifyDriverCirc_InterruptProxy.h:
+package/package.xdc.inc: package/internal/NotifyDriverCirc_InterruptProxy.xdc.h
+package/internal/NotifyDriverCirc_InterruptProxy.xdc.h:
+

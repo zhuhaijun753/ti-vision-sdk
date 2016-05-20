@@ -1,0 +1,8 @@
+# @name  dmtimer test with kernel debug option enabled # @desc Request, 
+#	validate and release timers.
+#       And then check if there is memleak or spinlock errors
+
+DMTIMER_S_FUNC_MEMLEAK source "common.sh"; check_config_options "y" CONFIG_DEBUG_KMEMLEAK; do_cmd /opt/ltp/runltp -f ddt/dmtimers -P $MACHINE -s "DMTIMER_S_FUNC_REQUEST-FREE-AVAILABLE-TIMERS-10-TIMES" && check_kernel_errors "kmemleak" 
+
+DMTIMER_S_FUNC_SPINLOCK source "common.sh"; check_config_options "y" CONFIG_DEBUG_SPINLOCK; do_cmd /opt/ltp/runltp -f ddt/dmtimers -P $MACHINE -s "DMTIMER_S_FUNC_REQUEST-FREE-AVAILABLE-TIMERS-10-TIMES" && check_kernel_errors "spinlock" 
+

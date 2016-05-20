@@ -1,0 +1,13 @@
+Package: libgbm1
+Version: 9.0.0-r0.0
+Description: libgbm version 9.0.0-r0
+ Userspace interface for the kernel GBM services.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libgbm
+Homepage: http://git.ti.com
+Depends: libudev0 (>= 182), libc6 (>= 2.15)
+Source: git://git.ti.com/glsdk/libgbm.git;protocol=git

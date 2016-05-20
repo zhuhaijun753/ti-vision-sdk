@@ -1,0 +1,2357 @@
+;******************************************************************************
+;* TMS320C6x C/C++ Codegen                                          PC v7.4.2 *
+;* Date/Time created: Sat Sep 26 11:09:02 2015                                *
+;******************************************************************************
+	.compiler_opts --abi=eabi --c64p_l1d_workaround=off --endian=little --hll_source=on --long_precision_bits=32 --mem_model:code=near --mem_model:const=data --mem_model:data=far --object_format=elf --silicon_version=6600 --symdebug:dwarf --symdebug:dwarf_version=3 
+
+;******************************************************************************
+;* GLOBAL FILE PARAMETERS                                                     *
+;*                                                                            *
+;*   Architecture      : TMS320C66xx                                          *
+;*   Optimization      : Enabled at level 3                                   *
+;*   Optimizing for    : Speed                                                *
+;*                       Based on options: -o3, no -ms                        *
+;*   Endian            : Little                                               *
+;*   Interrupt Thrshld : 10000                                                *
+;*   Data Access Model : Far                                                  *
+;*   Pipelining        : Enabled                                              *
+;*   Speculate Loads   : Enabled with threshold = 0                           *
+;*   Memory Aliases    : Presume are aliases (pessimistic)                    *
+;*   Debug Info        : DWARF Debug w/Optimization                           *
+;*                                                                            *
+;******************************************************************************
+
+	.asg	A15, FP
+	.asg	B14, DP
+	.asg	B15, SP
+	.global	$bss
+
+
+$C$DW$CU	.dwtag  DW_TAG_compile_unit
+	.dwattr $C$DW$CU, DW_AT_name("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$CU, DW_AT_producer("TI TMS320C6x C/C++ Codegen PC v7.4.2 Copyright (c) 1996-2012 Texas Instruments Incorporated")
+	.dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+	.dwattr $C$DW$CU, DW_AT_comp_dir("c:\nightlybuilds\vlib\ti\vlib\vlib\examples")
+	.sect	".fardata:minContStaticOut12x12", RW
+	.clink
+	.align	8
+	.elfsym	minContStaticOut12x12,SYM_SIZE(144)
+minContStaticOut12x12:
+	.field	255,8			; minContStaticOut12x12[0] @ 0
+	.field	255,8			; minContStaticOut12x12[1] @ 8
+	.field	255,8			; minContStaticOut12x12[2] @ 16
+	.field	255,8			; minContStaticOut12x12[3] @ 24
+	.field	255,8			; minContStaticOut12x12[4] @ 32
+	.field	255,8			; minContStaticOut12x12[5] @ 40
+	.field	255,8			; minContStaticOut12x12[6] @ 48
+	.field	255,8			; minContStaticOut12x12[7] @ 56
+	.field	255,8			; minContStaticOut12x12[8] @ 64
+	.field	255,8			; minContStaticOut12x12[9] @ 72
+	.field	255,8			; minContStaticOut12x12[10] @ 80
+	.field	255,8			; minContStaticOut12x12[11] @ 88
+	.field	255,8			; minContStaticOut12x12[12] @ 96
+	.field	255,8			; minContStaticOut12x12[13] @ 104
+	.field	255,8			; minContStaticOut12x12[14] @ 112
+	.field	255,8			; minContStaticOut12x12[15] @ 120
+	.field	255,8			; minContStaticOut12x12[16] @ 128
+	.field	255,8			; minContStaticOut12x12[17] @ 136
+	.field	255,8			; minContStaticOut12x12[18] @ 144
+	.field	255,8			; minContStaticOut12x12[19] @ 152
+	.field	255,8			; minContStaticOut12x12[20] @ 160
+	.field	255,8			; minContStaticOut12x12[21] @ 168
+	.field	255,8			; minContStaticOut12x12[22] @ 176
+	.field	255,8			; minContStaticOut12x12[23] @ 184
+	.field	255,8			; minContStaticOut12x12[24] @ 192
+	.field	255,8			; minContStaticOut12x12[25] @ 200
+	.field	255,8			; minContStaticOut12x12[26] @ 208
+	.field	255,8			; minContStaticOut12x12[27] @ 216
+	.field	255,8			; minContStaticOut12x12[28] @ 224
+	.field	255,8			; minContStaticOut12x12[29] @ 232
+	.field	255,8			; minContStaticOut12x12[30] @ 240
+	.field	255,8			; minContStaticOut12x12[31] @ 248
+	.field	255,8			; minContStaticOut12x12[32] @ 256
+	.field	255,8			; minContStaticOut12x12[33] @ 264
+	.field	255,8			; minContStaticOut12x12[34] @ 272
+	.field	255,8			; minContStaticOut12x12[35] @ 280
+	.field	255,8			; minContStaticOut12x12[36] @ 288
+	.field	255,8			; minContStaticOut12x12[37] @ 296
+	.field	255,8			; minContStaticOut12x12[38] @ 304
+	.field	255,8			; minContStaticOut12x12[39] @ 312
+	.field	255,8			; minContStaticOut12x12[40] @ 320
+	.field	255,8			; minContStaticOut12x12[41] @ 328
+	.field	255,8			; minContStaticOut12x12[42] @ 336
+	.field	255,8			; minContStaticOut12x12[43] @ 344
+	.field	255,8			; minContStaticOut12x12[44] @ 352
+	.field	255,8			; minContStaticOut12x12[45] @ 360
+	.field	255,8			; minContStaticOut12x12[46] @ 368
+	.field	255,8			; minContStaticOut12x12[47] @ 376
+	.field	255,8			; minContStaticOut12x12[48] @ 384
+	.field	255,8			; minContStaticOut12x12[49] @ 392
+	.field	255,8			; minContStaticOut12x12[50] @ 400
+	.field	255,8			; minContStaticOut12x12[51] @ 408
+	.field	255,8			; minContStaticOut12x12[52] @ 416
+	.field	255,8			; minContStaticOut12x12[53] @ 424
+	.field	255,8			; minContStaticOut12x12[54] @ 432
+	.field	255,8			; minContStaticOut12x12[55] @ 440
+	.field	255,8			; minContStaticOut12x12[56] @ 448
+	.field	255,8			; minContStaticOut12x12[57] @ 456
+	.field	255,8			; minContStaticOut12x12[58] @ 464
+	.field	255,8			; minContStaticOut12x12[59] @ 472
+	.field	255,8			; minContStaticOut12x12[60] @ 480
+	.field	255,8			; minContStaticOut12x12[61] @ 488
+	.field	255,8			; minContStaticOut12x12[62] @ 496
+	.field	255,8			; minContStaticOut12x12[63] @ 504
+	.field	255,8			; minContStaticOut12x12[64] @ 512
+	.field	255,8			; minContStaticOut12x12[65] @ 520
+	.field	255,8			; minContStaticOut12x12[66] @ 528
+	.field	255,8			; minContStaticOut12x12[67] @ 536
+	.field	255,8			; minContStaticOut12x12[68] @ 544
+	.field	255,8			; minContStaticOut12x12[69] @ 552
+	.field	255,8			; minContStaticOut12x12[70] @ 560
+	.field	255,8			; minContStaticOut12x12[71] @ 568
+	.field	255,8			; minContStaticOut12x12[72] @ 576
+	.field	255,8			; minContStaticOut12x12[73] @ 584
+	.field	255,8			; minContStaticOut12x12[74] @ 592
+	.field	255,8			; minContStaticOut12x12[75] @ 600
+	.field	255,8			; minContStaticOut12x12[76] @ 608
+	.field	255,8			; minContStaticOut12x12[77] @ 616
+	.field	255,8			; minContStaticOut12x12[78] @ 624
+	.field	255,8			; minContStaticOut12x12[79] @ 632
+	.field	255,8			; minContStaticOut12x12[80] @ 640
+	.field	255,8			; minContStaticOut12x12[81] @ 648
+	.field	255,8			; minContStaticOut12x12[82] @ 656
+	.field	255,8			; minContStaticOut12x12[83] @ 664
+	.field	255,8			; minContStaticOut12x12[84] @ 672
+	.field	255,8			; minContStaticOut12x12[85] @ 680
+	.field	255,8			; minContStaticOut12x12[86] @ 688
+	.field	255,8			; minContStaticOut12x12[87] @ 696
+	.field	255,8			; minContStaticOut12x12[88] @ 704
+	.field	255,8			; minContStaticOut12x12[89] @ 712
+	.field	255,8			; minContStaticOut12x12[90] @ 720
+	.field	255,8			; minContStaticOut12x12[91] @ 728
+	.field	255,8			; minContStaticOut12x12[92] @ 736
+	.field	255,8			; minContStaticOut12x12[93] @ 744
+	.field	255,8			; minContStaticOut12x12[94] @ 752
+	.field	255,8			; minContStaticOut12x12[95] @ 760
+	.field	255,8			; minContStaticOut12x12[96] @ 768
+	.field	255,8			; minContStaticOut12x12[97] @ 776
+	.field	255,8			; minContStaticOut12x12[98] @ 784
+	.field	255,8			; minContStaticOut12x12[99] @ 792
+	.field	255,8			; minContStaticOut12x12[100] @ 800
+	.field	255,8			; minContStaticOut12x12[101] @ 808
+	.field	255,8			; minContStaticOut12x12[102] @ 816
+	.field	255,8			; minContStaticOut12x12[103] @ 824
+	.field	255,8			; minContStaticOut12x12[104] @ 832
+	.field	255,8			; minContStaticOut12x12[105] @ 840
+	.field	255,8			; minContStaticOut12x12[106] @ 848
+	.field	255,8			; minContStaticOut12x12[107] @ 856
+	.field	255,8			; minContStaticOut12x12[108] @ 864
+	.field	255,8			; minContStaticOut12x12[109] @ 872
+	.field	255,8			; minContStaticOut12x12[110] @ 880
+	.field	255,8			; minContStaticOut12x12[111] @ 888
+	.field	255,8			; minContStaticOut12x12[112] @ 896
+	.field	255,8			; minContStaticOut12x12[113] @ 904
+	.field	255,8			; minContStaticOut12x12[114] @ 912
+	.field	255,8			; minContStaticOut12x12[115] @ 920
+	.field	255,8			; minContStaticOut12x12[116] @ 928
+	.field	255,8			; minContStaticOut12x12[117] @ 936
+	.field	255,8			; minContStaticOut12x12[118] @ 944
+	.field	255,8			; minContStaticOut12x12[119] @ 952
+	.field	255,8			; minContStaticOut12x12[120] @ 960
+	.field	255,8			; minContStaticOut12x12[121] @ 968
+	.field	255,8			; minContStaticOut12x12[122] @ 976
+	.field	255,8			; minContStaticOut12x12[123] @ 984
+	.field	255,8			; minContStaticOut12x12[124] @ 992
+	.field	255,8			; minContStaticOut12x12[125] @ 1000
+	.field	255,8			; minContStaticOut12x12[126] @ 1008
+	.field	255,8			; minContStaticOut12x12[127] @ 1016
+	.field	255,8			; minContStaticOut12x12[128] @ 1024
+	.field	255,8			; minContStaticOut12x12[129] @ 1032
+	.field	255,8			; minContStaticOut12x12[130] @ 1040
+	.field	255,8			; minContStaticOut12x12[131] @ 1048
+	.field	255,8			; minContStaticOut12x12[132] @ 1056
+	.field	255,8			; minContStaticOut12x12[133] @ 1064
+	.field	255,8			; minContStaticOut12x12[134] @ 1072
+	.field	255,8			; minContStaticOut12x12[135] @ 1080
+	.field	255,8			; minContStaticOut12x12[136] @ 1088
+	.field	255,8			; minContStaticOut12x12[137] @ 1096
+	.field	255,8			; minContStaticOut12x12[138] @ 1104
+	.field	255,8			; minContStaticOut12x12[139] @ 1112
+	.field	255,8			; minContStaticOut12x12[140] @ 1120
+	.field	255,8			; minContStaticOut12x12[141] @ 1128
+	.field	255,8			; minContStaticOut12x12[142] @ 1136
+	.field	255,8			; minContStaticOut12x12[143] @ 1144
+
+$C$DW$1	.dwtag  DW_TAG_variable, DW_AT_name("minContStaticOut12x12")
+	.dwattr $C$DW$1, DW_AT_TI_symbol_name("minContStaticOut12x12")
+	.dwattr $C$DW$1, DW_AT_type(*$C$DW$T$63)
+	.dwattr $C$DW$1, DW_AT_location[DW_OP_addr minContStaticOut12x12]
+	.dwattr $C$DW$1, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$1, DW_AT_decl_line(0x1f)
+	.dwattr $C$DW$1, DW_AT_decl_column(0x13)
+	.sect	".fardata:maxContStaticOut12x12", RW
+	.clink
+	.align	8
+	.elfsym	maxContStaticOut12x12,SYM_SIZE(144)
+maxContStaticOut12x12:
+	.field	255,8			; maxContStaticOut12x12[0] @ 0
+	.field	255,8			; maxContStaticOut12x12[1] @ 8
+	.field	255,8			; maxContStaticOut12x12[2] @ 16
+	.field	255,8			; maxContStaticOut12x12[3] @ 24
+	.field	255,8			; maxContStaticOut12x12[4] @ 32
+	.field	255,8			; maxContStaticOut12x12[5] @ 40
+	.field	255,8			; maxContStaticOut12x12[6] @ 48
+	.field	255,8			; maxContStaticOut12x12[7] @ 56
+	.field	255,8			; maxContStaticOut12x12[8] @ 64
+	.field	255,8			; maxContStaticOut12x12[9] @ 72
+	.field	255,8			; maxContStaticOut12x12[10] @ 80
+	.field	255,8			; maxContStaticOut12x12[11] @ 88
+	.field	255,8			; maxContStaticOut12x12[12] @ 96
+	.field	255,8			; maxContStaticOut12x12[13] @ 104
+	.field	255,8			; maxContStaticOut12x12[14] @ 112
+	.field	255,8			; maxContStaticOut12x12[15] @ 120
+	.field	255,8			; maxContStaticOut12x12[16] @ 128
+	.field	255,8			; maxContStaticOut12x12[17] @ 136
+	.field	255,8			; maxContStaticOut12x12[18] @ 144
+	.field	255,8			; maxContStaticOut12x12[19] @ 152
+	.field	255,8			; maxContStaticOut12x12[20] @ 160
+	.field	255,8			; maxContStaticOut12x12[21] @ 168
+	.field	255,8			; maxContStaticOut12x12[22] @ 176
+	.field	255,8			; maxContStaticOut12x12[23] @ 184
+	.field	255,8			; maxContStaticOut12x12[24] @ 192
+	.field	255,8			; maxContStaticOut12x12[25] @ 200
+	.field	255,8			; maxContStaticOut12x12[26] @ 208
+	.field	255,8			; maxContStaticOut12x12[27] @ 216
+	.field	255,8			; maxContStaticOut12x12[28] @ 224
+	.field	255,8			; maxContStaticOut12x12[29] @ 232
+	.field	255,8			; maxContStaticOut12x12[30] @ 240
+	.field	255,8			; maxContStaticOut12x12[31] @ 248
+	.field	255,8			; maxContStaticOut12x12[32] @ 256
+	.field	255,8			; maxContStaticOut12x12[33] @ 264
+	.field	255,8			; maxContStaticOut12x12[34] @ 272
+	.field	255,8			; maxContStaticOut12x12[35] @ 280
+	.field	255,8			; maxContStaticOut12x12[36] @ 288
+	.field	255,8			; maxContStaticOut12x12[37] @ 296
+	.field	255,8			; maxContStaticOut12x12[38] @ 304
+	.field	255,8			; maxContStaticOut12x12[39] @ 312
+	.field	255,8			; maxContStaticOut12x12[40] @ 320
+	.field	255,8			; maxContStaticOut12x12[41] @ 328
+	.field	255,8			; maxContStaticOut12x12[42] @ 336
+	.field	255,8			; maxContStaticOut12x12[43] @ 344
+	.field	255,8			; maxContStaticOut12x12[44] @ 352
+	.field	255,8			; maxContStaticOut12x12[45] @ 360
+	.field	255,8			; maxContStaticOut12x12[46] @ 368
+	.field	255,8			; maxContStaticOut12x12[47] @ 376
+	.field	255,8			; maxContStaticOut12x12[48] @ 384
+	.field	255,8			; maxContStaticOut12x12[49] @ 392
+	.field	255,8			; maxContStaticOut12x12[50] @ 400
+	.field	255,8			; maxContStaticOut12x12[51] @ 408
+	.field	255,8			; maxContStaticOut12x12[52] @ 416
+	.field	255,8			; maxContStaticOut12x12[53] @ 424
+	.field	255,8			; maxContStaticOut12x12[54] @ 432
+	.field	255,8			; maxContStaticOut12x12[55] @ 440
+	.field	255,8			; maxContStaticOut12x12[56] @ 448
+	.field	255,8			; maxContStaticOut12x12[57] @ 456
+	.field	255,8			; maxContStaticOut12x12[58] @ 464
+	.field	255,8			; maxContStaticOut12x12[59] @ 472
+	.field	255,8			; maxContStaticOut12x12[60] @ 480
+	.field	255,8			; maxContStaticOut12x12[61] @ 488
+	.field	255,8			; maxContStaticOut12x12[62] @ 496
+	.field	255,8			; maxContStaticOut12x12[63] @ 504
+	.field	255,8			; maxContStaticOut12x12[64] @ 512
+	.field	255,8			; maxContStaticOut12x12[65] @ 520
+	.field	255,8			; maxContStaticOut12x12[66] @ 528
+	.field	255,8			; maxContStaticOut12x12[67] @ 536
+	.field	255,8			; maxContStaticOut12x12[68] @ 544
+	.field	255,8			; maxContStaticOut12x12[69] @ 552
+	.field	255,8			; maxContStaticOut12x12[70] @ 560
+	.field	255,8			; maxContStaticOut12x12[71] @ 568
+	.field	255,8			; maxContStaticOut12x12[72] @ 576
+	.field	255,8			; maxContStaticOut12x12[73] @ 584
+	.field	255,8			; maxContStaticOut12x12[74] @ 592
+	.field	255,8			; maxContStaticOut12x12[75] @ 600
+	.field	255,8			; maxContStaticOut12x12[76] @ 608
+	.field	255,8			; maxContStaticOut12x12[77] @ 616
+	.field	255,8			; maxContStaticOut12x12[78] @ 624
+	.field	255,8			; maxContStaticOut12x12[79] @ 632
+	.field	255,8			; maxContStaticOut12x12[80] @ 640
+	.field	255,8			; maxContStaticOut12x12[81] @ 648
+	.field	255,8			; maxContStaticOut12x12[82] @ 656
+	.field	255,8			; maxContStaticOut12x12[83] @ 664
+	.field	255,8			; maxContStaticOut12x12[84] @ 672
+	.field	255,8			; maxContStaticOut12x12[85] @ 680
+	.field	255,8			; maxContStaticOut12x12[86] @ 688
+	.field	255,8			; maxContStaticOut12x12[87] @ 696
+	.field	255,8			; maxContStaticOut12x12[88] @ 704
+	.field	255,8			; maxContStaticOut12x12[89] @ 712
+	.field	255,8			; maxContStaticOut12x12[90] @ 720
+	.field	255,8			; maxContStaticOut12x12[91] @ 728
+	.field	255,8			; maxContStaticOut12x12[92] @ 736
+	.field	255,8			; maxContStaticOut12x12[93] @ 744
+	.field	255,8			; maxContStaticOut12x12[94] @ 752
+	.field	255,8			; maxContStaticOut12x12[95] @ 760
+	.field	255,8			; maxContStaticOut12x12[96] @ 768
+	.field	255,8			; maxContStaticOut12x12[97] @ 776
+	.field	255,8			; maxContStaticOut12x12[98] @ 784
+	.field	255,8			; maxContStaticOut12x12[99] @ 792
+	.field	255,8			; maxContStaticOut12x12[100] @ 800
+	.field	255,8			; maxContStaticOut12x12[101] @ 808
+	.field	255,8			; maxContStaticOut12x12[102] @ 816
+	.field	255,8			; maxContStaticOut12x12[103] @ 824
+	.field	255,8			; maxContStaticOut12x12[104] @ 832
+	.field	255,8			; maxContStaticOut12x12[105] @ 840
+	.field	255,8			; maxContStaticOut12x12[106] @ 848
+	.field	255,8			; maxContStaticOut12x12[107] @ 856
+	.field	255,8			; maxContStaticOut12x12[108] @ 864
+	.field	255,8			; maxContStaticOut12x12[109] @ 872
+	.field	255,8			; maxContStaticOut12x12[110] @ 880
+	.field	255,8			; maxContStaticOut12x12[111] @ 888
+	.field	255,8			; maxContStaticOut12x12[112] @ 896
+	.field	255,8			; maxContStaticOut12x12[113] @ 904
+	.field	255,8			; maxContStaticOut12x12[114] @ 912
+	.field	255,8			; maxContStaticOut12x12[115] @ 920
+	.field	255,8			; maxContStaticOut12x12[116] @ 928
+	.field	255,8			; maxContStaticOut12x12[117] @ 936
+	.field	255,8			; maxContStaticOut12x12[118] @ 944
+	.field	255,8			; maxContStaticOut12x12[119] @ 952
+	.field	255,8			; maxContStaticOut12x12[120] @ 960
+	.field	255,8			; maxContStaticOut12x12[121] @ 968
+	.field	255,8			; maxContStaticOut12x12[122] @ 976
+	.field	255,8			; maxContStaticOut12x12[123] @ 984
+	.field	255,8			; maxContStaticOut12x12[124] @ 992
+	.field	255,8			; maxContStaticOut12x12[125] @ 1000
+	.field	255,8			; maxContStaticOut12x12[126] @ 1008
+	.field	255,8			; maxContStaticOut12x12[127] @ 1016
+	.field	255,8			; maxContStaticOut12x12[128] @ 1024
+	.field	255,8			; maxContStaticOut12x12[129] @ 1032
+	.field	255,8			; maxContStaticOut12x12[130] @ 1040
+	.field	255,8			; maxContStaticOut12x12[131] @ 1048
+	.field	255,8			; maxContStaticOut12x12[132] @ 1056
+	.field	255,8			; maxContStaticOut12x12[133] @ 1064
+	.field	255,8			; maxContStaticOut12x12[134] @ 1072
+	.field	255,8			; maxContStaticOut12x12[135] @ 1080
+	.field	255,8			; maxContStaticOut12x12[136] @ 1088
+	.field	255,8			; maxContStaticOut12x12[137] @ 1096
+	.field	255,8			; maxContStaticOut12x12[138] @ 1104
+	.field	255,8			; maxContStaticOut12x12[139] @ 1112
+	.field	255,8			; maxContStaticOut12x12[140] @ 1120
+	.field	255,8			; maxContStaticOut12x12[141] @ 1128
+	.field	255,8			; maxContStaticOut12x12[142] @ 1136
+	.field	255,8			; maxContStaticOut12x12[143] @ 1144
+
+$C$DW$2	.dwtag  DW_TAG_variable, DW_AT_name("maxContStaticOut12x12")
+	.dwattr $C$DW$2, DW_AT_TI_symbol_name("maxContStaticOut12x12")
+	.dwattr $C$DW$2, DW_AT_type(*$C$DW$T$63)
+	.dwattr $C$DW$2, DW_AT_location[DW_OP_addr maxContStaticOut12x12]
+	.dwattr $C$DW$2, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$2, DW_AT_decl_line(0x2e)
+	.dwattr $C$DW$2, DW_AT_decl_column(0x13)
+	.sect	".fardata:meanContStaticOut12x12", RW
+	.clink
+	.align	8
+	.elfsym	meanContStaticOut12x12,SYM_SIZE(288)
+meanContStaticOut12x12:
+	.field	6375,16			; meanContStaticOut12x12[0] @ 0
+	.field	6375,16			; meanContStaticOut12x12[1] @ 16
+	.field	6375,16			; meanContStaticOut12x12[2] @ 32
+	.field	6375,16			; meanContStaticOut12x12[3] @ 48
+	.field	6375,16			; meanContStaticOut12x12[4] @ 64
+	.field	6375,16			; meanContStaticOut12x12[5] @ 80
+	.field	6375,16			; meanContStaticOut12x12[6] @ 96
+	.field	6375,16			; meanContStaticOut12x12[7] @ 112
+	.field	6375,16			; meanContStaticOut12x12[8] @ 128
+	.field	6375,16			; meanContStaticOut12x12[9] @ 144
+	.field	6375,16			; meanContStaticOut12x12[10] @ 160
+	.field	6375,16			; meanContStaticOut12x12[11] @ 176
+	.field	6375,16			; meanContStaticOut12x12[12] @ 192
+	.field	6375,16			; meanContStaticOut12x12[13] @ 208
+	.field	6375,16			; meanContStaticOut12x12[14] @ 224
+	.field	6375,16			; meanContStaticOut12x12[15] @ 240
+	.field	6375,16			; meanContStaticOut12x12[16] @ 256
+	.field	6375,16			; meanContStaticOut12x12[17] @ 272
+	.field	6375,16			; meanContStaticOut12x12[18] @ 288
+	.field	6375,16			; meanContStaticOut12x12[19] @ 304
+	.field	6375,16			; meanContStaticOut12x12[20] @ 320
+	.field	6375,16			; meanContStaticOut12x12[21] @ 336
+	.field	6375,16			; meanContStaticOut12x12[22] @ 352
+	.field	6375,16			; meanContStaticOut12x12[23] @ 368
+	.field	6375,16			; meanContStaticOut12x12[24] @ 384
+	.field	6375,16			; meanContStaticOut12x12[25] @ 400
+	.field	6375,16			; meanContStaticOut12x12[26] @ 416
+	.field	6375,16			; meanContStaticOut12x12[27] @ 432
+	.field	6375,16			; meanContStaticOut12x12[28] @ 448
+	.field	6375,16			; meanContStaticOut12x12[29] @ 464
+	.field	6375,16			; meanContStaticOut12x12[30] @ 480
+	.field	6375,16			; meanContStaticOut12x12[31] @ 496
+	.field	6375,16			; meanContStaticOut12x12[32] @ 512
+	.field	6375,16			; meanContStaticOut12x12[33] @ 528
+	.field	6375,16			; meanContStaticOut12x12[34] @ 544
+	.field	6375,16			; meanContStaticOut12x12[35] @ 560
+	.field	6375,16			; meanContStaticOut12x12[36] @ 576
+	.field	6375,16			; meanContStaticOut12x12[37] @ 592
+	.field	6375,16			; meanContStaticOut12x12[38] @ 608
+	.field	6375,16			; meanContStaticOut12x12[39] @ 624
+	.field	6375,16			; meanContStaticOut12x12[40] @ 640
+	.field	6375,16			; meanContStaticOut12x12[41] @ 656
+	.field	6375,16			; meanContStaticOut12x12[42] @ 672
+	.field	6375,16			; meanContStaticOut12x12[43] @ 688
+	.field	6375,16			; meanContStaticOut12x12[44] @ 704
+	.field	6375,16			; meanContStaticOut12x12[45] @ 720
+	.field	6375,16			; meanContStaticOut12x12[46] @ 736
+	.field	6375,16			; meanContStaticOut12x12[47] @ 752
+	.field	6375,16			; meanContStaticOut12x12[48] @ 768
+	.field	6375,16			; meanContStaticOut12x12[49] @ 784
+	.field	6375,16			; meanContStaticOut12x12[50] @ 800
+	.field	6375,16			; meanContStaticOut12x12[51] @ 816
+	.field	6375,16			; meanContStaticOut12x12[52] @ 832
+	.field	6375,16			; meanContStaticOut12x12[53] @ 848
+	.field	6375,16			; meanContStaticOut12x12[54] @ 864
+	.field	6375,16			; meanContStaticOut12x12[55] @ 880
+	.field	6375,16			; meanContStaticOut12x12[56] @ 896
+	.field	6375,16			; meanContStaticOut12x12[57] @ 912
+	.field	6375,16			; meanContStaticOut12x12[58] @ 928
+	.field	6375,16			; meanContStaticOut12x12[59] @ 944
+	.field	6375,16			; meanContStaticOut12x12[60] @ 960
+	.field	6375,16			; meanContStaticOut12x12[61] @ 976
+	.field	6375,16			; meanContStaticOut12x12[62] @ 992
+	.field	6375,16			; meanContStaticOut12x12[63] @ 1008
+	.field	6375,16			; meanContStaticOut12x12[64] @ 1024
+	.field	6375,16			; meanContStaticOut12x12[65] @ 1040
+	.field	6375,16			; meanContStaticOut12x12[66] @ 1056
+	.field	6375,16			; meanContStaticOut12x12[67] @ 1072
+	.field	6375,16			; meanContStaticOut12x12[68] @ 1088
+	.field	6375,16			; meanContStaticOut12x12[69] @ 1104
+	.field	6375,16			; meanContStaticOut12x12[70] @ 1120
+	.field	6375,16			; meanContStaticOut12x12[71] @ 1136
+	.field	6375,16			; meanContStaticOut12x12[72] @ 1152
+	.field	6375,16			; meanContStaticOut12x12[73] @ 1168
+	.field	6375,16			; meanContStaticOut12x12[74] @ 1184
+	.field	6375,16			; meanContStaticOut12x12[75] @ 1200
+	.field	6375,16			; meanContStaticOut12x12[76] @ 1216
+	.field	6375,16			; meanContStaticOut12x12[77] @ 1232
+	.field	6375,16			; meanContStaticOut12x12[78] @ 1248
+	.field	6375,16			; meanContStaticOut12x12[79] @ 1264
+	.field	6375,16			; meanContStaticOut12x12[80] @ 1280
+	.field	6375,16			; meanContStaticOut12x12[81] @ 1296
+	.field	6375,16			; meanContStaticOut12x12[82] @ 1312
+	.field	6375,16			; meanContStaticOut12x12[83] @ 1328
+	.field	6375,16			; meanContStaticOut12x12[84] @ 1344
+	.field	6375,16			; meanContStaticOut12x12[85] @ 1360
+	.field	6375,16			; meanContStaticOut12x12[86] @ 1376
+	.field	6375,16			; meanContStaticOut12x12[87] @ 1392
+	.field	6375,16			; meanContStaticOut12x12[88] @ 1408
+	.field	6375,16			; meanContStaticOut12x12[89] @ 1424
+	.field	6375,16			; meanContStaticOut12x12[90] @ 1440
+	.field	6375,16			; meanContStaticOut12x12[91] @ 1456
+	.field	6375,16			; meanContStaticOut12x12[92] @ 1472
+	.field	6375,16			; meanContStaticOut12x12[93] @ 1488
+	.field	6375,16			; meanContStaticOut12x12[94] @ 1504
+	.field	6375,16			; meanContStaticOut12x12[95] @ 1520
+	.field	6375,16			; meanContStaticOut12x12[96] @ 1536
+	.field	6375,16			; meanContStaticOut12x12[97] @ 1552
+	.field	6375,16			; meanContStaticOut12x12[98] @ 1568
+	.field	6375,16			; meanContStaticOut12x12[99] @ 1584
+	.field	6375,16			; meanContStaticOut12x12[100] @ 1600
+	.field	6375,16			; meanContStaticOut12x12[101] @ 1616
+	.field	6375,16			; meanContStaticOut12x12[102] @ 1632
+	.field	6375,16			; meanContStaticOut12x12[103] @ 1648
+	.field	6375,16			; meanContStaticOut12x12[104] @ 1664
+	.field	6375,16			; meanContStaticOut12x12[105] @ 1680
+	.field	6375,16			; meanContStaticOut12x12[106] @ 1696
+	.field	6375,16			; meanContStaticOut12x12[107] @ 1712
+	.field	6375,16			; meanContStaticOut12x12[108] @ 1728
+	.field	6375,16			; meanContStaticOut12x12[109] @ 1744
+	.field	6375,16			; meanContStaticOut12x12[110] @ 1760
+	.field	6375,16			; meanContStaticOut12x12[111] @ 1776
+	.field	6375,16			; meanContStaticOut12x12[112] @ 1792
+	.field	6375,16			; meanContStaticOut12x12[113] @ 1808
+	.field	6375,16			; meanContStaticOut12x12[114] @ 1824
+	.field	6375,16			; meanContStaticOut12x12[115] @ 1840
+	.field	6375,16			; meanContStaticOut12x12[116] @ 1856
+	.field	6375,16			; meanContStaticOut12x12[117] @ 1872
+	.field	6375,16			; meanContStaticOut12x12[118] @ 1888
+	.field	6375,16			; meanContStaticOut12x12[119] @ 1904
+	.field	6375,16			; meanContStaticOut12x12[120] @ 1920
+	.field	6375,16			; meanContStaticOut12x12[121] @ 1936
+	.field	6375,16			; meanContStaticOut12x12[122] @ 1952
+	.field	6375,16			; meanContStaticOut12x12[123] @ 1968
+	.field	6375,16			; meanContStaticOut12x12[124] @ 1984
+	.field	6375,16			; meanContStaticOut12x12[125] @ 2000
+	.field	6375,16			; meanContStaticOut12x12[126] @ 2016
+	.field	6375,16			; meanContStaticOut12x12[127] @ 2032
+	.field	6375,16			; meanContStaticOut12x12[128] @ 2048
+	.field	6375,16			; meanContStaticOut12x12[129] @ 2064
+	.field	6375,16			; meanContStaticOut12x12[130] @ 2080
+	.field	6375,16			; meanContStaticOut12x12[131] @ 2096
+	.field	6375,16			; meanContStaticOut12x12[132] @ 2112
+	.field	6375,16			; meanContStaticOut12x12[133] @ 2128
+	.field	6375,16			; meanContStaticOut12x12[134] @ 2144
+	.field	6375,16			; meanContStaticOut12x12[135] @ 2160
+	.field	6375,16			; meanContStaticOut12x12[136] @ 2176
+	.field	6375,16			; meanContStaticOut12x12[137] @ 2192
+	.field	6375,16			; meanContStaticOut12x12[138] @ 2208
+	.field	6375,16			; meanContStaticOut12x12[139] @ 2224
+	.field	6375,16			; meanContStaticOut12x12[140] @ 2240
+	.field	6375,16			; meanContStaticOut12x12[141] @ 2256
+	.field	6375,16			; meanContStaticOut12x12[142] @ 2272
+	.field	6375,16			; meanContStaticOut12x12[143] @ 2288
+
+$C$DW$3	.dwtag  DW_TAG_variable, DW_AT_name("meanContStaticOut12x12")
+	.dwattr $C$DW$3, DW_AT_TI_symbol_name("meanContStaticOut12x12")
+	.dwattr $C$DW$3, DW_AT_type(*$C$DW$T$68)
+	.dwattr $C$DW$3, DW_AT_location[DW_OP_addr meanContStaticOut12x12]
+	.dwattr $C$DW$3, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$3, DW_AT_decl_line(0x3d)
+	.dwattr $C$DW$3, DW_AT_decl_column(0x14)
+	.sect	".fardata:varContStaticOut12x12", RW
+	.clink
+	.align	8
+	.elfsym	varContStaticOut12x12,SYM_SIZE(576)
+varContStaticOut12x12:
+	.field	0,32			; varContStaticOut12x12[0] @ 0
+	.field	0,32			; varContStaticOut12x12[1] @ 32
+	.field	0,32			; varContStaticOut12x12[2] @ 64
+	.field	0,32			; varContStaticOut12x12[3] @ 96
+	.field	0,32			; varContStaticOut12x12[4] @ 128
+	.field	0,32			; varContStaticOut12x12[5] @ 160
+	.field	0,32			; varContStaticOut12x12[6] @ 192
+	.field	0,32			; varContStaticOut12x12[7] @ 224
+	.field	0,32			; varContStaticOut12x12[8] @ 256
+	.field	0,32			; varContStaticOut12x12[9] @ 288
+	.field	0,32			; varContStaticOut12x12[10] @ 320
+	.field	0,32			; varContStaticOut12x12[11] @ 352
+	.field	0,32			; varContStaticOut12x12[12] @ 384
+	.field	0,32			; varContStaticOut12x12[13] @ 416
+	.field	0,32			; varContStaticOut12x12[14] @ 448
+	.field	0,32			; varContStaticOut12x12[15] @ 480
+	.field	0,32			; varContStaticOut12x12[16] @ 512
+	.field	0,32			; varContStaticOut12x12[17] @ 544
+	.field	0,32			; varContStaticOut12x12[18] @ 576
+	.field	0,32			; varContStaticOut12x12[19] @ 608
+	.field	0,32			; varContStaticOut12x12[20] @ 640
+	.field	0,32			; varContStaticOut12x12[21] @ 672
+	.field	0,32			; varContStaticOut12x12[22] @ 704
+	.field	0,32			; varContStaticOut12x12[23] @ 736
+	.field	0,32			; varContStaticOut12x12[24] @ 768
+	.field	0,32			; varContStaticOut12x12[25] @ 800
+	.field	0,32			; varContStaticOut12x12[26] @ 832
+	.field	0,32			; varContStaticOut12x12[27] @ 864
+	.field	0,32			; varContStaticOut12x12[28] @ 896
+	.field	0,32			; varContStaticOut12x12[29] @ 928
+	.field	0,32			; varContStaticOut12x12[30] @ 960
+	.field	0,32			; varContStaticOut12x12[31] @ 992
+	.field	0,32			; varContStaticOut12x12[32] @ 1024
+	.field	0,32			; varContStaticOut12x12[33] @ 1056
+	.field	0,32			; varContStaticOut12x12[34] @ 1088
+	.field	0,32			; varContStaticOut12x12[35] @ 1120
+	.field	0,32			; varContStaticOut12x12[36] @ 1152
+	.field	0,32			; varContStaticOut12x12[37] @ 1184
+	.field	0,32			; varContStaticOut12x12[38] @ 1216
+	.field	0,32			; varContStaticOut12x12[39] @ 1248
+	.field	0,32			; varContStaticOut12x12[40] @ 1280
+	.field	0,32			; varContStaticOut12x12[41] @ 1312
+	.field	0,32			; varContStaticOut12x12[42] @ 1344
+	.field	0,32			; varContStaticOut12x12[43] @ 1376
+	.field	0,32			; varContStaticOut12x12[44] @ 1408
+	.field	0,32			; varContStaticOut12x12[45] @ 1440
+	.field	0,32			; varContStaticOut12x12[46] @ 1472
+	.field	0,32			; varContStaticOut12x12[47] @ 1504
+	.field	0,32			; varContStaticOut12x12[48] @ 1536
+	.field	0,32			; varContStaticOut12x12[49] @ 1568
+	.field	0,32			; varContStaticOut12x12[50] @ 1600
+	.field	0,32			; varContStaticOut12x12[51] @ 1632
+	.field	0,32			; varContStaticOut12x12[52] @ 1664
+	.field	0,32			; varContStaticOut12x12[53] @ 1696
+	.field	0,32			; varContStaticOut12x12[54] @ 1728
+	.field	0,32			; varContStaticOut12x12[55] @ 1760
+	.field	0,32			; varContStaticOut12x12[56] @ 1792
+	.field	0,32			; varContStaticOut12x12[57] @ 1824
+	.field	0,32			; varContStaticOut12x12[58] @ 1856
+	.field	0,32			; varContStaticOut12x12[59] @ 1888
+	.field	0,32			; varContStaticOut12x12[60] @ 1920
+	.field	0,32			; varContStaticOut12x12[61] @ 1952
+	.field	0,32			; varContStaticOut12x12[62] @ 1984
+	.field	0,32			; varContStaticOut12x12[63] @ 2016
+	.field	0,32			; varContStaticOut12x12[64] @ 2048
+	.field	0,32			; varContStaticOut12x12[65] @ 2080
+	.field	0,32			; varContStaticOut12x12[66] @ 2112
+	.field	0,32			; varContStaticOut12x12[67] @ 2144
+	.field	0,32			; varContStaticOut12x12[68] @ 2176
+	.field	0,32			; varContStaticOut12x12[69] @ 2208
+	.field	0,32			; varContStaticOut12x12[70] @ 2240
+	.field	0,32			; varContStaticOut12x12[71] @ 2272
+	.field	0,32			; varContStaticOut12x12[72] @ 2304
+	.field	0,32			; varContStaticOut12x12[73] @ 2336
+	.field	0,32			; varContStaticOut12x12[74] @ 2368
+	.field	0,32			; varContStaticOut12x12[75] @ 2400
+	.field	0,32			; varContStaticOut12x12[76] @ 2432
+	.field	0,32			; varContStaticOut12x12[77] @ 2464
+	.field	0,32			; varContStaticOut12x12[78] @ 2496
+	.field	0,32			; varContStaticOut12x12[79] @ 2528
+	.field	0,32			; varContStaticOut12x12[80] @ 2560
+	.field	0,32			; varContStaticOut12x12[81] @ 2592
+	.field	0,32			; varContStaticOut12x12[82] @ 2624
+	.field	0,32			; varContStaticOut12x12[83] @ 2656
+	.field	0,32			; varContStaticOut12x12[84] @ 2688
+	.field	0,32			; varContStaticOut12x12[85] @ 2720
+	.field	0,32			; varContStaticOut12x12[86] @ 2752
+	.field	0,32			; varContStaticOut12x12[87] @ 2784
+	.field	0,32			; varContStaticOut12x12[88] @ 2816
+	.field	0,32			; varContStaticOut12x12[89] @ 2848
+	.field	0,32			; varContStaticOut12x12[90] @ 2880
+	.field	0,32			; varContStaticOut12x12[91] @ 2912
+	.field	0,32			; varContStaticOut12x12[92] @ 2944
+	.field	0,32			; varContStaticOut12x12[93] @ 2976
+	.field	0,32			; varContStaticOut12x12[94] @ 3008
+	.field	0,32			; varContStaticOut12x12[95] @ 3040
+	.field	0,32			; varContStaticOut12x12[96] @ 3072
+	.field	0,32			; varContStaticOut12x12[97] @ 3104
+	.field	0,32			; varContStaticOut12x12[98] @ 3136
+	.field	0,32			; varContStaticOut12x12[99] @ 3168
+	.field	0,32			; varContStaticOut12x12[100] @ 3200
+	.field	0,32			; varContStaticOut12x12[101] @ 3232
+	.field	0,32			; varContStaticOut12x12[102] @ 3264
+	.field	0,32			; varContStaticOut12x12[103] @ 3296
+	.field	0,32			; varContStaticOut12x12[104] @ 3328
+	.field	0,32			; varContStaticOut12x12[105] @ 3360
+	.field	0,32			; varContStaticOut12x12[106] @ 3392
+	.field	0,32			; varContStaticOut12x12[107] @ 3424
+	.field	0,32			; varContStaticOut12x12[108] @ 3456
+	.field	0,32			; varContStaticOut12x12[109] @ 3488
+	.field	0,32			; varContStaticOut12x12[110] @ 3520
+	.field	0,32			; varContStaticOut12x12[111] @ 3552
+	.field	0,32			; varContStaticOut12x12[112] @ 3584
+	.field	0,32			; varContStaticOut12x12[113] @ 3616
+	.field	0,32			; varContStaticOut12x12[114] @ 3648
+	.field	0,32			; varContStaticOut12x12[115] @ 3680
+	.field	0,32			; varContStaticOut12x12[116] @ 3712
+	.field	0,32			; varContStaticOut12x12[117] @ 3744
+	.field	0,32			; varContStaticOut12x12[118] @ 3776
+	.field	0,32			; varContStaticOut12x12[119] @ 3808
+	.field	0,32			; varContStaticOut12x12[120] @ 3840
+	.field	0,32			; varContStaticOut12x12[121] @ 3872
+	.field	0,32			; varContStaticOut12x12[122] @ 3904
+	.field	0,32			; varContStaticOut12x12[123] @ 3936
+	.field	0,32			; varContStaticOut12x12[124] @ 3968
+	.field	0,32			; varContStaticOut12x12[125] @ 4000
+	.field	0,32			; varContStaticOut12x12[126] @ 4032
+	.field	0,32			; varContStaticOut12x12[127] @ 4064
+	.field	0,32			; varContStaticOut12x12[128] @ 4096
+	.field	0,32			; varContStaticOut12x12[129] @ 4128
+	.field	0,32			; varContStaticOut12x12[130] @ 4160
+	.field	0,32			; varContStaticOut12x12[131] @ 4192
+	.field	0,32			; varContStaticOut12x12[132] @ 4224
+	.field	0,32			; varContStaticOut12x12[133] @ 4256
+	.field	0,32			; varContStaticOut12x12[134] @ 4288
+	.field	0,32			; varContStaticOut12x12[135] @ 4320
+	.field	0,32			; varContStaticOut12x12[136] @ 4352
+	.field	0,32			; varContStaticOut12x12[137] @ 4384
+	.field	0,32			; varContStaticOut12x12[138] @ 4416
+	.field	0,32			; varContStaticOut12x12[139] @ 4448
+	.field	0,32			; varContStaticOut12x12[140] @ 4480
+	.field	0,32			; varContStaticOut12x12[141] @ 4512
+	.field	0,32			; varContStaticOut12x12[142] @ 4544
+	.field	0,32			; varContStaticOut12x12[143] @ 4576
+
+$C$DW$4	.dwtag  DW_TAG_variable, DW_AT_name("varContStaticOut12x12")
+	.dwattr $C$DW$4, DW_AT_TI_symbol_name("varContStaticOut12x12")
+	.dwattr $C$DW$4, DW_AT_type(*$C$DW$T$82)
+	.dwattr $C$DW$4, DW_AT_location[DW_OP_addr varContStaticOut12x12]
+	.dwattr $C$DW$4, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$4, DW_AT_decl_line(0x4c)
+	.dwattr $C$DW$4, DW_AT_decl_column(0x14)
+	.sect	".fardata:testParams", RW
+	.clink
+	.align	8
+	.elfsym	testParams,SYM_SIZE(864)
+testParams:
+	.field	0,8			; testParams[0].testPattern @ 0
+	.field	0,24
+	.field	0,32			; testParams[0].staticIn @ 32
+	.field	0,32			; testParams[0].staticOutMin @ 64
+	.field	0,32			; testParams[0].staticOutMax @ 96
+	.field	0,32			; testParams[0].staticOutMean @ 128
+	.field	0,32			; testParams[0].staticOutVar @ 160
+	.field	0,8			; testParams[0].mode @ 192
+	.field	0,8
+	.field	64,16			; testParams[0].imageWidth @ 208
+	.field	64,16			; testParams[0].imageHeight @ 224
+	.field	70,16			; testParams[0].imagePitch @ 240
+	.field	1,16			; testParams[0].statBlockWidth @ 256
+	.field	1,16			; testParams[0].statBlockHeight @ 272
+	.field	1,8			; testParams[1].testPattern @ 288
+	.field	0,24
+	.field	0,32			; testParams[1].staticIn @ 320
+	.field	0,32			; testParams[1].staticOutMin @ 352
+	.field	0,32			; testParams[1].staticOutMax @ 384
+	.field	0,32			; testParams[1].staticOutMean @ 416
+	.field	0,32			; testParams[1].staticOutVar @ 448
+	.field	1,8			; testParams[1].mode @ 480
+	.field	0,8
+	.field	64,16			; testParams[1].imageWidth @ 496
+	.field	64,16			; testParams[1].imageHeight @ 512
+	.field	70,16			; testParams[1].imagePitch @ 528
+	.field	1,16			; testParams[1].statBlockWidth @ 544
+	.field	1,16			; testParams[1].statBlockHeight @ 560
+	.field	2,8			; testParams[2].testPattern @ 576
+	.field	0,24
+	.field	0,32			; testParams[2].staticIn @ 608
+	.field	0,32			; testParams[2].staticOutMin @ 640
+	.field	0,32			; testParams[2].staticOutMax @ 672
+	.field	0,32			; testParams[2].staticOutMean @ 704
+	.field	0,32			; testParams[2].staticOutVar @ 736
+	.field	0,8			; testParams[2].mode @ 768
+	.field	0,8
+	.field	64,16			; testParams[2].imageWidth @ 784
+	.field	64,16			; testParams[2].imageHeight @ 800
+	.field	64,16			; testParams[2].imagePitch @ 816
+	.field	5,16			; testParams[2].statBlockWidth @ 832
+	.field	5,16			; testParams[2].statBlockHeight @ 848
+	.field	0,8			; testParams[3].testPattern @ 864
+	.field	0,24
+	.field	0,32			; testParams[3].staticIn @ 896
+	.field	minContStaticOut12x12,32		; testParams[3].staticOutMin @ 928
+	.field	maxContStaticOut12x12,32		; testParams[3].staticOutMax @ 960
+	.field	meanContStaticOut12x12,32		; testParams[3].staticOutMean @ 992
+	.field	varContStaticOut12x12,32		; testParams[3].staticOutVar @ 1024
+	.field	1,8			; testParams[3].mode @ 1056
+	.field	0,8
+	.field	64,16			; testParams[3].imageWidth @ 1072
+	.field	64,16			; testParams[3].imageHeight @ 1088
+	.field	72,16			; testParams[3].imagePitch @ 1104
+	.field	5,16			; testParams[3].statBlockWidth @ 1120
+	.field	5,16			; testParams[3].statBlockHeight @ 1136
+	.field	1,8			; testParams[4].testPattern @ 1152
+	.field	0,24
+	.field	0,32			; testParams[4].staticIn @ 1184
+	.field	0,32			; testParams[4].staticOutMin @ 1216
+	.field	0,32			; testParams[4].staticOutMax @ 1248
+	.field	0,32			; testParams[4].staticOutMean @ 1280
+	.field	0,32			; testParams[4].staticOutVar @ 1312
+	.field	0,8			; testParams[4].mode @ 1344
+	.field	0,8
+	.field	64,16			; testParams[4].imageWidth @ 1360
+	.field	64,16			; testParams[4].imageHeight @ 1376
+	.field	64,16			; testParams[4].imagePitch @ 1392
+	.field	3,16			; testParams[4].statBlockWidth @ 1408
+	.field	5,16			; testParams[4].statBlockHeight @ 1424
+	.field	3,8			; testParams[5].testPattern @ 1440
+	.field	0,24
+	.field	0,32			; testParams[5].staticIn @ 1472
+	.field	0,32			; testParams[5].staticOutMin @ 1504
+	.field	0,32			; testParams[5].staticOutMax @ 1536
+	.field	0,32			; testParams[5].staticOutMean @ 1568
+	.field	0,32			; testParams[5].staticOutVar @ 1600
+	.field	0,8			; testParams[5].mode @ 1632
+	.field	0,8
+	.field	64,16			; testParams[5].imageWidth @ 1648
+	.field	64,16			; testParams[5].imageHeight @ 1664
+	.field	64,16			; testParams[5].imagePitch @ 1680
+	.field	5,16			; testParams[5].statBlockWidth @ 1696
+	.field	11,16			; testParams[5].statBlockHeight @ 1712
+	.field	0,8			; testParams[6].testPattern @ 1728
+	.field	0,24
+	.field	0,32			; testParams[6].staticIn @ 1760
+	.field	0,32			; testParams[6].staticOutMin @ 1792
+	.field	0,32			; testParams[6].staticOutMax @ 1824
+	.field	0,32			; testParams[6].staticOutMean @ 1856
+	.field	0,32			; testParams[6].staticOutVar @ 1888
+	.field	0,8			; testParams[6].mode @ 1920
+	.field	0,8
+	.field	128,16			; testParams[6].imageWidth @ 1936
+	.field	128,16			; testParams[6].imageHeight @ 1952
+	.field	128,16			; testParams[6].imagePitch @ 1968
+	.field	1,16			; testParams[6].statBlockWidth @ 1984
+	.field	3,16			; testParams[6].statBlockHeight @ 2000
+	.field	1,8			; testParams[7].testPattern @ 2016
+	.field	0,24
+	.field	0,32			; testParams[7].staticIn @ 2048
+	.field	0,32			; testParams[7].staticOutMin @ 2080
+	.field	0,32			; testParams[7].staticOutMax @ 2112
+	.field	0,32			; testParams[7].staticOutMean @ 2144
+	.field	0,32			; testParams[7].staticOutVar @ 2176
+	.field	0,8			; testParams[7].mode @ 2208
+	.field	0,8
+	.field	128,16			; testParams[7].imageWidth @ 2224
+	.field	256,16			; testParams[7].imageHeight @ 2240
+	.field	128,16			; testParams[7].imagePitch @ 2256
+	.field	3,16			; testParams[7].statBlockWidth @ 2272
+	.field	1,16			; testParams[7].statBlockHeight @ 2288
+	.field	3,8			; testParams[8].testPattern @ 2304
+	.field	0,24
+	.field	0,32			; testParams[8].staticIn @ 2336
+	.field	0,32			; testParams[8].staticOutMin @ 2368
+	.field	0,32			; testParams[8].staticOutMax @ 2400
+	.field	0,32			; testParams[8].staticOutMean @ 2432
+	.field	0,32			; testParams[8].staticOutVar @ 2464
+	.field	0,8			; testParams[8].mode @ 2496
+	.field	0,8
+	.field	128,16			; testParams[8].imageWidth @ 2512
+	.field	256,16			; testParams[8].imageHeight @ 2528
+	.field	130,16			; testParams[8].imagePitch @ 2544
+	.field	1,16			; testParams[8].statBlockWidth @ 2560
+	.field	32,16			; testParams[8].statBlockHeight @ 2576
+	.field	0,8			; testParams[9].testPattern @ 2592
+	.field	0,24
+	.field	0,32			; testParams[9].staticIn @ 2624
+	.field	0,32			; testParams[9].staticOutMin @ 2656
+	.field	0,32			; testParams[9].staticOutMax @ 2688
+	.field	0,32			; testParams[9].staticOutMean @ 2720
+	.field	0,32			; testParams[9].staticOutVar @ 2752
+	.field	1,8			; testParams[9].mode @ 2784
+	.field	0,8
+	.field	128,16			; testParams[9].imageWidth @ 2800
+	.field	128,16			; testParams[9].imageHeight @ 2816
+	.field	128,16			; testParams[9].imagePitch @ 2832
+	.field	1,16			; testParams[9].statBlockWidth @ 2848
+	.field	32,16			; testParams[9].statBlockHeight @ 2864
+	.field	1,8			; testParams[10].testPattern @ 2880
+	.field	0,24
+	.field	0,32			; testParams[10].staticIn @ 2912
+	.field	0,32			; testParams[10].staticOutMin @ 2944
+	.field	0,32			; testParams[10].staticOutMax @ 2976
+	.field	0,32			; testParams[10].staticOutMean @ 3008
+	.field	0,32			; testParams[10].staticOutVar @ 3040
+	.field	0,8			; testParams[10].mode @ 3072
+	.field	0,8
+	.field	128,16			; testParams[10].imageWidth @ 3088
+	.field	256,16			; testParams[10].imageHeight @ 3104
+	.field	128,16			; testParams[10].imagePitch @ 3120
+	.field	32,16			; testParams[10].statBlockWidth @ 3136
+	.field	1,16			; testParams[10].statBlockHeight @ 3152
+	.field	3,8			; testParams[11].testPattern @ 3168
+	.field	0,24
+	.field	0,32			; testParams[11].staticIn @ 3200
+	.field	0,32			; testParams[11].staticOutMin @ 3232
+	.field	0,32			; testParams[11].staticOutMax @ 3264
+	.field	0,32			; testParams[11].staticOutMean @ 3296
+	.field	0,32			; testParams[11].staticOutVar @ 3328
+	.field	1,8			; testParams[11].mode @ 3360
+	.field	0,8
+	.field	128,16			; testParams[11].imageWidth @ 3376
+	.field	128,16			; testParams[11].imageHeight @ 3392
+	.field	128,16			; testParams[11].imagePitch @ 3408
+	.field	32,16			; testParams[11].statBlockWidth @ 3424
+	.field	1,16			; testParams[11].statBlockHeight @ 3440
+	.field	0,8			; testParams[12].testPattern @ 3456
+	.field	0,24
+	.field	0,32			; testParams[12].staticIn @ 3488
+	.field	0,32			; testParams[12].staticOutMin @ 3520
+	.field	0,32			; testParams[12].staticOutMax @ 3552
+	.field	0,32			; testParams[12].staticOutMean @ 3584
+	.field	0,32			; testParams[12].staticOutVar @ 3616
+	.field	0,8			; testParams[12].mode @ 3648
+	.field	0,8
+	.field	320,16			; testParams[12].imageWidth @ 3664
+	.field	240,16			; testParams[12].imageHeight @ 3680
+	.field	320,16			; testParams[12].imagePitch @ 3696
+	.field	21,16			; testParams[12].statBlockWidth @ 3712
+	.field	11,16			; testParams[12].statBlockHeight @ 3728
+	.field	1,8			; testParams[13].testPattern @ 3744
+	.field	0,24
+	.field	0,32			; testParams[13].staticIn @ 3776
+	.field	0,32			; testParams[13].staticOutMin @ 3808
+	.field	0,32			; testParams[13].staticOutMax @ 3840
+	.field	0,32			; testParams[13].staticOutMean @ 3872
+	.field	0,32			; testParams[13].staticOutVar @ 3904
+	.field	1,8			; testParams[13].mode @ 3936
+	.field	0,8
+	.field	320,16			; testParams[13].imageWidth @ 3952
+	.field	240,16			; testParams[13].imageHeight @ 3968
+	.field	320,16			; testParams[13].imagePitch @ 3984
+	.field	21,16			; testParams[13].statBlockWidth @ 4000
+	.field	11,16			; testParams[13].statBlockHeight @ 4016
+	.field	2,8			; testParams[14].testPattern @ 4032
+	.field	0,24
+	.field	0,32			; testParams[14].staticIn @ 4064
+	.field	0,32			; testParams[14].staticOutMin @ 4096
+	.field	0,32			; testParams[14].staticOutMax @ 4128
+	.field	0,32			; testParams[14].staticOutMean @ 4160
+	.field	0,32			; testParams[14].staticOutVar @ 4192
+	.field	0,8			; testParams[14].mode @ 4224
+	.field	0,8
+	.field	321,16			; testParams[14].imageWidth @ 4240
+	.field	241,16			; testParams[14].imageHeight @ 4256
+	.field	400,16			; testParams[14].imagePitch @ 4272
+	.field	3,16			; testParams[14].statBlockWidth @ 4288
+	.field	3,16			; testParams[14].statBlockHeight @ 4304
+	.field	0,8			; testParams[15].testPattern @ 4320
+	.field	0,24
+	.field	0,32			; testParams[15].staticIn @ 4352
+	.field	0,32			; testParams[15].staticOutMin @ 4384
+	.field	0,32			; testParams[15].staticOutMax @ 4416
+	.field	0,32			; testParams[15].staticOutMean @ 4448
+	.field	0,32			; testParams[15].staticOutVar @ 4480
+	.field	0,8			; testParams[15].mode @ 4512
+	.field	0,8
+	.field	322,16			; testParams[15].imageWidth @ 4528
+	.field	242,16			; testParams[15].imageHeight @ 4544
+	.field	322,16			; testParams[15].imagePitch @ 4560
+	.field	3,16			; testParams[15].statBlockWidth @ 4576
+	.field	3,16			; testParams[15].statBlockHeight @ 4592
+	.field	1,8			; testParams[16].testPattern @ 4608
+	.field	0,24
+	.field	0,32			; testParams[16].staticIn @ 4640
+	.field	0,32			; testParams[16].staticOutMin @ 4672
+	.field	0,32			; testParams[16].staticOutMax @ 4704
+	.field	0,32			; testParams[16].staticOutMean @ 4736
+	.field	0,32			; testParams[16].staticOutVar @ 4768
+	.field	0,8			; testParams[16].mode @ 4800
+	.field	0,8
+	.field	323,16			; testParams[16].imageWidth @ 4816
+	.field	243,16			; testParams[16].imageHeight @ 4832
+	.field	323,16			; testParams[16].imagePitch @ 4848
+	.field	3,16			; testParams[16].statBlockWidth @ 4864
+	.field	3,16			; testParams[16].statBlockHeight @ 4880
+	.field	3,8			; testParams[17].testPattern @ 4896
+	.field	0,24
+	.field	0,32			; testParams[17].staticIn @ 4928
+	.field	0,32			; testParams[17].staticOutMin @ 4960
+	.field	0,32			; testParams[17].staticOutMax @ 4992
+	.field	0,32			; testParams[17].staticOutMean @ 5024
+	.field	0,32			; testParams[17].staticOutVar @ 5056
+	.field	0,8			; testParams[17].mode @ 5088
+	.field	0,8
+	.field	324,16			; testParams[17].imageWidth @ 5104
+	.field	244,16			; testParams[17].imageHeight @ 5120
+	.field	324,16			; testParams[17].imagePitch @ 5136
+	.field	3,16			; testParams[17].statBlockWidth @ 5152
+	.field	3,16			; testParams[17].statBlockHeight @ 5168
+	.field	0,8			; testParams[18].testPattern @ 5184
+	.field	0,24
+	.field	0,32			; testParams[18].staticIn @ 5216
+	.field	0,32			; testParams[18].staticOutMin @ 5248
+	.field	0,32			; testParams[18].staticOutMax @ 5280
+	.field	0,32			; testParams[18].staticOutMean @ 5312
+	.field	0,32			; testParams[18].staticOutVar @ 5344
+	.field	0,8			; testParams[18].mode @ 5376
+	.field	0,8
+	.field	320,16			; testParams[18].imageWidth @ 5392
+	.field	240,16			; testParams[18].imageHeight @ 5408
+	.field	320,16			; testParams[18].imagePitch @ 5424
+	.field	3,16			; testParams[18].statBlockWidth @ 5440
+	.field	3,16			; testParams[18].statBlockHeight @ 5456
+	.field	1,8			; testParams[19].testPattern @ 5472
+	.field	0,24
+	.field	0,32			; testParams[19].staticIn @ 5504
+	.field	0,32			; testParams[19].staticOutMin @ 5536
+	.field	0,32			; testParams[19].staticOutMax @ 5568
+	.field	0,32			; testParams[19].staticOutMean @ 5600
+	.field	0,32			; testParams[19].staticOutVar @ 5632
+	.field	1,8			; testParams[19].mode @ 5664
+	.field	0,8
+	.field	320,16			; testParams[19].imageWidth @ 5680
+	.field	240,16			; testParams[19].imageHeight @ 5696
+	.field	320,16			; testParams[19].imagePitch @ 5712
+	.field	3,16			; testParams[19].statBlockWidth @ 5728
+	.field	3,16			; testParams[19].statBlockHeight @ 5744
+	.field	2,8			; testParams[20].testPattern @ 5760
+	.field	0,24
+	.field	0,32			; testParams[20].staticIn @ 5792
+	.field	0,32			; testParams[20].staticOutMin @ 5824
+	.field	0,32			; testParams[20].staticOutMax @ 5856
+	.field	0,32			; testParams[20].staticOutMean @ 5888
+	.field	0,32			; testParams[20].staticOutVar @ 5920
+	.field	0,8			; testParams[20].mode @ 5952
+	.field	0,8
+	.field	320,16			; testParams[20].imageWidth @ 5968
+	.field	240,16			; testParams[20].imageHeight @ 5984
+	.field	320,16			; testParams[20].imagePitch @ 6000
+	.field	1,16			; testParams[20].statBlockWidth @ 6016
+	.field	18,16			; testParams[20].statBlockHeight @ 6032
+	.field	0,8			; testParams[21].testPattern @ 6048
+	.field	0,24
+	.field	0,32			; testParams[21].staticIn @ 6080
+	.field	0,32			; testParams[21].staticOutMin @ 6112
+	.field	0,32			; testParams[21].staticOutMax @ 6144
+	.field	0,32			; testParams[21].staticOutMean @ 6176
+	.field	0,32			; testParams[21].staticOutVar @ 6208
+	.field	0,8			; testParams[21].mode @ 6240
+	.field	0,8
+	.field	320,16			; testParams[21].imageWidth @ 6256
+	.field	240,16			; testParams[21].imageHeight @ 6272
+	.field	320,16			; testParams[21].imagePitch @ 6288
+	.field	18,16			; testParams[21].statBlockWidth @ 6304
+	.field	1,16			; testParams[21].statBlockHeight @ 6320
+	.field	0,8			; testParams[22].testPattern @ 6336
+	.field	0,24
+	.field	0,32			; testParams[22].staticIn @ 6368
+	.field	0,32			; testParams[22].staticOutMin @ 6400
+	.field	0,32			; testParams[22].staticOutMax @ 6432
+	.field	0,32			; testParams[22].staticOutMean @ 6464
+	.field	0,32			; testParams[22].staticOutVar @ 6496
+	.field	0,8			; testParams[22].mode @ 6528
+	.field	0,8
+	.field	320,16			; testParams[22].imageWidth @ 6544
+	.field	240,16			; testParams[22].imageHeight @ 6560
+	.field	320,16			; testParams[22].imagePitch @ 6576
+	.field	16,16			; testParams[22].statBlockWidth @ 6592
+	.field	16,16			; testParams[22].statBlockHeight @ 6608
+	.field	0,8			; testParams[23].testPattern @ 6624
+	.field	0,24
+	.field	0,32			; testParams[23].staticIn @ 6656
+	.field	0,32			; testParams[23].staticOutMin @ 6688
+	.field	0,32			; testParams[23].staticOutMax @ 6720
+	.field	0,32			; testParams[23].staticOutMean @ 6752
+	.field	0,32			; testParams[23].staticOutVar @ 6784
+	.field	1,8			; testParams[23].mode @ 6816
+	.field	0,8
+	.field	320,16			; testParams[23].imageWidth @ 6832
+	.field	240,16			; testParams[23].imageHeight @ 6848
+	.field	320,16			; testParams[23].imagePitch @ 6864
+	.field	16,16			; testParams[23].statBlockWidth @ 6880
+	.field	16,16			; testParams[23].statBlockHeight @ 6896
+
+$C$DW$5	.dwtag  DW_TAG_variable, DW_AT_name("testParams")
+	.dwattr $C$DW$5, DW_AT_TI_symbol_name("testParams")
+	.dwattr $C$DW$5, DW_AT_type(*$C$DW$T$51)
+	.dwattr $C$DW$5, DW_AT_location[DW_OP_addr testParams]
+	.dwattr $C$DW$5, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$5, DW_AT_decl_line(0x5c)
+	.dwattr $C$DW$5, DW_AT_decl_column(0x28)
+;	C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\bin\opt6x.exe C:\\Users\\gtbldadm\\AppData\\Local\\Temp\\021803 C:\\Users\\gtbldadm\\AppData\\Local\\Temp\\021805 
+	.sect	".text"
+	.clink
+	.global	blockStatistics_getTestParams
+
+$C$DW$6	.dwtag  DW_TAG_subprogram, DW_AT_name("blockStatistics_getTestParams")
+	.dwattr $C$DW$6, DW_AT_low_pc(blockStatistics_getTestParams)
+	.dwattr $C$DW$6, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$6, DW_AT_TI_symbol_name("blockStatistics_getTestParams")
+	.dwattr $C$DW$6, DW_AT_external
+	.dwattr $C$DW$6, DW_AT_TI_begin_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$6, DW_AT_TI_begin_line(0x12e)
+	.dwattr $C$DW$6, DW_AT_TI_begin_column(0x06)
+	.dwattr $C$DW$6, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$6, DW_AT_decl_line(0x12e)
+	.dwattr $C$DW$6, DW_AT_decl_column(0x06)
+	.dwattr $C$DW$6, DW_AT_TI_max_frame_size(0x00)
+	.dwpsn	file "./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c",line 303,column 1,is_stmt,address blockStatistics_getTestParams,isa 0
+
+	.dwfde $C$DW$CIE, blockStatistics_getTestParams
+$C$DW$7	.dwtag  DW_TAG_formal_parameter, DW_AT_name("params")
+	.dwattr $C$DW$7, DW_AT_TI_symbol_name("params")
+	.dwattr $C$DW$7, DW_AT_type(*$C$DW$T$49)
+	.dwattr $C$DW$7, DW_AT_location[DW_OP_reg4]
+$C$DW$8	.dwtag  DW_TAG_formal_parameter, DW_AT_name("numTests")
+	.dwattr $C$DW$8, DW_AT_TI_symbol_name("numTests")
+	.dwattr $C$DW$8, DW_AT_type(*$C$DW$T$59)
+	.dwattr $C$DW$8, DW_AT_location[DW_OP_reg20]
+;----------------------------------------------------------------------
+; 302 | void blockStatistics_getTestParams(blockStatistics_testParams_t * *para
+;     | ms, int32_t *numTests)                                                 
+; 304 | *params = testParams;                                                  
+; 305 | *numTests = sizeof(testParams) / sizeof(blockStatistics_testParams_t); 
+;----------------------------------------------------------------------
+
+;******************************************************************************
+;* FUNCTION NAME: blockStatistics_getTestParams                               *
+;*                                                                            *
+;*   Regs Modified     : A3,B5                                                *
+;*   Regs Used         : A3,A4,B3,B4,B5                                       *
+;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                    *
+;******************************************************************************
+
+;******************************************************************************
+;*                                                                            *
+;* Using -g (debug) with optimization (-o3) may disable key optimizations!    *
+;*                                                                            *
+;******************************************************************************
+blockStatistics_getTestParams:
+;** --------------------------------------------------------------------------*
+;          EXCLUSIVE CPU CYCLES: 9
+;** 304	-----------------------    *params = &testParams[0];
+;** 305	-----------------------    *numTests = 24;
+;**  	-----------------------    return;
+	.dwcfi	cfa_offset, 0
+$C$DW$9	.dwtag  DW_TAG_variable, DW_AT_name("numTests")
+	.dwattr $C$DW$9, DW_AT_TI_symbol_name("numTests")
+	.dwattr $C$DW$9, DW_AT_type(*$C$DW$T$73)
+	.dwattr $C$DW$9, DW_AT_location[DW_OP_reg20]
+$C$DW$10	.dwtag  DW_TAG_variable, DW_AT_name("params")
+	.dwattr $C$DW$10, DW_AT_TI_symbol_name("params")
+	.dwattr $C$DW$10, DW_AT_type(*$C$DW$T$50)
+	.dwattr $C$DW$10, DW_AT_location[DW_OP_reg4]
+           MVKL    .S1     testParams,A3
+
+           MVKH    .S1     testParams,A3
+||         MVK     .S2     24,B5             ; |305| 
+
+           STW     .D1T1   A3,*A4            ; |304| 
+||         STW     .D2T2   B5,*B4            ; |305| 
+
+	.dwcfi	cfa_offset, 0
+	.dwpsn	file "./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c",line 306,column 1,is_stmt,isa 0
+$C$DW$11	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$11, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$11, DW_AT_TI_return
+           RETNOP  .S2     B3,5              ; |306| 
+           ; BRANCH OCCURS {B3}              ; |306| 
+	.dwattr $C$DW$6, DW_AT_TI_end_file("./../packages/ti/vlib/src/VLIB_blockStatistics/VLIB_blockStatistics_idat.c")
+	.dwattr $C$DW$6, DW_AT_TI_end_line(0x132)
+	.dwattr $C$DW$6, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$6
+
+
+;******************************************************************************
+;* BUILD ATTRIBUTES                                                           *
+;******************************************************************************
+	.battr "TI", Tag_File, 1, Tag_Long_Precision_Bits(2)
+	.battr "TI", Tag_File, 1, Tag_Bitfield_layout(2)
+	.battr "TI", Tag_File, 1, Tag_ABI_enum_size(2)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_wchar_t(1)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_array_object_alignment(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_array_object_align_expected(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_PIC(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_PID(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_DSBT(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_stack_align_needed(0)
+	.battr "c6xabi", Tag_File, 1, Tag_ABI_stack_align_preserved(0)
+	.battr "TI", Tag_File, 1, Tag_Tramps_Use_SOC(1)
+
+;******************************************************************************
+;* TYPE INFORMATION                                                           *
+;******************************************************************************
+
+$C$DW$T$39	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$39, DW_AT_byte_size(0x04)
+$C$DW$12	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_NO_ERROR"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$12, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$12, DW_AT_decl_line(0x7a)
+	.dwattr $C$DW$12, DW_AT_decl_column(0x05)
+$C$DW$13	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_INVALID"), DW_AT_const_value(0x01)
+	.dwattr $C$DW$13, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$13, DW_AT_decl_line(0x7b)
+	.dwattr $C$DW$13, DW_AT_decl_column(0x05)
+$C$DW$14	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_NEGATIVE"), DW_AT_const_value(0x02)
+	.dwattr $C$DW$14, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$14, DW_AT_decl_line(0x7c)
+	.dwattr $C$DW$14, DW_AT_decl_column(0x05)
+$C$DW$15	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_EXCEEDED_RANGE"), DW_AT_const_value(0x03)
+	.dwattr $C$DW$15, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$15, DW_AT_decl_line(0x7d)
+	.dwattr $C$DW$15, DW_AT_decl_column(0x05)
+$C$DW$16	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_EXCEEDED_BOUNDARY"), DW_AT_const_value(0x04)
+	.dwattr $C$DW$16, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$16, DW_AT_decl_line(0x7e)
+	.dwattr $C$DW$16, DW_AT_decl_column(0x05)
+$C$DW$17	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_ALLOCATION_FAILURE"), DW_AT_const_value(0x05)
+	.dwattr $C$DW$17, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$17, DW_AT_decl_line(0x7f)
+	.dwattr $C$DW$17, DW_AT_decl_column(0x05)
+$C$DW$18	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_POINTER_NULL"), DW_AT_const_value(0x06)
+	.dwattr $C$DW$18, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$18, DW_AT_decl_line(0x80)
+	.dwattr $C$DW$18, DW_AT_decl_column(0x05)
+$C$DW$19	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_DMA_FAILURE"), DW_AT_const_value(0x07)
+	.dwattr $C$DW$19, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$19, DW_AT_decl_line(0x81)
+	.dwattr $C$DW$19, DW_AT_decl_column(0x05)
+$C$DW$20	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_OPEN_FAILURE"), DW_AT_const_value(0x08)
+	.dwattr $C$DW$20, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$20, DW_AT_decl_line(0x82)
+	.dwattr $C$DW$20, DW_AT_decl_column(0x05)
+$C$DW$21	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_READ_FAILURE"), DW_AT_const_value(0x09)
+	.dwattr $C$DW$21, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$21, DW_AT_decl_line(0x83)
+	.dwattr $C$DW$21, DW_AT_decl_column(0x05)
+$C$DW$22	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_WRITE_FAILURE"), DW_AT_const_value(0x0a)
+	.dwattr $C$DW$22, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$22, DW_AT_decl_line(0x84)
+	.dwattr $C$DW$22, DW_AT_decl_column(0x05)
+$C$DW$23	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_CLOSE_FAILURE"), DW_AT_const_value(0x0b)
+	.dwattr $C$DW$23, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$23, DW_AT_decl_line(0x85)
+	.dwattr $C$DW$23, DW_AT_decl_column(0x05)
+$C$DW$24	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_FORMAT_FAILURE"), DW_AT_const_value(0x0c)
+	.dwattr $C$DW$24, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$24, DW_AT_decl_line(0x86)
+	.dwattr $C$DW$24, DW_AT_decl_column(0x05)
+$C$DW$25	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_WARNING_LOW_MEMORY"), DW_AT_const_value(0x0d)
+	.dwattr $C$DW$25, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$25, DW_AT_decl_line(0x87)
+	.dwattr $C$DW$25, DW_AT_decl_column(0x05)
+$C$DW$26	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_NOT_IMPLEMENTED"), DW_AT_const_value(0x0e)
+	.dwattr $C$DW$26, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$26, DW_AT_decl_line(0x88)
+	.dwattr $C$DW$26, DW_AT_decl_column(0x05)
+$C$DW$27	.dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERROR_MAX"), DW_AT_const_value(0x0f)
+	.dwattr $C$DW$27, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$27, DW_AT_decl_line(0x89)
+	.dwattr $C$DW$27, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$39
+
+	.dwattr $C$DW$T$39, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$39, DW_AT_decl_line(0x79)
+	.dwattr $C$DW$T$39, DW_AT_decl_column(0x0e)
+$C$DW$T$40	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_STATUS")
+	.dwattr $C$DW$T$40, DW_AT_type(*$C$DW$T$39)
+	.dwattr $C$DW$T$40, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$40, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$40, DW_AT_decl_line(0x8a)
+	.dwattr $C$DW$T$40, DW_AT_decl_column(0x03)
+
+$C$DW$T$41	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$41, DW_AT_byte_size(0x04)
+$C$DW$28	.dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_OPT"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$28, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$28, DW_AT_decl_line(0x6a)
+	.dwattr $C$DW$28, DW_AT_decl_column(0x05)
+$C$DW$29	.dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_CN"), DW_AT_const_value(0x01)
+	.dwattr $C$DW$29, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$29, DW_AT_decl_line(0x6b)
+	.dwattr $C$DW$29, DW_AT_decl_column(0x05)
+$C$DW$30	.dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_CNT"), DW_AT_const_value(0x02)
+	.dwattr $C$DW$30, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$30, DW_AT_decl_line(0x6c)
+	.dwattr $C$DW$30, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$41
+
+	.dwattr $C$DW$T$41, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$T$41, DW_AT_decl_line(0x69)
+	.dwattr $C$DW$T$41, DW_AT_decl_column(0x06)
+
+$C$DW$T$42	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$42, DW_AT_byte_size(0x04)
+$C$DW$31	.dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_FAIL"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$31, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$31, DW_AT_decl_line(0x72)
+	.dwattr $C$DW$31, DW_AT_decl_column(0x05)
+$C$DW$32	.dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_PASS"), DW_AT_const_value(0x01)
+	.dwattr $C$DW$32, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$32, DW_AT_decl_line(0x73)
+	.dwattr $C$DW$32, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$42
+
+	.dwattr $C$DW$T$42, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\VLIB_test.h")
+	.dwattr $C$DW$T$42, DW_AT_decl_line(0x71)
+	.dwattr $C$DW$T$42, DW_AT_decl_column(0x06)
+
+$C$DW$T$25	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$25, DW_AT_byte_size(0x24)
+$C$DW$33	.dwtag  DW_TAG_member
+	.dwattr $C$DW$33, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$33, DW_AT_name("testPattern")
+	.dwattr $C$DW$33, DW_AT_TI_symbol_name("testPattern")
+	.dwattr $C$DW$33, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$33, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$33, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$33, DW_AT_decl_line(0x24)
+	.dwattr $C$DW$33, DW_AT_decl_column(0x0f)
+$C$DW$34	.dwtag  DW_TAG_member
+	.dwattr $C$DW$34, DW_AT_type(*$C$DW$T$20)
+	.dwattr $C$DW$34, DW_AT_name("staticIn")
+	.dwattr $C$DW$34, DW_AT_TI_symbol_name("staticIn")
+	.dwattr $C$DW$34, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$34, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$34, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$34, DW_AT_decl_line(0x25)
+	.dwattr $C$DW$34, DW_AT_decl_column(0x0f)
+$C$DW$35	.dwtag  DW_TAG_member
+	.dwattr $C$DW$35, DW_AT_type(*$C$DW$T$20)
+	.dwattr $C$DW$35, DW_AT_name("staticOutMin")
+	.dwattr $C$DW$35, DW_AT_TI_symbol_name("staticOutMin")
+	.dwattr $C$DW$35, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$35, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$35, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$35, DW_AT_decl_line(0x26)
+	.dwattr $C$DW$35, DW_AT_decl_column(0x0f)
+$C$DW$36	.dwtag  DW_TAG_member
+	.dwattr $C$DW$36, DW_AT_type(*$C$DW$T$20)
+	.dwattr $C$DW$36, DW_AT_name("staticOutMax")
+	.dwattr $C$DW$36, DW_AT_TI_symbol_name("staticOutMax")
+	.dwattr $C$DW$36, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+	.dwattr $C$DW$36, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$36, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$36, DW_AT_decl_line(0x27)
+	.dwattr $C$DW$36, DW_AT_decl_column(0x0f)
+$C$DW$37	.dwtag  DW_TAG_member
+	.dwattr $C$DW$37, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$37, DW_AT_name("staticOutMean")
+	.dwattr $C$DW$37, DW_AT_TI_symbol_name("staticOutMean")
+	.dwattr $C$DW$37, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+	.dwattr $C$DW$37, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$37, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$37, DW_AT_decl_line(0x28)
+	.dwattr $C$DW$37, DW_AT_decl_column(0x0f)
+$C$DW$38	.dwtag  DW_TAG_member
+	.dwattr $C$DW$38, DW_AT_type(*$C$DW$T$24)
+	.dwattr $C$DW$38, DW_AT_name("staticOutVar")
+	.dwattr $C$DW$38, DW_AT_TI_symbol_name("staticOutVar")
+	.dwattr $C$DW$38, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+	.dwattr $C$DW$38, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$38, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$38, DW_AT_decl_line(0x29)
+	.dwattr $C$DW$38, DW_AT_decl_column(0x0f)
+$C$DW$39	.dwtag  DW_TAG_member
+	.dwattr $C$DW$39, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$39, DW_AT_name("mode")
+	.dwattr $C$DW$39, DW_AT_TI_symbol_name("mode")
+	.dwattr $C$DW$39, DW_AT_data_member_location[DW_OP_plus_uconst 0x18]
+	.dwattr $C$DW$39, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$39, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$39, DW_AT_decl_line(0x2a)
+	.dwattr $C$DW$39, DW_AT_decl_column(0x0f)
+$C$DW$40	.dwtag  DW_TAG_member
+	.dwattr $C$DW$40, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$40, DW_AT_name("imageWidth")
+	.dwattr $C$DW$40, DW_AT_TI_symbol_name("imageWidth")
+	.dwattr $C$DW$40, DW_AT_data_member_location[DW_OP_plus_uconst 0x1a]
+	.dwattr $C$DW$40, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$40, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$40, DW_AT_decl_line(0x2b)
+	.dwattr $C$DW$40, DW_AT_decl_column(0x0f)
+$C$DW$41	.dwtag  DW_TAG_member
+	.dwattr $C$DW$41, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$41, DW_AT_name("imageHeight")
+	.dwattr $C$DW$41, DW_AT_TI_symbol_name("imageHeight")
+	.dwattr $C$DW$41, DW_AT_data_member_location[DW_OP_plus_uconst 0x1c]
+	.dwattr $C$DW$41, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$41, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$41, DW_AT_decl_line(0x2c)
+	.dwattr $C$DW$41, DW_AT_decl_column(0x0f)
+$C$DW$42	.dwtag  DW_TAG_member
+	.dwattr $C$DW$42, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$42, DW_AT_name("imagePitch")
+	.dwattr $C$DW$42, DW_AT_TI_symbol_name("imagePitch")
+	.dwattr $C$DW$42, DW_AT_data_member_location[DW_OP_plus_uconst 0x1e]
+	.dwattr $C$DW$42, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$42, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$42, DW_AT_decl_line(0x2d)
+	.dwattr $C$DW$42, DW_AT_decl_column(0x0f)
+$C$DW$43	.dwtag  DW_TAG_member
+	.dwattr $C$DW$43, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$43, DW_AT_name("statBlockWidth")
+	.dwattr $C$DW$43, DW_AT_TI_symbol_name("statBlockWidth")
+	.dwattr $C$DW$43, DW_AT_data_member_location[DW_OP_plus_uconst 0x20]
+	.dwattr $C$DW$43, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$43, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$43, DW_AT_decl_line(0x2e)
+	.dwattr $C$DW$43, DW_AT_decl_column(0x0f)
+$C$DW$44	.dwtag  DW_TAG_member
+	.dwattr $C$DW$44, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$44, DW_AT_name("statBlockHeight")
+	.dwattr $C$DW$44, DW_AT_TI_symbol_name("statBlockHeight")
+	.dwattr $C$DW$44, DW_AT_data_member_location[DW_OP_plus_uconst 0x22]
+	.dwattr $C$DW$44, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$44, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$44, DW_AT_decl_line(0x2f)
+	.dwattr $C$DW$44, DW_AT_decl_column(0x0f)
+	.dwendtag $C$DW$T$25
+
+	.dwattr $C$DW$T$25, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$T$25, DW_AT_decl_line(0x23)
+	.dwattr $C$DW$T$25, DW_AT_decl_column(0x10)
+$C$DW$T$47	.dwtag  DW_TAG_typedef, DW_AT_name("blockStatistics_testParams_t")
+	.dwattr $C$DW$T$47, DW_AT_type(*$C$DW$T$25)
+	.dwattr $C$DW$T$47, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$47, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\VLIB_blockStatistics_idat.h")
+	.dwattr $C$DW$T$47, DW_AT_decl_line(0x30)
+	.dwattr $C$DW$T$47, DW_AT_decl_column(0x03)
+$C$DW$T$48	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$48, DW_AT_type(*$C$DW$T$47)
+	.dwattr $C$DW$T$48, DW_AT_address_class(0x20)
+$C$DW$T$49	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$49, DW_AT_type(*$C$DW$T$48)
+	.dwattr $C$DW$T$49, DW_AT_address_class(0x20)
+$C$DW$T$50	.dwtag  DW_TAG_const_type
+	.dwattr $C$DW$T$50, DW_AT_type(*$C$DW$T$49)
+
+$C$DW$T$51	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$51, DW_AT_type(*$C$DW$T$47)
+	.dwattr $C$DW$T$51, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$51, DW_AT_byte_size(0x360)
+$C$DW$45	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$45, DW_AT_upper_bound(0x17)
+	.dwendtag $C$DW$T$51
+
+
+$C$DW$T$27	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$27, DW_AT_byte_size(0x18)
+$C$DW$46	.dwtag  DW_TAG_member
+	.dwattr $C$DW$46, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$46, DW_AT_name("fd")
+	.dwattr $C$DW$46, DW_AT_TI_symbol_name("fd")
+	.dwattr $C$DW$46, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$46, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$46, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$46, DW_AT_decl_line(0x49)
+	.dwattr $C$DW$46, DW_AT_decl_column(0x0b)
+$C$DW$47	.dwtag  DW_TAG_member
+	.dwattr $C$DW$47, DW_AT_type(*$C$DW$T$26)
+	.dwattr $C$DW$47, DW_AT_name("buf")
+	.dwattr $C$DW$47, DW_AT_TI_symbol_name("buf")
+	.dwattr $C$DW$47, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$47, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$47, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$47, DW_AT_decl_line(0x4a)
+	.dwattr $C$DW$47, DW_AT_decl_column(0x16)
+$C$DW$48	.dwtag  DW_TAG_member
+	.dwattr $C$DW$48, DW_AT_type(*$C$DW$T$26)
+	.dwattr $C$DW$48, DW_AT_name("pos")
+	.dwattr $C$DW$48, DW_AT_TI_symbol_name("pos")
+	.dwattr $C$DW$48, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$48, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$48, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$48, DW_AT_decl_line(0x4b)
+	.dwattr $C$DW$48, DW_AT_decl_column(0x16)
+$C$DW$49	.dwtag  DW_TAG_member
+	.dwattr $C$DW$49, DW_AT_type(*$C$DW$T$26)
+	.dwattr $C$DW$49, DW_AT_name("bufend")
+	.dwattr $C$DW$49, DW_AT_TI_symbol_name("bufend")
+	.dwattr $C$DW$49, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+	.dwattr $C$DW$49, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$49, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$49, DW_AT_decl_line(0x4c)
+	.dwattr $C$DW$49, DW_AT_decl_column(0x16)
+$C$DW$50	.dwtag  DW_TAG_member
+	.dwattr $C$DW$50, DW_AT_type(*$C$DW$T$26)
+	.dwattr $C$DW$50, DW_AT_name("buff_stop")
+	.dwattr $C$DW$50, DW_AT_TI_symbol_name("buff_stop")
+	.dwattr $C$DW$50, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+	.dwattr $C$DW$50, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$50, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$50, DW_AT_decl_line(0x4d)
+	.dwattr $C$DW$50, DW_AT_decl_column(0x16)
+$C$DW$51	.dwtag  DW_TAG_member
+	.dwattr $C$DW$51, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$51, DW_AT_name("flags")
+	.dwattr $C$DW$51, DW_AT_TI_symbol_name("flags")
+	.dwattr $C$DW$51, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+	.dwattr $C$DW$51, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$51, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$51, DW_AT_decl_line(0x4e)
+	.dwattr $C$DW$51, DW_AT_decl_column(0x16)
+	.dwendtag $C$DW$T$27
+
+	.dwattr $C$DW$T$27, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$T$27, DW_AT_decl_line(0x48)
+	.dwattr $C$DW$T$27, DW_AT_decl_column(0x10)
+$C$DW$T$52	.dwtag  DW_TAG_typedef, DW_AT_name("FILE")
+	.dwattr $C$DW$T$52, DW_AT_type(*$C$DW$T$27)
+	.dwattr $C$DW$T$52, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$52, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$T$52, DW_AT_decl_line(0x4f)
+	.dwattr $C$DW$T$52, DW_AT_decl_column(0x03)
+
+$C$DW$T$28	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$28, DW_AT_byte_size(0x08)
+$C$DW$52	.dwtag  DW_TAG_member
+	.dwattr $C$DW$52, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$52, DW_AT_name("quot")
+	.dwattr $C$DW$52, DW_AT_TI_symbol_name("quot")
+	.dwattr $C$DW$52, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$52, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$52, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$52, DW_AT_decl_line(0x3e)
+	.dwattr $C$DW$52, DW_AT_decl_column(0x16)
+$C$DW$53	.dwtag  DW_TAG_member
+	.dwattr $C$DW$53, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$53, DW_AT_name("rem")
+	.dwattr $C$DW$53, DW_AT_TI_symbol_name("rem")
+	.dwattr $C$DW$53, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$53, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$53, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$53, DW_AT_decl_line(0x3e)
+	.dwattr $C$DW$53, DW_AT_decl_column(0x1c)
+	.dwendtag $C$DW$T$28
+
+	.dwattr $C$DW$T$28, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$28, DW_AT_decl_line(0x3e)
+	.dwattr $C$DW$T$28, DW_AT_decl_column(0x10)
+$C$DW$T$53	.dwtag  DW_TAG_typedef, DW_AT_name("div_t")
+	.dwattr $C$DW$T$53, DW_AT_type(*$C$DW$T$28)
+	.dwattr $C$DW$T$53, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$53, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$53, DW_AT_decl_line(0x3e)
+	.dwattr $C$DW$T$53, DW_AT_decl_column(0x23)
+
+$C$DW$T$29	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$29, DW_AT_byte_size(0x08)
+$C$DW$54	.dwtag  DW_TAG_member
+	.dwattr $C$DW$54, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$54, DW_AT_name("quot")
+	.dwattr $C$DW$54, DW_AT_TI_symbol_name("quot")
+	.dwattr $C$DW$54, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$54, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$54, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$54, DW_AT_decl_line(0x40)
+	.dwattr $C$DW$54, DW_AT_decl_column(0x17)
+$C$DW$55	.dwtag  DW_TAG_member
+	.dwattr $C$DW$55, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$55, DW_AT_name("rem")
+	.dwattr $C$DW$55, DW_AT_TI_symbol_name("rem")
+	.dwattr $C$DW$55, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$55, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$55, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$55, DW_AT_decl_line(0x40)
+	.dwattr $C$DW$55, DW_AT_decl_column(0x1d)
+	.dwendtag $C$DW$T$29
+
+	.dwattr $C$DW$T$29, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$29, DW_AT_decl_line(0x40)
+	.dwattr $C$DW$T$29, DW_AT_decl_column(0x10)
+$C$DW$T$54	.dwtag  DW_TAG_typedef, DW_AT_name("ldiv_t")
+	.dwattr $C$DW$T$54, DW_AT_type(*$C$DW$T$29)
+	.dwattr $C$DW$T$54, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$54, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$54, DW_AT_decl_line(0x40)
+	.dwattr $C$DW$T$54, DW_AT_decl_column(0x24)
+
+$C$DW$T$30	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$30, DW_AT_byte_size(0x10)
+$C$DW$56	.dwtag  DW_TAG_member
+	.dwattr $C$DW$56, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$56, DW_AT_name("quot")
+	.dwattr $C$DW$56, DW_AT_TI_symbol_name("quot")
+	.dwattr $C$DW$56, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$56, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$56, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$56, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$56, DW_AT_decl_column(0x1c)
+$C$DW$57	.dwtag  DW_TAG_member
+	.dwattr $C$DW$57, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$57, DW_AT_name("rem")
+	.dwattr $C$DW$57, DW_AT_TI_symbol_name("rem")
+	.dwattr $C$DW$57, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$57, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$57, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$57, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$57, DW_AT_decl_column(0x22)
+	.dwendtag $C$DW$T$30
+
+	.dwattr $C$DW$T$30, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$30, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$T$30, DW_AT_decl_column(0x10)
+$C$DW$T$55	.dwtag  DW_TAG_typedef, DW_AT_name("lldiv_t")
+	.dwattr $C$DW$T$55, DW_AT_type(*$C$DW$T$30)
+	.dwattr $C$DW$T$55, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$55, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$55, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$T$55, DW_AT_decl_column(0x29)
+
+$C$DW$T$32	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$32, DW_AT_byte_size(0x24)
+$C$DW$58	.dwtag  DW_TAG_member
+	.dwattr $C$DW$58, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$58, DW_AT_name("area")
+	.dwattr $C$DW$58, DW_AT_TI_symbol_name("area")
+	.dwattr $C$DW$58, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$58, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$58, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$58, DW_AT_decl_line(0x69)
+	.dwattr $C$DW$58, DW_AT_decl_column(0x0d)
+$C$DW$59	.dwtag  DW_TAG_member
+	.dwattr $C$DW$59, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$59, DW_AT_name("xsum")
+	.dwattr $C$DW$59, DW_AT_TI_symbol_name("xsum")
+	.dwattr $C$DW$59, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$59, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$59, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$59, DW_AT_decl_line(0x6a)
+	.dwattr $C$DW$59, DW_AT_decl_column(0x0d)
+$C$DW$60	.dwtag  DW_TAG_member
+	.dwattr $C$DW$60, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$60, DW_AT_name("ysum")
+	.dwattr $C$DW$60, DW_AT_TI_symbol_name("ysum")
+	.dwattr $C$DW$60, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$60, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$60, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$60, DW_AT_decl_line(0x6b)
+	.dwattr $C$DW$60, DW_AT_decl_column(0x0d)
+$C$DW$61	.dwtag  DW_TAG_member
+	.dwattr $C$DW$61, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$61, DW_AT_name("xmin")
+	.dwattr $C$DW$61, DW_AT_TI_symbol_name("xmin")
+	.dwattr $C$DW$61, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+	.dwattr $C$DW$61, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$61, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$61, DW_AT_decl_line(0x6d)
+	.dwattr $C$DW$61, DW_AT_decl_column(0x0d)
+$C$DW$62	.dwtag  DW_TAG_member
+	.dwattr $C$DW$62, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$62, DW_AT_name("ymin")
+	.dwattr $C$DW$62, DW_AT_TI_symbol_name("ymin")
+	.dwattr $C$DW$62, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+	.dwattr $C$DW$62, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$62, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$62, DW_AT_decl_line(0x6e)
+	.dwattr $C$DW$62, DW_AT_decl_column(0x0d)
+$C$DW$63	.dwtag  DW_TAG_member
+	.dwattr $C$DW$63, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$63, DW_AT_name("xmax")
+	.dwattr $C$DW$63, DW_AT_TI_symbol_name("xmax")
+	.dwattr $C$DW$63, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+	.dwattr $C$DW$63, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$63, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$63, DW_AT_decl_line(0x6f)
+	.dwattr $C$DW$63, DW_AT_decl_column(0x0d)
+$C$DW$64	.dwtag  DW_TAG_member
+	.dwattr $C$DW$64, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$64, DW_AT_name("ymax")
+	.dwattr $C$DW$64, DW_AT_TI_symbol_name("ymax")
+	.dwattr $C$DW$64, DW_AT_data_member_location[DW_OP_plus_uconst 0x18]
+	.dwattr $C$DW$64, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$64, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$64, DW_AT_decl_line(0x70)
+	.dwattr $C$DW$64, DW_AT_decl_column(0x0d)
+$C$DW$65	.dwtag  DW_TAG_member
+	.dwattr $C$DW$65, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$65, DW_AT_name("seedx")
+	.dwattr $C$DW$65, DW_AT_TI_symbol_name("seedx")
+	.dwattr $C$DW$65, DW_AT_data_member_location[DW_OP_plus_uconst 0x1c]
+	.dwattr $C$DW$65, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$65, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$65, DW_AT_decl_line(0x72)
+	.dwattr $C$DW$65, DW_AT_decl_column(0x0d)
+$C$DW$66	.dwtag  DW_TAG_member
+	.dwattr $C$DW$66, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$66, DW_AT_name("seedy")
+	.dwattr $C$DW$66, DW_AT_TI_symbol_name("seedy")
+	.dwattr $C$DW$66, DW_AT_data_member_location[DW_OP_plus_uconst 0x20]
+	.dwattr $C$DW$66, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$66, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$66, DW_AT_decl_line(0x73)
+	.dwattr $C$DW$66, DW_AT_decl_column(0x0d)
+	.dwendtag $C$DW$T$32
+
+	.dwattr $C$DW$T$32, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$32, DW_AT_decl_line(0x68)
+	.dwattr $C$DW$T$32, DW_AT_decl_column(0x10)
+$C$DW$T$56	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_CC")
+	.dwattr $C$DW$T$56, DW_AT_type(*$C$DW$T$32)
+	.dwattr $C$DW$T$56, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$56, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$56, DW_AT_decl_line(0x75)
+	.dwattr $C$DW$T$56, DW_AT_decl_column(0x03)
+
+$C$DW$T$35	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$35, DW_AT_byte_size(0x10)
+$C$DW$67	.dwtag  DW_TAG_member
+	.dwattr $C$DW$67, DW_AT_type(*$C$DW$T$8)
+	.dwattr $C$DW$67, DW_AT_name("daylight")
+	.dwattr $C$DW$67, DW_AT_TI_symbol_name("daylight")
+	.dwattr $C$DW$67, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$67, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$67, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$67, DW_AT_decl_line(0x52)
+	.dwattr $C$DW$67, DW_AT_decl_column(0x0b)
+$C$DW$68	.dwtag  DW_TAG_member
+	.dwattr $C$DW$68, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$68, DW_AT_name("timezone")
+	.dwattr $C$DW$68, DW_AT_TI_symbol_name("timezone")
+	.dwattr $C$DW$68, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$68, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$68, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$68, DW_AT_decl_line(0x53)
+	.dwattr $C$DW$68, DW_AT_decl_column(0x0b)
+$C$DW$69	.dwtag  DW_TAG_member
+	.dwattr $C$DW$69, DW_AT_type(*$C$DW$T$34)
+	.dwattr $C$DW$69, DW_AT_name("tzname")
+	.dwattr $C$DW$69, DW_AT_TI_symbol_name("tzname")
+	.dwattr $C$DW$69, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$69, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$69, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$69, DW_AT_decl_line(0x54)
+	.dwattr $C$DW$69, DW_AT_decl_column(0x0b)
+$C$DW$70	.dwtag  DW_TAG_member
+	.dwattr $C$DW$70, DW_AT_type(*$C$DW$T$34)
+	.dwattr $C$DW$70, DW_AT_name("dstname")
+	.dwattr $C$DW$70, DW_AT_TI_symbol_name("dstname")
+	.dwattr $C$DW$70, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+	.dwattr $C$DW$70, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$70, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$70, DW_AT_decl_line(0x55)
+	.dwattr $C$DW$70, DW_AT_decl_column(0x0b)
+	.dwendtag $C$DW$T$35
+
+	.dwattr $C$DW$T$35, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$T$35, DW_AT_decl_line(0x51)
+	.dwattr $C$DW$T$35, DW_AT_decl_column(0x01)
+$C$DW$T$57	.dwtag  DW_TAG_typedef, DW_AT_name("TZ")
+	.dwattr $C$DW$T$57, DW_AT_type(*$C$DW$T$35)
+	.dwattr $C$DW$T$57, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$57, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$T$57, DW_AT_decl_line(0x56)
+	.dwattr $C$DW$T$57, DW_AT_decl_column(0x03)
+$C$DW$T$2	.dwtag  DW_TAG_unspecified_type
+	.dwattr $C$DW$T$2, DW_AT_name("void")
+$C$DW$T$3	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$3, DW_AT_type(*$C$DW$T$2)
+	.dwattr $C$DW$T$3, DW_AT_address_class(0x20)
+$C$DW$T$58	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_PTR")
+	.dwattr $C$DW$T$58, DW_AT_type(*$C$DW$T$3)
+	.dwattr $C$DW$T$58, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$58, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$58, DW_AT_decl_line(0x5c)
+	.dwattr $C$DW$T$58, DW_AT_decl_column(0x19)
+$C$DW$T$4	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+	.dwattr $C$DW$T$4, DW_AT_name("bool")
+	.dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+$C$DW$T$5	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+	.dwattr $C$DW$T$5, DW_AT_name("signed char")
+	.dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+$C$DW$T$61	.dwtag  DW_TAG_typedef, DW_AT_name("int8_t")
+	.dwattr $C$DW$T$61, DW_AT_type(*$C$DW$T$5)
+	.dwattr $C$DW$T$61, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$61, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$61, DW_AT_decl_line(0x2a)
+	.dwattr $C$DW$T$61, DW_AT_decl_column(0x1d)
+$C$DW$T$62	.dwtag  DW_TAG_typedef, DW_AT_name("int_least8_t")
+	.dwattr $C$DW$T$62, DW_AT_type(*$C$DW$T$61)
+	.dwattr $C$DW$T$62, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$62, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$62, DW_AT_decl_line(0x39)
+	.dwattr $C$DW$T$62, DW_AT_decl_column(0x17)
+$C$DW$T$6	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+	.dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+	.dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+$C$DW$T$26	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$26, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$26, DW_AT_address_class(0x20)
+$C$DW$T$19	.dwtag  DW_TAG_typedef, DW_AT_name("uint8_t")
+	.dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$19, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$19, DW_AT_decl_line(0x2b)
+	.dwattr $C$DW$T$19, DW_AT_decl_column(0x1c)
+$C$DW$T$20	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$20, DW_AT_address_class(0x20)
+
+$C$DW$T$63	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$63, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$63, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$63, DW_AT_byte_size(0x90)
+$C$DW$71	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$71, DW_AT_upper_bound(0x8f)
+	.dwendtag $C$DW$T$63
+
+$C$DW$T$64	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least8_t")
+	.dwattr $C$DW$T$64, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$64, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$64, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$64, DW_AT_decl_line(0x3a)
+	.dwattr $C$DW$T$64, DW_AT_decl_column(0x16)
+$C$DW$T$7	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+	.dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+	.dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+$C$DW$T$8	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$8, DW_AT_name("short")
+	.dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+$C$DW$T$65	.dwtag  DW_TAG_typedef, DW_AT_name("int16_t")
+	.dwattr $C$DW$T$65, DW_AT_type(*$C$DW$T$8)
+	.dwattr $C$DW$T$65, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$65, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$65, DW_AT_decl_line(0x2c)
+	.dwattr $C$DW$T$65, DW_AT_decl_column(0x1d)
+$C$DW$T$66	.dwtag  DW_TAG_typedef, DW_AT_name("int_least16_t")
+	.dwattr $C$DW$T$66, DW_AT_type(*$C$DW$T$65)
+	.dwattr $C$DW$T$66, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$66, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$66, DW_AT_decl_line(0x3c)
+	.dwattr $C$DW$T$66, DW_AT_decl_column(0x17)
+$C$DW$T$9	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+	.dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+$C$DW$T$21	.dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+	.dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$21, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$21, DW_AT_decl_line(0x2d)
+	.dwattr $C$DW$T$21, DW_AT_decl_column(0x1c)
+$C$DW$T$22	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$22, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$T$22, DW_AT_address_class(0x20)
+
+$C$DW$T$68	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$68, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$T$68, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$68, DW_AT_byte_size(0x120)
+$C$DW$72	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$72, DW_AT_upper_bound(0x8f)
+	.dwendtag $C$DW$T$68
+
+$C$DW$T$69	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least16_t")
+	.dwattr $C$DW$T$69, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$T$69, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$69, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$69, DW_AT_decl_line(0x3d)
+	.dwattr $C$DW$T$69, DW_AT_decl_column(0x16)
+$C$DW$T$67	.dwtag  DW_TAG_typedef, DW_AT_name("wchar_t")
+	.dwattr $C$DW$T$67, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$67, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$67, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdlib.h")
+	.dwattr $C$DW$T$67, DW_AT_decl_line(0x53)
+	.dwattr $C$DW$T$67, DW_AT_decl_column(0x1a)
+$C$DW$T$10	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$10, DW_AT_name("int")
+	.dwattr $C$DW$T$10, DW_AT_byte_size(0x04)
+$C$DW$T$79	.dwtag  DW_TAG_typedef, DW_AT_name("fpos_t")
+	.dwattr $C$DW$T$79, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$79, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$79, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$T$79, DW_AT_decl_line(0x53)
+	.dwattr $C$DW$T$79, DW_AT_decl_column(0x0d)
+$C$DW$T$31	.dwtag  DW_TAG_typedef, DW_AT_name("int32_t")
+	.dwattr $C$DW$T$31, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$31, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$31, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$31, DW_AT_decl_line(0x2e)
+	.dwattr $C$DW$T$31, DW_AT_decl_column(0x1d)
+$C$DW$T$72	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_CCHandle")
+	.dwattr $C$DW$T$72, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$72, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$72, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$72, DW_AT_decl_line(0x77)
+	.dwattr $C$DW$T$72, DW_AT_decl_column(0x11)
+
+$C$DW$T$36	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$36, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$36, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$36, DW_AT_byte_size(0x10)
+$C$DW$73	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$73, DW_AT_upper_bound(0x03)
+	.dwendtag $C$DW$T$36
+
+$C$DW$T$59	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$59, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$59, DW_AT_address_class(0x20)
+$C$DW$T$73	.dwtag  DW_TAG_const_type
+	.dwattr $C$DW$T$73, DW_AT_type(*$C$DW$T$59)
+$C$DW$T$74	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast16_t")
+	.dwattr $C$DW$T$74, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$74, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$74, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$74, DW_AT_decl_line(0x4b)
+	.dwattr $C$DW$T$74, DW_AT_decl_column(0x17)
+$C$DW$T$75	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast32_t")
+	.dwattr $C$DW$T$75, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$75, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$75, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$75, DW_AT_decl_line(0x4e)
+	.dwattr $C$DW$T$75, DW_AT_decl_column(0x17)
+$C$DW$T$76	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast8_t")
+	.dwattr $C$DW$T$76, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$76, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$76, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$76, DW_AT_decl_line(0x49)
+	.dwattr $C$DW$T$76, DW_AT_decl_column(0x17)
+$C$DW$T$77	.dwtag  DW_TAG_typedef, DW_AT_name("int_least32_t")
+	.dwattr $C$DW$T$77, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$77, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$77, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$77, DW_AT_decl_line(0x3e)
+	.dwattr $C$DW$T$77, DW_AT_decl_column(0x17)
+$C$DW$T$78	.dwtag  DW_TAG_typedef, DW_AT_name("intptr_t")
+	.dwattr $C$DW$T$78, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$78, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$78, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$78, DW_AT_decl_line(0x58)
+	.dwattr $C$DW$T$78, DW_AT_decl_column(0x1a)
+$C$DW$T$11	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+	.dwattr $C$DW$T$11, DW_AT_byte_size(0x04)
+$C$DW$T$80	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_VAL")
+	.dwattr $C$DW$T$80, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$80, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$80, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$80, DW_AT_decl_line(0x5d)
+	.dwattr $C$DW$T$80, DW_AT_decl_column(0x17)
+$C$DW$T$89	.dwtag  DW_TAG_typedef, DW_AT_name("clock_t")
+	.dwattr $C$DW$T$89, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$89, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$89, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$T$89, DW_AT_decl_line(0x37)
+	.dwattr $C$DW$T$89, DW_AT_decl_column(0x16)
+$C$DW$T$88	.dwtag  DW_TAG_typedef, DW_AT_name("size_t")
+	.dwattr $C$DW$T$88, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$88, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$88, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdio.h")
+	.dwattr $C$DW$T$88, DW_AT_decl_line(0x45)
+	.dwattr $C$DW$T$88, DW_AT_decl_column(0x19)
+$C$DW$T$81	.dwtag  DW_TAG_typedef, DW_AT_name("time_t")
+	.dwattr $C$DW$T$81, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$81, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$81, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$T$81, DW_AT_decl_line(0x38)
+	.dwattr $C$DW$T$81, DW_AT_decl_column(0x16)
+$C$DW$T$23	.dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+	.dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$23, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$23, DW_AT_decl_line(0x2f)
+	.dwattr $C$DW$T$23, DW_AT_decl_column(0x1c)
+$C$DW$T$24	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$24, DW_AT_address_class(0x20)
+
+$C$DW$T$82	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$82, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$82, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$82, DW_AT_byte_size(0x240)
+$C$DW$74	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$74, DW_AT_upper_bound(0x8f)
+	.dwendtag $C$DW$T$82
+
+$C$DW$T$83	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast16_t")
+	.dwattr $C$DW$T$83, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$83, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$83, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$83, DW_AT_decl_line(0x4c)
+	.dwattr $C$DW$T$83, DW_AT_decl_column(0x16)
+$C$DW$T$84	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast32_t")
+	.dwattr $C$DW$T$84, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$84, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$84, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$84, DW_AT_decl_line(0x4f)
+	.dwattr $C$DW$T$84, DW_AT_decl_column(0x16)
+$C$DW$T$85	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast8_t")
+	.dwattr $C$DW$T$85, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$85, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$85, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$85, DW_AT_decl_line(0x4a)
+	.dwattr $C$DW$T$85, DW_AT_decl_column(0x16)
+$C$DW$T$86	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least32_t")
+	.dwattr $C$DW$T$86, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$86, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$86, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$86, DW_AT_decl_line(0x3f)
+	.dwattr $C$DW$T$86, DW_AT_decl_column(0x16)
+$C$DW$T$87	.dwtag  DW_TAG_typedef, DW_AT_name("uintptr_t")
+	.dwattr $C$DW$T$87, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$87, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$87, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$87, DW_AT_decl_line(0x59)
+	.dwattr $C$DW$T$87, DW_AT_decl_column(0x1a)
+$C$DW$T$12	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$12, DW_AT_name("__int40_t")
+	.dwattr $C$DW$T$12, DW_AT_byte_size(0x08)
+	.dwattr $C$DW$T$12, DW_AT_bit_size(0x28)
+	.dwattr $C$DW$T$12, DW_AT_bit_offset(0x18)
+$C$DW$T$90	.dwtag  DW_TAG_typedef, DW_AT_name("int40_t")
+	.dwattr $C$DW$T$90, DW_AT_type(*$C$DW$T$12)
+	.dwattr $C$DW$T$90, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$90, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$90, DW_AT_decl_line(0x31)
+	.dwattr $C$DW$T$90, DW_AT_decl_column(0x21)
+$C$DW$T$91	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast40_t")
+	.dwattr $C$DW$T$91, DW_AT_type(*$C$DW$T$90)
+	.dwattr $C$DW$T$91, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$91, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$91, DW_AT_decl_line(0x51)
+	.dwattr $C$DW$T$91, DW_AT_decl_column(0x17)
+$C$DW$T$92	.dwtag  DW_TAG_typedef, DW_AT_name("int_least40_t")
+	.dwattr $C$DW$T$92, DW_AT_type(*$C$DW$T$90)
+	.dwattr $C$DW$T$92, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$92, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$92, DW_AT_decl_line(0x41)
+	.dwattr $C$DW$T$92, DW_AT_decl_column(0x17)
+$C$DW$T$13	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$13, DW_AT_name("unsigned __int40_t")
+	.dwattr $C$DW$T$13, DW_AT_byte_size(0x08)
+	.dwattr $C$DW$T$13, DW_AT_bit_size(0x28)
+	.dwattr $C$DW$T$13, DW_AT_bit_offset(0x18)
+$C$DW$T$93	.dwtag  DW_TAG_typedef, DW_AT_name("uint40_t")
+	.dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$13)
+	.dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$93, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$93, DW_AT_decl_line(0x32)
+	.dwattr $C$DW$T$93, DW_AT_decl_column(0x20)
+$C$DW$T$94	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast40_t")
+	.dwattr $C$DW$T$94, DW_AT_type(*$C$DW$T$93)
+	.dwattr $C$DW$T$94, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$94, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$94, DW_AT_decl_line(0x52)
+	.dwattr $C$DW$T$94, DW_AT_decl_column(0x16)
+$C$DW$T$95	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least40_t")
+	.dwattr $C$DW$T$95, DW_AT_type(*$C$DW$T$93)
+	.dwattr $C$DW$T$95, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$95, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$95, DW_AT_decl_line(0x42)
+	.dwattr $C$DW$T$95, DW_AT_decl_column(0x16)
+$C$DW$T$14	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$14, DW_AT_name("long long")
+	.dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+$C$DW$T$96	.dwtag  DW_TAG_typedef, DW_AT_name("int64_t")
+	.dwattr $C$DW$T$96, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$T$96, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$96, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$96, DW_AT_decl_line(0x34)
+	.dwattr $C$DW$T$96, DW_AT_decl_column(0x21)
+$C$DW$T$97	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast64_t")
+	.dwattr $C$DW$T$97, DW_AT_type(*$C$DW$T$96)
+	.dwattr $C$DW$T$97, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$97, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$97, DW_AT_decl_line(0x54)
+	.dwattr $C$DW$T$97, DW_AT_decl_column(0x17)
+$C$DW$T$98	.dwtag  DW_TAG_typedef, DW_AT_name("int_least64_t")
+	.dwattr $C$DW$T$98, DW_AT_type(*$C$DW$T$96)
+	.dwattr $C$DW$T$98, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$98, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$98, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$T$98, DW_AT_decl_column(0x17)
+$C$DW$T$99	.dwtag  DW_TAG_typedef, DW_AT_name("intmax_t")
+	.dwattr $C$DW$T$99, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$T$99, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$99, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$99, DW_AT_decl_line(0x5c)
+	.dwattr $C$DW$T$99, DW_AT_decl_column(0x20)
+$C$DW$T$15	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+	.dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+$C$DW$T$100	.dwtag  DW_TAG_typedef, DW_AT_name("uint64_t")
+	.dwattr $C$DW$T$100, DW_AT_type(*$C$DW$T$15)
+	.dwattr $C$DW$T$100, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$100, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$100, DW_AT_decl_line(0x35)
+	.dwattr $C$DW$T$100, DW_AT_decl_column(0x20)
+$C$DW$T$101	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast64_t")
+	.dwattr $C$DW$T$101, DW_AT_type(*$C$DW$T$100)
+	.dwattr $C$DW$T$101, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$101, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$101, DW_AT_decl_line(0x55)
+	.dwattr $C$DW$T$101, DW_AT_decl_column(0x16)
+$C$DW$T$102	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least64_t")
+	.dwattr $C$DW$T$102, DW_AT_type(*$C$DW$T$100)
+	.dwattr $C$DW$T$102, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$102, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$102, DW_AT_decl_line(0x45)
+	.dwattr $C$DW$T$102, DW_AT_decl_column(0x16)
+$C$DW$T$103	.dwtag  DW_TAG_typedef, DW_AT_name("uintmax_t")
+	.dwattr $C$DW$T$103, DW_AT_type(*$C$DW$T$15)
+	.dwattr $C$DW$T$103, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$103, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdint.h")
+	.dwattr $C$DW$T$103, DW_AT_decl_line(0x5d)
+	.dwattr $C$DW$T$103, DW_AT_decl_column(0x20)
+$C$DW$T$16	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$16, DW_AT_name("float")
+	.dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+$C$DW$T$104	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_F32")
+	.dwattr $C$DW$T$104, DW_AT_type(*$C$DW$T$16)
+	.dwattr $C$DW$T$104, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$104, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$104, DW_AT_decl_line(0x5b)
+	.dwattr $C$DW$T$104, DW_AT_decl_column(0x0f)
+$C$DW$T$105	.dwtag  DW_TAG_typedef, DW_AT_name("float32_t")
+	.dwattr $C$DW$T$105, DW_AT_type(*$C$DW$T$16)
+	.dwattr $C$DW$T$105, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$105, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\vect.h")
+	.dwattr $C$DW$T$105, DW_AT_decl_line(0x30)
+	.dwattr $C$DW$T$105, DW_AT_decl_column(0x0f)
+$C$DW$T$17	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$17, DW_AT_name("double")
+	.dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
+$C$DW$T$106	.dwtag  DW_TAG_typedef, DW_AT_name("VLIB_D64")
+	.dwattr $C$DW$T$106, DW_AT_type(*$C$DW$T$17)
+	.dwattr $C$DW$T$106, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$106, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_blockStatistics\..\common\c66/VLIB_types.h")
+	.dwattr $C$DW$T$106, DW_AT_decl_line(0x5a)
+	.dwattr $C$DW$T$106, DW_AT_decl_column(0x10)
+$C$DW$T$107	.dwtag  DW_TAG_typedef, DW_AT_name("__float2_t")
+	.dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$17)
+	.dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$107, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/c6x.h")
+	.dwattr $C$DW$T$107, DW_AT_decl_line(0x5f)
+	.dwattr $C$DW$T$107, DW_AT_decl_column(0x14)
+$C$DW$T$18	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$18, DW_AT_name("long double")
+	.dwattr $C$DW$T$18, DW_AT_byte_size(0x08)
+$C$DW$T$33	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$33, DW_AT_encoding(DW_ATE_signed_char)
+	.dwattr $C$DW$T$33, DW_AT_name("signed char")
+	.dwattr $C$DW$T$33, DW_AT_byte_size(0x01)
+
+$C$DW$T$34	.dwtag  DW_TAG_array_type
+	.dwattr $C$DW$T$34, DW_AT_type(*$C$DW$T$33)
+	.dwattr $C$DW$T$34, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$34, DW_AT_byte_size(0x04)
+$C$DW$75	.dwtag  DW_TAG_subrange_type
+	.dwattr $C$DW$75, DW_AT_upper_bound(0x03)
+	.dwendtag $C$DW$T$34
+
+$C$DW$T$108	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$108, DW_AT_type(*$C$DW$T$33)
+	.dwattr $C$DW$T$108, DW_AT_address_class(0x20)
+$C$DW$T$109	.dwtag  DW_TAG_typedef, DW_AT_name("va_list")
+	.dwattr $C$DW$T$109, DW_AT_type(*$C$DW$T$108)
+	.dwattr $C$DW$T$109, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$109, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/stdarg.h")
+	.dwattr $C$DW$T$109, DW_AT_decl_line(0x2f)
+	.dwattr $C$DW$T$109, DW_AT_decl_column(0x12)
+
+$C$DW$T$37	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$37, DW_AT_name("__simd128_int32_t")
+	.dwattr $C$DW$T$37, DW_AT_byte_size(0x10)
+$C$DW$76	.dwtag  DW_TAG_member
+	.dwattr $C$DW$76, DW_AT_type(*$C$DW$T$36)
+	.dwattr $C$DW$76, DW_AT_name("_v")
+	.dwattr $C$DW$76, DW_AT_TI_symbol_name("_v")
+	.dwattr $C$DW$76, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$76, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$76, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\vect.h")
+	.dwattr $C$DW$76, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$76, DW_AT_decl_column(0x01)
+	.dwendtag $C$DW$T$37
+
+	.dwattr $C$DW$T$37, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\vect.h")
+	.dwattr $C$DW$T$37, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$T$37, DW_AT_decl_column(0x01)
+$C$DW$T$110	.dwtag  DW_TAG_typedef, DW_AT_name("int32x4_t")
+	.dwattr $C$DW$T$110, DW_AT_type(*$C$DW$T$37)
+	.dwattr $C$DW$T$110, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$110, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\vect.h")
+	.dwattr $C$DW$T$110, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$T$110, DW_AT_decl_column(0x01)
+$C$DW$T$111	.dwtag  DW_TAG_typedef, DW_AT_name("__x128_t")
+	.dwattr $C$DW$T$111, DW_AT_type(*$C$DW$T$110)
+	.dwattr $C$DW$T$111, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$111, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\vect.h")
+	.dwattr $C$DW$T$111, DW_AT_decl_line(0x46)
+	.dwattr $C$DW$T$111, DW_AT_decl_column(0x13)
+
+$C$DW$T$38	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$38, DW_AT_name("tm")
+	.dwattr $C$DW$T$38, DW_AT_byte_size(0x24)
+$C$DW$77	.dwtag  DW_TAG_member
+	.dwattr $C$DW$77, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$77, DW_AT_name("tm_sec")
+	.dwattr $C$DW$77, DW_AT_TI_symbol_name("tm_sec")
+	.dwattr $C$DW$77, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$77, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$77, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$77, DW_AT_decl_line(0x41)
+	.dwattr $C$DW$77, DW_AT_decl_column(0x09)
+$C$DW$78	.dwtag  DW_TAG_member
+	.dwattr $C$DW$78, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$78, DW_AT_name("tm_min")
+	.dwattr $C$DW$78, DW_AT_TI_symbol_name("tm_min")
+	.dwattr $C$DW$78, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$78, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$78, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$78, DW_AT_decl_line(0x42)
+	.dwattr $C$DW$78, DW_AT_decl_column(0x09)
+$C$DW$79	.dwtag  DW_TAG_member
+	.dwattr $C$DW$79, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$79, DW_AT_name("tm_hour")
+	.dwattr $C$DW$79, DW_AT_TI_symbol_name("tm_hour")
+	.dwattr $C$DW$79, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$79, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$79, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$79, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$79, DW_AT_decl_column(0x09)
+$C$DW$80	.dwtag  DW_TAG_member
+	.dwattr $C$DW$80, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$80, DW_AT_name("tm_mday")
+	.dwattr $C$DW$80, DW_AT_TI_symbol_name("tm_mday")
+	.dwattr $C$DW$80, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+	.dwattr $C$DW$80, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$80, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$80, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$80, DW_AT_decl_column(0x09)
+$C$DW$81	.dwtag  DW_TAG_member
+	.dwattr $C$DW$81, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$81, DW_AT_name("tm_mon")
+	.dwattr $C$DW$81, DW_AT_TI_symbol_name("tm_mon")
+	.dwattr $C$DW$81, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+	.dwattr $C$DW$81, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$81, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$81, DW_AT_decl_line(0x45)
+	.dwattr $C$DW$81, DW_AT_decl_column(0x09)
+$C$DW$82	.dwtag  DW_TAG_member
+	.dwattr $C$DW$82, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$82, DW_AT_name("tm_year")
+	.dwattr $C$DW$82, DW_AT_TI_symbol_name("tm_year")
+	.dwattr $C$DW$82, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+	.dwattr $C$DW$82, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$82, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$82, DW_AT_decl_line(0x46)
+	.dwattr $C$DW$82, DW_AT_decl_column(0x09)
+$C$DW$83	.dwtag  DW_TAG_member
+	.dwattr $C$DW$83, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$83, DW_AT_name("tm_wday")
+	.dwattr $C$DW$83, DW_AT_TI_symbol_name("tm_wday")
+	.dwattr $C$DW$83, DW_AT_data_member_location[DW_OP_plus_uconst 0x18]
+	.dwattr $C$DW$83, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$83, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$83, DW_AT_decl_line(0x47)
+	.dwattr $C$DW$83, DW_AT_decl_column(0x09)
+$C$DW$84	.dwtag  DW_TAG_member
+	.dwattr $C$DW$84, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$84, DW_AT_name("tm_yday")
+	.dwattr $C$DW$84, DW_AT_TI_symbol_name("tm_yday")
+	.dwattr $C$DW$84, DW_AT_data_member_location[DW_OP_plus_uconst 0x1c]
+	.dwattr $C$DW$84, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$84, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$84, DW_AT_decl_line(0x48)
+	.dwattr $C$DW$84, DW_AT_decl_column(0x09)
+$C$DW$85	.dwtag  DW_TAG_member
+	.dwattr $C$DW$85, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$85, DW_AT_name("tm_isdst")
+	.dwattr $C$DW$85, DW_AT_TI_symbol_name("tm_isdst")
+	.dwattr $C$DW$85, DW_AT_data_member_location[DW_OP_plus_uconst 0x20]
+	.dwattr $C$DW$85, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$85, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$85, DW_AT_decl_line(0x49)
+	.dwattr $C$DW$85, DW_AT_decl_column(0x09)
+	.dwendtag $C$DW$T$38
+
+	.dwattr $C$DW$T$38, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/time.h")
+	.dwattr $C$DW$T$38, DW_AT_decl_line(0x3f)
+	.dwattr $C$DW$T$38, DW_AT_decl_column(0x08)
+	.dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+
+;***************************************************************
+;* DWARF CIE ENTRIES                                           *
+;***************************************************************
+
+$C$DW$CIE	.dwcie 19
+	.dwcfi	cfa_register, 31
+	.dwcfi	cfa_offset, 0
+	.dwcfi	undefined, 0
+	.dwcfi	undefined, 1
+	.dwcfi	undefined, 2
+	.dwcfi	undefined, 3
+	.dwcfi	undefined, 4
+	.dwcfi	undefined, 5
+	.dwcfi	undefined, 6
+	.dwcfi	undefined, 7
+	.dwcfi	undefined, 8
+	.dwcfi	undefined, 9
+	.dwcfi	same_value, 10
+	.dwcfi	same_value, 11
+	.dwcfi	same_value, 12
+	.dwcfi	same_value, 13
+	.dwcfi	same_value, 14
+	.dwcfi	same_value, 15
+	.dwcfi	undefined, 16
+	.dwcfi	undefined, 17
+	.dwcfi	undefined, 18
+	.dwcfi	undefined, 19
+	.dwcfi	undefined, 20
+	.dwcfi	undefined, 21
+	.dwcfi	undefined, 22
+	.dwcfi	undefined, 23
+	.dwcfi	undefined, 24
+	.dwcfi	undefined, 25
+	.dwcfi	same_value, 26
+	.dwcfi	same_value, 27
+	.dwcfi	same_value, 28
+	.dwcfi	same_value, 29
+	.dwcfi	same_value, 30
+	.dwcfi	same_value, 31
+	.dwcfi	same_value, 32
+	.dwcfi	undefined, 33
+	.dwcfi	undefined, 34
+	.dwcfi	undefined, 35
+	.dwcfi	undefined, 36
+	.dwcfi	undefined, 37
+	.dwcfi	undefined, 38
+	.dwcfi	undefined, 39
+	.dwcfi	undefined, 40
+	.dwcfi	undefined, 41
+	.dwcfi	undefined, 42
+	.dwcfi	undefined, 43
+	.dwcfi	undefined, 44
+	.dwcfi	undefined, 45
+	.dwcfi	undefined, 46
+	.dwcfi	undefined, 47
+	.dwcfi	undefined, 48
+	.dwcfi	undefined, 49
+	.dwcfi	undefined, 50
+	.dwcfi	undefined, 51
+	.dwcfi	undefined, 52
+	.dwcfi	undefined, 53
+	.dwcfi	undefined, 54
+	.dwcfi	undefined, 55
+	.dwcfi	undefined, 56
+	.dwcfi	undefined, 57
+	.dwcfi	undefined, 58
+	.dwcfi	undefined, 59
+	.dwcfi	undefined, 60
+	.dwcfi	undefined, 61
+	.dwcfi	undefined, 62
+	.dwcfi	undefined, 63
+	.dwcfi	undefined, 64
+	.dwcfi	undefined, 65
+	.dwcfi	undefined, 66
+	.dwcfi	undefined, 67
+	.dwcfi	undefined, 68
+	.dwcfi	undefined, 69
+	.dwcfi	undefined, 70
+	.dwcfi	undefined, 71
+	.dwcfi	undefined, 72
+	.dwcfi	undefined, 73
+	.dwcfi	undefined, 74
+	.dwcfi	undefined, 75
+	.dwcfi	undefined, 76
+	.dwcfi	undefined, 77
+	.dwcfi	undefined, 78
+	.dwcfi	undefined, 79
+	.dwcfi	undefined, 80
+	.dwcfi	undefined, 81
+	.dwcfi	undefined, 82
+	.dwcfi	undefined, 83
+	.dwcfi	undefined, 84
+	.dwcfi	undefined, 85
+	.dwcfi	undefined, 86
+	.dwcfi	undefined, 87
+	.dwcfi	undefined, 88
+	.dwcfi	undefined, 89
+	.dwcfi	undefined, 90
+	.dwcfi	undefined, 91
+	.dwcfi	undefined, 92
+	.dwcfi	undefined, 93
+	.dwcfi	undefined, 94
+	.dwcfi	undefined, 95
+	.dwcfi	undefined, 96
+	.dwcfi	undefined, 97
+	.dwcfi	undefined, 98
+	.dwcfi	undefined, 99
+	.dwcfi	undefined, 100
+	.dwcfi	undefined, 101
+	.dwcfi	undefined, 102
+	.dwcfi	undefined, 103
+	.dwcfi	undefined, 104
+	.dwcfi	undefined, 105
+	.dwcfi	undefined, 106
+	.dwcfi	undefined, 107
+	.dwcfi	undefined, 108
+	.dwcfi	undefined, 109
+	.dwcfi	undefined, 110
+	.dwcfi	undefined, 111
+	.dwcfi	undefined, 112
+	.dwcfi	undefined, 113
+	.dwcfi	undefined, 114
+	.dwcfi	undefined, 115
+	.dwcfi	undefined, 116
+	.dwcfi	undefined, 117
+	.dwcfi	undefined, 118
+	.dwcfi	undefined, 119
+	.dwcfi	undefined, 120
+	.dwcfi	undefined, 121
+	.dwcfi	undefined, 122
+	.dwcfi	undefined, 123
+	.dwcfi	undefined, 124
+	.dwcfi	undefined, 125
+	.dwcfi	undefined, 126
+	.dwcfi	undefined, 127
+	.dwendentry
+	.dwendtag $C$DW$CU
+

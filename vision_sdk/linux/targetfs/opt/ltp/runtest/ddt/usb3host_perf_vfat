@@ -1,0 +1,6 @@
+# @name USB3.0 Host Write/Read Performance test
+# @desc format usb device first and then mount it and do read write perf test
+# @requires usb/host/superspeed
+# @setup_requires usbhostmsc
+
+USB3HOST_M_PERF_VFAT_0001 source 'common.sh' ; do_cmd install_modules.sh 'usb' ; blk_device_filesystem_perf_test.sh -f vfat -s 10 -B "102400 262144" -d "usb" -e "superspeed"

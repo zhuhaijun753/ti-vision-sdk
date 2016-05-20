@@ -1,0 +1,33 @@
+From 1d3b0de592339984c81fc16b6b346858ca7ee80a Mon Sep 17 00:00:00 2001
+From: Somnath Mukherjee <somnath@ti.com>
+Date: Fri, 6 Feb 2015 15:04:11 +0530
+Subject: [PATCH 05/12] arm: dtsi: dra7: reserving memory for infoadas
+ integration.
+
+This memory would be used by VisionSDK running on IPU.
+
+Change-Id: I162646497fd12fee17cd414b75be0ad50f55b870
+Signed-off-by: Somnath Mukherjee <somnath@ti.com>
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ arch/arm/boot/dts/dra7-evm.dts |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/boot/dts/dra7-evm.dts b/arch/arm/boot/dts/dra7-evm.dts
+index f3c7631..312121e 100644
+--- a/arch/arm/boot/dts/dra7-evm.dts
++++ b/arch/arm/boot/dts/dra7-evm.dts
+@@ -7,6 +7,10 @@
+  */
+ /dts-v1/;
+ 
++/memreserve/ 0x85800000 0xFC00000;
++/memreserve/ 0xA2000000 0x4000000;
++/memreserve/ 0xA0000000 0x2000000;
++
+ #include "dra74x.dtsi"
+ #include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/gpio/gpio.h>
+-- 
+1.7.9.5
+

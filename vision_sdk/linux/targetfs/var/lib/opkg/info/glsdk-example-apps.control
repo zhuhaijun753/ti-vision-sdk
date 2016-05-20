@@ -1,0 +1,13 @@
+Package: glsdk-example-apps
+Version: 1.0-r20.0
+Description: GLSDK example applications
+ GLSDK example applications.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: glsdk-example-apps
+Homepage: http://git.ti.com/glsdk
+Depends: ti-ipc (>= 3.36.01.11), libkms1 (>= 2.4.41), libdrm2 (>= 2.4.41), libdrm-omap1 (>= 2.4.41), libc6 (>= 2.15), libglib-2.0-0 (>= 2.38.2), gstreamer1.0 (>= 1.2.3)
+Source: git://git.ti.com/glsdk/example-applications.git;protocol=git

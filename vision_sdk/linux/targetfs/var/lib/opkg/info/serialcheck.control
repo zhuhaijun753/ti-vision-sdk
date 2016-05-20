@@ -1,0 +1,13 @@
+Package: serialcheck
+Version: 1.0.0-r0.0
+Description: Application to verify operation of serial ports
+ Application to verify operation of serial ports.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: serialcheck
+Homepage: git://git.breakpoint.cc/bigeasy/serialcheck.git
+Depends: libc6 (>= 2.15)
+Source: git://git.breakpoint.cc/bigeasy/serialcheck.git file://0001-Add-option-to-enable-internal-loopback.patch file://0002-Restore-original-loopback-config.patch

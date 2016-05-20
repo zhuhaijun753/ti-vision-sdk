@@ -1,0 +1,13 @@
+Package: pango-module-basic-fc
+Version: 1.36.2-r0.0
+Description: Pango module basic-fc
+ Pango module basic-fc
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.0+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: pango
+Homepage: http://www.pango.org/
+Depends: libffi6 (>= 3.0.13), libfreetype6 (>= 2.5.2), libc6 (>= 2.15), libglib-2.0-0 (>= 2.38.2), libharfbuzz0 (>= 0.9.26), pango (>= 1.36.2), libexpat1 (>= 2.1.0), libfontconfig1 (>= 2.11.0)
+Source: http://ftp.gnome.org/pub/GNOME/sources/pango/1.36/pango-1.36.2.tar.xz;name=archive file://no-tests.patch file://multilib-fix-clean.patch

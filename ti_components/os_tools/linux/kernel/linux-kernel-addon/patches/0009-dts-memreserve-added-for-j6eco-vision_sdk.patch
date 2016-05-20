@@ -1,0 +1,27 @@
+From 7695eab5ca7099268348e40a83f60f8a1bf6c8de Mon Sep 17 00:00:00 2001
+From: Subhajit Paul <a0132170@ti.com>
+Date: Thu, 8 Oct 2015 14:23:06 +0530
+Subject: [PATCH 09/12] dts : memreserve added for j6eco vision_sdk
+
+Signed-off-by: Subhajit Paul <a0132170@ti.com>
+---
+ arch/arm/boot/dts/dra72-evm.dts |    3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm/boot/dts/dra72-evm.dts b/arch/arm/boot/dts/dra72-evm.dts
+index cf1c8d4..55bb0f3 100644
+--- a/arch/arm/boot/dts/dra72-evm.dts
++++ b/arch/arm/boot/dts/dra72-evm.dts
+@@ -7,6 +7,9 @@
+  */
+ /dts-v1/;
+ 
++/memreserve/ 0x8a200000 0xFE00000;
++/memreserve/ 0xA0000000 0x2000000;
++
+ #include "dra72x.dtsi"
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/clk/ti-dra7-atl.h>
+-- 
+1.7.9.5
+

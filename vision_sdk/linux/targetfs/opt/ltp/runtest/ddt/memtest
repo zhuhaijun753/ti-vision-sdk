@@ -1,0 +1,17 @@
+# @name Memtester
+# @desc Test memory using memtester application
+# @requires 
+# @setup_requires 
+
+MEMORY_S_FUNC_MEMTESTER_1pct_1time source 'functions.sh'; run_memtest 1 1
+MEMORY_M_FUNC_MEMTESTER_10pct_1time source 'functions.sh'; run_memtest 10 1
+MEMORY_M_FUNC_MEMTESTER_50pct_1time source 'functions.sh'; run_memtest 50 1
+MEMORY_L_STRESS_MEMTESTER_80pct_1time source 'functions.sh'; run_memtest 80 1
+MEMORY_L_STRESS_MEMTESTER_90pct_1time source 'functions.sh'; run_memtest 90 1
+MEMORY_XL_STRESS_MEMTESTER_50pct_10times source 'functions.sh'; run_memtest 50 10
+MEMORY_XL_STRESS_MEMTESTER_80pct_10times source 'functions.sh'; run_memtest 80 10
+MEMORY_L_FUNC_MEMTESTER_7000MBs_350MBh_1time source 'functions.sh'; run_memtest_var 7000 350 1 
+MEMORY_L_FUNC_MEMTESTER_3000MBs_350MBh_1time source 'functions.sh'; run_memtest_var 3000 350 1 
+MEMORY_L_FUNC_MEMTESTER_1000MBs_350MBh_1time source 'functions.sh'; run_memtest_var 1000 350 1 
+MEMORY_S_FUNC_MEMTESTER_100MBs_0MBh_1time source 'functions.sh'; run_memtest_var 100 0 1 
+

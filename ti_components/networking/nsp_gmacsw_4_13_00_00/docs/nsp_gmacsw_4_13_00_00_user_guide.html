@@ -1,0 +1,300 @@
+<!-- 
+ *  Copyright (c) 2013, Texas Instruments Incorporated
+ *  All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *  *  Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *  *  Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *
+ *  *  Neither the name of Texas Instruments Incorporated nor the names of
+ *     its contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ *  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ *  PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ *  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ *  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ *  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ *  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>NDK Support Package (NSP) for GMACSW User Guide</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td bgcolor="black" width="1">
+            <a href="http://www.ti.com/"><img style=
+            "border: 0px solid ; width: 222px; height: 54px;" alt=
+            "Texas Instruments" src="tilogo.gif"></a>
+          </td>
+          <td bgcolor="red">
+            <img style="width: 314px; height: 26px;" alt=
+            "Technology for Innovators(tm)" src="titagline.gif">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1 align="center">NSP for GMACSW User Guide</h1>
+    <h2 align="center"></h2>
+
+<p>
+    This is an NSP release for the 3-port Gigabit Ethernet Switch (GMACSW) on the
+    DRA7xx/TDA2xx (Vayu) device, the DRA62x (J5Eco) device, and the DRA65x/VisionMid (Centaurus)
+    device. On J5Eco and Centaurus devices, this release supports Ethernet control on the 
+    ARM Cortex-M3 (Media Controller) and ARM Cortex-A8 (GPP or MPU). On the Vayu device,
+    this release supports use on the ARM Cortex-M4 (IPU) and ARM Cortex-A15 (MPU).
+    Network examples for SYS/BIOS 6.x are provided for the supported cores.
+</p>
+
+<p align="center">
+<a href="#Introduction">Introduction</a>,
+<a href="#Documentation">Documentation</a>,
+<a href="#Examples">Examples</a>,
+<a href="#Rebuilding_driver_libs">Rebuilding The Driver Library</a>,
+<a href="#Version">Version Information</a>,
+<a href="#Support">Technical Support</a>.
+</p>
+
+<hr>
+<h2><a name="Introduction">Introduction</a></h2>
+    <p>
+      This is an NSP release for the 3-port Gigabit Ethernet Switch (GMACSW) on the
+      DRA7xx/TDA2xx (Vayu) device, the DRA62x (J5Eco) device, and the DRA65x/VisionMid (Centaurus)
+      device. On J5Eco and Centaurus devices, this release supports Ethernet control on the 
+      ARM Cortex-M3 (Media Controller) and ARM Cortex-A8 (GPP or MPU). On the Vayu device,
+      this release supports use on the ARM Cortex-M4 (IPU) and ARM Cortex-A15 (MPU).
+      Network examples for SYS/BIOS 6.x are provided for the supported cores.
+    </p>
+    <p>
+      The Network Development Kit Support Package (NSP) contains&nbsp;
+      ethernet driver code, libraries and network examples for the supported EVM platforms. 
+      It is meant to be used in conjunction with the TI Network Development Kit
+      (NDK), which consists of the platform independent networking code and stacks.
+    </p>
+    <p>
+      The NSP product is comprised of the following main packages
+    </p>
+
+<hr>
+<h2><a name="Documentation">Documentation</a></h2>
+<p>
+    The following documents provide an overview of the NDK, the networking
+    programming API, and how to port the software to other platforms (The
+    following documents have not been updated to reflect changes in this
+    drop).
+</p>
+<ul>
+    <li>
+        <a href="http://www-s.ti.com/sc/techlit/spru523.pdf">NDK User's
+        Guide</a>: Documents the NDK basics, and describes how to develop or
+        port a network-enabled application. It also describes how to customize
+        the network environment to fit your embedded environment. 
+    </li>
+    <li>
+        <a href="http://www-s.ti.com/sc/techlit/spru524.pdf">NDK Programmer's
+        Reference Guide</a>: Describes the NDK library API calls in detail.
+        It also includes a description of the stack's internal object based
+        API functions. 
+    </li>
+    <li>
+        <a href="http://www-s.ti.com/sc/techlit/sprufp2.pdf">NDK Support
+        Package Ethernet Driver Design Guide</a>: 
+        Describes the NIMU based architecture of the Ethernet Drivers
+        packaged in the NSPs. 
+  </li>
+</ul>
+<p>
+    In addition, users are encouraged to monitor (and contribute to!) the
+    <a href="http://tiexpressdsp.com">TI Embedded Processors Wiki</a>.
+</p>
+<p>
+    Release notes from previous NDK releases are also available in the 
+    <a href="http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ndk/index.html">
+    release website.</a>
+</p>
+
+
+<hr>
+
+<h2><a name="Features Supported">Features Supported</a></h2>
+<ul>
+    <li>Raw ethernet support with Non-NIMU APIs</li>
+    <li>TCP/UDP/Raw Socket support with NIMU APIs</li>
+    <li>NSP builds available for accessing EMAC and PHY for Cortext M4</li>
+    <li>Both EMAC & PHY are enabled</li>
+    <li>Non-NIMU & NIMU example files are included in this package</li>
+    <li>CCSv5.4.0 example projects</li>
+    <li>Option for enabling internal loopback mode of the GMAC_SW peripheral.</li>
+    <li>Device selection via RTSC config file options. These are used as follows:
+    <ul>
+        <li><code>GMACSW.device = GMACSW.DEVICE_J5ECO;</code></li>
+        <li><code>GMACSW.device = GMACSW.DEVICE_CENTAURUS;</code></li>
+        <li><code>GMACSW.device = GMACSW.DEVICE_VAYU;</code></li>
+    </ul>
+    </li>
+</ul>
+
+<hr>
+
+<h2><a name="Examples">Examples</a></h2>
+<p>
+    NDK examples may be found in the "packages/ti/ndk/vayu/examples_ipu1"
+    directory and the "packages/ti/ndk/vayu/examples_mpu".  The examples are stored as CCSv5 project files 
+    that are meant to be imported into CCSv5.
+</P
+<h3>Importing The NDK Example Projects Into CCS 5.4</h3>
+<p>
+    Before following the steps in this section, please ensure that all
+    dependent software that is listed in the section Compatibility Information in the release notes has
+    been installed.
+</p>
+<ul>
+  <li>Open CCSv5 and create a new workspace.</li>
+  <br>
+  <li>From within the C/C++ View, select the menu option "Project -&gt; Import Existing CCS/CCE Eclipse Project"</li>
+  <br>
+  <li>In the window that appears, click "Select Archive File", then click the "browse" button.</li>
+  <br>
+  <li>Navigate to the location where you installed the nsp_gmacsw_4_13_00_00 package. &nbsp;If you installed the NSP into C:\Program Files\Texas Instruments, then navigate to:</li>
+  <br>
+  <ul>
+    <li style="font-family: Courier New;">C:\Program Files\Texas Instruments\<b>nsp_gmacsw_4_13_00_00\</b>packages\ti\ndk\vayu\examples</li>
+    <br>
+  </ul>
+  <li>Once in the examples directory, you will see the example directories for MPU & IPU1:</li><br>
+  <li>Choose the desired directory and click open</li><br>
+  <li>Under "Discovered Projects" you should see the examples listed.  Click "Finish" to import the examples.</li><br>
+  <li>You may now build the NDK examples within CCSv5</li>
+  <br>
+ </li>
+ <li><b>NOTE</b>: if a project with the
+same name as the NDK examples already exists in the workspace, then it
+will not be found in the above steps. Therefore, it is
+recommended that a new workspace is used for the above steps.</li>
+</ul>
+
+
+<hr>
+<h2><a name="Rebuilding_driver_libs">Rebuilding The Driver Library</a></h2>
+<p>
+    The NDK Support Package includes the EMAC driver source files and a 
+    RTSC build files that allow you to modify the driver sources and rebuild
+    the EMAC library.  You can rebuild the EMAC driver sources in order to 
+    modify, update or add functionality.  If you edit any of the driver source
+    code and/or RTSC build files, you must rebuild the EMAC library in order 
+    to incorporate these changes into it.
+</p>
+<p>
+    The instructions on this page are intended for rebuilding the EMAC driver
+    library on Microsoft Windows in a DOS shell using the xdc command. However,
+    this library may also be re-built on Linux using the xdc command that comes 
+    packaged with XDCtools. Linux users should substitute any Windows specific 
+    copy, explorer, or DOS shell instructions or commands with the Linux equivalents
+    in the steps that follow.
+</p>
+<p>
+    <b>Warning:</b> This section provides details about rebuilding the EMAC driver 
+    source code. We strongly recommend that you copy the NSP installation to a 
+    directory with a different name and update and rebuild that copy, rather than 
+    rebuilding the original installation. 
+</p>
+
+<h3>Making A Backup Copy Of The NSP Installation</h3>
+
+  <ul>
+          <li>Create a new directory on your computer. You will use this directory to store a copy of the NSP installation. This directory will act as a container for your NSP modifications. The full path to this directory <b>cannot contain any spaces</b>.<br><br>
+
+          For example, we recommend creating a directory called "C:/MYNSPBUILDS" rather than using a location in the "My Documents" directory tree.
+          </li><br>
+          <li>Using Windows Explorer, copy the entire NSP installation to the directory you just created. For example, if you installed the NSP in the default installation location, then you should copy the C:/PROGRAM FILES\TEXAS INSTRUMENTS\nsp_gmacsw_4_02_00_00 folder and all of its contents to the C:/MYNSPBUILDS folder. After this step, the C:/MYNSPBUILDS folder should contain the nsp_gmacsw_4_02_00_00 folder, which is a copy of your NSP installation.</li><br>
+     
+        <li>Rename the folder that contains the copy of the NSP installation. For example, rename the C:\MYNSPBUILDS\nsp_gmacsw_4_13_00_00 directory to C:/MYNSPBUILDS\CUSTOM_nsp_gmacsw_4_13_00_00 </li><br>
+  </ul>
+        
+<h3>Updating The config.bld File</h3>
+    <ul>
+        <li>Using Windows Explorer, move to the C:\MYNSPBUILDS\CUSTOM_nsp_gmacsw_4_13_00_00/packages/ti/nsp/drv directory.  </li><br>
+        <li>Open the config.bld file for text editing. </li><br>
+        <li>Make sure that the paths to the NDK 2.22 installation, XDCtools, and Code Generation Tools are correct. 
+        For example, if you have installed NDK 2.22 and CCSv5.4 into the default locations, then the default values
+        of the following variables in config.bld should be correct.  If you have installed these components into 
+        different locations, then you must update these variables to point to the correct installation locations: </li><br>
+        <ul>
+            <li><code>var xdctoolsInstallDir = "C:/Program Files/Texas Instruments/xdctools_3_25_01_65";</code></li>
+            <li><code>var ndkInstallDir = "C:/Program Files/Texas Instruments/ndk_2_22_03_20";</code></li>
+            <li><code>var biosInstallDir = "C:/Program Files/Texas Instruments/bios_6_35_02_45";</code></li>
+            <li><code>gccMPUTarget.rootDir = "C:/Program\ Files/Texas\ Instruments/ccsv5/tools/compiler/gcc-arm-none-eabi-4_7-2012q4";</code></li>
+            <li><code>tiIPUTarget.rootDir = "C:/Program\ Files/Texas\ Instruments/ccsv5/tools/compiler/arm_5.0.5";</code></li>
+            <br>
+        </ul>
+        <li>Near the end of the file, look for the array called <code>Build.targets</code>. This array contains the list of targets for which the EMAC driver should be built. Make sure that the target for which you want the driver built is uncommented. To build for all targets, this array should look like the following: </li><br>
+        <code>
+                &nbsp;&nbsp;Build.targets = [<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;gccMPUTarget,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;tiIPUTarget,<br>
+                &nbsp;&nbsp;];
+        </code><br><br>
+
+        <li>Save and exit the file.</li><br>
+  </ul>
+        
+<h3>Re-building The EMAC Driver</h3>
+<ul>
+    <li>In a DOS shell, navigate to the location of the copy of the NSP installation:</li><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;cd C:\MYNSPBUILDS\CUSTOM_nsp_gmacsw_4_13_00_00\packages\ti\nsp\drv</code><br><br>
+    <li>Run the XDC command to rebuild the driver library</li><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;xdc all</code><br><br>
+    <li>Or, if your XDCtools installation location is not on your path, type:</li><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\Texas Instruments\xdctools_3_25_01_65"\xdc all</code><br><br>
+    <li>The driver rebuild should begin.</li><br>
+</ul>
+
+<hr>
+<h2><a name="Support">Technical Support</a></h2>
+<ul>
+    <li>
+        <a href="http://support.ti.com">Technical support resources</a>
+    </li>
+
+    <li>
+        Forum-based technical support is available through the TI E2E Community in
+        the <a href="http://e2e.ti.com/support/embedded/f/355.aspx">BIOS forum</a>
+    </li>
+
+    <li>
+        <a href="http://tiexpressdsp.com/wiki/index.php?title=Category:NDK">Wiki-based documentation</a>
+    </li>
+
+    <li>
+        <a href="http://focus.ti.com/general/docs/techdocsabstract.tsp?abstractName=spraax4">Getting
+        Started with the C6000 Network Developer's Kit (NDK)</a>
+    </li>
+</ul>
+<p>
+    Check the <a href="http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ndk/index.html">NDK
+    website</a> for updates.
+</p>
+
+<hr>
+
+</body>
+</html>

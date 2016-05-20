@@ -1,0 +1,16 @@
+Package: ti-ipc-dev
+Version: 3.36.01.11-r0.0
+Description: ti-ipc version 3.36.01.11-r0 - Development files
+ TI Inter Process Communication (IPC) Mechanisms (for Uni- and Multi-
+ Processor Configurations)  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: dra7xx_evm
+OE: ti-ipc
+Homepage: http://processors.wiki.ti.com/index.php/Category:IPC
+Depends: ti-ipc (= 3.36.01.11-r0.0)
+Recommends: libc6-dev, initscripts-dev
+Source: git://git.ti.com/ipc/ipcdev.git;protocol=git;branch=3.36 file://tiipclad-daemon.sh

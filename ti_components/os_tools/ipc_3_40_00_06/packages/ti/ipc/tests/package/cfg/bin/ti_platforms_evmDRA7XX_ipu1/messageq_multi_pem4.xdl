@@ -1,0 +1,236 @@
+/*
+ * Do not modify this file; it is automatically generated from the template
+ * linkcmd.xdt in the ti.targets.elf package and will be overwritten.
+ */
+
+/*
+ * put '"'s around paths because, without this, the linker
+ * considers '-' as minus operator, not a file name character.
+ */
+
+
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/ipc/tests/package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.src/ipc/ipc.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/pm/lib/debug/ti.pm_null.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/deh/lib/debug/ti.deh_vayu_smp.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/ipc/tests/package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.src/utils/utils.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/ti.targets.arm.rtsarm.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/boot.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/auto_init.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/ipc/tests/package/cfg/bin/ti_platforms_evmDRA7XX_ipu1/messageq_multi_pem4.src/sysbios/sysbios.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/trace/lib/debug/ti.trace.aem4"
+
+--retain="*(xdc.meta)"
+
+/* C6x Elf symbols */
+--symbol_map __TI_STACK_SIZE=__STACK_SIZE
+--symbol_map __TI_STACK_BASE=__stack
+--symbol_map _stack=__stack
+
+
+
+--args 0x0
+-heap  0x0
+-stack 0x1000
+
+MEMORY
+{
+    L2_ROM : org = 0x0, len = 0x4000
+    L2_RAM : org = 0x20000000, len = 0x10000
+    OCMC_RAM1 : org = 0x40300000, len = 0x80000
+    OCMC_RAM2 : org = 0x40400000, len = 0x100000
+    OCMC_RAM3 : org = 0x40500000, len = 0x100000
+    EXT_CODE (RWX) : org = 0x4000, len = 0xfc000
+    EXT_DATA (RW) : org = 0x80000000, len = 0x200000
+    EXT_HEAP (RW) : org = 0x80200000, len = 0x300000
+    TRACE_BUF (RW) : org = 0x9f000000, len = 0x60000
+    EXC_DATA (RW) : org = 0x9f060000, len = 0x10000
+    PM_DATA (RWX) : org = 0x9f070000, len = 0x20000
+}
+
+/*
+ * Linker command file contributions from all loaded packages:
+ */
+
+/* Content from xdc.services.global (null): */
+
+/* Content from xdc (null): */
+
+/* Content from xdc.corevers (null): */
+
+/* Content from xdc.shelf (null): */
+
+/* Content from xdc.services.spec (null): */
+
+/* Content from xdc.services.intern.xsr (null): */
+
+/* Content from xdc.services.intern.gen (null): */
+
+/* Content from xdc.services.intern.cmd (null): */
+
+/* Content from xdc.bld (null): */
+
+/* Content from ti.targets (null): */
+
+/* Content from ti.targets.arm.elf (null): */
+
+/* Content from xdc.rov (null): */
+
+/* Content from xdc.services.getset (null): */
+
+/* Content from ti.sdo.ipc.family (null): */
+
+/* Content from ti.catalog.arm.cortexm4 (null): */
+
+/* Content from ti.catalog (null): */
+
+/* Content from ti.catalog.peripherals.hdvicp2 (null): */
+
+/* Content from xdc.platform (null): */
+
+/* Content from xdc.cfg (null): */
+
+/* Content from ti.catalog.arp32 (null): */
+
+/* Content from ti.catalog.c6000 (null): */
+
+/* Content from ti.catalog.arm.cortexa15 (null): */
+
+/* Content from ti.platforms.evmDRA7XX (null): */
+
+/* Content from ti.sysbios.hal (null): */
+
+/* Content from ti.sysbios.interfaces (null): */
+
+/* Content from xdc.runtime (null): */
+
+/* Content from ti.trace (null): */
+
+/* Content from ti.sysbios.knl (null): */
+
+/* Content from ti.sysbios (null): */
+
+/* Content from ti.sysbios.rts (ti/sysbios/rts/linkcmd.xdt): */
+
+/* Content from ti.sysbios.family (null): */
+
+/* Content from ti.targets.arm.rtsarm (null): */
+
+/* Content from ti.sysbios.family.arm (ti/sysbios/family/arm/linkcmd.xdt): */
+--retain "*(.vecs)"
+
+/* Content from ti.sysbios.gates (null): */
+
+/* Content from ti.sysbios.heaps (null): */
+
+/* Content from xdc.runtime.knl (null): */
+
+/* Content from ti.sdo.utils (null): */
+
+/* Content from ti.sdo.ipc.interfaces (null): */
+
+/* Content from ti.sysbios.syncs (null): */
+
+/* Content from ti.sysbios.xdcruntime (null): */
+
+/* Content from ti.sysbios.family.arm.m3 (ti/sysbios/family/arm/m3/linkcmd.xdt): */
+-u _c_int00
+ti_sysbios_family_arm_m3_Hwi_nvic = 0xe000e000;
+
+/* Content from ti.deh (null): */
+
+/* Content from ti.sysbios.timers.dmtimer (null): */
+
+/* Content from ti.sysbios.family.arm.ducati (ti/sysbios/family/arm/ducati/linkcmd.xdt): */
+--diag_suppress=10063
+--entry_point=ti_sysbios_family_arm_ducati_Core_reset
+
+/* Content from ti.sysbios.family.shared.vayu (null): */
+
+/* Content from ti.sysbios.hal.ammu (ti/sysbios/hal/ammu/linkcmd.xdt): */
+ti_sysbios_hal_ammu_AMMU_mmu = 1073743872;
+
+/* Content from ti.sysbios.hal.unicache (ti/sysbios/hal/unicache/linkcmd.xdt): */
+ti_sysbios_hal_unicache_Cache_cache = 1073741824;
+
+/* Content from ti.sysbios.family.arm.ducati.smp (null): */
+
+/* Content from ti.pm (null): */
+
+/* Content from ti.sysbios.utils (null): */
+
+/* Content from ti.sdo.ipc (ti/sdo/ipc/linkcmd.xdt): */
+
+SECTIONS
+{
+
+    ti_sdo_ipc_init: load > EXT_DATA, type = NOINIT
+}
+
+/* Content from ti.sdo.ipc.transports (null): */
+
+/* Content from ti.sdo.ipc.notifyDrivers (null): */
+
+/* Content from ti.sdo.ipc.family.vayu (null): */
+
+/* Content from ti.ipc.remoteproc (ti/ipc/remoteproc/linkcmd.xdt): */
+
+
+
+/* Content from ti.ipc.family.vayu (null): */
+
+/* Content from ti.ipc.rpmsg (null): */
+
+/* Content from ti.ipc.ipcmgr (null): */
+
+/* Content from ti.ipc.namesrv (null): */
+
+/* Content from ti.ipc.transports (null): */
+
+/* Content from ti.ipc.tests (null): */
+
+/* Content from xdc.services.io (null): */
+
+/* Content from ti.sdo.ipc.family.ti81xx (null): */
+
+
+/*
+ * symbolic aliases for static instance objects
+ */
+xdc_runtime_Startup__EXECFXN__C = 1;
+xdc_runtime_Startup__RESETFXN__C = 1;
+TSK_idle = ti_sysbios_knl_Task_Object__table__V + 0;
+
+SECTIONS
+{
+    .text: load >> EXT_CODE
+    .stack: load > EXT_DATA
+    GROUP: load > EXT_DATA
+    {
+        .bss:
+        .neardata:
+        .rodata:
+    }
+    .binit: load > EXT_CODE
+    .cinit: load > EXT_CODE
+    .init_array: load > EXT_CODE
+    .const: load >> EXT_CODE
+    .data: load >> EXT_DATA
+    .fardata: load >> EXT_DATA
+    .switch: load >> EXT_DATA
+    .sysmem: load > EXT_DATA
+    .far: load >> EXT_DATA
+    .args: load > EXT_DATA align = 0x4, fill = 0 {_argsize = 0x0; }
+    .cio: load >> EXT_DATA
+    .ARM.exidx: load > EXT_DATA
+    .ARM.extab: load >> EXT_DATA
+    .bootVecs:  type = DSECT
+    .vecs: load > 0x400, type = DSECT
+    .resetVecs: load > 0x400
+    .tracebuf: load > TRACE_BUF
+    .errorbuf: load > EXC_DATA
+    .ducatiBoot: load > 0x0
+    .resource_table: load > 0x3000, type = NOINIT
+    .ducatiGates: load > 0x7f0, type = NOINIT
+    xdc.meta: load > EXT_CODE, type = COPY
+
+}

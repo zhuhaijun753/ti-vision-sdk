@@ -1,0 +1,8 @@
+# @name ALSA plus standby/resume
+# @desc ALSA Loopback tests while doing power standby/resume operations
+# @requires sound && power_mgr 
+# @setup_requires 
+
+POWERMGR_S_FUNC_ALSA-8K_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/alsa_samplerate -P $PLATFORM -s 'ALSA_S_FUNC_LOOPBK_SMPRT_8000 '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_STANDBY ' "
+
+POWERMGR_S_FUNC_ALSA-44.1K_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/alsa_samplerate -P $PLATFORM -s 'ALSA_S_FUNC_LOOPBK_SMPRT_44100 '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_STANDBY ' "

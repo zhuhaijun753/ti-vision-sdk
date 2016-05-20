@@ -1,0 +1,13 @@
+Package: kmscube
+Version: 1.0.0-r2.0
+Description: kmscube version 1.0.0-r2
+ Demo application to showcase 3D graphics on SGX using kms and gbm
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: kmscube
+Homepage: http://git.ti.com
+Depends: libdrm2 (>= 2.4.41), libdrm-omap1 (>= 2.4.41), libudev0 (>= 182), omap5-sgx-ddk-um-linux (>= 1.9.0.12), libc6 (>= 2.15), libgbm1 (>= 9.0.0)
+Source: git://git.ti.com/glsdk/kmscube.git;protocol=git

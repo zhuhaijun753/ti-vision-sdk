@@ -1,0 +1,12 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+OmxSrvMgr.h
+package.bld
+package/package.cfg.xdc.inc
+lib/debug/ti.srvmgr.omx_smp.aem4
+package/package_ti.srvmgr.omx.c
+OmxSrvMgr.c
+lib/release/ti.srvmgr.omx_smp.aem4
+lib/debug/ti.srvmgr.omx.ae66
+lib/release/ti.srvmgr.omx.ae66

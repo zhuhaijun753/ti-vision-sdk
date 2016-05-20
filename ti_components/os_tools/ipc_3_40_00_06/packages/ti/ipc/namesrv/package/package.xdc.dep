@@ -1,0 +1,98 @@
+clean::
+	$(RM) package/ti.ipc.namesrv.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_ipc_namesrv.java
+	$(RM) package/ti_ipc_namesrv.class
+	$(RM) package/package_ti.ipc.namesrv.c
+	$(RM) package/package.defs.h
+	$(RM) NameServerRemoteRpmsg.h
+	$(RM) package/internal/NameServerRemoteRpmsg.xdc.h
+	$(RM) package/ti.ipc.namesrv.ccs
+
+.interfaces: package/ti.ipc.namesrv.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_ipc_namesrv.java package/package_ti.ipc.namesrv.c package/package.defs.h NameServerRemoteRpmsg.h package/internal/NameServerRemoteRpmsg.xdc.h package/ti.ipc.namesrv.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: NameServerRemoteRpmsg.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+NameServerRemoteRpmsg.xs:
+package/package.xdc.inc: NameServerRemoteRpmsg.xs
+
+# schema update dependencies
+package/package.xdc.inc: NameServerRemoteRpmsg.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Semaphore.xdc
+ti/sysbios/knl/Semaphore.xdc:
+vpath ti/sysbios/knl/Semaphore.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Queue.xdc
+ti/sysbios/knl/Queue.xdc:
+vpath ti/sysbios/knl/Queue.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Task.xdc
+ti/sysbios/knl/Task.xdc:
+vpath ti/sysbios/knl/Task.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/ITaskSupport.xdc
+ti/sysbios/interfaces/ITaskSupport.xdc:
+vpath ti/sysbios/interfaces/ITaskSupport.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Clock.xdc
+ti/sysbios/knl/Clock.xdc:
+vpath ti/sysbios/knl/Clock.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/ITimer.xdc
+ti/sysbios/interfaces/ITimer.xdc:
+vpath ti/sysbios/interfaces/ITimer.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Swi.xdc
+ti/sysbios/knl/Swi.xdc:
+vpath ti/sysbios/knl/Swi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Event.xdc
+ti/sysbios/knl/Event.xdc:
+vpath ti/sysbios/knl/Event.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/gates/GateMutex.xdc
+ti/sysbios/gates/GateMutex.xdc:
+vpath ti/sysbios/gates/GateMutex.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/INameServerRemote.xdc
+ti/sdo/utils/INameServerRemote.xdc:
+vpath ti/sdo/utils/INameServerRemote.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/knl/ISync.xdc
+xdc/runtime/knl/ISync.xdc:
+vpath xdc/runtime/knl/ISync.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: NameServerRemoteRpmsg.h
+NameServerRemoteRpmsg.h:
+package/package.xdc.inc: package/internal/NameServerRemoteRpmsg.xdc.h
+package/internal/NameServerRemoteRpmsg.xdc.h:
+

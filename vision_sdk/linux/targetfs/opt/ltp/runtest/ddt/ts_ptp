@@ -1,0 +1,10 @@
+# @name Kernel PTP timestamping test
+# @desc Tests timestamping for PTP (IEEE 1588) packets
+
+TS_S_FUNC_TX_PTP source 'common.sh'; iface=`get_eth_iface_name.sh` || die "error getting eth interface name: $iface"; run_timestamping.sh -i $iface -t 300 SOF_TIMESTAMPING_TX_HARDWARE SOF_TIMESTAMPING_SYS_HARDWARE SOF_TIMESTAMPING_RAW_HARDWARE
+
+TS_M_FUNC_TX_PTP source 'common.sh'; iface=`get_eth_iface_name.sh` || die "error getting eth interface name: $iface"; run_timestamping.sh -i $iface -t 1800 SOF_TIMESTAMPING_TX_HARDWARE SOF_TIMESTAMPING_SYS_HARDWARE SOF_TIMESTAMPING_RAW_HARDWARE
+
+TS_S_FUNC_RX_PTP source 'common.sh'; iface=`get_eth_iface_name.sh` || die "error getting eth interface name: $iface"; run_timestamping.sh -i $iface -t 300 SOF_TIMESTAMPING_RX_HARDWARE SOF_TIMESTAMPING_SYS_HARDWARE SOF_TIMESTAMPING_RAW_HARDWARE
+
+TS_M_FUNC_RX_PTP source 'common.sh'; iface=`get_eth_iface_name.sh` || die "error getting eth interface name: $iface"; run_timestamping.sh -i $iface -t 1800 SOF_TIMESTAMPING_RX_HARDWARE SOF_TIMESTAMPING_SYS_HARDWARE SOF_TIMESTAMPING_RAW_HARDWARE

@@ -1,0 +1,81 @@
+clean::
+	$(RM) package/ti.sdo.ipc.interfaces.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_interfaces.java
+	$(RM) package/ti_sdo_ipc_interfaces.class
+	$(RM) package/package_ti.sdo.ipc.interfaces.c
+	$(RM) package/package.defs.h
+	$(RM) INotifyDriver.h
+	$(RM) INotifySetup.h
+	$(RM) IGateMPSupport.h
+	$(RM) ITransport.h
+	$(RM) IMessageQTransport.h
+	$(RM) INetworkTransport.h
+	$(RM) ITransportSetup.h
+	$(RM) package/ti.sdo.ipc.interfaces.ccs
+
+.interfaces: package/ti.sdo.ipc.interfaces.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_interfaces.java package/package_ti.sdo.ipc.interfaces.c package/package.defs.h INotifyDriver.h INotifySetup.h IGateMPSupport.h ITransport.h IMessageQTransport.h INetworkTransport.h ITransportSetup.h package/ti.sdo.ipc.interfaces.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: INotifyDriver.xdc INotifySetup.xdc IGateMPSupport.xdc ITransport.xdc IMessageQTransport.xdc INetworkTransport.xdc ITransportSetup.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+
+# schema update dependencies
+package/package.xdc.inc: INotifyDriver.xdc
+package/package.xdc.inc: INotifySetup.xdc
+package/package.xdc.inc: IGateMPSupport.xdc
+package/package.xdc.inc: ITransport.xdc
+package/package.xdc.inc: IMessageQTransport.xdc
+package/package.xdc.inc: INetworkTransport.xdc
+package/package.xdc.inc: ITransportSetup.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: INotifyDriver.h
+INotifyDriver.h:
+package/package.xdc.inc: INotifySetup.h
+INotifySetup.h:
+package/package.xdc.inc: IGateMPSupport.h
+IGateMPSupport.h:
+package/package.xdc.inc: ITransport.h
+ITransport.h:
+package/package.xdc.inc: IMessageQTransport.h
+IMessageQTransport.h:
+package/package.xdc.inc: INetworkTransport.h
+INetworkTransport.h:
+package/package.xdc.inc: ITransportSetup.h
+ITransportSetup.h:
+

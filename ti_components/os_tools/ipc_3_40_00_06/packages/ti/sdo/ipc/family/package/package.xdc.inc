@@ -1,0 +1,14 @@
+package.xdc
+package.xs
+Settings.xdc
+Settings.xs
+package/ti.sdo.ipc.family.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b160
+package/.xdc-A75
+package/ti_sdo_ipc_family.java
+package/ti_sdo_ipc_family.class
+package/package_ti.sdo.ipc.family.c
+package/package.defs.h
+package/ti.sdo.ipc.family.ccs

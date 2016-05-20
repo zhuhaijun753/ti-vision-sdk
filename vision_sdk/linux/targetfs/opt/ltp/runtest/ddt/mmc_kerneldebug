@@ -1,0 +1,8 @@
+# @name MMC test with kernel debug option kmemleak enabled
+# @desc Run MMC test and then check if there is memleak or spinlock errors
+# @requires mmc_host 
+
+MMC_L_STRESS_100M_20TIMES_MEMLEAK source "common.sh"; install_modules.sh "mmc"; check_kernel_errors "kmemleak" "clear" && do_cmd blk_device_dd_readwrite_test.sh -b "10M" -c "10" -l "20" -d "mmc" && check_kernel_errors "kmemleak" 
+
+MMC_M_FUNC_10M_10TIMES_SPINLOCK source "common.sh"; install_modules.sh "mmc"; do_cmd blk_device_dd_readwrite_test.sh -b "1M" -c "10" -l "10" -d "mmc" && check_kernel_errors "spinlock" 
+

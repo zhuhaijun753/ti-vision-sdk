@@ -1,0 +1,99 @@
+From 2379f80cd06b979cfb026699869f7042ed1ee840 Mon Sep 17 00:00:00 2001
+From: Nikhil Devshatwar <nikhil.nd@ti.com>
+Date: Wed, 23 Sep 2015 16:49:00 +0530
+Subject: [PATCH 08/12] arm: dts: infoadas: Fix EDMA channels and WDT sharing
+
+For infoadas use cases, because of the partitioning of the
+devices, some peripherals and it's DMAs are controlled by linux
+while others are controlled by IPUs and DSPs.
+
+For this to work seamlessly, distinct DMA requests must be used by
+linux and DSPs. Restricting the total DMA requests supported by
+EDMA device to 32 would leave the last 32 request unused by the
+linux driver.
+
+IPUs and DSPs are allowed to use only last 32 EDMA requests with this.
+
+Also, do not delete the watchdog timer nodes from infoadas DTBs.
+WDT should be used only by linux.
+
+Change-Id: I4046ba7b38bef679dd03b5c0b31ed297f6166f7f
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ arch/arm/boot/dts/dra7-evm-infoadas.dts       |   10 +++++++++-
+ arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts |   10 +++++++++-
+ arch/arm/boot/dts/dra72-evm-infoadas.dts      |   10 +++++++++-
+ 3 files changed, 27 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/boot/dts/dra7-evm-infoadas.dts b/arch/arm/boot/dts/dra7-evm-infoadas.dts
+index 8459ae9..04928a8 100644
+--- a/arch/arm/boot/dts/dra7-evm-infoadas.dts
++++ b/arch/arm/boot/dts/dra7-evm-infoadas.dts
+@@ -35,9 +35,17 @@
+ 	export-devnode;
+ };
+ 
+-/delete-node/ &wdt2;
+ /delete-node/ &vpe;
+ 
++/*
++ * Restrict the linux used EDMA requests to only 32
++ * Last 32 requests lines would be routed by the edma-xbar
++ * to perform DMA for DSPs and IPUs
++ */
++&edma {
++	dma-requests = <32>;
++};
++
+ &vip1 {
+ 	status = "disabled";
+ };
+diff --git a/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts b/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
+index 2c765c5..52c44c9 100644
+--- a/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
++++ b/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
+@@ -28,9 +28,17 @@
+ };
+ 
+ /delete-node/ &sel_enet_mux_hog;
+-/delete-node/ &wdt2;
+ /delete-node/ &vpe;
+ 
++/*
++ * Restrict the linux used EDMA requests to only 32
++ * Last 32 requests lines would be routed by the edma-xbar
++ * to perform DMA for DSPs and IPUs
++ */
++&edma {
++       dma-requests = <32>;
++};
++
+ &vip1 {
+ 	status = "disabled";
+ };
+diff --git a/arch/arm/boot/dts/dra72-evm-infoadas.dts b/arch/arm/boot/dts/dra72-evm-infoadas.dts
+index 289e223..c61d721 100644
+--- a/arch/arm/boot/dts/dra72-evm-infoadas.dts
++++ b/arch/arm/boot/dts/dra72-evm-infoadas.dts
+@@ -11,9 +11,17 @@
+ 	export-devnode;
+ };
+ 
+-/delete-node/ &wdt2;
+ /delete-node/ &vpe;
+ 
++/*
++ * Restrict the linux used EDMA requests to only 32
++ * Last 32 requests lines would be routed by the edma-xbar
++ * to perform DMA for DSPs and IPUs
++ */
++&edma {
++       dma-requests = <32>;
++};
++
+ &vip1 {
+ 	status = "disabled";
+ };
+-- 
+1.7.9.5
+

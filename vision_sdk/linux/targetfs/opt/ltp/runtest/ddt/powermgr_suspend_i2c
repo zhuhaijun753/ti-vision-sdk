@@ -1,0 +1,6 @@
+# @name I2C plus suspend/resume
+# @desc I2C Detect tests while doing power suspend/resume operations
+# @requires i2c && power_mgr 
+# @setup_requires 
+
+POWERMGR_M_FUNC_I2C_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/i2c_detect -P $PLATFORM -s 'I2C_M_FUNC_I2CDETECT_20TIMES '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "

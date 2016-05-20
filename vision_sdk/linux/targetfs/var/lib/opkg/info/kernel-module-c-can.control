@@ -1,0 +1,12 @@
+Package: kernel-module-c-can
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: c-can kernel module
+ c-can kernel module; CAN bus driver for Bosch C_CAN controller
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-3.14.49, kernel-module-can-dev
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

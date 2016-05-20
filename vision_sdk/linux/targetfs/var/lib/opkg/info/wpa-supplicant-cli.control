@@ -1,0 +1,13 @@
+Package: wpa-supplicant-cli
+Version: R8.5-devel-ti+git0+2710d0ae31-r8c.0
+Description: Client for Wi-Fi Protected Access (WPA)
+ Client for Wi-Fi Protected Access (WPA).
+Section: network
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2 | BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: wpa-supplicant-wl18xx
+Homepage: http://hostap.epitest.fi/wpa_supplicant/
+Depends: libc6 (>= 2.15)
+Source: git://git.ti.com/wilink8-wlan/hostap.git;protocol=git;branch=ap_p2p file://defconfig file://wpa-supplicant.sh file://wpa_supplicant.conf file://p2p_supplicant.conf file://99_wpa_supplicant

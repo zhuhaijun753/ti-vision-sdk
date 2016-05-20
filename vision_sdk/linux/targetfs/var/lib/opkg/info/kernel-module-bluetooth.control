@@ -1,0 +1,12 @@
+Package: kernel-module-bluetooth
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: bluetooth kernel module
+ bluetooth kernel module; Bluetooth Core ver 2.18
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-3.14.49, kernel-module-6lowpan-iphc
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

@@ -1,0 +1,172 @@
+From 679fce6256c159aa8b93114cebc521c5d418bdee Mon Sep 17 00:00:00 2001
+From: Nikhil Devshatwar <nikhil.nd@ti.com>
+Date: Mon, 7 Sep 2015 14:53:00 +0530
+Subject: [PATCH 02/12] arm: dts: dra72-evm: Correct the pinmux pad names
+
+dra72-evm uses VIP interfaces which are internally routed to the
+VIP1 ports. But the pads for other interfaces are still present.
+
+Correct the pad names to correctly reflect the REAL pads used.
+Also, for the case of LVDS use case, one of the hsync pin is
+used from a different mode. This compromises ethernet functionality.
+
+Add it as two different options to be chosen as per need.
+
+Change-Id: I55beaef87b63cb87d39ba28b95f9db9c829dcbb6
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ arch/arm/boot/dts/dra72-evm-vision.dts |  101 +++++++++++++++++++-------------
+ 1 file changed, 61 insertions(+), 40 deletions(-)
+
+diff --git a/arch/arm/boot/dts/dra72-evm-vision.dts b/arch/arm/boot/dts/dra72-evm-vision.dts
+index ea9ef2c..41baf7f 100644
+--- a/arch/arm/boot/dts/dra72-evm-vision.dts
++++ b/arch/arm/boot/dts/dra72-evm-vision.dts
+@@ -36,34 +36,34 @@ i2cexp: &i2c5 {
+ 	/* vin5a pins are internally routed to vin1a  */
+ 	vin5a_pins: pinmux_vin5a_pins {
+ 		pinctrl-single,pins = <
+-			0x374	(PIN_INPUT | MUX_MODE9)	/* vin1a_clk0	*/
+-			0x39C	(PIN_INPUT | MUX_MODE9)	/* vin1a_hsync0	*/
+-			0x3A0	(PIN_INPUT | MUX_MODE9)	/* vin1a_vsync0	*/
+-			0x398	(PIN_INPUT | MUX_MODE9)	/* vin1a_d0	*/
+-			0x394	(PIN_INPUT | MUX_MODE9)	/* vin1a_d1	*/
+-			0x390	(PIN_INPUT | MUX_MODE9)	/* vin1a_d2	*/
+-			0x38C	(PIN_INPUT | MUX_MODE9)	/* vin1a_d3 	*/
+-			0x388	(PIN_INPUT | MUX_MODE9)	/* vin1a_d4 	*/
+-			0x384	(PIN_INPUT | MUX_MODE9)	/* vin1a_d5	*/
+-			0x380	(PIN_INPUT | MUX_MODE9)	/* vin1a_d6	*/
+-			0x37C	(PIN_INPUT | MUX_MODE9)	/* vin1a_d7	*/
++			0x374	(PIN_INPUT | MUX_MODE9)	/* vin5a_clk0	*/
++			0x39C	(PIN_INPUT | MUX_MODE9)	/* vin5a_hsync0	*/
++			0x3A0	(PIN_INPUT | MUX_MODE9)	/* vin5a_vsync0	*/
++			0x398	(PIN_INPUT | MUX_MODE9)	/* vin5a_d0	*/
++			0x394	(PIN_INPUT | MUX_MODE9)	/* vin5a_d1	*/
++			0x390	(PIN_INPUT | MUX_MODE9)	/* vin5a_d2	*/
++			0x38C	(PIN_INPUT | MUX_MODE9)	/* vin5a_d3 	*/
++			0x388	(PIN_INPUT | MUX_MODE9)	/* vin5a_d4 	*/
++			0x384	(PIN_INPUT | MUX_MODE9)	/* vin5a_d5	*/
++			0x380	(PIN_INPUT | MUX_MODE9)	/* vin5a_d6	*/
++			0x37C	(PIN_INPUT | MUX_MODE9)	/* vin5a_d7	*/
+ 		>;
+ 	};
+ 
+ 	/* vin4b pins are internally routed to vin1b  */
+         vin4b_pins: pinmux_vin4b_pins {
+ 		pinctrl-single,pins = <
+-			0x23C	(PIN_INPUT | MUX_MODE5)	/* vin1b_clk1	*/
+-			0x060	(PIN_INPUT | MUX_MODE6)	/* vin1b_hsync1	*/
+-			0x260	(PIN_INPUT | MUX_MODE5)	/* vin1b_vsync1	*/
+-			0x240	(PIN_INPUT | MUX_MODE5)	/* vin1b_d0	*/
+-			0x248	(PIN_INPUT | MUX_MODE5)	/* vin1b_d1	*/
+-			0x24C	(PIN_INPUT | MUX_MODE5)	/* vin1b_d2	*/
+-			0x250	(PIN_INPUT | MUX_MODE5)	/* vin1b_d3 	*/
+-			0x254	(PIN_INPUT | MUX_MODE5)	/* vin1b_d4 	*/
+-			0x268	(PIN_INPUT | MUX_MODE5)	/* vin1b_d5	*/
+-			0x26C	(PIN_INPUT | MUX_MODE5)	/* vin1b_d6	*/
+-			0x270	(PIN_INPUT | MUX_MODE5)	/* vin1b_d7	*/
++			0x23C	(PIN_INPUT | MUX_MODE5)	/* vin4b_clk1	*/
++			0x060	(PIN_INPUT | MUX_MODE6)	/* vin4b_hsync1	*/
++			0x260	(PIN_INPUT | MUX_MODE5)	/* vin4b_vsync1	*/
++			0x240	(PIN_INPUT | MUX_MODE5)	/* vin4b_d0	*/
++			0x248	(PIN_INPUT | MUX_MODE5)	/* vin4b_d1	*/
++			0x24C	(PIN_INPUT | MUX_MODE5)	/* vin4b_d2	*/
++			0x250	(PIN_INPUT | MUX_MODE5)	/* vin4b_d3 	*/
++			0x254	(PIN_INPUT | MUX_MODE5)	/* vin4b_d4 	*/
++			0x268	(PIN_INPUT | MUX_MODE5)	/* vin4b_d5	*/
++			0x26C	(PIN_INPUT | MUX_MODE5)	/* vin4b_d6	*/
++			0x270	(PIN_INPUT | MUX_MODE5)	/* vin4b_d7	*/
+                 >;
+         };
+ 
+@@ -71,7 +71,7 @@ i2cexp: &i2c5 {
+ 	vin2a_pins: pinmux_vin2a_pins {
+ 		pinctrl-single,pins = <
+ 			0x154	(PIN_INPUT | MUX_MODE0)	/* vin2a_clk0	*/
+-			0x25c	(PIN_INPUT | MUX_MODE4)	/* vin2a_hsync0	*/
++		/* Note that hsync pin is missing, use one of two options */
+ 			0x164	(PIN_INPUT | MUX_MODE0)	/* vin2a_vsync0	*/
+ 			0x168	(PIN_INPUT | MUX_MODE0)	/* vin2a_d0	*/
+ 			0x16c	(PIN_INPUT | MUX_MODE0)	/* vin2a_d1	*/
+@@ -84,20 +84,40 @@ i2cexp: &i2c5 {
+ 		>;
+ 	};
+ 
++	/* This is default pad for vin2a_hsync - conflicts with vin3b_hsync
++	 * Use this when vin3b is unused. e.g. Only front camera use case.
++	 */
++	vin2a_hsync_def_pins: pinmux_vin2a_hsync_def_pins {
++		pinctrl-single,pins = <
++			0x160	(PIN_INPUT | MUX_MODE0)	/* vin2a_hsync0	*/
++		>;
++	};
++
++	/* This is alternate pad for vin2a_hsync - conflicts with rgmii0_txd2
++	 * Default pad can't be used for LVDS use cases, because of conflict
++	 * with vin3b_hsync1. And using this pad conflicts with ethernet.
++	 * Therefore, on TI-EVM, ethernet and LVDS will NEVER work together.
++	 */
++	vin2a_hsync_alt_pins: pinmux_vin2a_hsync_alt_pins {
++		pinctrl-single,pins = <
++			0x25c	(PIN_INPUT | MUX_MODE4)	/* vin2a_hsync0	*/
++		>;
++	};
++
+ 	/* vin3b pins are internally routed to vin2b */
+ 	vin3b_pins: pinmux_vin3b_pins {
+ 		pinctrl-single,pins = <
+-			0x15C	(PIN_INPUT | MUX_MODE2)	/* vin2b_clk1	*/
+-			0x160	(PIN_INPUT | MUX_MODE3)	/* vin2b_hsync1	*/
+-			0x378	(PIN_INPUT | MUX_MODE4)	/* vin2b_vsync1	*/
+-			0x1C4	(PIN_INPUT | MUX_MODE2)	/* vin2b_d0	*/
+-			0x1C0	(PIN_INPUT | MUX_MODE2)	/* vin2b_d1	*/
+-			0x1BC	(PIN_INPUT | MUX_MODE2)	/* vin2b_d2	*/
+-			0x1B8	(PIN_INPUT | MUX_MODE2)	/* vin2b_d3 	*/
+-			0x1B4	(PIN_INPUT | MUX_MODE2)	/* vin2b_d4 	*/
+-			0x1B0	(PIN_INPUT | MUX_MODE2)	/* vin2b_d5	*/
+-			0x1AC	(PIN_INPUT | MUX_MODE2)	/* vin2b_d6	*/
+-			0x1A8	(PIN_INPUT | MUX_MODE2)	/* vin2b_d7	*/
++			0x15C	(PIN_INPUT | MUX_MODE2)	/* vin3b_clk1	*/
++			0x160	(PIN_INPUT | MUX_MODE3)	/* vin3b_hsync1	*/
++			0x378	(PIN_INPUT | MUX_MODE4)	/* vin3b_vsync1	*/
++			0x1C4	(PIN_INPUT | MUX_MODE2)	/* vin3b_d0	*/
++			0x1C0	(PIN_INPUT | MUX_MODE2)	/* vin3b_d1	*/
++			0x1BC	(PIN_INPUT | MUX_MODE2)	/* vin3b_d2	*/
++			0x1B8	(PIN_INPUT | MUX_MODE2)	/* vin3b_d3 	*/
++			0x1B4	(PIN_INPUT | MUX_MODE2)	/* vin3b_d4 	*/
++			0x1B0	(PIN_INPUT | MUX_MODE2)	/* vin3b_d5	*/
++			0x1AC	(PIN_INPUT | MUX_MODE2)	/* vin3b_d6	*/
++			0x1A8	(PIN_INPUT | MUX_MODE2)	/* vin3b_d7	*/
+                 >;
+ 	};
+ };
+@@ -123,7 +143,13 @@ i2cexp: &i2c5 {
+ &vip1 {
+ 	status = "okay";
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&vin5a_pins &vin4b_pins &vin2a_pins &vin3b_pins>;
++	pinctrl-0 = <&vin2a_pins &vin2a_hsync_def_pins>;
++
++	/*
++	 * Pinmux combination for LVDS camera use case
++	 * pinctrl-0 = <&vin5a_pins &vin4b_pins &vin2a_pins &vin3b_pins
++	 *		&vin2a_hsync_alt_pins>;
++	*/
+ };
+ 
+ &ovcam_fc {
+@@ -150,11 +176,6 @@ i2cexp: &i2c5 {
+ 	/* No board muxes */
+ };
+ 
+-/* This is to not hog the GPIO
+- * We need to set the gpio from the camera driver
+- * Note that this will disable the ethernet */
+-/delete-node/ &sel_enet_mux_hog;
+-
+ &ovcam4 {
+ 	/* No board muxes */
+ 	mux-gpios =
+-- 
+1.7.9.5
+

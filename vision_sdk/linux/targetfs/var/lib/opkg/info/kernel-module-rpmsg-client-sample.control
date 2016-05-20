@@ -1,0 +1,14 @@
+Package: kernel-module-rpmsg-client-sample
+Version: 1.0.0+git0+aa4fe3c6f6-r4.0
+Description: rpmsg-client-sample kernel module
+ rpmsg-client-sample kernel module; Remote processor messaging sample
+ client driver
+Section: console/utils
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: ltp-ddt
+Homepage: http://arago-project.org/git/projects/test-automation/ltp-ddt.git
+Depends: kernel-3.14.49
+Source: git://arago-project.org/git/projects/test-automation/ltp-ddt.git;branch=master file://ltp-Do-not-link-against-libfl.patch

@@ -1,0 +1,13 @@
+# @name RTC timer with cpu affinity
+# @desc Check that rtc timer works fine when assigned to any cpu instance
+# @requires smp && rtc
+
+SMP_S_FUNC_RTC_NO-LB_SETGETTIME_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_setgettime -s RTC_S_FUNC_SETGETTIME_0001" -n 1 -a 0x1 -d 1
+SMP_S_FUNC_RTC_NO-LB_SETGETTIME_CORE2 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_setgettime -s RTC_S_FUNC_SETGETTIME_0001" -n 1 -a 0x2 -d 1
+SMP_S_FUNC_RTC_NO-LB_ALARM_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_alarm -s RTC_M_FUNC_ALARM_0001" -n 1 -a 0x1 -d 1
+SMP_S_FUNC_RTC_NO-LB_ALARM_CORE2 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_alarm -s RTC_M_FUNC_ALARM_0001" -n 1 -a 0x2 -d 1
+SMP_S_FUNC_RTC_NO-LB_UPDATEINT_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_updateint -s RTC_M_FUNC_UIE_0001" -n 1 -a 0x1 -d 1
+SMP_S_FUNC_RTC_NO-LB_UPDATEINT_CORE2 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_updateint -s RTC_M_FUNC_UIE_0001" -n 1 -a 0x2 -d 1
+SMP_S_FUNC_RTC_NO-LB_READTIME_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_readtime -s RTC_S_FUNC_READTIME_0001" -n 1 -a 0x1 -d 1
+SMP_S_FUNC_RTC_NO-LB_READTIME_CORE2 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_readtime -s RTC_S_FUNC_READTIME_0001" -n 1 -a 0x2 -d 1
+

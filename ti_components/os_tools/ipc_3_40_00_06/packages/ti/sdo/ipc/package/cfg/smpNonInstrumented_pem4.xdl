@@ -1,0 +1,138 @@
+/*
+ * Do not modify this file; it is automatically generated from the template
+ * linkcmd.xdt in the ti.platforms.stellaris package and will be overwritten.
+ */
+
+/*
+ * put '"'s around paths because, without this, the linker
+ * considers '-' as minus operator, not a file name character.
+ */
+
+
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/ipc/package/cfg/smpNonInstrumented_pem4.src/ipc/ipc.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/catalog/arm/cortexm4/tiva/ce/lib/Boot.aem4"
+-l"/datalocal1/ti_components/os_tools/ipc_3_40_00_06/packages/ti/sdo/utils/lib/smputils/instrumented/utils.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/ti.targets.arm.rtsarm.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/boot.aem4"
+-l"/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/targets/arm/rtsarm/lib/auto_init.aem4"
+
+--retain="*(xdc.meta)"
+
+/* C6x Elf symbols */
+--symbol_map __TI_STACK_SIZE=__STACK_SIZE
+--symbol_map __TI_STACK_BASE=__stack
+--symbol_map _stack=__stack
+
+
+--args 0x200
+-heap  0x1000
+-stack 0x1000
+
+/*
+ * Linker command file contributions from all loaded packages:
+ */
+
+/* Content from xdc.services.global (null): */
+
+/* Content from xdc (null): */
+
+/* Content from xdc.corevers (null): */
+
+/* Content from xdc.shelf (null): */
+
+/* Content from xdc.services.spec (null): */
+
+/* Content from xdc.services.intern.xsr (null): */
+
+/* Content from xdc.services.intern.gen (null): */
+
+/* Content from xdc.services.intern.cmd (null): */
+
+/* Content from xdc.bld (null): */
+
+/* Content from ti.targets (null): */
+
+/* Content from ti.targets.arm.elf (null): */
+
+/* Content from xdc.rov (null): */
+
+/* Content from xdc.runtime (null): */
+
+/* Content from xdc.services.getset (null): */
+
+/* Content from ti.targets.arm.rtsarm (null): */
+
+/* Content from ti.sysbios.interfaces (null): */
+
+/* Content from ti.sysbios.family (null): */
+
+/* Content from ti.sysbios.knl (null): */
+
+/* Content from ti.sysbios.gates (null): */
+
+/* Content from ti.sysbios.family.arm (ti/sysbios/family/arm/linkcmd.xdt): */
+--retain "*(.vecs)"
+
+/* Content from xdc.runtime.knl (null): */
+
+/* Content from ti.sdo.utils (null): */
+
+/* Content from ti.sdo.ipc.interfaces (null): */
+
+/* Content from ti.sysbios.syncs (null): */
+
+/* Content from ti.sdo.ipc.family (null): */
+
+/* Content from ti.sysbios (null): */
+
+/* Content from ti.catalog.arm.peripherals.timers (null): */
+
+/* Content from ti.catalog (null): */
+
+/* Content from ti.catalog.arm.cortexm4 (null): */
+
+/* Content from ti.catalog.peripherals.hdvicp2 (null): */
+
+/* Content from xdc.platform (null): */
+
+/* Content from xdc.cfg (null): */
+
+/* Content from ti.catalog.arm.cortexm3 (null): */
+
+/* Content from ti.catalog.arm.cortexm4.tiva.ce (null): */
+
+/* Content from ti.platforms.stellaris (null): */
+
+/* Content from ti.sdo.ipc (ti/sdo/ipc/linkcmd.xdt): */
+
+SECTIONS
+{
+}
+
+/* Content from xdc.services.io (null): */
+
+/* Content from ti.sdo.ipc.notifyDrivers (null): */
+
+/* Content from ti.sysbios.hal (null): */
+
+/* Content from ti.sdo.ipc.family.ti81xx (null): */
+
+
+
+/*
+ * symbolic aliases for static instance objects
+ */
+xdc_runtime_Startup__EXECFXN__C = 1;
+xdc_runtime_Startup__RESETFXN__C = 1;
+
+-l "/datalocal1/ti_components/os_tools/bios_6_42_02_29/packages/ti/platforms/stellaris//include/LM4FSXLH5BB.cmd"
+
+SECTIONS
+{
+    .bootVecs: load > 0x0
+
+
+
+    xdc.meta: type = COPY
+}
+

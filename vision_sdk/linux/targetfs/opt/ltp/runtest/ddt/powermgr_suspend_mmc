@@ -1,0 +1,8 @@
+# @name MMC plus suspend/resume
+# @desc MMC read write test with whatever fs in card while doing power suspend/resume operations
+# @requires mmc_host && power_mgr 
+# @setup_requires mmc || sd || sdhc || sdxc  
+
+POWERMGR_S_FUNC_MMC_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/mmc_dd_rw -P $PLATFORM -s 'MMC_S_FUNC_DD_RW_QUICK '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "
+
+POWERMGR_M_FUNC_MMC_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/mmc_dd_rw -P $PLATFORM -s 'MMC_M_FUNC_DD_RW_20TIMES '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_SUSPEND ' "

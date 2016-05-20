@@ -1,0 +1,12 @@
+Package: kernel-module-bcm203x
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: bcm203x kernel module
+ bcm203x kernel module; Broadcom Blutonium firmware driver ver 1.2
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-module-bluetooth, kernel-3.14.49, kernel-module-6lowpan-iphc
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

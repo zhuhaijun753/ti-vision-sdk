@@ -1,0 +1,62 @@
+/*
+ * Copyright (C) 2013 Texas Instruments Incorporated - http://www.ti.com/
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+#include "dra72-evm-vision.dts"
+
+&ovcam_fc {
+	status = "disabled";
+};
+
+&ovcam1 {
+	export-devnode;
+};
+
+&ovcam2 {
+	export-devnode;
+};
+
+&ovcam3 {
+	export-devnode;
+};
+
+&ovcam4 {
+	export-devnode;
+};
+
+/delete-node/ &sel_enet_mux_hog;
+/delete-node/ &vpe;
+
+/*
+ * Restrict the linux used EDMA requests to only 32
+ * Last 32 requests lines would be routed by the edma-xbar
+ * to perform DMA for DSPs and IPUs
+ */
+&edma {
+       dma-requests = <32>;
+};
+
+&vip1 {
+	status = "disabled";
+};
+
+&dra7_pmx_core {
+	pinctrl-names = "default";
+	pinctrl-0 = <&vin5a_pins &vin4b_pins &vin2a_pins &vin3b_pins
+			&vin2a_hsync_alt_pins>;
+};
+
+&ipu2_cma_pool {
+	reg = <0x95800000 0x3800000>;
+};
+
+&dsp1_cma_pool {
+	reg = <0x86000000 0x2000000>;
+};
+
+&ipu1_cma_pool {
+	reg = <0x84000000 0x2000000>;
+};

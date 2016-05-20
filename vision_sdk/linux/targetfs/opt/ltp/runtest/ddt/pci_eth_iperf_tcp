@@ -1,0 +1,30 @@
+# @name PCI Ethernet performance using IPERF
+# @desc Run Iperf as a server in a host PC and as a client in the target machine
+# Test different window sizes, from 8K to 256K
+# @requires pcie || pci
+# @setup_requires pcieethtg3card
+
+
+PCI_S_PERF_TG3_ETH_IPERF_TCP_8K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 1500 -f M -d -t 60 -w 8K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_16K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -f M -d -t 60 -w 16K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_32K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -f M -d -t 60 -w 32K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_64K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -f M -d -t 60 -w 64K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_128K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -f M -d -t 60 -w 128K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_256K_1448B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -f M -d -t 60 -w 256K" '
+" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_8K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 8K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_16K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 16K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_32K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 32K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_64K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 64K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_128K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 128K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_256K_76B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 88 -f M -d -t 60 -w 256K" '
+
+
+PCI_S_PERF_TG3_ETH_IPERF_TCP_8K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 8K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_16K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 16K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_32K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 32K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_64K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 64K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_128K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 128K" '
+PCI_S_PERF_TG3_ETH_IPERF_TCP_256K_200B source 'common.sh'; check_config_options "m" CONFIG_TIGON3; run_pci_eth_test.sh -a ' do_cmd "run_iperf.sh -m -M 212 -f M -d -t 60 -w 256K" '
+
+

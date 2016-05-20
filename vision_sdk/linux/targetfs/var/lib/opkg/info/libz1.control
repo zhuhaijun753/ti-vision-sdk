@@ -1,0 +1,14 @@
+Package: libz1
+Version: 1.2.8-r0.0
+Description: Zlib Compression Library
+ Zlib is a general-purpose, patent-free, lossless data compression library
+ which is used by many different programs.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Zlib
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: zlib
+Homepage: http://zlib.net/
+Depends: libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: http://www.zlib.net/zlib-1.2.8.tar.xz file://remove.ldconfig.call.patch file://Makefile-runtests.patch file://run-ptest

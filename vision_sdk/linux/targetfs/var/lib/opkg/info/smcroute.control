@@ -1,0 +1,14 @@
+Package: smcroute
+Version: 2.0.0-r0.0
+Description: Static Multicast Routing Daemon
+ SMCRoute is a daemon and command line tool to manipulate the multicast
+ routing table in the UNIX kernel.
+Section: console/network
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: smcroute
+Homepage: http://troglobit.github.io/smcroute.html
+Depends: libc6 (>= 2.15)
+Source: git://github.com/troglobit/smcroute.git;branch=master;protocol=git

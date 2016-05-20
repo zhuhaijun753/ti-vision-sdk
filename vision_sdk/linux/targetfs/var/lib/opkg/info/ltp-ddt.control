@@ -1,0 +1,13 @@
+Package: ltp-ddt
+Version: 1.0.0+git0+aa4fe3c6f6-r4.0
+Description: Embedded Linux Device Driver Tests based on Linux Test Project
+ Embedded Linux Device Driver Tests based on Linux Test Project.
+Section: console/utils
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: ltp-ddt
+Homepage: http://arago-project.org/git/projects/test-automation/ltp-ddt.git
+Depends: kernel-module-rpmsg-client-sample, libaio1 (>= 0.3.109), kernel-module-dmtimer-test, kernel-module-gpio-test, kernel-module-kst-timer, serialcheck, libasound2 (>= 1.0.27.2), libc6 (>= 2.15), pm-qa, libgcc-s1 (>= 4.7.3), kernel-module-coproc-devfreq
+Source: git://arago-project.org/git/projects/test-automation/ltp-ddt.git;branch=master file://ltp-Do-not-link-against-libfl.patch

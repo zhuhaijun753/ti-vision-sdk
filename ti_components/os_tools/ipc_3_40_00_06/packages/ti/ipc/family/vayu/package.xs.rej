@@ -1,0 +1,24 @@
+--- packages/ti/ipc/family/vayu/package.xs
++++ packages/ti/ipc/family/vayu/package.xs
+@@ -46,7 +46,7 @@
+ 
+     /* bring in modules we use in this package */
+     xdc.useModule('ti.ipc.remoteproc.Resource');
+-    xdc.loadPackage('ti.pm');
++//    xdc.loadPackage('ti.pm');
+     xdc.useModule('ti.sysbios.gates.GateAll');
+     xdc.useModule('ti.sysbios.hal.Cache');
+     xdc.useModule('ti.sysbios.knl.Semaphore');
+@@ -81,10 +81,11 @@
+     }
+ 
+     var BIOS = xdc.module('ti.sysbios.BIOS');
++/*
+     if (BIOS.smpEnabled) {
+         smp = "_smp";
+     }
+-
++*/
+     /* make sure the library exists, else fallback to a built library */
+     file = "lib/" + profile + "/ti.ipc.family.vayu" + smp + ".a" + suffix;
+     if (java.io.File(this.packageBase + file).exists()) {

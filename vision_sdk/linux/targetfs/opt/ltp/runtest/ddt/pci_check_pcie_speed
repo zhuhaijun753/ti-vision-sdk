@@ -1,0 +1,8 @@
+# @name Check PCIe speed/width is expected speed/width
+# @desc Check if PCIe link speed/width is at expected speed/width; Expected speed is the lower speed
+#       between RC and EP 
+# @requires pcie
+# @setup_requires pcieusbcard || pcieethtg3card
+
+PCI_XS_FUNC_PCIE_CHECK_SPEED source 'common.sh'; do_cmd pcie_check_speed.sh
+

@@ -1,0 +1,8 @@
+# @name Nand Ubifs Write/Read plus suspend/resume
+# @desc Erase Nand MTD partition, mount it as ubifs and writes to it while doing suspend/resume operations
+# @requires  nand && ubifs && power_mgr
+# @setup_requires 
+
+POWERMGR_S_FUNC_NAND_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/nand_perf_ubifs -P $PLATFORM -s 'NAND_S_PERF_UBIFS '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "
+
+POWERMGR_M_FUNC_NAND_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/nand_perf_ubifs -P $PLATFORM -s 'NAND_S_PERF_UBIFS_VARIOUS_BUFSIZE '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_SUSPEND ' "

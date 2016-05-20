@@ -1,0 +1,13 @@
+Package: kernel-module-tda8290
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: tda8290 kernel module
+ tda8290 kernel module; Philips/NXP TDA8290/TDA8295 analog IF demodulator
+ driver
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-3.14.49
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

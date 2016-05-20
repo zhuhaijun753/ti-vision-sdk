@@ -1,0 +1,11 @@
+# @name DMATEST
+# @desc DMATEST uses dmatest module and runs stress and performance tests on first listed dma channel as well as runs tests on all available dma channels
+# @requires edma || sdma
+
+DMA_S_PERF_DMATEST_EACH_CHANNEL_4096_buff_size source 'common.sh';  check_config_options "m" CONFIG_DMATEST; dma_channel_list=`get_dma_channels.sh`; echo "${dma_channel_list[@]}"; do_cmd "dmesg -c > /dev/null"; for channel in ${dma_channel_list[@]}; do do_cmd "echo $channel"; do_cmd "modprobe dmatest run=1 iterations=100 wait=1 test_buf_size=4096 channel=$channel"; do_cmd "modprobe -r dmatest";done; for channel in ${dma_channel_list[@]}; do do_cmd "dmesg|grep $channel|grep summary|grep \"0 failures\""; done
+
+DMA_M_PERF_DMATEST_EACH_CHANNEL_4096_buff_size source 'common.sh';  check_config_options "m" CONFIG_DMATEST; dma_channel_list=`get_dma_channels.sh`; echo "${dma_channel_list[@]}"; do_cmd "dmesg -c > /dev/null"; for channel in ${dma_channel_list[@]}; do do_cmd "echo $channel"; do_cmd "modprobe dmatest run=1 iterations=10000 wait=1 test_buf_size=4096 channel=$channel"; do_cmd "modprobe -r dmatest";done; for channel in ${dma_channel_list[@]}; do do_cmd "dmesg|grep $channel|grep summary|grep \"0 failures\""; done
+
+DMA_S_PERF_DMATEST_EACH_CHANNEL_65536_buff_size source 'common.sh';  check_config_options "m" CONFIG_DMATEST; dma_channel_list=`get_dma_channels.sh`; echo "${dma_channel_list[@]}"; do_cmd "dmesg -c > /dev/null"; for channel in ${dma_channel_list[@]}; do do_cmd "echo $channel"; do_cmd "modprobe dmatest run=1 iterations=100 wait=1 test_buf_size=65536 channel=$channel"; do_cmd "modprobe -r dmatest";done; for channel in ${dma_channel_list[@]}; do do_cmd "dmesg|grep $channel|grep summary|grep \"0 failures\""; done
+
+DMA_M_PERF_DMATEST_EACH_CHANNEL_65536_buff_size source 'common.sh';  check_config_options "m" CONFIG_DMATEST; dma_channel_list=`get_dma_channels.sh`; echo "${dma_channel_list[@]}"; do_cmd "dmesg -c > /dev/null"; for channel in ${dma_channel_list[@]}; do do_cmd "echo $channel"; do_cmd "modprobe dmatest run=1 iterations=10000 wait=1 test_buf_size=65536 channel=$channel"; do_cmd "modprobe -r dmatest";done; for channel in ${dma_channel_list[@]}; do do_cmd "dmesg|grep $channel|grep summary|grep \"0 failures\""; done

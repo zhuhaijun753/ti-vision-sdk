@@ -1,0 +1,14 @@
+# @name PCIe Ethernet ping tests 
+# @desc Brings net iface up and pings gw
+# @requires pcie || pci
+# @setup_requires pcieethtg3card
+
+PCI_XS_FUNC_ETH_PING_TG3 source 'common.sh'; check_config_options "m" CONFIG_TIGON3; iface=`pci_eth_search_device.sh 'pci'` || die "error getting pcie eth interface name";  echo "PCI eth iface: $iface"; run_pci_eth_test.sh -i "$iface" -a ' do_cmd "ping ${host} -c 10" '
+
+PCI_L_STRESS_ETH_PING_TG3_5HRS source 'common.sh'; check_config_options "m" CONFIG_TIGON3; iface=`pci_eth_search_device.sh 'pci'` || die "error getting pcie eth interface name";  echo "PCI eth iface: $iface"; run_pci_eth_test.sh -i "$iface" -a ' do_cmd "ping ${host} -w 18000" '
+
+PCI_XL_STRESS_ETH_PING_TG3_12HRS source 'common.sh'; check_config_options "m" CONFIG_TIGON3; iface=`pci_eth_search_device.sh 'pci'` || die "error getting pcie eth interface name";  echo "PCI eth iface: $iface"; run_pci_eth_test.sh -i "$iface" -a ' do_cmd "ping ${host} -w 43200" '
+
+
+PCI_S_FUNC_ETH_PING_TG3_MULTI-PKT-SIZES source 'common.sh'; check_config_options "m" CONFIG_TIGON3; iface=`pci_eth_search_device.sh 'pci'` || die "error getting pcie eth interface name";  echo "PCI eth iface: $iface"; run_pci_eth_test.sh -i "$iface" -a ' for size in 64 128 512 1024 4096 8192 16384; do do_cmd "ping ${host} -c 10 -s ${size}";done '
+

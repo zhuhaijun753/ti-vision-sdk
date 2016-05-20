@@ -1,0 +1,13 @@
+Package: bt-firmware
+Version: R8.5+git0+46f6a1d008-r8.0
+Description: bt-firmware version R8.5+gitAUTOINC+46f6a1d008-r8
+ Firmware files for Bluetooth
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: TI-TSPA
+Architecture: dra7xx_evm
+OE: bt-firmware
+Replaces: linux-firmware-wl12xx
+Conflicts: linux-firmware-wl12xx
+Source: git://git.ti.com/wilink8-bt/ti-bt-firmware.git;branch=master file://0001-Makefile-allow-building-within-the-OE.patch file://0001-bt-firmware-Remove-platform-check-and-install-defaul.patch

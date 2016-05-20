@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libtiipc
+Description: TI IPC library
+Version: 3.0.0
+Requires.private: libtiipcutils
+Libs: -L${libdir} -ltiipc
+Cflags: -I${includedir}

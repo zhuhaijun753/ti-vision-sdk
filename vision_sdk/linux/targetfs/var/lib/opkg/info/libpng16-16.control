@@ -1,0 +1,13 @@
+Package: libpng16-16
+Version: 1.6.8-r0.0
+Description: PNG image format decoding library
+ PNG image format decoding library.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Libpng
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libpng
+Homepage: http://www.libpng.org/
+Depends: libz1 (>= 1.2.8), libc6 (>= 2.15)
+Source: http://downloads.sourceforge.net/project/libpng/libpng16/1.6.8/libpng-1.6.8.tar.xz file://0001-configure-lower-automake-requirement.patch file://libpng16-CVE-2015-0973.patch

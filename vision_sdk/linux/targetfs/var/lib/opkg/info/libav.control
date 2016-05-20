@@ -1,0 +1,15 @@
+Package: libav
+Version: 0.8.9-r0-arago0.0
+Description: A complete, cross-platform solution to record, convert and stream audio and video
+ A complete, cross-platform solution to record, convert and stream audio
+ and video.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libav
+Homepage: http://libav.org/
+Depends: libswscale2 (>= 0.8.9), libavcodec53 (>= 0.8.9), libavformat53 (>= 0.8.9), libavdevice53 (>= 0.8.9), libc6 (>= 2.15), libavfilter2 (>= 0.8.9), libpostproc52 (>= 0.8.9), libavutil51 (>= 0.8.9), libgcc-s1 (>= 4.7.3)
+Suggests: mplayer
+Source: http://libav.org/releases/libav-0.8.9.tar.xz file://0001-configure-enable-pic-for-AArch64.patch

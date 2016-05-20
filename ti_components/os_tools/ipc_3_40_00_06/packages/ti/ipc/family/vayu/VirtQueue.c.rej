@@ -1,0 +1,14 @@
+--- packages/ti/ipc/family/vayu/VirtQueue.c
++++ packages/ti/ipc/family/vayu/VirtQueue.c
+@@ -507,9 +513,11 @@
+ #ifdef DSP
+     intInfo.intVectorId = DSPEVENTID;
+ #else
++#if 0
+     /* Initilize the IpcPower module */
+     IpcPower_init();
+ #endif
++#endif
+ 
+     /*
+      * Wait for HLOS (Virtio device) to indicate that priming of host's receive

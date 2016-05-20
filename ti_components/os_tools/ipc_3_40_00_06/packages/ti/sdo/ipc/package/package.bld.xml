@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ipc" version="1, 0, 0, 0" producerId="undefined">
+    <units>
+        <module name="Build"/>
+        <module name="GateMP"/>
+        <module name="MessageQ"/>
+        <module name="SharedRegion"/>
+        <module name="ListMP"/>
+        <module name="Ipc"/>
+        <module name="Notify"/>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/instrumented_pem4.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem4.c"/>
+        <srcFile name="package/cfg/instrumented_pe66.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe66.c"/>
+        <srcFile name="package/cfg/instrumented_pearp32.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pearp32.c"/>
+        <srcFile name="package/cfg/smpInstrumented_pem4.c"/>
+        <srcFile name="package/cfg/smpNonInstrumented_pem4.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="instrumented.cfg"/>
+        <srcFile name="nonInstrumented.cfg"/>
+        <srcFile name="smpInstrumented.cfg"/>
+        <srcFile name="smpNonInstrumented.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/instrumented_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pem4.oem4.dep" src="package/cfg/instrumented_pem4.c"/>
+        <srcFile name="package/cfg/instrumented_pem4.dep" src="package/cfg/instrumented_pem4.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pem4.oem4.dep" src="package/cfg/nonInstrumented_pem4.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pem4.dep" src="package/cfg/nonInstrumented_pem4.cfg"/>
+        <srcFile name="package/cfg/instrumented_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pe66.oe66.dep" src="package/cfg/instrumented_pe66.c"/>
+        <srcFile name="package/cfg/instrumented_pe66.dep" src="package/cfg/instrumented_pe66.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pe66.oe66.dep" src="package/cfg/nonInstrumented_pe66.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pe66.dep" src="package/cfg/nonInstrumented_pe66.cfg"/>
+        <srcFile name="package/cfg/instrumented_pearp32.mak" src="package.bld"/>
+        <srcFile name="package/cfg/instrumented_pearp32.oearp32.dep" src="package/cfg/instrumented_pearp32.c"/>
+        <srcFile name="package/cfg/instrumented_pearp32.dep" src="package/cfg/instrumented_pearp32.cfg"/>
+        <srcFile name="package/cfg/nonInstrumented_pearp32.mak" src="package.bld"/>
+        <srcFile name="package/cfg/nonInstrumented_pearp32.oearp32.dep" src="package/cfg/nonInstrumented_pearp32.c"/>
+        <srcFile name="package/cfg/nonInstrumented_pearp32.dep" src="package/cfg/nonInstrumented_pearp32.cfg"/>
+        <srcFile name="package/cfg/smpInstrumented_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/smpInstrumented_pem4.oem4.dep" src="package/cfg/smpInstrumented_pem4.c"/>
+        <srcFile name="package/cfg/smpInstrumented_pem4.dep" src="package/cfg/smpInstrumented_pem4.cfg"/>
+        <srcFile name="package/cfg/smpNonInstrumented_pem4.mak" src="package.bld"/>
+        <srcFile name="package/cfg/smpNonInstrumented_pem4.oem4.dep" src="package/cfg/smpNonInstrumented_pem4.c"/>
+        <srcFile name="package/cfg/smpNonInstrumented_pem4.dep" src="package/cfg/smpNonInstrumented_pem4.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ipc.tar.gz.dep" src="package/rel/ti_sdo_ipc.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,5.2,5"
+            rawVersion="5.2.5"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/ti-cgt-arm_5.2.5"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,7.4,2"
+            rawVersion="7.4.2"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/c6000_7_4_2"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arp32.elf.ARP32"
+            version="ti.targets.arp32.elf.ARP32{1,0,1.0,6"
+            rawVersion="1.0.6"
+            platform="ti.platforms.simARP32"
+            isa="arp32"
+            suffix="earp32"
+            rootDir="/datalocal1/ti_components/cg_tools/linux/arp32_1_0_6"
+            os="undefined"
+            rts="ti.targets.arp32.rts">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="far_aggregates"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="instrumented"
+        pname="instrumented.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pem4.cfg"
+        xCfgPrefix="package/cfg/instrumented_pem4"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pem4.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pem4"
+        cfgScript="nonInstrumented.cfg"
+        />
+    <configuration name="instrumented"
+        pname="instrumented.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.simTCI6616"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pe66.cfg"
+        xCfgPrefix="package/cfg/instrumented_pe66"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.platforms.simTCI6616"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pe66.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pe66"
+        cfgScript="nonInstrumented.cfg"
+        />
+    <configuration name="instrumented"
+        pname="instrumented.pearp32"
+        target="ti.targets.arp32.elf.ARP32"
+        platform="ti.platforms.simARP32"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/instrumented_pearp32.cfg"
+        xCfgPrefix="package/cfg/instrumented_pearp32"
+        cfgScript="instrumented.cfg"
+        />
+    <configuration name="nonInstrumented"
+        pname="nonInstrumented.pearp32"
+        target="ti.targets.arp32.elf.ARP32"
+        platform="ti.platforms.simARP32"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/nonInstrumented_pearp32.cfg"
+        xCfgPrefix="package/cfg/nonInstrumented_pearp32"
+        cfgScript="nonInstrumented.cfg"
+        />
+    <configuration name="smpInstrumented"
+        pname="smpInstrumented.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/smpInstrumented_pem4.cfg"
+        xCfgPrefix="package/cfg/smpInstrumented_pem4"
+        cfgScript="smpInstrumented.cfg"
+        />
+    <configuration name="smpNonInstrumented"
+        pname="smpNonInstrumented.pem4"
+        target="ti.targets.arm.elf.M4"
+        platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/smpNonInstrumented_pem4.cfg"
+        xCfgPrefix="package/cfg/smpNonInstrumented_pem4"
+        cfgScript="smpNonInstrumented.cfg"
+        />
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ipc"
+        pname="ti_sdo_ipc.tar.gz"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="linkcmd.xdt"/>
+        <file name="_GateMP.h"/>
+        <file name="_ListMP.h"/>
+        <file name="_Notify.h"/>
+        <file name="_MessageQ.h"/>
+        <file name="_SharedRegion.h"/>
+        <file name="_Ipc.h"/>
+        <file name="Ipc.c"/>
+        <file name="makefile.xdt"/>
+        <file name="debugMakefile.xdt"/>
+        <file name="makefile_gccArmLto.xdt"/>
+        <file name="instrumented.cfg.xs"/>
+        <file name="nonInstrumented.cfg.xs"/>
+        <file name="instrumented.cfg"/>
+        <file name="nonInstrumented.cfg"/>
+        <file name="smpInstrumented.cfg"/>
+        <file name="smpNonInstrumented.cfg"/>
+        <file name="Notify.c"/>
+        <file name="GateMP.c"/>
+        <file name="MessageQ.c"/>
+        <file name="SharedRegion.c"/>
+        <file name="ListMP.c"/>
+        <file name="lib/ipc/instrumented/ipc.aem4"/>
+        <file name="lib/ipc/nonInstrumented/ipc.aem4"/>
+        <file name="lib/ipc/instrumented/ipc.ae66"/>
+        <file name="lib/ipc/nonInstrumented/ipc.ae66"/>
+        <file name="lib/ipc/instrumented/ipc.aearp32"/>
+        <file name="lib/ipc/nonInstrumented/ipc.aearp32"/>
+        <file name="lib/smpipc/instrumented/ipc.aem4"/>
+        <file name="lib/smpipc/nonInstrumented/ipc.aem4"/>
+        <file name="package/package.cfg.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

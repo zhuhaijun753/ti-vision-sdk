@@ -1,0 +1,8 @@
+# @name Ethernet plus standby/resume
+# @desc Ethernet ping tests while doing power standby/resume operations
+# @requires net && power_mgr 
+# @setup_requires 
+
+POWERMGR_S_FUNC_ETH_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/eth_ping -P $PLATFORM -s 'ETH_XS_FUNC_PING '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_STANDBY ' "
+
+POWERMGR_M_FUNC_ETH_STANDBY source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/eth_ping -P $PLATFORM -s 'ETH_S_FUNC_PING_300S '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_STANDBY ' "

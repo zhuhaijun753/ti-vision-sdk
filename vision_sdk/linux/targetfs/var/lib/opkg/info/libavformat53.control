@@ -1,0 +1,13 @@
+Package: libavformat53
+Version: 0.8.9-r0-arago0.0
+Description: libav avformat library
+ libav avformat library
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libav
+Homepage: http://libav.org/
+Depends: libavcodec53 (>= 0.8.9), libz1 (>= 1.2.8), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15), libavutil51 (>= 0.8.9), libbz2-0 (>= 1.0.6)
+Source: http://libav.org/releases/libav-0.8.9.tar.xz file://0001-configure-enable-pic-for-AArch64.patch

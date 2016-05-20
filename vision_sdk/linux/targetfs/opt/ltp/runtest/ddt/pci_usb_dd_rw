@@ -1,0 +1,20 @@
+# @name PCI USB host w/r tests 
+# @desc Perform mkfs first, then do read write 
+# @requires pci || pcie
+# @setup_requires pciusbcard
+
+PCI_S_FUNC_USBHOST_VFAT_DD_RW_10M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -f "vfat" -b "1M" -c "10" -d "pci" 
+
+PCI_M_FUNC_USBHOST_VFAT_DD_RW_100M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -f "vfat" -b "1M" -c "100" -d "pci" 
+
+PCI_S_FUNC_USBHOST_EXT2_DD_RW_10M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -f "ext2" -b "10M" -c "1" -d "pci" 
+
+PCI_M_FUNC_USBHOST_EXT2_DD_RW_100M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -f "ext2" -b "10M" -c "10" -d "pci" 
+
+PCI_L_STRESS_USBHOST_EXT2_DD_RW_10M_100TIMES source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -f "ext2" -b "10M" -c "1" -d "pci" -l "100"
+
+PCI_S_FUNC_USBHOST_DD_RW_10M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -b "1M" -c "10" -d "pci" 
+
+PCI_M_FUNC_USBHOST_DD_RW_100M source 'common.sh'; do_cmd blk_device_dd_readwrite_test.sh -b "1M" -c "100" -d "pci" 
+
+

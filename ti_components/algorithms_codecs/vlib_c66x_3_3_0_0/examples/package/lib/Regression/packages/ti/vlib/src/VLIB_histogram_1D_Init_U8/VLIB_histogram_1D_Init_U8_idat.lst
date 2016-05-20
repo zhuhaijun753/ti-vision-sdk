@@ -1,0 +1,1629 @@
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    1
+
+       1                    ;******************************************************************************
+       2                    ;* TMS320C6x C/C++ Codegen                                          PC v7.4.2 *
+       3                    ;* Date/Time created: Sat Sep 26 11:10:35 2015                                *
+       4                    ;******************************************************************************
+       5                            .compiler_opts --abi=eabi --c64p_l1d_workaround=off --endian=little --hll_source=on --long_pre
+       6                    
+       7                    ;******************************************************************************
+       8                    ;* GLOBAL FILE PARAMETERS                                                     *
+       9                    ;*                                                                            *
+      10                    ;*   Architecture      : TMS320C66xx                                          *
+      11                    ;*   Optimization      : Enabled at level 3                                   *
+      12                    ;*   Optimizing for    : Speed                                                *
+      13                    ;*                       Based on options: -o3, no -ms                        *
+      14                    ;*   Endian            : Little                                               *
+      15                    ;*   Interrupt Thrshld : 10000                                                *
+      16                    ;*   Data Access Model : Far                                                  *
+      17                    ;*   Pipelining        : Enabled                                              *
+      18                    ;*   Speculate Loads   : Enabled with threshold = 0                           *
+      19                    ;*   Memory Aliases    : Presume are aliases (pessimistic)                    *
+      20                    ;*   Debug Info        : DWARF Debug w/Optimization                           *
+      21                    ;*                                                                            *
+      22                    ;******************************************************************************
+      23                    
+      24                            .asg    A15, FP
+      25                            .asg    B14, DP
+      26                            .asg    B15, SP
+      27                            .global $bss
+      28                    
+      29                    
+      30                    $C$DW$CU        .dwtag  DW_TAG_compile_unit
+      31                            .dwattr $C$DW$CU, DW_AT_name("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogr
+      32                            .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C6x C/C++ Codegen PC v7.4.2 Copyright (c) 1996-2012
+      33                            .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      34                            .dwattr $C$DW$CU, DW_AT_comp_dir("c:\nightlybuilds\vlib\ti\vlib\vlib\examples")
+      35 00000000                   .sect   ".fardata:binEdges0", RW
+      36                            .clink
+      37                            .align  8
+      38                            .elfsym binEdges0,SYM_SIZE(10)
+      39 00000000           binEdges0:
+      40 00000000 00000000          .field  0,8                     ; binEdges0[0] @ 0
+      41 00000000 00001A00          .field  26,8                    ; binEdges0[1] @ 8
+      42 00000000 00341A00          .field  52,8                    ; binEdges0[2] @ 16
+      43 00000000 4E341A00          .field  78,8                    ; binEdges0[3] @ 24
+      44 00000004 00000068          .field  104,8                   ; binEdges0[4] @ 32
+      45 00000004 00008268          .field  130,8                   ; binEdges0[5] @ 40
+      46 00000004 009C8268          .field  156,8                   ; binEdges0[6] @ 48
+      47 00000004 B69C8268          .field  182,8                   ; binEdges0[7] @ 56
+      48 00000008 000000D0          .field  208,8                   ; binEdges0[8] @ 64
+      49 00000008 0000EAD0          .field  234,8                   ; binEdges0[9] @ 72
+      50                    
+      51                    $C$DW$1 .dwtag  DW_TAG_variable, DW_AT_name("binEdges0")
+      52                            .dwattr $C$DW$1, DW_AT_TI_symbol_name("binEdges0")
+      53                            .dwattr $C$DW$1, DW_AT_type(*$C$DW$T$59)
+      54                            .dwattr $C$DW$1, DW_AT_location[DW_OP_addr binEdges0]
+      55                            .dwattr $C$DW$1, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    2
+
+      56                            .dwattr $C$DW$1, DW_AT_decl_line(0x1f)
+      57                            .dwattr $C$DW$1, DW_AT_decl_column(0x13)
+      58 00000000                   .sect   ".fardata:binEdges1", RW
+      59                            .clink
+      60                            .align  8
+      61                            .elfsym binEdges1,SYM_SIZE(4)
+      62 00000000           binEdges1:
+      63 00000000 00000000          .field  0,8                     ; binEdges1[0] @ 0
+      64 00000000 00000700          .field  7,8                     ; binEdges1[1] @ 8
+      65 00000000 00100700          .field  16,8                    ; binEdges1[2] @ 16
+      66 00000000 13100700          .field  19,8                    ; binEdges1[3] @ 24
+      67                    
+      68                    $C$DW$2 .dwtag  DW_TAG_variable, DW_AT_name("binEdges1")
+      69                            .dwattr $C$DW$2, DW_AT_TI_symbol_name("binEdges1")
+      70                            .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$60)
+      71                            .dwattr $C$DW$2, DW_AT_location[DW_OP_addr binEdges1]
+      72                            .dwattr $C$DW$2, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+      73                            .dwattr $C$DW$2, DW_AT_decl_line(0x23)
+      74                            .dwattr $C$DW$2, DW_AT_decl_column(0x13)
+      75 00000000                   .sect   ".fardata:binEdges2", RW
+      76                            .clink
+      77                            .align  8
+      78                            .elfsym binEdges2,SYM_SIZE(3)
+      79 00000000           binEdges2:
+      80 00000000 00000000          .field  0,8                     ; binEdges2[0] @ 0
+      81 00000000 00006400          .field  100,8                   ; binEdges2[1] @ 8
+      82 00000000 00FA6400          .field  250,8                   ; binEdges2[2] @ 16
+      83                    
+      84                    $C$DW$3 .dwtag  DW_TAG_variable, DW_AT_name("binEdges2")
+      85                            .dwattr $C$DW$3, DW_AT_TI_symbol_name("binEdges2")
+      86                            .dwattr $C$DW$3, DW_AT_type(*$C$DW$T$61)
+      87                            .dwattr $C$DW$3, DW_AT_location[DW_OP_addr binEdges2]
+      88                            .dwattr $C$DW$3, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+      89                            .dwattr $C$DW$3, DW_AT_decl_line(0x28)
+      90                            .dwattr $C$DW$3, DW_AT_decl_column(0x13)
+      91 00000000                   .sect   ".fardata:binEdges3", RW
+      92                            .clink
+      93                            .align  8
+      94                            .elfsym binEdges3,SYM_SIZE(13)
+      95 00000000           binEdges3:
+      96 00000000 00000078          .field  120,8                   ; binEdges3[0] @ 0
+      97 00000000 00008178          .field  129,8                   ; binEdges3[1] @ 8
+      98 00000000 00848178          .field  132,8                   ; binEdges3[2] @ 16
+      99 00000000 8B848178          .field  139,8                   ; binEdges3[3] @ 24
+     100 00000004 00000091          .field  145,8                   ; binEdges3[4] @ 32
+     101 00000004 00009691          .field  150,8                   ; binEdges3[5] @ 40
+     102 00000004 009D9691          .field  157,8                   ; binEdges3[6] @ 48
+     103 00000004 A69D9691          .field  166,8                   ; binEdges3[7] @ 56
+     104 00000008 000000AC          .field  172,8                   ; binEdges3[8] @ 64
+     105 00000008 0000B1AC          .field  177,8                   ; binEdges3[9] @ 72
+     106 00000008 00B7B1AC          .field  183,8                   ; binEdges3[10] @ 80
+     107 00000008 BBB7B1AC          .field  187,8                   ; binEdges3[11] @ 88
+     108 0000000c 000000BE          .field  190,8                   ; binEdges3[12] @ 96
+     109                    
+     110                    $C$DW$4 .dwtag  DW_TAG_variable, DW_AT_name("binEdges3")
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    3
+
+     111                            .dwattr $C$DW$4, DW_AT_TI_symbol_name("binEdges3")
+     112                            .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$62)
+     113                            .dwattr $C$DW$4, DW_AT_location[DW_OP_addr binEdges3]
+     114                            .dwattr $C$DW$4, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+     115                            .dwattr $C$DW$4, DW_AT_decl_line(0x2d)
+     116                            .dwattr $C$DW$4, DW_AT_decl_column(0x13)
+     117 00000000                   .sect   ".fardata:histArray1", RW
+     118                            .clink
+     119                            .align  8
+     120                            .elfsym histArray1,SYM_SIZE(25)
+     121 00000000           histArray1:
+     122 00000000 00000001          .field  1,8                     ; histArray1[0] @ 0
+     123 00000000 00000101          .field  1,8                     ; histArray1[1] @ 8
+     124 00000000 00010101          .field  1,8                     ; histArray1[2] @ 16
+     125 00000000 01010101          .field  1,8                     ; histArray1[3] @ 24
+     126 00000004 00000001          .field  1,8                     ; histArray1[4] @ 32
+     127 00000004 00000101          .field  1,8                     ; histArray1[5] @ 40
+     128 00000004 00010101          .field  1,8                     ; histArray1[6] @ 48
+     129 00000004 02010101          .field  2,8                     ; histArray1[7] @ 56
+     130 00000008 00000002          .field  2,8                     ; histArray1[8] @ 64
+     131 00000008 00000202          .field  2,8                     ; histArray1[9] @ 72
+     132 00000008 00020202          .field  2,8                     ; histArray1[10] @ 80
+     133 00000008 02020202          .field  2,8                     ; histArray1[11] @ 88
+     134 0000000c 00000002          .field  2,8                     ; histArray1[12] @ 96
+     135 0000000c 00000202          .field  2,8                     ; histArray1[13] @ 104
+     136 0000000c 00020202          .field  2,8                     ; histArray1[14] @ 112
+     137 0000000c 02020202          .field  2,8                     ; histArray1[15] @ 120
+     138 00000010 00000003          .field  3,8                     ; histArray1[16] @ 128
+     139 00000010 00000303          .field  3,8                     ; histArray1[17] @ 136
+     140 00000010 00030303          .field  3,8                     ; histArray1[18] @ 144
+     141 00000010 04030303          .field  4,8                     ; histArray1[19] @ 152
+     142 00000014 00000000          .field  0,8                     ; histArray1[20] @ 160
+     143 00000014 00000000          .field  0,8                     ; histArray1[21] @ 168
+     144 00000014 00000000          .field  0,8                     ; histArray1[22] @ 176
+     145 00000014 00000000          .field  0,8                     ; histArray1[23] @ 184
+     146 00000018 00000000          .field  0,8                     ; histArray1[24] @ 192
+     147                    
+     148                    $C$DW$5 .dwtag  DW_TAG_variable, DW_AT_name("histArray1")
+     149                            .dwattr $C$DW$5, DW_AT_TI_symbol_name("histArray1")
+     150                            .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$63)
+     151                            .dwattr $C$DW$5, DW_AT_location[DW_OP_addr histArray1]
+     152                            .dwattr $C$DW$5, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+     153                            .dwattr $C$DW$5, DW_AT_decl_line(0x33)
+     154                            .dwattr $C$DW$5, DW_AT_decl_column(0x13)
+     155 00000000                   .sect   ".fardata:testParams", RW
+     156                            .clink
+     157                            .align  8
+     158                            .elfsym testParams,SYM_SIZE(80)
+     159 00000000           testParams:
+     160 00000000 00000004          .field  4,8                     ; testParams[0].testPattern @ 0
+     161 00000000 00000004          .field  0,24
+     162 00000004 00000000!         .field  binEdges0,32            ; testParams[0].staticIn @ 32
+     163 00000008 00000000          .field  0,32                    ; testParams[0].staticOut @ 64
+     164 0000000c 0000000A          .field  10,32                   ; testParams[0].numBins @ 96
+     165 00000010 000000FA          .field  250,32                  ; testParams[0].maxSize @ 128
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    4
+
+     166 00000014 00000004          .field  4,8                     ; testParams[1].testPattern @ 160
+     167 00000014 00000004          .field  0,24
+     168 00000018 00000000!         .field  binEdges1,32            ; testParams[1].staticIn @ 192
+     169 0000001c 00000000!         .field  histArray1,32           ; testParams[1].staticOut @ 224
+     170 00000020 00000004          .field  4,32                    ; testParams[1].numBins @ 256
+     171 00000024 00000019          .field  25,32                   ; testParams[1].maxSize @ 288
+     172 00000028 00000004          .field  4,8                     ; testParams[2].testPattern @ 320
+     173 00000028 00000004          .field  0,24
+     174 0000002c 00000000!         .field  binEdges2,32            ; testParams[2].staticIn @ 352
+     175 00000030 00000000          .field  0,32                    ; testParams[2].staticOut @ 384
+     176 00000034 00000003          .field  3,32                    ; testParams[2].numBins @ 416
+     177 00000038 00000100          .field  256,32                  ; testParams[2].maxSize @ 448
+     178 0000003c 00000004          .field  4,8                     ; testParams[3].testPattern @ 480
+     179 0000003c 00000004          .field  0,24
+     180 00000040 00000000!         .field  binEdges3,32            ; testParams[3].staticIn @ 512
+     181 00000044 00000000          .field  0,32                    ; testParams[3].staticOut @ 544
+     182 00000048 0000000D          .field  13,32                   ; testParams[3].numBins @ 576
+     183 0000004c 000000F0          .field  240,32                  ; testParams[3].maxSize @ 608
+     184                    
+     185                    $C$DW$6 .dwtag  DW_TAG_variable, DW_AT_name("testParams")
+     186                            .dwattr $C$DW$6, DW_AT_TI_symbol_name("testParams")
+     187                            .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$47)
+     188                            .dwattr $C$DW$6, DW_AT_location[DW_OP_addr testParams]
+     189                            .dwattr $C$DW$6, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+     190                            .dwattr $C$DW$6, DW_AT_decl_line(0x3a)
+     191                            .dwattr $C$DW$6, DW_AT_decl_column(0x2d)
+     192                    ;       C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\bin\opt6x.exe C:\\Users\\gtbldadm\\AppData\
+     193 00000000                   .sect   ".text"
+     194                            .clink
+     195                            .global histogram_1D_Init_U8_getTestParams
+     196                    
+     197                    $C$DW$7 .dwtag  DW_TAG_subprogram, DW_AT_name("histogram_1D_Init_U8_getTestParams")
+     198                            .dwattr $C$DW$7, DW_AT_low_pc(histogram_1D_Init_U8_getTestParams)
+     199                            .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+     200                            .dwattr $C$DW$7, DW_AT_TI_symbol_name("histogram_1D_Init_U8_getTestParams")
+     201                            .dwattr $C$DW$7, DW_AT_external
+     202                            .dwattr $C$DW$7, DW_AT_TI_begin_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB
+     203                            .dwattr $C$DW$7, DW_AT_TI_begin_line(0x5c)
+     204                            .dwattr $C$DW$7, DW_AT_TI_begin_column(0x06)
+     205                            .dwattr $C$DW$7, DW_AT_decl_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_his
+     206                            .dwattr $C$DW$7, DW_AT_decl_line(0x5c)
+     207                            .dwattr $C$DW$7, DW_AT_decl_column(0x06)
+     208                            .dwattr $C$DW$7, DW_AT_TI_max_frame_size(0x00)
+     209                            .dwpsn  file "./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_id
+     210                    
+     211                            .dwfde $C$DW$CIE, histogram_1D_Init_U8_getTestParams
+     212                    $C$DW$8 .dwtag  DW_TAG_formal_parameter, DW_AT_name("params")
+     213                            .dwattr $C$DW$8, DW_AT_TI_symbol_name("params")
+     214                            .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$45)
+     215                            .dwattr $C$DW$8, DW_AT_location[DW_OP_reg4]
+     216                    $C$DW$9 .dwtag  DW_TAG_formal_parameter, DW_AT_name("numTests")
+     217                            .dwattr $C$DW$9, DW_AT_TI_symbol_name("numTests")
+     218                            .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$55)
+     219                            .dwattr $C$DW$9, DW_AT_location[DW_OP_reg20]
+     220                    ;----------------------------------------------------------------------
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    5
+
+     221                    ;  92 | void histogram_1D_Init_U8_getTestParams(histogram_1D_Init_U8_testParams
+     222                    ;     | _t * *params, int32_t *numTests)                                       
+     223                    ;  94 | *params = testParams;                                                  
+     224                    ;  95 | *numTests = sizeof(testParams) / sizeof(histogram_1D_Init_U8_testParams
+     225                    ;     | _t);                                                                   
+     226                    ;----------------------------------------------------------------------
+     227                    
+     228                    ;******************************************************************************
+     229                    ;* FUNCTION NAME: histogram_1D_Init_U8_getTestParams                          *
+     230                    ;*                                                                            *
+     231                    ;*   Regs Modified     : A3,B5                                                *
+     232                    ;*   Regs Used         : A3,A4,B3,B4,B5                                       *
+     233                    ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                    *
+     234                    ;******************************************************************************
+     235                    
+     236                    ;******************************************************************************
+     237                    ;*                                                                            *
+     238                    ;* Using -g (debug) with optimization (-o3) may disable key optimizations!    *
+     239                    ;*                                                                            *
+     240                    ;******************************************************************************
+     241 00000000           histogram_1D_Init_U8_getTestParams:
+     242                    ;** --------------------------------------------------------------------------*
+     243                    ;          EXCLUSIVE CPU CYCLES: 9
+     244                    ;** 94  -----------------------    *params = &testParams[0];
+     245                    ;** 95  -----------------------    *numTests = 4;
+     246                    ;**     -----------------------    return;
+     247                            .dwcfi  cfa_offset, 0
+     248                    $C$DW$10        .dwtag  DW_TAG_variable, DW_AT_name("numTests")
+     249                            .dwattr $C$DW$10, DW_AT_TI_symbol_name("numTests")
+     250                            .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$73)
+     251                            .dwattr $C$DW$10, DW_AT_location[DW_OP_reg20]
+     252                    $C$DW$11        .dwtag  DW_TAG_variable, DW_AT_name("params")
+     253                            .dwattr $C$DW$11, DW_AT_TI_symbol_name("params")
+     254                            .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$46)
+     255                            .dwattr $C$DW$11, DW_AT_location[DW_OP_reg4]
+     256 00000000 01800028!            MVKL    .S1     testParams,A3
+     257                    
+     258 00000004 01800069!            MVKH    .S1     testParams,A3
+     259 00000008 0290a35a  ||         MVK     .L2     4,B5              ; |95| 
+     260                    
+     261 0000000c 01900275             STW     .D1T1   A3,*A4            ; |94| 
+     262 00000010 029002f6  ||         STW     .D2T2   B5,*B4            ; |95| 
+     263                    
+     264                            .dwcfi  cfa_offset, 0
+     265                            .dwpsn  file "./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_id
+     266                    $C$DW$12        .dwtag  DW_TAG_TI_branch
+     267                            .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     268                            .dwattr $C$DW$12, DW_AT_TI_return
+     269 00000014 008ca362             RETNOP  .S2     B3,5              ; |96| 
+     270                               ; BRANCH OCCURS {B3}              ; |96| 
+     271                            .dwattr $C$DW$7, DW_AT_TI_end_file("./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_h
+     272                            .dwattr $C$DW$7, DW_AT_TI_end_line(0x60)
+     273                            .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     274                            .dwendentry
+     275                            .dwendtag $C$DW$7
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    6
+
+     276                    
+     277                    
+     278                    ;******************************************************************************
+     279                    ;* BUILD ATTRIBUTES                                                           *
+     280                    ;******************************************************************************
+     281                            .battr "TI", Tag_File, 1, Tag_Long_Precision_Bits(2)
+     282                            .battr "TI", Tag_File, 1, Tag_Bitfield_layout(2)
+     283                            .battr "TI", Tag_File, 1, Tag_ABI_enum_size(2)
+     284                            .battr "c6xabi", Tag_File, 1, Tag_ABI_wchar_t(1)
+     285                            .battr "c6xabi", Tag_File, 1, Tag_ABI_array_object_alignment(0)
+     286                            .battr "c6xabi", Tag_File, 1, Tag_ABI_array_object_align_expected(0)
+     287                            .battr "c6xabi", Tag_File, 1, Tag_ABI_PIC(0)
+     288                            .battr "c6xabi", Tag_File, 1, Tag_ABI_PID(0)
+     289                            .battr "c6xabi", Tag_File, 1, Tag_ABI_DSBT(0)
+     290                            .battr "c6xabi", Tag_File, 1, Tag_ABI_stack_align_needed(0)
+     291                            .battr "c6xabi", Tag_File, 1, Tag_ABI_stack_align_preserved(0)
+     292                            .battr "TI", Tag_File, 1, Tag_Tramps_Use_SOC(1)
+     293                    
+     294                    ;******************************************************************************
+     295                    ;* TYPE INFORMATION                                                           *
+     296                    ;******************************************************************************
+     297                    
+     298                    $C$DW$T$35      .dwtag  DW_TAG_enumeration_type
+     299                            .dwattr $C$DW$T$35, DW_AT_byte_size(0x04)
+     300                    $C$DW$13        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_NO_ERROR"), DW_AT_const_value(0x00)
+     301                            .dwattr $C$DW$13, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     302                            .dwattr $C$DW$13, DW_AT_decl_line(0x7a)
+     303                            .dwattr $C$DW$13, DW_AT_decl_column(0x05)
+     304                    $C$DW$14        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_INVALID"), DW_AT_const_value(0x0
+     305                            .dwattr $C$DW$14, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     306                            .dwattr $C$DW$14, DW_AT_decl_line(0x7b)
+     307                            .dwattr $C$DW$14, DW_AT_decl_column(0x05)
+     308                    $C$DW$15        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_NEGATIVE"), DW_AT_const_value(0x
+     309                            .dwattr $C$DW$15, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     310                            .dwattr $C$DW$15, DW_AT_decl_line(0x7c)
+     311                            .dwattr $C$DW$15, DW_AT_decl_column(0x05)
+     312                    $C$DW$16        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_INPUT_EXCEEDED_RANGE"), DW_AT_const_va
+     313                            .dwattr $C$DW$16, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     314                            .dwattr $C$DW$16, DW_AT_decl_line(0x7d)
+     315                            .dwattr $C$DW$16, DW_AT_decl_column(0x05)
+     316                    $C$DW$17        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_EXCEEDED_BOUNDARY"), DW_AT_cons
+     317                            .dwattr $C$DW$17, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     318                            .dwattr $C$DW$17, DW_AT_decl_line(0x7e)
+     319                            .dwattr $C$DW$17, DW_AT_decl_column(0x05)
+     320                    $C$DW$18        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_ALLOCATION_FAILURE"), DW_AT_con
+     321                            .dwattr $C$DW$18, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     322                            .dwattr $C$DW$18, DW_AT_decl_line(0x7f)
+     323                            .dwattr $C$DW$18, DW_AT_decl_column(0x05)
+     324                    $C$DW$19        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_MEMORY_POINTER_NULL"), DW_AT_const_val
+     325                            .dwattr $C$DW$19, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     326                            .dwattr $C$DW$19, DW_AT_decl_line(0x80)
+     327                            .dwattr $C$DW$19, DW_AT_decl_column(0x05)
+     328                    $C$DW$20        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_DMA_FAILURE"), DW_AT_const_value(0x07)
+     329                            .dwattr $C$DW$20, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     330                            .dwattr $C$DW$20, DW_AT_decl_line(0x81)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    7
+
+     331                            .dwattr $C$DW$20, DW_AT_decl_column(0x05)
+     332                    $C$DW$21        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_OPEN_FAILURE"), DW_AT_const_value
+     333                            .dwattr $C$DW$21, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     334                            .dwattr $C$DW$21, DW_AT_decl_line(0x82)
+     335                            .dwattr $C$DW$21, DW_AT_decl_column(0x05)
+     336                    $C$DW$22        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_READ_FAILURE"), DW_AT_const_value
+     337                            .dwattr $C$DW$22, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     338                            .dwattr $C$DW$22, DW_AT_decl_line(0x83)
+     339                            .dwattr $C$DW$22, DW_AT_decl_column(0x05)
+     340                    $C$DW$23        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_WRITE_FAILURE"), DW_AT_const_valu
+     341                            .dwattr $C$DW$23, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     342                            .dwattr $C$DW$23, DW_AT_decl_line(0x84)
+     343                            .dwattr $C$DW$23, DW_AT_decl_column(0x05)
+     344                    $C$DW$24        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_CLOSE_FAILURE"), DW_AT_const_valu
+     345                            .dwattr $C$DW$24, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     346                            .dwattr $C$DW$24, DW_AT_decl_line(0x85)
+     347                            .dwattr $C$DW$24, DW_AT_decl_column(0x05)
+     348                    $C$DW$25        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_FILE_FORMAT_FAILURE"), DW_AT_const_val
+     349                            .dwattr $C$DW$25, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     350                            .dwattr $C$DW$25, DW_AT_decl_line(0x86)
+     351                            .dwattr $C$DW$25, DW_AT_decl_column(0x05)
+     352                    $C$DW$26        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_WARNING_LOW_MEMORY"), DW_AT_const_value(0x
+     353                            .dwattr $C$DW$26, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     354                            .dwattr $C$DW$26, DW_AT_decl_line(0x87)
+     355                            .dwattr $C$DW$26, DW_AT_decl_column(0x05)
+     356                    $C$DW$27        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERR_NOT_IMPLEMENTED"), DW_AT_const_value(0
+     357                            .dwattr $C$DW$27, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     358                            .dwattr $C$DW$27, DW_AT_decl_line(0x88)
+     359                            .dwattr $C$DW$27, DW_AT_decl_column(0x05)
+     360                    $C$DW$28        .dwtag  DW_TAG_enumerator, DW_AT_name("VLIB_ERROR_MAX"), DW_AT_const_value(0x0f)
+     361                            .dwattr $C$DW$28, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     362                            .dwattr $C$DW$28, DW_AT_decl_line(0x89)
+     363                            .dwattr $C$DW$28, DW_AT_decl_column(0x05)
+     364                            .dwendtag $C$DW$T$35
+     365                    
+     366                            .dwattr $C$DW$T$35, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     367                            .dwattr $C$DW$T$35, DW_AT_decl_line(0x79)
+     368                            .dwattr $C$DW$T$35, DW_AT_decl_column(0x0e)
+     369                    $C$DW$T$36      .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_STATUS")
+     370                            .dwattr $C$DW$T$36, DW_AT_type(*$C$DW$T$35)
+     371                            .dwattr $C$DW$T$36, DW_AT_language(DW_LANG_C)
+     372                            .dwattr $C$DW$T$36, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     373                            .dwattr $C$DW$T$36, DW_AT_decl_line(0x8a)
+     374                            .dwattr $C$DW$T$36, DW_AT_decl_column(0x03)
+     375                    
+     376                    $C$DW$T$37      .dwtag  DW_TAG_enumeration_type
+     377                            .dwattr $C$DW$T$37, DW_AT_byte_size(0x04)
+     378                    $C$DW$29        .dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_OPT"), DW_AT_const_value(0x00)
+     379                            .dwattr $C$DW$29, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     380                            .dwattr $C$DW$29, DW_AT_decl_line(0x6a)
+     381                            .dwattr $C$DW$29, DW_AT_decl_column(0x05)
+     382                    $C$DW$30        .dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_CN"), DW_AT_const_value(0x01)
+     383                            .dwattr $C$DW$30, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     384                            .dwattr $C$DW$30, DW_AT_decl_line(0x6b)
+     385                            .dwattr $C$DW$30, DW_AT_decl_column(0x05)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    8
+
+     386                    $C$DW$31        .dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_CNT"), DW_AT_const_value(0x02)
+     387                            .dwattr $C$DW$31, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     388                            .dwattr $C$DW$31, DW_AT_decl_line(0x6c)
+     389                            .dwattr $C$DW$31, DW_AT_decl_column(0x05)
+     390                            .dwendtag $C$DW$T$37
+     391                    
+     392                            .dwattr $C$DW$T$37, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     393                            .dwattr $C$DW$T$37, DW_AT_decl_line(0x69)
+     394                            .dwattr $C$DW$T$37, DW_AT_decl_column(0x06)
+     395                    
+     396                    $C$DW$T$38      .dwtag  DW_TAG_enumeration_type
+     397                            .dwattr $C$DW$T$38, DW_AT_byte_size(0x04)
+     398                    $C$DW$32        .dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_FAIL"), DW_AT_const_value(0x00)
+     399                            .dwattr $C$DW$32, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     400                            .dwattr $C$DW$32, DW_AT_decl_line(0x72)
+     401                            .dwattr $C$DW$32, DW_AT_decl_column(0x05)
+     402                    $C$DW$33        .dwtag  DW_TAG_enumerator, DW_AT_name("vlib_KERNEL_PASS"), DW_AT_const_value(0x01)
+     403                            .dwattr $C$DW$33, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     404                            .dwattr $C$DW$33, DW_AT_decl_line(0x73)
+     405                            .dwattr $C$DW$33, DW_AT_decl_column(0x05)
+     406                            .dwendtag $C$DW$T$38
+     407                    
+     408                            .dwattr $C$DW$T$38, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     409                            .dwattr $C$DW$T$38, DW_AT_decl_line(0x71)
+     410                            .dwattr $C$DW$T$38, DW_AT_decl_column(0x06)
+     411                    
+     412                    $C$DW$T$22      .dwtag  DW_TAG_structure_type
+     413                            .dwattr $C$DW$T$22, DW_AT_byte_size(0x14)
+     414                    $C$DW$34        .dwtag  DW_TAG_member
+     415                            .dwattr $C$DW$34, DW_AT_type(*$C$DW$T$19)
+     416                            .dwattr $C$DW$34, DW_AT_name("testPattern")
+     417                            .dwattr $C$DW$34, DW_AT_TI_symbol_name("testPattern")
+     418                            .dwattr $C$DW$34, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     419                            .dwattr $C$DW$34, DW_AT_accessibility(DW_ACCESS_public)
+     420                            .dwattr $C$DW$34, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_hi
+     421                            .dwattr $C$DW$34, DW_AT_decl_line(0x24)
+     422                            .dwattr $C$DW$34, DW_AT_decl_column(0x0e)
+     423                    $C$DW$35        .dwtag  DW_TAG_member
+     424                            .dwattr $C$DW$35, DW_AT_type(*$C$DW$T$20)
+     425                            .dwattr $C$DW$35, DW_AT_name("staticIn")
+     426                            .dwattr $C$DW$35, DW_AT_TI_symbol_name("staticIn")
+     427                            .dwattr $C$DW$35, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     428                            .dwattr $C$DW$35, DW_AT_accessibility(DW_ACCESS_public)
+     429                            .dwattr $C$DW$35, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_hi
+     430                            .dwattr $C$DW$35, DW_AT_decl_line(0x25)
+     431                            .dwattr $C$DW$35, DW_AT_decl_column(0x0e)
+     432                    $C$DW$36        .dwtag  DW_TAG_member
+     433                            .dwattr $C$DW$36, DW_AT_type(*$C$DW$T$20)
+     434                            .dwattr $C$DW$36, DW_AT_name("staticOut")
+     435                            .dwattr $C$DW$36, DW_AT_TI_symbol_name("staticOut")
+     436                            .dwattr $C$DW$36, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+     437                            .dwattr $C$DW$36, DW_AT_accessibility(DW_ACCESS_public)
+     438                            .dwattr $C$DW$36, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_hi
+     439                            .dwattr $C$DW$36, DW_AT_decl_line(0x26)
+     440                            .dwattr $C$DW$36, DW_AT_decl_column(0x0e)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE    9
+
+     441                    $C$DW$37        .dwtag  DW_TAG_member
+     442                            .dwattr $C$DW$37, DW_AT_type(*$C$DW$T$21)
+     443                            .dwattr $C$DW$37, DW_AT_name("numBins")
+     444                            .dwattr $C$DW$37, DW_AT_TI_symbol_name("numBins")
+     445                            .dwattr $C$DW$37, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+     446                            .dwattr $C$DW$37, DW_AT_accessibility(DW_ACCESS_public)
+     447                            .dwattr $C$DW$37, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_hi
+     448                            .dwattr $C$DW$37, DW_AT_decl_line(0x27)
+     449                            .dwattr $C$DW$37, DW_AT_decl_column(0x0e)
+     450                    $C$DW$38        .dwtag  DW_TAG_member
+     451                            .dwattr $C$DW$38, DW_AT_type(*$C$DW$T$21)
+     452                            .dwattr $C$DW$38, DW_AT_name("maxSize")
+     453                            .dwattr $C$DW$38, DW_AT_TI_symbol_name("maxSize")
+     454                            .dwattr $C$DW$38, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+     455                            .dwattr $C$DW$38, DW_AT_accessibility(DW_ACCESS_public)
+     456                            .dwattr $C$DW$38, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_hi
+     457                            .dwattr $C$DW$38, DW_AT_decl_line(0x28)
+     458                            .dwattr $C$DW$38, DW_AT_decl_column(0x0e)
+     459                            .dwendtag $C$DW$T$22
+     460                    
+     461                            .dwattr $C$DW$T$22, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_
+     462                            .dwattr $C$DW$T$22, DW_AT_decl_line(0x23)
+     463                            .dwattr $C$DW$T$22, DW_AT_decl_column(0x10)
+     464                    $C$DW$T$43      .dwtag  DW_TAG_typedef, DW_AT_name("histogram_1D_Init_U8_testParams_t")
+     465                            .dwattr $C$DW$T$43, DW_AT_type(*$C$DW$T$22)
+     466                            .dwattr $C$DW$T$43, DW_AT_language(DW_LANG_C)
+     467                            .dwattr $C$DW$T$43, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\VLIB_
+     468                            .dwattr $C$DW$T$43, DW_AT_decl_line(0x29)
+     469                            .dwattr $C$DW$T$43, DW_AT_decl_column(0x03)
+     470                    $C$DW$T$44      .dwtag  DW_TAG_pointer_type
+     471                            .dwattr $C$DW$T$44, DW_AT_type(*$C$DW$T$43)
+     472                            .dwattr $C$DW$T$44, DW_AT_address_class(0x20)
+     473                    $C$DW$T$45      .dwtag  DW_TAG_pointer_type
+     474                            .dwattr $C$DW$T$45, DW_AT_type(*$C$DW$T$44)
+     475                            .dwattr $C$DW$T$45, DW_AT_address_class(0x20)
+     476                    $C$DW$T$46      .dwtag  DW_TAG_const_type
+     477                            .dwattr $C$DW$T$46, DW_AT_type(*$C$DW$T$45)
+     478                    
+     479                    $C$DW$T$47      .dwtag  DW_TAG_array_type
+     480                            .dwattr $C$DW$T$47, DW_AT_type(*$C$DW$T$43)
+     481                            .dwattr $C$DW$T$47, DW_AT_language(DW_LANG_C)
+     482                            .dwattr $C$DW$T$47, DW_AT_byte_size(0x50)
+     483                    $C$DW$39        .dwtag  DW_TAG_subrange_type
+     484                            .dwattr $C$DW$39, DW_AT_upper_bound(0x03)
+     485                            .dwendtag $C$DW$T$47
+     486                    
+     487                    
+     488                    $C$DW$T$24      .dwtag  DW_TAG_structure_type
+     489                            .dwattr $C$DW$T$24, DW_AT_byte_size(0x18)
+     490                    $C$DW$40        .dwtag  DW_TAG_member
+     491                            .dwattr $C$DW$40, DW_AT_type(*$C$DW$T$10)
+     492                            .dwattr $C$DW$40, DW_AT_name("fd")
+     493                            .dwattr $C$DW$40, DW_AT_TI_symbol_name("fd")
+     494                            .dwattr $C$DW$40, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     495                            .dwattr $C$DW$40, DW_AT_accessibility(DW_ACCESS_public)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   10
+
+     496                            .dwattr $C$DW$40, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     497                            .dwattr $C$DW$40, DW_AT_decl_line(0x49)
+     498                            .dwattr $C$DW$40, DW_AT_decl_column(0x0b)
+     499                    $C$DW$41        .dwtag  DW_TAG_member
+     500                            .dwattr $C$DW$41, DW_AT_type(*$C$DW$T$23)
+     501                            .dwattr $C$DW$41, DW_AT_name("buf")
+     502                            .dwattr $C$DW$41, DW_AT_TI_symbol_name("buf")
+     503                            .dwattr $C$DW$41, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     504                            .dwattr $C$DW$41, DW_AT_accessibility(DW_ACCESS_public)
+     505                            .dwattr $C$DW$41, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     506                            .dwattr $C$DW$41, DW_AT_decl_line(0x4a)
+     507                            .dwattr $C$DW$41, DW_AT_decl_column(0x16)
+     508                    $C$DW$42        .dwtag  DW_TAG_member
+     509                            .dwattr $C$DW$42, DW_AT_type(*$C$DW$T$23)
+     510                            .dwattr $C$DW$42, DW_AT_name("pos")
+     511                            .dwattr $C$DW$42, DW_AT_TI_symbol_name("pos")
+     512                            .dwattr $C$DW$42, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+     513                            .dwattr $C$DW$42, DW_AT_accessibility(DW_ACCESS_public)
+     514                            .dwattr $C$DW$42, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     515                            .dwattr $C$DW$42, DW_AT_decl_line(0x4b)
+     516                            .dwattr $C$DW$42, DW_AT_decl_column(0x16)
+     517                    $C$DW$43        .dwtag  DW_TAG_member
+     518                            .dwattr $C$DW$43, DW_AT_type(*$C$DW$T$23)
+     519                            .dwattr $C$DW$43, DW_AT_name("bufend")
+     520                            .dwattr $C$DW$43, DW_AT_TI_symbol_name("bufend")
+     521                            .dwattr $C$DW$43, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+     522                            .dwattr $C$DW$43, DW_AT_accessibility(DW_ACCESS_public)
+     523                            .dwattr $C$DW$43, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     524                            .dwattr $C$DW$43, DW_AT_decl_line(0x4c)
+     525                            .dwattr $C$DW$43, DW_AT_decl_column(0x16)
+     526                    $C$DW$44        .dwtag  DW_TAG_member
+     527                            .dwattr $C$DW$44, DW_AT_type(*$C$DW$T$23)
+     528                            .dwattr $C$DW$44, DW_AT_name("buff_stop")
+     529                            .dwattr $C$DW$44, DW_AT_TI_symbol_name("buff_stop")
+     530                            .dwattr $C$DW$44, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+     531                            .dwattr $C$DW$44, DW_AT_accessibility(DW_ACCESS_public)
+     532                            .dwattr $C$DW$44, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     533                            .dwattr $C$DW$44, DW_AT_decl_line(0x4d)
+     534                            .dwattr $C$DW$44, DW_AT_decl_column(0x16)
+     535                    $C$DW$45        .dwtag  DW_TAG_member
+     536                            .dwattr $C$DW$45, DW_AT_type(*$C$DW$T$11)
+     537                            .dwattr $C$DW$45, DW_AT_name("flags")
+     538                            .dwattr $C$DW$45, DW_AT_TI_symbol_name("flags")
+     539                            .dwattr $C$DW$45, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+     540                            .dwattr $C$DW$45, DW_AT_accessibility(DW_ACCESS_public)
+     541                            .dwattr $C$DW$45, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     542                            .dwattr $C$DW$45, DW_AT_decl_line(0x4e)
+     543                            .dwattr $C$DW$45, DW_AT_decl_column(0x16)
+     544                            .dwendtag $C$DW$T$24
+     545                    
+     546                            .dwattr $C$DW$T$24, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     547                            .dwattr $C$DW$T$24, DW_AT_decl_line(0x48)
+     548                            .dwattr $C$DW$T$24, DW_AT_decl_column(0x10)
+     549                    $C$DW$T$48      .dwtag  DW_TAG_typedef, DW_AT_name("FILE")
+     550                            .dwattr $C$DW$T$48, DW_AT_type(*$C$DW$T$24)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   11
+
+     551                            .dwattr $C$DW$T$48, DW_AT_language(DW_LANG_C)
+     552                            .dwattr $C$DW$T$48, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     553                            .dwattr $C$DW$T$48, DW_AT_decl_line(0x4f)
+     554                            .dwattr $C$DW$T$48, DW_AT_decl_column(0x03)
+     555                    
+     556                    $C$DW$T$25      .dwtag  DW_TAG_structure_type
+     557                            .dwattr $C$DW$T$25, DW_AT_byte_size(0x08)
+     558                    $C$DW$46        .dwtag  DW_TAG_member
+     559                            .dwattr $C$DW$46, DW_AT_type(*$C$DW$T$10)
+     560                            .dwattr $C$DW$46, DW_AT_name("quot")
+     561                            .dwattr $C$DW$46, DW_AT_TI_symbol_name("quot")
+     562                            .dwattr $C$DW$46, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     563                            .dwattr $C$DW$46, DW_AT_accessibility(DW_ACCESS_public)
+     564                            .dwattr $C$DW$46, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     565                            .dwattr $C$DW$46, DW_AT_decl_line(0x3e)
+     566                            .dwattr $C$DW$46, DW_AT_decl_column(0x16)
+     567                    $C$DW$47        .dwtag  DW_TAG_member
+     568                            .dwattr $C$DW$47, DW_AT_type(*$C$DW$T$10)
+     569                            .dwattr $C$DW$47, DW_AT_name("rem")
+     570                            .dwattr $C$DW$47, DW_AT_TI_symbol_name("rem")
+     571                            .dwattr $C$DW$47, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     572                            .dwattr $C$DW$47, DW_AT_accessibility(DW_ACCESS_public)
+     573                            .dwattr $C$DW$47, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     574                            .dwattr $C$DW$47, DW_AT_decl_line(0x3e)
+     575                            .dwattr $C$DW$47, DW_AT_decl_column(0x1c)
+     576                            .dwendtag $C$DW$T$25
+     577                    
+     578                            .dwattr $C$DW$T$25, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     579                            .dwattr $C$DW$T$25, DW_AT_decl_line(0x3e)
+     580                            .dwattr $C$DW$T$25, DW_AT_decl_column(0x10)
+     581                    $C$DW$T$49      .dwtag  DW_TAG_typedef, DW_AT_name("div_t")
+     582                            .dwattr $C$DW$T$49, DW_AT_type(*$C$DW$T$25)
+     583                            .dwattr $C$DW$T$49, DW_AT_language(DW_LANG_C)
+     584                            .dwattr $C$DW$T$49, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     585                            .dwattr $C$DW$T$49, DW_AT_decl_line(0x3e)
+     586                            .dwattr $C$DW$T$49, DW_AT_decl_column(0x23)
+     587                    
+     588                    $C$DW$T$26      .dwtag  DW_TAG_structure_type
+     589                            .dwattr $C$DW$T$26, DW_AT_byte_size(0x08)
+     590                    $C$DW$48        .dwtag  DW_TAG_member
+     591                            .dwattr $C$DW$48, DW_AT_type(*$C$DW$T$10)
+     592                            .dwattr $C$DW$48, DW_AT_name("quot")
+     593                            .dwattr $C$DW$48, DW_AT_TI_symbol_name("quot")
+     594                            .dwattr $C$DW$48, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     595                            .dwattr $C$DW$48, DW_AT_accessibility(DW_ACCESS_public)
+     596                            .dwattr $C$DW$48, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     597                            .dwattr $C$DW$48, DW_AT_decl_line(0x40)
+     598                            .dwattr $C$DW$48, DW_AT_decl_column(0x17)
+     599                    $C$DW$49        .dwtag  DW_TAG_member
+     600                            .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$10)
+     601                            .dwattr $C$DW$49, DW_AT_name("rem")
+     602                            .dwattr $C$DW$49, DW_AT_TI_symbol_name("rem")
+     603                            .dwattr $C$DW$49, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     604                            .dwattr $C$DW$49, DW_AT_accessibility(DW_ACCESS_public)
+     605                            .dwattr $C$DW$49, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   12
+
+     606                            .dwattr $C$DW$49, DW_AT_decl_line(0x40)
+     607                            .dwattr $C$DW$49, DW_AT_decl_column(0x1d)
+     608                            .dwendtag $C$DW$T$26
+     609                    
+     610                            .dwattr $C$DW$T$26, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     611                            .dwattr $C$DW$T$26, DW_AT_decl_line(0x40)
+     612                            .dwattr $C$DW$T$26, DW_AT_decl_column(0x10)
+     613                    $C$DW$T$50      .dwtag  DW_TAG_typedef, DW_AT_name("ldiv_t")
+     614                            .dwattr $C$DW$T$50, DW_AT_type(*$C$DW$T$26)
+     615                            .dwattr $C$DW$T$50, DW_AT_language(DW_LANG_C)
+     616                            .dwattr $C$DW$T$50, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     617                            .dwattr $C$DW$T$50, DW_AT_decl_line(0x40)
+     618                            .dwattr $C$DW$T$50, DW_AT_decl_column(0x24)
+     619                    
+     620                    $C$DW$T$27      .dwtag  DW_TAG_structure_type
+     621                            .dwattr $C$DW$T$27, DW_AT_byte_size(0x10)
+     622                    $C$DW$50        .dwtag  DW_TAG_member
+     623                            .dwattr $C$DW$50, DW_AT_type(*$C$DW$T$14)
+     624                            .dwattr $C$DW$50, DW_AT_name("quot")
+     625                            .dwattr $C$DW$50, DW_AT_TI_symbol_name("quot")
+     626                            .dwattr $C$DW$50, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     627                            .dwattr $C$DW$50, DW_AT_accessibility(DW_ACCESS_public)
+     628                            .dwattr $C$DW$50, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     629                            .dwattr $C$DW$50, DW_AT_decl_line(0x43)
+     630                            .dwattr $C$DW$50, DW_AT_decl_column(0x1c)
+     631                    $C$DW$51        .dwtag  DW_TAG_member
+     632                            .dwattr $C$DW$51, DW_AT_type(*$C$DW$T$14)
+     633                            .dwattr $C$DW$51, DW_AT_name("rem")
+     634                            .dwattr $C$DW$51, DW_AT_TI_symbol_name("rem")
+     635                            .dwattr $C$DW$51, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+     636                            .dwattr $C$DW$51, DW_AT_accessibility(DW_ACCESS_public)
+     637                            .dwattr $C$DW$51, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     638                            .dwattr $C$DW$51, DW_AT_decl_line(0x43)
+     639                            .dwattr $C$DW$51, DW_AT_decl_column(0x22)
+     640                            .dwendtag $C$DW$T$27
+     641                    
+     642                            .dwattr $C$DW$T$27, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     643                            .dwattr $C$DW$T$27, DW_AT_decl_line(0x43)
+     644                            .dwattr $C$DW$T$27, DW_AT_decl_column(0x10)
+     645                    $C$DW$T$51      .dwtag  DW_TAG_typedef, DW_AT_name("lldiv_t")
+     646                            .dwattr $C$DW$T$51, DW_AT_type(*$C$DW$T$27)
+     647                            .dwattr $C$DW$T$51, DW_AT_language(DW_LANG_C)
+     648                            .dwattr $C$DW$T$51, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     649                            .dwattr $C$DW$T$51, DW_AT_decl_line(0x43)
+     650                            .dwattr $C$DW$T$51, DW_AT_decl_column(0x29)
+     651                    
+     652                    $C$DW$T$28      .dwtag  DW_TAG_structure_type
+     653                            .dwattr $C$DW$T$28, DW_AT_byte_size(0x24)
+     654                    $C$DW$52        .dwtag  DW_TAG_member
+     655                            .dwattr $C$DW$52, DW_AT_type(*$C$DW$T$21)
+     656                            .dwattr $C$DW$52, DW_AT_name("area")
+     657                            .dwattr $C$DW$52, DW_AT_TI_symbol_name("area")
+     658                            .dwattr $C$DW$52, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     659                            .dwattr $C$DW$52, DW_AT_accessibility(DW_ACCESS_public)
+     660                            .dwattr $C$DW$52, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   13
+
+     661                            .dwattr $C$DW$52, DW_AT_decl_line(0x69)
+     662                            .dwattr $C$DW$52, DW_AT_decl_column(0x0d)
+     663                    $C$DW$53        .dwtag  DW_TAG_member
+     664                            .dwattr $C$DW$53, DW_AT_type(*$C$DW$T$21)
+     665                            .dwattr $C$DW$53, DW_AT_name("xsum")
+     666                            .dwattr $C$DW$53, DW_AT_TI_symbol_name("xsum")
+     667                            .dwattr $C$DW$53, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     668                            .dwattr $C$DW$53, DW_AT_accessibility(DW_ACCESS_public)
+     669                            .dwattr $C$DW$53, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     670                            .dwattr $C$DW$53, DW_AT_decl_line(0x6a)
+     671                            .dwattr $C$DW$53, DW_AT_decl_column(0x0d)
+     672                    $C$DW$54        .dwtag  DW_TAG_member
+     673                            .dwattr $C$DW$54, DW_AT_type(*$C$DW$T$21)
+     674                            .dwattr $C$DW$54, DW_AT_name("ysum")
+     675                            .dwattr $C$DW$54, DW_AT_TI_symbol_name("ysum")
+     676                            .dwattr $C$DW$54, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+     677                            .dwattr $C$DW$54, DW_AT_accessibility(DW_ACCESS_public)
+     678                            .dwattr $C$DW$54, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     679                            .dwattr $C$DW$54, DW_AT_decl_line(0x6b)
+     680                            .dwattr $C$DW$54, DW_AT_decl_column(0x0d)
+     681                    $C$DW$55        .dwtag  DW_TAG_member
+     682                            .dwattr $C$DW$55, DW_AT_type(*$C$DW$T$21)
+     683                            .dwattr $C$DW$55, DW_AT_name("xmin")
+     684                            .dwattr $C$DW$55, DW_AT_TI_symbol_name("xmin")
+     685                            .dwattr $C$DW$55, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+     686                            .dwattr $C$DW$55, DW_AT_accessibility(DW_ACCESS_public)
+     687                            .dwattr $C$DW$55, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     688                            .dwattr $C$DW$55, DW_AT_decl_line(0x6d)
+     689                            .dwattr $C$DW$55, DW_AT_decl_column(0x0d)
+     690                    $C$DW$56        .dwtag  DW_TAG_member
+     691                            .dwattr $C$DW$56, DW_AT_type(*$C$DW$T$21)
+     692                            .dwattr $C$DW$56, DW_AT_name("ymin")
+     693                            .dwattr $C$DW$56, DW_AT_TI_symbol_name("ymin")
+     694                            .dwattr $C$DW$56, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+     695                            .dwattr $C$DW$56, DW_AT_accessibility(DW_ACCESS_public)
+     696                            .dwattr $C$DW$56, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     697                            .dwattr $C$DW$56, DW_AT_decl_line(0x6e)
+     698                            .dwattr $C$DW$56, DW_AT_decl_column(0x0d)
+     699                    $C$DW$57        .dwtag  DW_TAG_member
+     700                            .dwattr $C$DW$57, DW_AT_type(*$C$DW$T$21)
+     701                            .dwattr $C$DW$57, DW_AT_name("xmax")
+     702                            .dwattr $C$DW$57, DW_AT_TI_symbol_name("xmax")
+     703                            .dwattr $C$DW$57, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+     704                            .dwattr $C$DW$57, DW_AT_accessibility(DW_ACCESS_public)
+     705                            .dwattr $C$DW$57, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     706                            .dwattr $C$DW$57, DW_AT_decl_line(0x6f)
+     707                            .dwattr $C$DW$57, DW_AT_decl_column(0x0d)
+     708                    $C$DW$58        .dwtag  DW_TAG_member
+     709                            .dwattr $C$DW$58, DW_AT_type(*$C$DW$T$21)
+     710                            .dwattr $C$DW$58, DW_AT_name("ymax")
+     711                            .dwattr $C$DW$58, DW_AT_TI_symbol_name("ymax")
+     712                            .dwattr $C$DW$58, DW_AT_data_member_location[DW_OP_plus_uconst 0x18]
+     713                            .dwattr $C$DW$58, DW_AT_accessibility(DW_ACCESS_public)
+     714                            .dwattr $C$DW$58, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     715                            .dwattr $C$DW$58, DW_AT_decl_line(0x70)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   14
+
+     716                            .dwattr $C$DW$58, DW_AT_decl_column(0x0d)
+     717                    $C$DW$59        .dwtag  DW_TAG_member
+     718                            .dwattr $C$DW$59, DW_AT_type(*$C$DW$T$21)
+     719                            .dwattr $C$DW$59, DW_AT_name("seedx")
+     720                            .dwattr $C$DW$59, DW_AT_TI_symbol_name("seedx")
+     721                            .dwattr $C$DW$59, DW_AT_data_member_location[DW_OP_plus_uconst 0x1c]
+     722                            .dwattr $C$DW$59, DW_AT_accessibility(DW_ACCESS_public)
+     723                            .dwattr $C$DW$59, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     724                            .dwattr $C$DW$59, DW_AT_decl_line(0x72)
+     725                            .dwattr $C$DW$59, DW_AT_decl_column(0x0d)
+     726                    $C$DW$60        .dwtag  DW_TAG_member
+     727                            .dwattr $C$DW$60, DW_AT_type(*$C$DW$T$21)
+     728                            .dwattr $C$DW$60, DW_AT_name("seedy")
+     729                            .dwattr $C$DW$60, DW_AT_TI_symbol_name("seedy")
+     730                            .dwattr $C$DW$60, DW_AT_data_member_location[DW_OP_plus_uconst 0x20]
+     731                            .dwattr $C$DW$60, DW_AT_accessibility(DW_ACCESS_public)
+     732                            .dwattr $C$DW$60, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\comm
+     733                            .dwattr $C$DW$60, DW_AT_decl_line(0x73)
+     734                            .dwattr $C$DW$60, DW_AT_decl_column(0x0d)
+     735                            .dwendtag $C$DW$T$28
+     736                    
+     737                            .dwattr $C$DW$T$28, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     738                            .dwattr $C$DW$T$28, DW_AT_decl_line(0x68)
+     739                            .dwattr $C$DW$T$28, DW_AT_decl_column(0x10)
+     740                    $C$DW$T$52      .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_CC")
+     741                            .dwattr $C$DW$T$52, DW_AT_type(*$C$DW$T$28)
+     742                            .dwattr $C$DW$T$52, DW_AT_language(DW_LANG_C)
+     743                            .dwattr $C$DW$T$52, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     744                            .dwattr $C$DW$T$52, DW_AT_decl_line(0x75)
+     745                            .dwattr $C$DW$T$52, DW_AT_decl_column(0x03)
+     746                    
+     747                    $C$DW$T$31      .dwtag  DW_TAG_structure_type
+     748                            .dwattr $C$DW$T$31, DW_AT_byte_size(0x10)
+     749                    $C$DW$61        .dwtag  DW_TAG_member
+     750                            .dwattr $C$DW$61, DW_AT_type(*$C$DW$T$8)
+     751                            .dwattr $C$DW$61, DW_AT_name("daylight")
+     752                            .dwattr $C$DW$61, DW_AT_TI_symbol_name("daylight")
+     753                            .dwattr $C$DW$61, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     754                            .dwattr $C$DW$61, DW_AT_accessibility(DW_ACCESS_public)
+     755                            .dwattr $C$DW$61, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     756                            .dwattr $C$DW$61, DW_AT_decl_line(0x52)
+     757                            .dwattr $C$DW$61, DW_AT_decl_column(0x0b)
+     758                    $C$DW$62        .dwtag  DW_TAG_member
+     759                            .dwattr $C$DW$62, DW_AT_type(*$C$DW$T$10)
+     760                            .dwattr $C$DW$62, DW_AT_name("timezone")
+     761                            .dwattr $C$DW$62, DW_AT_TI_symbol_name("timezone")
+     762                            .dwattr $C$DW$62, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     763                            .dwattr $C$DW$62, DW_AT_accessibility(DW_ACCESS_public)
+     764                            .dwattr $C$DW$62, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     765                            .dwattr $C$DW$62, DW_AT_decl_line(0x53)
+     766                            .dwattr $C$DW$62, DW_AT_decl_column(0x0b)
+     767                    $C$DW$63        .dwtag  DW_TAG_member
+     768                            .dwattr $C$DW$63, DW_AT_type(*$C$DW$T$30)
+     769                            .dwattr $C$DW$63, DW_AT_name("tzname")
+     770                            .dwattr $C$DW$63, DW_AT_TI_symbol_name("tzname")
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   15
+
+     771                            .dwattr $C$DW$63, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+     772                            .dwattr $C$DW$63, DW_AT_accessibility(DW_ACCESS_public)
+     773                            .dwattr $C$DW$63, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     774                            .dwattr $C$DW$63, DW_AT_decl_line(0x54)
+     775                            .dwattr $C$DW$63, DW_AT_decl_column(0x0b)
+     776                    $C$DW$64        .dwtag  DW_TAG_member
+     777                            .dwattr $C$DW$64, DW_AT_type(*$C$DW$T$30)
+     778                            .dwattr $C$DW$64, DW_AT_name("dstname")
+     779                            .dwattr $C$DW$64, DW_AT_TI_symbol_name("dstname")
+     780                            .dwattr $C$DW$64, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+     781                            .dwattr $C$DW$64, DW_AT_accessibility(DW_ACCESS_public)
+     782                            .dwattr $C$DW$64, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+     783                            .dwattr $C$DW$64, DW_AT_decl_line(0x55)
+     784                            .dwattr $C$DW$64, DW_AT_decl_column(0x0b)
+     785                            .dwendtag $C$DW$T$31
+     786                    
+     787                            .dwattr $C$DW$T$31, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     788                            .dwattr $C$DW$T$31, DW_AT_decl_line(0x51)
+     789                            .dwattr $C$DW$T$31, DW_AT_decl_column(0x01)
+     790                    $C$DW$T$53      .dwtag  DW_TAG_typedef, DW_AT_name("TZ")
+     791                            .dwattr $C$DW$T$53, DW_AT_type(*$C$DW$T$31)
+     792                            .dwattr $C$DW$T$53, DW_AT_language(DW_LANG_C)
+     793                            .dwattr $C$DW$T$53, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     794                            .dwattr $C$DW$T$53, DW_AT_decl_line(0x56)
+     795                            .dwattr $C$DW$T$53, DW_AT_decl_column(0x03)
+     796                    $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+     797                            .dwattr $C$DW$T$2, DW_AT_name("void")
+     798                    $C$DW$T$3       .dwtag  DW_TAG_pointer_type
+     799                            .dwattr $C$DW$T$3, DW_AT_type(*$C$DW$T$2)
+     800                            .dwattr $C$DW$T$3, DW_AT_address_class(0x20)
+     801                    $C$DW$T$54      .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_PTR")
+     802                            .dwattr $C$DW$T$54, DW_AT_type(*$C$DW$T$3)
+     803                            .dwattr $C$DW$T$54, DW_AT_language(DW_LANG_C)
+     804                            .dwattr $C$DW$T$54, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     805                            .dwattr $C$DW$T$54, DW_AT_decl_line(0x5c)
+     806                            .dwattr $C$DW$T$54, DW_AT_decl_column(0x19)
+     807                    $C$DW$T$4       .dwtag  DW_TAG_base_type
+     808                            .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     809                            .dwattr $C$DW$T$4, DW_AT_name("bool")
+     810                            .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     811                    $C$DW$T$5       .dwtag  DW_TAG_base_type
+     812                            .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     813                            .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     814                            .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     815                    $C$DW$T$57      .dwtag  DW_TAG_typedef, DW_AT_name("int8_t")
+     816                            .dwattr $C$DW$T$57, DW_AT_type(*$C$DW$T$5)
+     817                            .dwattr $C$DW$T$57, DW_AT_language(DW_LANG_C)
+     818                            .dwattr $C$DW$T$57, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     819                            .dwattr $C$DW$T$57, DW_AT_decl_line(0x2a)
+     820                            .dwattr $C$DW$T$57, DW_AT_decl_column(0x1d)
+     821                    $C$DW$T$58      .dwtag  DW_TAG_typedef, DW_AT_name("int_least8_t")
+     822                            .dwattr $C$DW$T$58, DW_AT_type(*$C$DW$T$57)
+     823                            .dwattr $C$DW$T$58, DW_AT_language(DW_LANG_C)
+     824                            .dwattr $C$DW$T$58, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     825                            .dwattr $C$DW$T$58, DW_AT_decl_line(0x39)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   16
+
+     826                            .dwattr $C$DW$T$58, DW_AT_decl_column(0x17)
+     827                    $C$DW$T$6       .dwtag  DW_TAG_base_type
+     828                            .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     829                            .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     830                            .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     831                    $C$DW$T$23      .dwtag  DW_TAG_pointer_type
+     832                            .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$6)
+     833                            .dwattr $C$DW$T$23, DW_AT_address_class(0x20)
+     834                    $C$DW$T$19      .dwtag  DW_TAG_typedef, DW_AT_name("uint8_t")
+     835                            .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$6)
+     836                            .dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+     837                            .dwattr $C$DW$T$19, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     838                            .dwattr $C$DW$T$19, DW_AT_decl_line(0x2b)
+     839                            .dwattr $C$DW$T$19, DW_AT_decl_column(0x1c)
+     840                    $C$DW$T$20      .dwtag  DW_TAG_pointer_type
+     841                            .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+     842                            .dwattr $C$DW$T$20, DW_AT_address_class(0x20)
+     843                    
+     844                    $C$DW$T$59      .dwtag  DW_TAG_array_type
+     845                            .dwattr $C$DW$T$59, DW_AT_type(*$C$DW$T$19)
+     846                            .dwattr $C$DW$T$59, DW_AT_language(DW_LANG_C)
+     847                            .dwattr $C$DW$T$59, DW_AT_byte_size(0x0a)
+     848                    $C$DW$65        .dwtag  DW_TAG_subrange_type
+     849                            .dwattr $C$DW$65, DW_AT_upper_bound(0x09)
+     850                            .dwendtag $C$DW$T$59
+     851                    
+     852                    
+     853                    $C$DW$T$60      .dwtag  DW_TAG_array_type
+     854                            .dwattr $C$DW$T$60, DW_AT_type(*$C$DW$T$19)
+     855                            .dwattr $C$DW$T$60, DW_AT_language(DW_LANG_C)
+     856                            .dwattr $C$DW$T$60, DW_AT_byte_size(0x04)
+     857                    $C$DW$66        .dwtag  DW_TAG_subrange_type
+     858                            .dwattr $C$DW$66, DW_AT_upper_bound(0x03)
+     859                            .dwendtag $C$DW$T$60
+     860                    
+     861                    
+     862                    $C$DW$T$61      .dwtag  DW_TAG_array_type
+     863                            .dwattr $C$DW$T$61, DW_AT_type(*$C$DW$T$19)
+     864                            .dwattr $C$DW$T$61, DW_AT_language(DW_LANG_C)
+     865                            .dwattr $C$DW$T$61, DW_AT_byte_size(0x03)
+     866                    $C$DW$67        .dwtag  DW_TAG_subrange_type
+     867                            .dwattr $C$DW$67, DW_AT_upper_bound(0x02)
+     868                            .dwendtag $C$DW$T$61
+     869                    
+     870                    
+     871                    $C$DW$T$62      .dwtag  DW_TAG_array_type
+     872                            .dwattr $C$DW$T$62, DW_AT_type(*$C$DW$T$19)
+     873                            .dwattr $C$DW$T$62, DW_AT_language(DW_LANG_C)
+     874                            .dwattr $C$DW$T$62, DW_AT_byte_size(0x0d)
+     875                    $C$DW$68        .dwtag  DW_TAG_subrange_type
+     876                            .dwattr $C$DW$68, DW_AT_upper_bound(0x0c)
+     877                            .dwendtag $C$DW$T$62
+     878                    
+     879                    
+     880                    $C$DW$T$63      .dwtag  DW_TAG_array_type
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   17
+
+     881                            .dwattr $C$DW$T$63, DW_AT_type(*$C$DW$T$19)
+     882                            .dwattr $C$DW$T$63, DW_AT_language(DW_LANG_C)
+     883                            .dwattr $C$DW$T$63, DW_AT_byte_size(0x19)
+     884                    $C$DW$69        .dwtag  DW_TAG_subrange_type
+     885                            .dwattr $C$DW$69, DW_AT_upper_bound(0x18)
+     886                            .dwendtag $C$DW$T$63
+     887                    
+     888                    $C$DW$T$64      .dwtag  DW_TAG_typedef, DW_AT_name("uint_least8_t")
+     889                            .dwattr $C$DW$T$64, DW_AT_type(*$C$DW$T$19)
+     890                            .dwattr $C$DW$T$64, DW_AT_language(DW_LANG_C)
+     891                            .dwattr $C$DW$T$64, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     892                            .dwattr $C$DW$T$64, DW_AT_decl_line(0x3a)
+     893                            .dwattr $C$DW$T$64, DW_AT_decl_column(0x16)
+     894                    $C$DW$T$7       .dwtag  DW_TAG_base_type
+     895                            .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     896                            .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     897                            .dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+     898                    $C$DW$T$8       .dwtag  DW_TAG_base_type
+     899                            .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     900                            .dwattr $C$DW$T$8, DW_AT_name("short")
+     901                            .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+     902                    $C$DW$T$65      .dwtag  DW_TAG_typedef, DW_AT_name("int16_t")
+     903                            .dwattr $C$DW$T$65, DW_AT_type(*$C$DW$T$8)
+     904                            .dwattr $C$DW$T$65, DW_AT_language(DW_LANG_C)
+     905                            .dwattr $C$DW$T$65, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     906                            .dwattr $C$DW$T$65, DW_AT_decl_line(0x2c)
+     907                            .dwattr $C$DW$T$65, DW_AT_decl_column(0x1d)
+     908                    $C$DW$T$66      .dwtag  DW_TAG_typedef, DW_AT_name("int_least16_t")
+     909                            .dwattr $C$DW$T$66, DW_AT_type(*$C$DW$T$65)
+     910                            .dwattr $C$DW$T$66, DW_AT_language(DW_LANG_C)
+     911                            .dwattr $C$DW$T$66, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     912                            .dwattr $C$DW$T$66, DW_AT_decl_line(0x3c)
+     913                            .dwattr $C$DW$T$66, DW_AT_decl_column(0x17)
+     914                    $C$DW$T$9       .dwtag  DW_TAG_base_type
+     915                            .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     916                            .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     917                            .dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+     918                    $C$DW$T$68      .dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+     919                            .dwattr $C$DW$T$68, DW_AT_type(*$C$DW$T$9)
+     920                            .dwattr $C$DW$T$68, DW_AT_language(DW_LANG_C)
+     921                            .dwattr $C$DW$T$68, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     922                            .dwattr $C$DW$T$68, DW_AT_decl_line(0x2d)
+     923                            .dwattr $C$DW$T$68, DW_AT_decl_column(0x1c)
+     924                    $C$DW$T$69      .dwtag  DW_TAG_typedef, DW_AT_name("uint_least16_t")
+     925                            .dwattr $C$DW$T$69, DW_AT_type(*$C$DW$T$68)
+     926                            .dwattr $C$DW$T$69, DW_AT_language(DW_LANG_C)
+     927                            .dwattr $C$DW$T$69, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     928                            .dwattr $C$DW$T$69, DW_AT_decl_line(0x3d)
+     929                            .dwattr $C$DW$T$69, DW_AT_decl_column(0x16)
+     930                    $C$DW$T$67      .dwtag  DW_TAG_typedef, DW_AT_name("wchar_t")
+     931                            .dwattr $C$DW$T$67, DW_AT_type(*$C$DW$T$9)
+     932                            .dwattr $C$DW$T$67, DW_AT_language(DW_LANG_C)
+     933                            .dwattr $C$DW$T$67, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     934                            .dwattr $C$DW$T$67, DW_AT_decl_line(0x53)
+     935                            .dwattr $C$DW$T$67, DW_AT_decl_column(0x1a)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   18
+
+     936                    $C$DW$T$10      .dwtag  DW_TAG_base_type
+     937                            .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     938                            .dwattr $C$DW$T$10, DW_AT_name("int")
+     939                            .dwattr $C$DW$T$10, DW_AT_byte_size(0x04)
+     940                    $C$DW$T$79      .dwtag  DW_TAG_typedef, DW_AT_name("fpos_t")
+     941                            .dwattr $C$DW$T$79, DW_AT_type(*$C$DW$T$10)
+     942                            .dwattr $C$DW$T$79, DW_AT_language(DW_LANG_C)
+     943                            .dwattr $C$DW$T$79, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     944                            .dwattr $C$DW$T$79, DW_AT_decl_line(0x53)
+     945                            .dwattr $C$DW$T$79, DW_AT_decl_column(0x0d)
+     946                    $C$DW$T$21      .dwtag  DW_TAG_typedef, DW_AT_name("int32_t")
+     947                            .dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$10)
+     948                            .dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+     949                            .dwattr $C$DW$T$21, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     950                            .dwattr $C$DW$T$21, DW_AT_decl_line(0x2e)
+     951                            .dwattr $C$DW$T$21, DW_AT_decl_column(0x1d)
+     952                    $C$DW$T$72      .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_CCHandle")
+     953                            .dwattr $C$DW$T$72, DW_AT_type(*$C$DW$T$21)
+     954                            .dwattr $C$DW$T$72, DW_AT_language(DW_LANG_C)
+     955                            .dwattr $C$DW$T$72, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+     956                            .dwattr $C$DW$T$72, DW_AT_decl_line(0x77)
+     957                            .dwattr $C$DW$T$72, DW_AT_decl_column(0x11)
+     958                    
+     959                    $C$DW$T$32      .dwtag  DW_TAG_array_type
+     960                            .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$21)
+     961                            .dwattr $C$DW$T$32, DW_AT_language(DW_LANG_C)
+     962                            .dwattr $C$DW$T$32, DW_AT_byte_size(0x10)
+     963                    $C$DW$70        .dwtag  DW_TAG_subrange_type
+     964                            .dwattr $C$DW$70, DW_AT_upper_bound(0x03)
+     965                            .dwendtag $C$DW$T$32
+     966                    
+     967                    $C$DW$T$55      .dwtag  DW_TAG_pointer_type
+     968                            .dwattr $C$DW$T$55, DW_AT_type(*$C$DW$T$21)
+     969                            .dwattr $C$DW$T$55, DW_AT_address_class(0x20)
+     970                    $C$DW$T$73      .dwtag  DW_TAG_const_type
+     971                            .dwattr $C$DW$T$73, DW_AT_type(*$C$DW$T$55)
+     972                    $C$DW$T$74      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast16_t")
+     973                            .dwattr $C$DW$T$74, DW_AT_type(*$C$DW$T$21)
+     974                            .dwattr $C$DW$T$74, DW_AT_language(DW_LANG_C)
+     975                            .dwattr $C$DW$T$74, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     976                            .dwattr $C$DW$T$74, DW_AT_decl_line(0x4b)
+     977                            .dwattr $C$DW$T$74, DW_AT_decl_column(0x17)
+     978                    $C$DW$T$75      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast32_t")
+     979                            .dwattr $C$DW$T$75, DW_AT_type(*$C$DW$T$21)
+     980                            .dwattr $C$DW$T$75, DW_AT_language(DW_LANG_C)
+     981                            .dwattr $C$DW$T$75, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     982                            .dwattr $C$DW$T$75, DW_AT_decl_line(0x4e)
+     983                            .dwattr $C$DW$T$75, DW_AT_decl_column(0x17)
+     984                    $C$DW$T$76      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast8_t")
+     985                            .dwattr $C$DW$T$76, DW_AT_type(*$C$DW$T$21)
+     986                            .dwattr $C$DW$T$76, DW_AT_language(DW_LANG_C)
+     987                            .dwattr $C$DW$T$76, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     988                            .dwattr $C$DW$T$76, DW_AT_decl_line(0x49)
+     989                            .dwattr $C$DW$T$76, DW_AT_decl_column(0x17)
+     990                    $C$DW$T$77      .dwtag  DW_TAG_typedef, DW_AT_name("int_least32_t")
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   19
+
+     991                            .dwattr $C$DW$T$77, DW_AT_type(*$C$DW$T$21)
+     992                            .dwattr $C$DW$T$77, DW_AT_language(DW_LANG_C)
+     993                            .dwattr $C$DW$T$77, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+     994                            .dwattr $C$DW$T$77, DW_AT_decl_line(0x3e)
+     995                            .dwattr $C$DW$T$77, DW_AT_decl_column(0x17)
+     996                    $C$DW$T$78      .dwtag  DW_TAG_typedef, DW_AT_name("intptr_t")
+     997                            .dwattr $C$DW$T$78, DW_AT_type(*$C$DW$T$10)
+     998                            .dwattr $C$DW$T$78, DW_AT_language(DW_LANG_C)
+     999                            .dwattr $C$DW$T$78, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1000                            .dwattr $C$DW$T$78, DW_AT_decl_line(0x58)
+    1001                            .dwattr $C$DW$T$78, DW_AT_decl_column(0x1a)
+    1002                    $C$DW$T$11      .dwtag  DW_TAG_base_type
+    1003                            .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+    1004                            .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+    1005                            .dwattr $C$DW$T$11, DW_AT_byte_size(0x04)
+    1006                    $C$DW$T$80      .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_VAL")
+    1007                            .dwattr $C$DW$T$80, DW_AT_type(*$C$DW$T$11)
+    1008                            .dwattr $C$DW$T$80, DW_AT_language(DW_LANG_C)
+    1009                            .dwattr $C$DW$T$80, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\co
+    1010                            .dwattr $C$DW$T$80, DW_AT_decl_line(0x5d)
+    1011                            .dwattr $C$DW$T$80, DW_AT_decl_column(0x17)
+    1012                    $C$DW$T$89      .dwtag  DW_TAG_typedef, DW_AT_name("clock_t")
+    1013                            .dwattr $C$DW$T$89, DW_AT_type(*$C$DW$T$11)
+    1014                            .dwattr $C$DW$T$89, DW_AT_language(DW_LANG_C)
+    1015                            .dwattr $C$DW$T$89, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1016                            .dwattr $C$DW$T$89, DW_AT_decl_line(0x37)
+    1017                            .dwattr $C$DW$T$89, DW_AT_decl_column(0x16)
+    1018                    $C$DW$T$88      .dwtag  DW_TAG_typedef, DW_AT_name("size_t")
+    1019                            .dwattr $C$DW$T$88, DW_AT_type(*$C$DW$T$11)
+    1020                            .dwattr $C$DW$T$88, DW_AT_language(DW_LANG_C)
+    1021                            .dwattr $C$DW$T$88, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1022                            .dwattr $C$DW$T$88, DW_AT_decl_line(0x45)
+    1023                            .dwattr $C$DW$T$88, DW_AT_decl_column(0x19)
+    1024                    $C$DW$T$81      .dwtag  DW_TAG_typedef, DW_AT_name("time_t")
+    1025                            .dwattr $C$DW$T$81, DW_AT_type(*$C$DW$T$11)
+    1026                            .dwattr $C$DW$T$81, DW_AT_language(DW_LANG_C)
+    1027                            .dwattr $C$DW$T$81, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1028                            .dwattr $C$DW$T$81, DW_AT_decl_line(0x38)
+    1029                            .dwattr $C$DW$T$81, DW_AT_decl_column(0x16)
+    1030                    $C$DW$T$82      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+    1031                            .dwattr $C$DW$T$82, DW_AT_type(*$C$DW$T$11)
+    1032                            .dwattr $C$DW$T$82, DW_AT_language(DW_LANG_C)
+    1033                            .dwattr $C$DW$T$82, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1034                            .dwattr $C$DW$T$82, DW_AT_decl_line(0x2f)
+    1035                            .dwattr $C$DW$T$82, DW_AT_decl_column(0x1c)
+    1036                    $C$DW$T$83      .dwtag  DW_TAG_typedef, DW_AT_name("uint_fast16_t")
+    1037                            .dwattr $C$DW$T$83, DW_AT_type(*$C$DW$T$82)
+    1038                            .dwattr $C$DW$T$83, DW_AT_language(DW_LANG_C)
+    1039                            .dwattr $C$DW$T$83, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1040                            .dwattr $C$DW$T$83, DW_AT_decl_line(0x4c)
+    1041                            .dwattr $C$DW$T$83, DW_AT_decl_column(0x16)
+    1042                    $C$DW$T$84      .dwtag  DW_TAG_typedef, DW_AT_name("uint_fast32_t")
+    1043                            .dwattr $C$DW$T$84, DW_AT_type(*$C$DW$T$82)
+    1044                            .dwattr $C$DW$T$84, DW_AT_language(DW_LANG_C)
+    1045                            .dwattr $C$DW$T$84, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   20
+
+    1046                            .dwattr $C$DW$T$84, DW_AT_decl_line(0x4f)
+    1047                            .dwattr $C$DW$T$84, DW_AT_decl_column(0x16)
+    1048                    $C$DW$T$85      .dwtag  DW_TAG_typedef, DW_AT_name("uint_fast8_t")
+    1049                            .dwattr $C$DW$T$85, DW_AT_type(*$C$DW$T$82)
+    1050                            .dwattr $C$DW$T$85, DW_AT_language(DW_LANG_C)
+    1051                            .dwattr $C$DW$T$85, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1052                            .dwattr $C$DW$T$85, DW_AT_decl_line(0x4a)
+    1053                            .dwattr $C$DW$T$85, DW_AT_decl_column(0x16)
+    1054                    $C$DW$T$86      .dwtag  DW_TAG_typedef, DW_AT_name("uint_least32_t")
+    1055                            .dwattr $C$DW$T$86, DW_AT_type(*$C$DW$T$82)
+    1056                            .dwattr $C$DW$T$86, DW_AT_language(DW_LANG_C)
+    1057                            .dwattr $C$DW$T$86, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1058                            .dwattr $C$DW$T$86, DW_AT_decl_line(0x3f)
+    1059                            .dwattr $C$DW$T$86, DW_AT_decl_column(0x16)
+    1060                    $C$DW$T$87      .dwtag  DW_TAG_typedef, DW_AT_name("uintptr_t")
+    1061                            .dwattr $C$DW$T$87, DW_AT_type(*$C$DW$T$11)
+    1062                            .dwattr $C$DW$T$87, DW_AT_language(DW_LANG_C)
+    1063                            .dwattr $C$DW$T$87, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1064                            .dwattr $C$DW$T$87, DW_AT_decl_line(0x59)
+    1065                            .dwattr $C$DW$T$87, DW_AT_decl_column(0x1a)
+    1066                    $C$DW$T$12      .dwtag  DW_TAG_base_type
+    1067                            .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+    1068                            .dwattr $C$DW$T$12, DW_AT_name("__int40_t")
+    1069                            .dwattr $C$DW$T$12, DW_AT_byte_size(0x08)
+    1070                            .dwattr $C$DW$T$12, DW_AT_bit_size(0x28)
+    1071                            .dwattr $C$DW$T$12, DW_AT_bit_offset(0x18)
+    1072                    $C$DW$T$90      .dwtag  DW_TAG_typedef, DW_AT_name("int40_t")
+    1073                            .dwattr $C$DW$T$90, DW_AT_type(*$C$DW$T$12)
+    1074                            .dwattr $C$DW$T$90, DW_AT_language(DW_LANG_C)
+    1075                            .dwattr $C$DW$T$90, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1076                            .dwattr $C$DW$T$90, DW_AT_decl_line(0x31)
+    1077                            .dwattr $C$DW$T$90, DW_AT_decl_column(0x21)
+    1078                    $C$DW$T$91      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast40_t")
+    1079                            .dwattr $C$DW$T$91, DW_AT_type(*$C$DW$T$90)
+    1080                            .dwattr $C$DW$T$91, DW_AT_language(DW_LANG_C)
+    1081                            .dwattr $C$DW$T$91, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1082                            .dwattr $C$DW$T$91, DW_AT_decl_line(0x51)
+    1083                            .dwattr $C$DW$T$91, DW_AT_decl_column(0x17)
+    1084                    $C$DW$T$92      .dwtag  DW_TAG_typedef, DW_AT_name("int_least40_t")
+    1085                            .dwattr $C$DW$T$92, DW_AT_type(*$C$DW$T$90)
+    1086                            .dwattr $C$DW$T$92, DW_AT_language(DW_LANG_C)
+    1087                            .dwattr $C$DW$T$92, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1088                            .dwattr $C$DW$T$92, DW_AT_decl_line(0x41)
+    1089                            .dwattr $C$DW$T$92, DW_AT_decl_column(0x17)
+    1090                    $C$DW$T$13      .dwtag  DW_TAG_base_type
+    1091                            .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+    1092                            .dwattr $C$DW$T$13, DW_AT_name("unsigned __int40_t")
+    1093                            .dwattr $C$DW$T$13, DW_AT_byte_size(0x08)
+    1094                            .dwattr $C$DW$T$13, DW_AT_bit_size(0x28)
+    1095                            .dwattr $C$DW$T$13, DW_AT_bit_offset(0x18)
+    1096                    $C$DW$T$93      .dwtag  DW_TAG_typedef, DW_AT_name("uint40_t")
+    1097                            .dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$13)
+    1098                            .dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
+    1099                            .dwattr $C$DW$T$93, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1100                            .dwattr $C$DW$T$93, DW_AT_decl_line(0x32)
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   21
+
+    1101                            .dwattr $C$DW$T$93, DW_AT_decl_column(0x20)
+    1102                    $C$DW$T$94      .dwtag  DW_TAG_typedef, DW_AT_name("uint_fast40_t")
+    1103                            .dwattr $C$DW$T$94, DW_AT_type(*$C$DW$T$93)
+    1104                            .dwattr $C$DW$T$94, DW_AT_language(DW_LANG_C)
+    1105                            .dwattr $C$DW$T$94, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1106                            .dwattr $C$DW$T$94, DW_AT_decl_line(0x52)
+    1107                            .dwattr $C$DW$T$94, DW_AT_decl_column(0x16)
+    1108                    $C$DW$T$95      .dwtag  DW_TAG_typedef, DW_AT_name("uint_least40_t")
+    1109                            .dwattr $C$DW$T$95, DW_AT_type(*$C$DW$T$93)
+    1110                            .dwattr $C$DW$T$95, DW_AT_language(DW_LANG_C)
+    1111                            .dwattr $C$DW$T$95, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1112                            .dwattr $C$DW$T$95, DW_AT_decl_line(0x42)
+    1113                            .dwattr $C$DW$T$95, DW_AT_decl_column(0x16)
+    1114                    $C$DW$T$14      .dwtag  DW_TAG_base_type
+    1115                            .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+    1116                            .dwattr $C$DW$T$14, DW_AT_name("long long")
+    1117                            .dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+    1118                    $C$DW$T$96      .dwtag  DW_TAG_typedef, DW_AT_name("int64_t")
+    1119                            .dwattr $C$DW$T$96, DW_AT_type(*$C$DW$T$14)
+    1120                            .dwattr $C$DW$T$96, DW_AT_language(DW_LANG_C)
+    1121                            .dwattr $C$DW$T$96, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1122                            .dwattr $C$DW$T$96, DW_AT_decl_line(0x34)
+    1123                            .dwattr $C$DW$T$96, DW_AT_decl_column(0x21)
+    1124                    $C$DW$T$97      .dwtag  DW_TAG_typedef, DW_AT_name("int_fast64_t")
+    1125                            .dwattr $C$DW$T$97, DW_AT_type(*$C$DW$T$96)
+    1126                            .dwattr $C$DW$T$97, DW_AT_language(DW_LANG_C)
+    1127                            .dwattr $C$DW$T$97, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1128                            .dwattr $C$DW$T$97, DW_AT_decl_line(0x54)
+    1129                            .dwattr $C$DW$T$97, DW_AT_decl_column(0x17)
+    1130                    $C$DW$T$98      .dwtag  DW_TAG_typedef, DW_AT_name("int_least64_t")
+    1131                            .dwattr $C$DW$T$98, DW_AT_type(*$C$DW$T$96)
+    1132                            .dwattr $C$DW$T$98, DW_AT_language(DW_LANG_C)
+    1133                            .dwattr $C$DW$T$98, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1134                            .dwattr $C$DW$T$98, DW_AT_decl_line(0x44)
+    1135                            .dwattr $C$DW$T$98, DW_AT_decl_column(0x17)
+    1136                    $C$DW$T$99      .dwtag  DW_TAG_typedef, DW_AT_name("intmax_t")
+    1137                            .dwattr $C$DW$T$99, DW_AT_type(*$C$DW$T$14)
+    1138                            .dwattr $C$DW$T$99, DW_AT_language(DW_LANG_C)
+    1139                            .dwattr $C$DW$T$99, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1140                            .dwattr $C$DW$T$99, DW_AT_decl_line(0x5c)
+    1141                            .dwattr $C$DW$T$99, DW_AT_decl_column(0x20)
+    1142                    $C$DW$T$15      .dwtag  DW_TAG_base_type
+    1143                            .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+    1144                            .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+    1145                            .dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+    1146                    $C$DW$T$100     .dwtag  DW_TAG_typedef, DW_AT_name("uint64_t")
+    1147                            .dwattr $C$DW$T$100, DW_AT_type(*$C$DW$T$15)
+    1148                            .dwattr $C$DW$T$100, DW_AT_language(DW_LANG_C)
+    1149                            .dwattr $C$DW$T$100, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+    1150                            .dwattr $C$DW$T$100, DW_AT_decl_line(0x35)
+    1151                            .dwattr $C$DW$T$100, DW_AT_decl_column(0x20)
+    1152                    $C$DW$T$101     .dwtag  DW_TAG_typedef, DW_AT_name("uint_fast64_t")
+    1153                            .dwattr $C$DW$T$101, DW_AT_type(*$C$DW$T$100)
+    1154                            .dwattr $C$DW$T$101, DW_AT_language(DW_LANG_C)
+    1155                            .dwattr $C$DW$T$101, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   22
+
+    1156                            .dwattr $C$DW$T$101, DW_AT_decl_line(0x55)
+    1157                            .dwattr $C$DW$T$101, DW_AT_decl_column(0x16)
+    1158                    $C$DW$T$102     .dwtag  DW_TAG_typedef, DW_AT_name("uint_least64_t")
+    1159                            .dwattr $C$DW$T$102, DW_AT_type(*$C$DW$T$100)
+    1160                            .dwattr $C$DW$T$102, DW_AT_language(DW_LANG_C)
+    1161                            .dwattr $C$DW$T$102, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+    1162                            .dwattr $C$DW$T$102, DW_AT_decl_line(0x45)
+    1163                            .dwattr $C$DW$T$102, DW_AT_decl_column(0x16)
+    1164                    $C$DW$T$103     .dwtag  DW_TAG_typedef, DW_AT_name("uintmax_t")
+    1165                            .dwattr $C$DW$T$103, DW_AT_type(*$C$DW$T$15)
+    1166                            .dwattr $C$DW$T$103, DW_AT_language(DW_LANG_C)
+    1167                            .dwattr $C$DW$T$103, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+    1168                            .dwattr $C$DW$T$103, DW_AT_decl_line(0x5d)
+    1169                            .dwattr $C$DW$T$103, DW_AT_decl_column(0x20)
+    1170                    $C$DW$T$16      .dwtag  DW_TAG_base_type
+    1171                            .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+    1172                            .dwattr $C$DW$T$16, DW_AT_name("float")
+    1173                            .dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+    1174                    $C$DW$T$104     .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_F32")
+    1175                            .dwattr $C$DW$T$104, DW_AT_type(*$C$DW$T$16)
+    1176                            .dwattr $C$DW$T$104, DW_AT_language(DW_LANG_C)
+    1177                            .dwattr $C$DW$T$104, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\c
+    1178                            .dwattr $C$DW$T$104, DW_AT_decl_line(0x5b)
+    1179                            .dwattr $C$DW$T$104, DW_AT_decl_column(0x0f)
+    1180                    $C$DW$T$105     .dwtag  DW_TAG_typedef, DW_AT_name("float32_t")
+    1181                            .dwattr $C$DW$T$105, DW_AT_type(*$C$DW$T$16)
+    1182                            .dwattr $C$DW$T$105, DW_AT_language(DW_LANG_C)
+    1183                            .dwattr $C$DW$T$105, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\inclu
+    1184                            .dwattr $C$DW$T$105, DW_AT_decl_line(0x30)
+    1185                            .dwattr $C$DW$T$105, DW_AT_decl_column(0x0f)
+    1186                    $C$DW$T$17      .dwtag  DW_TAG_base_type
+    1187                            .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+    1188                            .dwattr $C$DW$T$17, DW_AT_name("double")
+    1189                            .dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
+    1190                    $C$DW$T$106     .dwtag  DW_TAG_typedef, DW_AT_name("VLIB_D64")
+    1191                            .dwattr $C$DW$T$106, DW_AT_type(*$C$DW$T$17)
+    1192                            .dwattr $C$DW$T$106, DW_AT_language(DW_LANG_C)
+    1193                            .dwattr $C$DW$T$106, DW_AT_decl_file(".\..\packages\ti\vlib\src\VLIB_histogram_1D_Init_U8\..\c
+    1194                            .dwattr $C$DW$T$106, DW_AT_decl_line(0x5a)
+    1195                            .dwattr $C$DW$T$106, DW_AT_decl_column(0x10)
+    1196                    $C$DW$T$107     .dwtag  DW_TAG_typedef, DW_AT_name("__float2_t")
+    1197                            .dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$17)
+    1198                            .dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
+    1199                            .dwattr $C$DW$T$107, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+    1200                            .dwattr $C$DW$T$107, DW_AT_decl_line(0x5f)
+    1201                            .dwattr $C$DW$T$107, DW_AT_decl_column(0x14)
+    1202                    $C$DW$T$18      .dwtag  DW_TAG_base_type
+    1203                            .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+    1204                            .dwattr $C$DW$T$18, DW_AT_name("long double")
+    1205                            .dwattr $C$DW$T$18, DW_AT_byte_size(0x08)
+    1206                    $C$DW$T$29      .dwtag  DW_TAG_base_type
+    1207                            .dwattr $C$DW$T$29, DW_AT_encoding(DW_ATE_signed_char)
+    1208                            .dwattr $C$DW$T$29, DW_AT_name("signed char")
+    1209                            .dwattr $C$DW$T$29, DW_AT_byte_size(0x01)
+    1210                    
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   23
+
+    1211                    $C$DW$T$30      .dwtag  DW_TAG_array_type
+    1212                            .dwattr $C$DW$T$30, DW_AT_type(*$C$DW$T$29)
+    1213                            .dwattr $C$DW$T$30, DW_AT_language(DW_LANG_C)
+    1214                            .dwattr $C$DW$T$30, DW_AT_byte_size(0x04)
+    1215                    $C$DW$71        .dwtag  DW_TAG_subrange_type
+    1216                            .dwattr $C$DW$71, DW_AT_upper_bound(0x03)
+    1217                            .dwendtag $C$DW$T$30
+    1218                    
+    1219                    $C$DW$T$108     .dwtag  DW_TAG_pointer_type
+    1220                            .dwattr $C$DW$T$108, DW_AT_type(*$C$DW$T$29)
+    1221                            .dwattr $C$DW$T$108, DW_AT_address_class(0x20)
+    1222                    $C$DW$T$109     .dwtag  DW_TAG_typedef, DW_AT_name("va_list")
+    1223                            .dwattr $C$DW$T$109, DW_AT_type(*$C$DW$T$108)
+    1224                            .dwattr $C$DW$T$109, DW_AT_language(DW_LANG_C)
+    1225                            .dwattr $C$DW$T$109, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/inclu
+    1226                            .dwattr $C$DW$T$109, DW_AT_decl_line(0x2f)
+    1227                            .dwattr $C$DW$T$109, DW_AT_decl_column(0x12)
+    1228                    
+    1229                    $C$DW$T$33      .dwtag  DW_TAG_structure_type
+    1230                            .dwattr $C$DW$T$33, DW_AT_name("__simd128_int32_t")
+    1231                            .dwattr $C$DW$T$33, DW_AT_byte_size(0x10)
+    1232                    $C$DW$72        .dwtag  DW_TAG_member
+    1233                            .dwattr $C$DW$72, DW_AT_type(*$C$DW$T$32)
+    1234                            .dwattr $C$DW$72, DW_AT_name("_v")
+    1235                            .dwattr $C$DW$72, DW_AT_TI_symbol_name("_v")
+    1236                            .dwattr $C$DW$72, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+    1237                            .dwattr $C$DW$72, DW_AT_accessibility(DW_ACCESS_public)
+    1238                            .dwattr $C$DW$72, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\include\
+    1239                            .dwattr $C$DW$72, DW_AT_decl_line(0x44)
+    1240                            .dwattr $C$DW$72, DW_AT_decl_column(0x01)
+    1241                            .dwendtag $C$DW$T$33
+    1242                    
+    1243                            .dwattr $C$DW$T$33, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\includ
+    1244                            .dwattr $C$DW$T$33, DW_AT_decl_line(0x44)
+    1245                            .dwattr $C$DW$T$33, DW_AT_decl_column(0x01)
+    1246                    $C$DW$T$110     .dwtag  DW_TAG_typedef, DW_AT_name("int32x4_t")
+    1247                            .dwattr $C$DW$T$110, DW_AT_type(*$C$DW$T$33)
+    1248                            .dwattr $C$DW$T$110, DW_AT_language(DW_LANG_C)
+    1249                            .dwattr $C$DW$T$110, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\inclu
+    1250                            .dwattr $C$DW$T$110, DW_AT_decl_line(0x44)
+    1251                            .dwattr $C$DW$T$110, DW_AT_decl_column(0x01)
+    1252                    $C$DW$T$111     .dwtag  DW_TAG_typedef, DW_AT_name("__x128_t")
+    1253                            .dwattr $C$DW$T$111, DW_AT_type(*$C$DW$T$110)
+    1254                            .dwattr $C$DW$T$111, DW_AT_language(DW_LANG_C)
+    1255                            .dwattr $C$DW$T$111, DW_AT_decl_file("C:\VLIB_Tools\CCSV5_4_0\ccsv5\tools\compiler\C6000\inclu
+    1256                            .dwattr $C$DW$T$111, DW_AT_decl_line(0x46)
+    1257                            .dwattr $C$DW$T$111, DW_AT_decl_column(0x13)
+    1258                    
+    1259                    $C$DW$T$34      .dwtag  DW_TAG_structure_type
+    1260                            .dwattr $C$DW$T$34, DW_AT_name("tm")
+    1261                            .dwattr $C$DW$T$34, DW_AT_byte_size(0x24)
+    1262                    $C$DW$73        .dwtag  DW_TAG_member
+    1263                            .dwattr $C$DW$73, DW_AT_type(*$C$DW$T$10)
+    1264                            .dwattr $C$DW$73, DW_AT_name("tm_sec")
+    1265                            .dwattr $C$DW$73, DW_AT_TI_symbol_name("tm_sec")
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   24
+
+    1266                            .dwattr $C$DW$73, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+    1267                            .dwattr $C$DW$73, DW_AT_accessibility(DW_ACCESS_public)
+    1268                            .dwattr $C$DW$73, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1269                            .dwattr $C$DW$73, DW_AT_decl_line(0x41)
+    1270                            .dwattr $C$DW$73, DW_AT_decl_column(0x09)
+    1271                    $C$DW$74        .dwtag  DW_TAG_member
+    1272                            .dwattr $C$DW$74, DW_AT_type(*$C$DW$T$10)
+    1273                            .dwattr $C$DW$74, DW_AT_name("tm_min")
+    1274                            .dwattr $C$DW$74, DW_AT_TI_symbol_name("tm_min")
+    1275                            .dwattr $C$DW$74, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+    1276                            .dwattr $C$DW$74, DW_AT_accessibility(DW_ACCESS_public)
+    1277                            .dwattr $C$DW$74, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1278                            .dwattr $C$DW$74, DW_AT_decl_line(0x42)
+    1279                            .dwattr $C$DW$74, DW_AT_decl_column(0x09)
+    1280                    $C$DW$75        .dwtag  DW_TAG_member
+    1281                            .dwattr $C$DW$75, DW_AT_type(*$C$DW$T$10)
+    1282                            .dwattr $C$DW$75, DW_AT_name("tm_hour")
+    1283                            .dwattr $C$DW$75, DW_AT_TI_symbol_name("tm_hour")
+    1284                            .dwattr $C$DW$75, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+    1285                            .dwattr $C$DW$75, DW_AT_accessibility(DW_ACCESS_public)
+    1286                            .dwattr $C$DW$75, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1287                            .dwattr $C$DW$75, DW_AT_decl_line(0x43)
+    1288                            .dwattr $C$DW$75, DW_AT_decl_column(0x09)
+    1289                    $C$DW$76        .dwtag  DW_TAG_member
+    1290                            .dwattr $C$DW$76, DW_AT_type(*$C$DW$T$10)
+    1291                            .dwattr $C$DW$76, DW_AT_name("tm_mday")
+    1292                            .dwattr $C$DW$76, DW_AT_TI_symbol_name("tm_mday")
+    1293                            .dwattr $C$DW$76, DW_AT_data_member_location[DW_OP_plus_uconst 0xc]
+    1294                            .dwattr $C$DW$76, DW_AT_accessibility(DW_ACCESS_public)
+    1295                            .dwattr $C$DW$76, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1296                            .dwattr $C$DW$76, DW_AT_decl_line(0x44)
+    1297                            .dwattr $C$DW$76, DW_AT_decl_column(0x09)
+    1298                    $C$DW$77        .dwtag  DW_TAG_member
+    1299                            .dwattr $C$DW$77, DW_AT_type(*$C$DW$T$10)
+    1300                            .dwattr $C$DW$77, DW_AT_name("tm_mon")
+    1301                            .dwattr $C$DW$77, DW_AT_TI_symbol_name("tm_mon")
+    1302                            .dwattr $C$DW$77, DW_AT_data_member_location[DW_OP_plus_uconst 0x10]
+    1303                            .dwattr $C$DW$77, DW_AT_accessibility(DW_ACCESS_public)
+    1304                            .dwattr $C$DW$77, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1305                            .dwattr $C$DW$77, DW_AT_decl_line(0x45)
+    1306                            .dwattr $C$DW$77, DW_AT_decl_column(0x09)
+    1307                    $C$DW$78        .dwtag  DW_TAG_member
+    1308                            .dwattr $C$DW$78, DW_AT_type(*$C$DW$T$10)
+    1309                            .dwattr $C$DW$78, DW_AT_name("tm_year")
+    1310                            .dwattr $C$DW$78, DW_AT_TI_symbol_name("tm_year")
+    1311                            .dwattr $C$DW$78, DW_AT_data_member_location[DW_OP_plus_uconst 0x14]
+    1312                            .dwattr $C$DW$78, DW_AT_accessibility(DW_ACCESS_public)
+    1313                            .dwattr $C$DW$78, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1314                            .dwattr $C$DW$78, DW_AT_decl_line(0x46)
+    1315                            .dwattr $C$DW$78, DW_AT_decl_column(0x09)
+    1316                    $C$DW$79        .dwtag  DW_TAG_member
+    1317                            .dwattr $C$DW$79, DW_AT_type(*$C$DW$T$10)
+    1318                            .dwattr $C$DW$79, DW_AT_name("tm_wday")
+    1319                            .dwattr $C$DW$79, DW_AT_TI_symbol_name("tm_wday")
+    1320                            .dwattr $C$DW$79, DW_AT_data_member_location[DW_OP_plus_uconst 0x18]
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   25
+
+    1321                            .dwattr $C$DW$79, DW_AT_accessibility(DW_ACCESS_public)
+    1322                            .dwattr $C$DW$79, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1323                            .dwattr $C$DW$79, DW_AT_decl_line(0x47)
+    1324                            .dwattr $C$DW$79, DW_AT_decl_column(0x09)
+    1325                    $C$DW$80        .dwtag  DW_TAG_member
+    1326                            .dwattr $C$DW$80, DW_AT_type(*$C$DW$T$10)
+    1327                            .dwattr $C$DW$80, DW_AT_name("tm_yday")
+    1328                            .dwattr $C$DW$80, DW_AT_TI_symbol_name("tm_yday")
+    1329                            .dwattr $C$DW$80, DW_AT_data_member_location[DW_OP_plus_uconst 0x1c]
+    1330                            .dwattr $C$DW$80, DW_AT_accessibility(DW_ACCESS_public)
+    1331                            .dwattr $C$DW$80, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1332                            .dwattr $C$DW$80, DW_AT_decl_line(0x48)
+    1333                            .dwattr $C$DW$80, DW_AT_decl_column(0x09)
+    1334                    $C$DW$81        .dwtag  DW_TAG_member
+    1335                            .dwattr $C$DW$81, DW_AT_type(*$C$DW$T$10)
+    1336                            .dwattr $C$DW$81, DW_AT_name("tm_isdst")
+    1337                            .dwattr $C$DW$81, DW_AT_TI_symbol_name("tm_isdst")
+    1338                            .dwattr $C$DW$81, DW_AT_data_member_location[DW_OP_plus_uconst 0x20]
+    1339                            .dwattr $C$DW$81, DW_AT_accessibility(DW_ACCESS_public)
+    1340                            .dwattr $C$DW$81, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/include/
+    1341                            .dwattr $C$DW$81, DW_AT_decl_line(0x49)
+    1342                            .dwattr $C$DW$81, DW_AT_decl_column(0x09)
+    1343                            .dwendtag $C$DW$T$34
+    1344                    
+    1345                            .dwattr $C$DW$T$34, DW_AT_decl_file("C:/VLIB_Tools/CCSV5_4_0/ccsv5/tools/compiler/C6000/includ
+    1346                            .dwattr $C$DW$T$34, DW_AT_decl_line(0x3f)
+    1347                            .dwattr $C$DW$T$34, DW_AT_decl_column(0x08)
+    1348                            .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+    1349                    
+    1350                    ;***************************************************************
+    1351                    ;* DWARF CIE ENTRIES                                           *
+    1352                    ;***************************************************************
+    1353                    
+    1354                    $C$DW$CIE       .dwcie 19
+    1355                            .dwcfi  cfa_register, 31
+    1356                            .dwcfi  cfa_offset, 0
+    1357                            .dwcfi  undefined, 0
+    1358                            .dwcfi  undefined, 1
+    1359                            .dwcfi  undefined, 2
+    1360                            .dwcfi  undefined, 3
+    1361                            .dwcfi  undefined, 4
+    1362                            .dwcfi  undefined, 5
+    1363                            .dwcfi  undefined, 6
+    1364                            .dwcfi  undefined, 7
+    1365                            .dwcfi  undefined, 8
+    1366                            .dwcfi  undefined, 9
+    1367                            .dwcfi  same_value, 10
+    1368                            .dwcfi  same_value, 11
+    1369                            .dwcfi  same_value, 12
+    1370                            .dwcfi  same_value, 13
+    1371                            .dwcfi  same_value, 14
+    1372                            .dwcfi  same_value, 15
+    1373                            .dwcfi  undefined, 16
+    1374                            .dwcfi  undefined, 17
+    1375                            .dwcfi  undefined, 18
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   26
+
+    1376                            .dwcfi  undefined, 19
+    1377                            .dwcfi  undefined, 20
+    1378                            .dwcfi  undefined, 21
+    1379                            .dwcfi  undefined, 22
+    1380                            .dwcfi  undefined, 23
+    1381                            .dwcfi  undefined, 24
+    1382                            .dwcfi  undefined, 25
+    1383                            .dwcfi  same_value, 26
+    1384                            .dwcfi  same_value, 27
+    1385                            .dwcfi  same_value, 28
+    1386                            .dwcfi  same_value, 29
+    1387                            .dwcfi  same_value, 30
+    1388                            .dwcfi  same_value, 31
+    1389                            .dwcfi  same_value, 32
+    1390                            .dwcfi  undefined, 33
+    1391                            .dwcfi  undefined, 34
+    1392                            .dwcfi  undefined, 35
+    1393                            .dwcfi  undefined, 36
+    1394                            .dwcfi  undefined, 37
+    1395                            .dwcfi  undefined, 38
+    1396                            .dwcfi  undefined, 39
+    1397                            .dwcfi  undefined, 40
+    1398                            .dwcfi  undefined, 41
+    1399                            .dwcfi  undefined, 42
+    1400                            .dwcfi  undefined, 43
+    1401                            .dwcfi  undefined, 44
+    1402                            .dwcfi  undefined, 45
+    1403                            .dwcfi  undefined, 46
+    1404                            .dwcfi  undefined, 47
+    1405                            .dwcfi  undefined, 48
+    1406                            .dwcfi  undefined, 49
+    1407                            .dwcfi  undefined, 50
+    1408                            .dwcfi  undefined, 51
+    1409                            .dwcfi  undefined, 52
+    1410                            .dwcfi  undefined, 53
+    1411                            .dwcfi  undefined, 54
+    1412                            .dwcfi  undefined, 55
+    1413                            .dwcfi  undefined, 56
+    1414                            .dwcfi  undefined, 57
+    1415                            .dwcfi  undefined, 58
+    1416                            .dwcfi  undefined, 59
+    1417                            .dwcfi  undefined, 60
+    1418                            .dwcfi  undefined, 61
+    1419                            .dwcfi  undefined, 62
+    1420                            .dwcfi  undefined, 63
+    1421                            .dwcfi  undefined, 64
+    1422                            .dwcfi  undefined, 65
+    1423                            .dwcfi  undefined, 66
+    1424                            .dwcfi  undefined, 67
+    1425                            .dwcfi  undefined, 68
+    1426                            .dwcfi  undefined, 69
+    1427                            .dwcfi  undefined, 70
+    1428                            .dwcfi  undefined, 71
+    1429                            .dwcfi  undefined, 72
+    1430                            .dwcfi  undefined, 73
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   27
+
+    1431                            .dwcfi  undefined, 74
+    1432                            .dwcfi  undefined, 75
+    1433                            .dwcfi  undefined, 76
+    1434                            .dwcfi  undefined, 77
+    1435                            .dwcfi  undefined, 78
+    1436                            .dwcfi  undefined, 79
+    1437                            .dwcfi  undefined, 80
+    1438                            .dwcfi  undefined, 81
+    1439                            .dwcfi  undefined, 82
+    1440                            .dwcfi  undefined, 83
+    1441                            .dwcfi  undefined, 84
+    1442                            .dwcfi  undefined, 85
+    1443                            .dwcfi  undefined, 86
+    1444                            .dwcfi  undefined, 87
+    1445                            .dwcfi  undefined, 88
+    1446                            .dwcfi  undefined, 89
+    1447                            .dwcfi  undefined, 90
+    1448                            .dwcfi  undefined, 91
+    1449                            .dwcfi  undefined, 92
+    1450                            .dwcfi  undefined, 93
+    1451                            .dwcfi  undefined, 94
+    1452                            .dwcfi  undefined, 95
+    1453                            .dwcfi  undefined, 96
+    1454                            .dwcfi  undefined, 97
+    1455                            .dwcfi  undefined, 98
+    1456                            .dwcfi  undefined, 99
+    1457                            .dwcfi  undefined, 100
+    1458                            .dwcfi  undefined, 101
+    1459                            .dwcfi  undefined, 102
+    1460                            .dwcfi  undefined, 103
+    1461                            .dwcfi  undefined, 104
+    1462                            .dwcfi  undefined, 105
+    1463                            .dwcfi  undefined, 106
+    1464                            .dwcfi  undefined, 107
+    1465                            .dwcfi  undefined, 108
+    1466                            .dwcfi  undefined, 109
+    1467                            .dwcfi  undefined, 110
+    1468                            .dwcfi  undefined, 111
+    1469                            .dwcfi  undefined, 112
+    1470                            .dwcfi  undefined, 113
+    1471                            .dwcfi  undefined, 114
+    1472                            .dwcfi  undefined, 115
+    1473                            .dwcfi  undefined, 116
+    1474                            .dwcfi  undefined, 117
+    1475                            .dwcfi  undefined, 118
+    1476                            .dwcfi  undefined, 119
+    1477                            .dwcfi  undefined, 120
+    1478                            .dwcfi  undefined, 121
+    1479                            .dwcfi  undefined, 122
+    1480                            .dwcfi  undefined, 123
+    1481                            .dwcfi  undefined, 124
+    1482                            .dwcfi  undefined, 125
+    1483                            .dwcfi  undefined, 126
+    1484                            .dwcfi  undefined, 127
+    1485                            .dwendentry
+TMS320C6x Assembler PC v7.4.2 Sat Sep 26 11:10:35 2015
+
+Tools Copyright (c) 1996-2012 Texas Instruments Incorporated
+package/lib/Regression/regress_d_c/./../packages/ti/vlib/src/VLIB_histogram_1D_Init_U8/VLIB_histogram_1D_Init_U8_idat.se66 PAGE   28
+
+    1486                            .dwendtag $C$DW$CU
+    1487                    
+
+No Assembly Errors, No Assembly Warnings

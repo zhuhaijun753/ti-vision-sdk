@@ -1,0 +1,9 @@
+# @name GPIO test with kernel debug option enabled
+# @desc Set gpio pin in each bank to 'in' or 'out' through sysfs.  
+#       And then check if there is memleak or spinlock errors
+# @requires gpio 
+
+GPIO_M_FUNC_DIR_OUT_MEMLEAK source "common.sh"; check_kernel_errors "kmemleak" "clear" && do_cmd /opt/ltp/runltp -f ddt/gpio-tests -P $PLATFORM -s "GPIO_S_FUNC_DIR_OUT_ALL_BANK_5TIMES" && check_kernel_errors "kmemleak" 
+
+GPIO_S_FUNC_DIR_OUT_SPINLOCK source "common.sh"; do_cmd /opt/ltp/runltp -f ddt/gpio-tests -P $PLATFORM -s "GPIO_S_FUNC_DIR_OUT_ALL_BANK_5TIMES" && check_kernel_errors "spinlock" 
+

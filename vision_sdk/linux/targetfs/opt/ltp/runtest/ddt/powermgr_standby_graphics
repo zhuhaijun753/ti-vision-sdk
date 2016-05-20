@@ -1,0 +1,8 @@
+# @name 3D Graphics plus standby/resume
+# @desc Display 3D Graphics while doing standby/resume operations
+# @requires graphics && power_mgr
+# @setup_requires 
+
+POWERMGR_S_FUNC_GRAPHICS_STANDBY source "common.sh"; run_processes.sh -c " (which runOGLES2ChameleonMan.sh && runOGLES2ChameleonMan.sh -qaf=3000) || die 'runOGLES2ChameleonMan is not available' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_STANDBY ' "
+
+POWERMGR_M_FUNC_GRAPHICS_STANDBY source "common.sh"; run_processes.sh -c " (which runOGLES2ChameleonMan.sh && runOGLES2ChameleonMan.sh -qaf=30000) || die 'runOGLES2ChameleonMan is not available' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_STANDBY ' "

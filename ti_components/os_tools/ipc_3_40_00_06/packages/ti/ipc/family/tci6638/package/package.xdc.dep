@@ -1,0 +1,101 @@
+clean::
+	$(RM) package/ti.ipc.family.tci6638.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_ipc_family_tci6638.java
+	$(RM) package/ti_ipc_family_tci6638.class
+	$(RM) package/package_ti.ipc.family.tci6638.c
+	$(RM) package/package.defs.h
+	$(RM) Interrupt.h
+	$(RM) package/internal/Interrupt.xdc.h
+	$(RM) VirtQueue.h
+	$(RM) package/internal/VirtQueue.xdc.h
+	$(RM) NotifyCircSetup.h
+	$(RM) package/internal/NotifyCircSetup.xdc.h
+	$(RM) package/ti.ipc.family.tci6638.ccs
+
+.interfaces: package/ti.ipc.family.tci6638.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_ipc_family_tci6638.java package/package_ti.ipc.family.tci6638.c package/package.defs.h Interrupt.h package/internal/Interrupt.xdc.h VirtQueue.h package/internal/VirtQueue.xdc.h NotifyCircSetup.h package/internal/NotifyCircSetup.xdc.h package/ti.ipc.family.tci6638.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: Interrupt.xdc VirtQueue.xdc NotifyCircSetup.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+Interrupt.xs:
+package/package.xdc.inc: Interrupt.xs
+VirtQueue.xs:
+package/package.xdc.inc: VirtQueue.xs
+NotifyCircSetup.xs:
+package/package.xdc.inc: NotifyCircSetup.xs
+
+# schema update dependencies
+package/package.xdc.inc: Interrupt.xdc
+package/package.xdc.inc: VirtQueue.xdc
+package/package.xdc.inc: NotifyCircSetup.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/notifyDrivers/IInterrupt.xdc
+ti/sdo/ipc/notifyDrivers/IInterrupt.xdc:
+vpath ti/sdo/ipc/notifyDrivers/IInterrupt.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Swi.xdc
+ti/sysbios/knl/Swi.xdc:
+vpath ti/sysbios/knl/Swi.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/knl/Queue.xdc
+ti/sysbios/knl/Queue.xdc:
+vpath ti/sysbios/knl/Queue.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/gates/GateAll.xdc
+ti/sysbios/gates/GateAll.xdc:
+vpath ti/sysbios/gates/GateAll.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INotifySetup.xdc
+ti/sdo/ipc/interfaces/INotifySetup.xdc:
+vpath ti/sdo/ipc/interfaces/INotifySetup.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: Interrupt.h
+Interrupt.h:
+package/package.xdc.inc: package/internal/Interrupt.xdc.h
+package/internal/Interrupt.xdc.h:
+package/package.xdc.inc: VirtQueue.h
+VirtQueue.h:
+package/package.xdc.inc: package/internal/VirtQueue.xdc.h
+package/internal/VirtQueue.xdc.h:
+package/package.xdc.inc: NotifyCircSetup.h
+NotifyCircSetup.h:
+package/package.xdc.inc: package/internal/NotifyCircSetup.xdc.h
+package/internal/NotifyCircSetup.xdc.h:
+

@@ -1,0 +1,13 @@
+Package: pm-qa
+Version: 0.4.8-r3.0
+Description: pm-qa version 0.4.8-r3
+ Utilities for testing Power Management
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: pm-qa
+Homepage: https://wiki.linaro.org/WorkingGroups/PowerManagement/Resources/TestSuite/PmQa
+Depends: libc6 (>= 2.15)
+Source: git://git.linaro.org/tools/pm-qa.git;protocol=git;branch=master file://0001-THERMAL-Remove-relative-path-to-Switches.sh.patch

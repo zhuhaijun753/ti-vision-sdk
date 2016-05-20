@@ -1,0 +1,14 @@
+Package: libglib-2.0-0
+Version: 1:2.38.2-r0.0
+Description: A general-purpose utility library
+ GLib is a general-purpose utility library, which provides many useful
+ data types, macros, type conversions, string utilities, file utilities, a
+ main loop abstraction, and so on.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2+ & BSD & PD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: glib-2.0
+Depends: libffi6 (>= 3.0.13), libz1 (>= 1.2.8), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: http://ftp.gnome.org/pub/GNOME/sources/glib/2.38/glib-2.38.2.tar.xz file://configure-libtool.patch file://fix-conflicting-rand.patch file://add-march-i486-into-CFLAGS-automatically.patch file://glib-2.0-configure-readlink.patch file://run-ptest file://0001-gio-Fix-Werror-format-string-errors-from-mismatched-.patch file://ptest-dbus.patch file://ptest-paths.patch file://gtest-skip-fixes.patch file://gio-test-race.patch file://uclibc.patch

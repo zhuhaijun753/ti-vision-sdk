@@ -1,0 +1,7 @@
+# @name RTC timer with irq affinity
+# @desc Check that rtc timer works fine when assigned to any cpu instance and interrupt count goes up 
+# on the right cpu instance
+# @requires smp && rtc
+
+SMP_M_FUNC_IRQAFF_RTC_ALARM_CORE1 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && (IRQ=`get_irq_for_iface.sh -i 'rtc'` && PRE=`get_num_interrupts_for_irq.sh -i $IRQ -c 0` && echo "1" > /proc/irq/$IRQ/smp_affinity && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_alarm -s RTC_M_FUNC_ALARM_0001" && POST=`get_num_interrupts_for_irq.sh -i $IRQ -c 0` && [[ $POST -gt $PRE ]] )
+SMP_M_FUNC_IRQAFF_RTC_ALARM_CORE2 source 'common.sh'; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null && (IRQ=`get_irq_for_iface.sh -i 'rtc'` && PRE=`get_num_interrupts_for_irq.sh -i $IRQ -c 1` && echo "2" > /proc/irq/$IRQ/smp_affinity && run_processes.sh -c "/opt/ltp/runltp -P ${MACHINE} -f ddt/rtc_alarm -s RTC_M_FUNC_ALARM_0001" && POST=`get_num_interrupts_for_irq.sh -i $IRQ -c 1` && [[ $POST -gt $PRE ]] )

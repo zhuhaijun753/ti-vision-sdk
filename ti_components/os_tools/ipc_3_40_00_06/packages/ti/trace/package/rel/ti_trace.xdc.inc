@@ -1,0 +1,16 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+package.bld
+SysMin.h
+package/package.cfg.xdc.inc
+lib/debug/ti.trace_smp.aem4
+package/package_ti.trace.c
+SysMin.c
+lib/release/ti.trace_smp.aem4
+lib/debug/ti.trace.aem4
+lib/release/ti.trace.aem4
+lib/debug/ti.trace.ae66
+lib/release/ti.trace.ae66
+lib/debug/ti.trace.aearp32
+lib/release/ti.trace.aearp32

@@ -1,0 +1,234 @@
+From eaef042effc94a9650414fba5b2fa74263520c17 Mon Sep 17 00:00:00 2001
+From: Manish Badarkhe <manishvb@ti.com>
+Date: Fri, 30 Jan 2015 17:18:02 +0530
+Subject: [PATCH 06/12] arm: dts: infoadas: devicetree based on vision board
+
+This device tree is needed for informational ADAS use cases.
+In that, all instances of VIP and VPE are managed by remote core.
+So linux cannot use them.
+But all the board level initialization is done from linux side.
+Therefore, all the cameras and pinmux configuration nodes are enabled.
+
+Change-Id: I1ea55bb42a860f77d2c1aa69a06be6785af55586
+Signed-off-by: Manish Badarkhe <manishvb@ti.com>
+Signed-off-by: Ramprasad <x0038811@ti.com>
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ arch/arm/boot/dts/Makefile                    |    3 ++
+ arch/arm/boot/dts/dra7-evm-infoadas.dts       |   67 +++++++++++++++++++++++++
+ arch/arm/boot/dts/dra7.dtsi                   |    2 +-
+ arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts |   53 +++++++++++++++++++
+ arch/arm/boot/dts/dra72-evm-infoadas.dts      |   36 +++++++++++++
+ 5 files changed, 160 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/dra7-evm-infoadas.dts
+ create mode 100644 arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
+ create mode 100644 arch/arm/boot/dts/dra72-evm-infoadas.dts
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index fd743d8..4a6bb50 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -247,10 +247,13 @@ dtb-$(CONFIG_ARCH_OMAP2PLUS) += omap2420-h4.dtb \
+ 	dra7-hs-evm.dtb \
+ 	dra7-hs-evm-lcd7.dtb \
+ 	dra7-hs-evm-lcd10.dtb \
++	dra7-evm-infoadas.dtb \
+ 	dra72-evm.dtb \
+ 	dra72-evm-lcd7.dtb \
+ 	dra72-evm-lcd10.dtb \
+ 	dra72-evm-vision.dtb \
++	dra72-evm-infoadas.dtb \
++	dra72-evm-infoadas-LVDS.dtb \
+ 	am57xx-beagle-x15.dtb \
+ 	am57xx-evm.dtb
+ 
+diff --git a/arch/arm/boot/dts/dra7-evm-infoadas.dts b/arch/arm/boot/dts/dra7-evm-infoadas.dts
+new file mode 100644
+index 0000000..8459ae9
+--- /dev/null
++++ b/arch/arm/boot/dts/dra7-evm-infoadas.dts
+@@ -0,0 +1,67 @@
++/*
++ * Copyright (C) 2013 Texas Instruments Incorporated - http://www.ti.com/
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++#include "dra7-evm-vision.dts"
++
++&ovcam_fc {
++	export-devnode;
++};
++
++&ovcam1 {
++	export-devnode;
++};
++
++&ovcam2 {
++	export-devnode;
++};
++
++&ovcam3 {
++	export-devnode;
++};
++
++&ovcam4 {
++	export-devnode;
++};
++
++&ovcam5 {
++	export-devnode;
++};
++
++&ovcam6 {
++	export-devnode;
++};
++
++/delete-node/ &wdt2;
++/delete-node/ &vpe;
++
++&vip1 {
++	status = "disabled";
++};
++
++&vip2 {
++	status = "disabled";
++};
++
++&vip3 {
++	status = "disabled";
++};
++
++&ipu2_cma_pool {
++	reg = <0x95800000 0x3800000>;
++};
++
++&dsp1_cma_pool {
++	reg = <0x99000000 0x4000000>;
++};
++
++&ipu1_cma_pool {
++	reg = <0x9d000000 0x2000000>;
++};
++
++&dsp2_cma_pool {
++	reg = <0x9f000000 0x1000000>;
++};
+diff --git a/arch/arm/boot/dts/dra7.dtsi b/arch/arm/boot/dts/dra7.dtsi
+index b94fbc6..9b209d9 100644
+--- a/arch/arm/boot/dts/dra7.dtsi
++++ b/arch/arm/boot/dts/dra7.dtsi
+@@ -1734,7 +1734,7 @@
+ 			};
+ 		};
+ 
+-		vpe {
++		vpe: vpe {
+ 			compatible = "ti,vpe";
+ 			ti,hwmods = "vpe";
+ 			clocks = <&dpll_core_h23x2_ck>;
+diff --git a/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts b/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
+new file mode 100644
+index 0000000..f794739
+--- /dev/null
++++ b/arch/arm/boot/dts/dra72-evm-infoadas-LVDS.dts
+@@ -0,0 +1,53 @@
++/*
++ * Copyright (C) 2013 Texas Instruments Incorporated - http://www.ti.com/
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++#include "dra72-evm-vision.dts"
++
++&ovcam_fc {
++	status = "disabled";
++};
++
++&ovcam1 {
++	export-devnode;
++};
++
++&ovcam2 {
++	export-devnode;
++};
++
++&ovcam3 {
++	export-devnode;
++};
++
++&ovcam4 {
++	export-devnode;
++};
++
++/delete-node/ &wdt2;
++/delete-node/ &vpe;
++
++&vip1 {
++	status = "disabled";
++};
++
++&dra7_pmx_core {
++	pinctrl-names = "default";
++	pinctrl-0 = <&vin5a_pins &vin4b_pins &vin2a_pins &vin3b_pins
++			&vin2a_hsync_alt_pins>;
++};
++
++&ipu2_cma_pool {
++	reg = <0x95800000 0x3800000>;
++};
++
++&dsp1_cma_pool {
++	reg = <0x86000000 0x2000000>;
++};
++
++&ipu1_cma_pool {
++	reg = <0x84000000 0x2000000>;
++};
+diff --git a/arch/arm/boot/dts/dra72-evm-infoadas.dts b/arch/arm/boot/dts/dra72-evm-infoadas.dts
+new file mode 100644
+index 0000000..289e223
+--- /dev/null
++++ b/arch/arm/boot/dts/dra72-evm-infoadas.dts
+@@ -0,0 +1,36 @@
++/*
++ * Copyright (C) 2013 Texas Instruments Incorporated - http://www.ti.com/
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++#include "dra72-evm-vision.dts"
++
++&ovcam_fc {
++	export-devnode;
++};
++
++/delete-node/ &wdt2;
++/delete-node/ &vpe;
++
++&vip1 {
++	status = "disabled";
++};
++
++&dra7_pmx_core {
++	pinctrl-names = "default";
++	pinctrl-0 = <&vin2a_pins &vin2a_hsync_def_pins>;
++};
++
++&ipu2_cma_pool {
++	reg = <0x95800000 0x3800000>;
++};
++
++&dsp1_cma_pool {
++	reg = <0x86000000 0x2000000>;
++};
++
++&ipu1_cma_pool {
++	reg = <0x84000000 0x2000000>;
++};
+-- 
+1.7.9.5
+

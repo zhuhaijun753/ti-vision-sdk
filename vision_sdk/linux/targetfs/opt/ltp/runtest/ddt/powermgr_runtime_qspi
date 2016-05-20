@@ -1,0 +1,7 @@
+# @name Power Manager Runtime Tests for QSPI
+# @desc Tests to validate that QSPI driver use runtime_pm
+# @requires qspi
+# @setup_requires 
+
+POWERMGR_S_FUNC_RUNTIME_QSPI source 'pm_runtime.sh'; is_pm_runtime_enabled '\.qspi\/' || die "pm_runtime is not enabled for QSPI"; is_pm_runtime_suspending_device '\.qspi\/' || die "pm_runtime is not suspending QSPI"
+

@@ -1,0 +1,60 @@
+/*******************************************************************/
+/* This GEL file is loaded on the command line of Code Composer    */
+/* The StartUp() function is called every time you start           */
+/* Code Composer.  You can customize this function to              */
+/* initialize wait states or to perform other initialization.      */
+/*                                                                 */
+/* ECC CFG                                                         */
+/*                                                                 */
+/*                                                                 */
+/*******************************************************************/
+
+#define IPU1_MMU_CFG                 (IPU1_TARGET_TARG + 0x80000)
+
+hotmenu
+AMMU_config_IPU_ECC_Test()
+{
+    uint32_t regVal, regAddr;
+
+    GEL_TextOut("--->>>Starting A-MMU config for IPU ECC test... <<<---\n");
+
+    /*Medium Page*/
+    regAddr = IPU_MMU_CFG;
+    regAddr += 0x860;
+    /* Map ECC test app code as non cacheable ( Based on map file : DDR3_M4 section)*/
+    WR_MEM_32(regAddr,         0x84000000); regAddr += 0x4;
+
+    regAddr = IPU_MMU_CFG;
+    regAddr += 0x8A0;
+    WR_MEM_32(regAddr,         0x84000000); regAddr += 0x4;
+
+    regAddr = IPU_MMU_CFG;
+    regAddr += 0x8E0;
+    WR_MEM_32(regAddr,         0x00000003); regAddr += 0x4;
+
+    GEL_TextOut("--->>> A-MMU config for IPU ECC Test completed. <<<---\n");
+
+}
+
+hotmenu
+TDA2xx_set_lisa_maps_MEMMAP_512MB_SINGLE_EMIFX1()
+{
+    /* Reset all LISA MAPs */
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_0, 0U);
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_1, 0U);
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_2, 0U);
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_3, 0U);
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_0, 0U);
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_1, 0U);
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_2, 0U);
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_3, 0U);
+
+    printf("       One EMIF - 512MB total memory\n");
+    printf("       Same memory mapped at 0x80000000 and 0xA0000000\n");
+    /* MA_LISA_MAP_i */
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_0, 0x80500100U);
+    HW_WR_REG32(SOC_MA_MPU_CONF_REGS_BASE + LISA_MAP_1, 0xA0500100U);
+    /* DMM_LISA_MAP_i */
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_0, 0x80500100U);
+    HW_WR_REG32(SOC_DMM_CONF_REGS_BASE + LISA_MAP_1, 0xA0500100U);
+}

@@ -1,0 +1,25 @@
+# @name ALSA operation mode
+# @desc Testing Blocking and non-blocking mode of operation.
+#       The playback tests in alsa_tests.sh will try to 
+#       fetch (if -u option is not specified) a file from server 
+#       http://gtopentest-server.gt.design.ti.com based on the
+#       sample format, rate and number of channels; if the fetch
+#       fails playback will use /dev/urandom as the source. It 
+#       is recommended to change the url to an existing server 
+#       in the test environment or to add the -u option in the 
+#       playback scenarios so that a valid audio source file is 
+#       used during playback tests.
+# @requires sound
+ALSA_XS_FUNC_CAP_OPMODE_BLK_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t capture -o 0 -F ALSA_M_FUNC_CAP_OPMODE_BLK_01.snd'; do_cmd 'alsa_tests.sh -t playback -o 0 -F ALSA_M_FUNC_CAP_OPMODE_BLK_01.snd'
+ALSA_S_FUNC_PLAYBK_OPMODE_BLK source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t playback -o 0 -F /home/root/ALSA_M_FUNC_PLAYBK_OPMODE_BLK.wav'
+ALSA_XS_FUNC_LOOPBK_OPMODE_BLK_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 0 -d 10'
+ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 0 -d 60'
+ALSA_S_FUNC_LOOPBK_OPMODE_BLK_03 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 0 -d 300'
+ALSA_XS_FUNC_CAP_OPMODE_NONBLK_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t capture -o 1 -F ALSA_M_FUNC_CAP_OPMODE_NONBLK_01.snd'; do_cmd 'alsa_tests.sh -t playback -o 1 -F ALSA_M_FUNC_CAP_OPMODE_NONBLK_01.snd'
+ALSA_S_FUNC_PLAYBK_OPMODE_NONBLK source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t playback -o 1 -F /home/root/ALSA_M_FUNC_PLAYBK_OPMODE_NONBLK.wav'
+ALSA_XS_FUNC_LOOPBK_OPMODE_NONBLK_01 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 1 -d 10'
+ALSA_S_FUNC_LOOPBK_OPMODE_NONBLK_02 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 1 -d 60'
+ALSA_S_FUNC_LOOPBK_OPMODE_NONBLK_03 source 'common.sh' ; do_cmd install_modules.sh 'sound' ; do_cmd 'alsa_tests.sh -t loopback -o 1 -d 300'
+
+
+

@@ -1,0 +1,16 @@
+Package: libgbm-dev
+Version: 9.0.0-r0.0
+Description: libgbm version 9.0.0-r0 - Development files
+ Userspace interface for the kernel GBM services.  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libgbm
+Homepage: http://git.ti.com
+Depends: libgbm1 (= 9.0.0-r0.0)
+Recommends: libc6-dev, libdrm-dev, libudev-dev
+Source: git://git.ti.com/glsdk/libgbm.git;protocol=git

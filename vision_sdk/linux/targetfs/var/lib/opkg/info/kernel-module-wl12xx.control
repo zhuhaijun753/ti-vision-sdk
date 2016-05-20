@@ -1,0 +1,13 @@
+Package: kernel-module-wl12xx
+Version: R8.5+git0+ad69b45b9a-r7+g.0
+Description: wl12xx kernel module
+ wl12xx kernel module
+Section: kernel/modules
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: ti-compat-wireless-wl18xx
+Homepage: https://git.ti.com/wilink8-wlan/wl18xx
+Depends: kernel-module-cfg80211, kernel-module-compat, kernel-module-mac80211, kernel-3.14.49, kernel-module-wlcore
+Source: git://git.ti.com/wilink8-wlan/wl18xx.git;branch=ap_p2p;destsuffix=wl18xx;name=wl18xx git://git.ti.com/wilink8-wlan/backports.git;branch=ap_dfs_mbss_all;destsuffix=backports;name=backports

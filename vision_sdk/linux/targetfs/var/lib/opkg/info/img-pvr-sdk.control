@@ -1,0 +1,12 @@
+Package: img-pvr-sdk
+Version: 3.5.0-r4.0
+Description: img-pvr-sdk version 3.5.0-r4
+ Imagination PowerVR SDK binaries for Jacinto6 SoC
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: TI-TSPA
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: img-pvr-sdk
+Depends: libdrm2 (>= 2.4.41), libstdc++6 (>= 4.7.3), omap5-sgx-ddk-um-linux (>= 1.9.0.12), libc6 (>= 2.15), libgcc-s1 (>= 4.7.3), libgbm1 (>= 9.0.0)
+Source: git://git.ti.com/graphics/img-pvr-sdk.git;protocol=git

@@ -1,0 +1,23 @@
+# @name 
+#	USBDEVICE (USBGADGET) modular multiple insmod rmmod test 
+# @desc 
+#       modprobe usb module multiple times 
+# @requires  usb/slave
+
+# The test step pass if the commands return zero, it fails otherwise.
+# For more information please refer to <root>/README-DDT file.
+
+USBDEVICE_S_FUNC_MODULAR-NCM-10-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mod_name=`get_device_modular_names.sh usbslave_ncm`; do_cmd do_modular_common.sh -l "10" -m $mod_name
+USBDEVICE_M_STRESS_MODULAR-NCM-100-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mod_name=`get_device_modular_names.sh usbslave_ncm`; do_cmd do_modular_common.sh -l "100" -m $mod_name
+
+USBDEVICE_S_FUNC_MODULAR-ETHER-10-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mod_name=`get_device_modular_names.sh usbslave_ether`; do_cmd do_modular_common.sh -l "10" -m $mod_name
+USBDEVICE_M_STRESS_MODULAR-ETHER-100-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mod_name=`get_device_modular_names.sh usbslave_ether`; do_cmd do_modular_common.sh -l "100" -m $mod_name
+
+USBDEVICE_S_FUNC_MODULAR-ZERO-10-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mod_name=`get_device_modular_names.sh usbslave_zero`; do_cmd do_modular_common.sh -l "10" -m $mod_name
+USBDEVICE_M_STRESS_MODULAR-ZERO-100-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; `get_device_modular_names.sh usbslave_zero`; do_cmd do_modular_common.sh -l "100" -m $mod_name
+
+USBDEVICE_S_FUNC_MODULAR-MASS-STORAGE-10-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mmc_node=`get_blk_device_node.sh 'mmc'`; mod_name=`get_device_modular_names.sh usbslave_mass_storage`; do_cmd do_modular_common.sh -l "10" -m $mod_name -p 'file=$mmc_node\ stall=0\ removable=1'
+USBDEVICE_M_STRESS_MODULAR-MASS-STORAGE-100-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mmc_node=`get_blk_device_node.sh 'mmc'; mod_name=`get_device_modular_names.sh usbslave_mass_storage`; do_cmd do_modular_common.sh -l "100" -m $mod_name -p 'file=$mmc_node\ stall=0\ removable=1'
+
+USBDEVICE_S_FUNC_MODULAR-MULTI-10-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mmc_node=`get_blk_device_node.sh 'mmc'`; mod_name=`get_device_modular_names.sh usbslave_multi`; do_cmd do_modular_common.sh -l "10" -m $mod_name -p 'file=$mmc_node\ stall=0\ removable=1' 
+USBDEVICE_M_STRESS_MODULAR-MULTI-100-LOOPS source 'common.sh' ; do_cmd remove_usbdevice.sh; mmc_node=`get_blk_device_node.sh 'mmc'`; mod_name=`get_device_modular_names.sh usbslave_multi`; do_cmd do_modular_common.sh -l "100" -m $mod_name -p 'file=$mmc_node\ stall=0\ removable=1' 

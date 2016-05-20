@@ -1,0 +1,12 @@
+Package: libaio1
+Version: 0.3.109-r2.0
+Description: Asynchronous I/O library
+ Asynchronous input/output library that uses the kernels native interface
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.1+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libaio
+Homepage: http://lse.sourceforge.net/io/aio.html
+Source: ftp://ftp.debian.org/debian/pool/main/liba/libaio/libaio_0.3.109.orig.tar.gz file://00_arches.patch file://toolchain.patch file://destdir.patch file://libaio_fix_for_x32.patch file://libaio-generic.patch file://libaio-aarch64.patch file://libaio_fix_for_mips_syscalls.patch

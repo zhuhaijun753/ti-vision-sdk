@@ -1,0 +1,12 @@
+Package: kernel-module-usb-f-ecm-subset
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: usb-f-ecm-subset kernel module
+ usb-f-ecm-subset kernel module
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-module-u-ether, kernel-module-configfs, kernel-3.14.49, kernel-module-libcomposite
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

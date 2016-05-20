@@ -1,0 +1,12 @@
+/*==========================================================================*/
+/*      Copyright (C) 2009-2013 Texas Instruments Incorporated.             */
+/*                      All Rights Reserved                                 */
+/*==========================================================================*/
+
+
+all: 
+	cl.exe /I ../inc *.c  /Fe../elf_out/fft_behav.exe
+	del *.obj
+
+clean :  
+	del *.obj ..\elf_out\*.*~

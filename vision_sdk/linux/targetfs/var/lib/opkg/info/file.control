@@ -1,0 +1,14 @@
+Package: file
+Version: 5.16-r0.0
+Description: File classification tool
+ File attempts to classify files depending on their contents and prints a
+ description if a match is found.
+Section: console/utils
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: file
+Homepage: http://www.darwinsys.com/file/
+Depends: libz1 (>= 1.2.8), libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: ftp://ftp.astron.com/pub/file/file-5.16.tar.gz file://file-CVE-2014-9620-and-CVE-2014-9621.patch file://dump file://filesystems

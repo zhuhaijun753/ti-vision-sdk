@@ -1,0 +1,8 @@
+# @name SATA w/r test using existing FS
+# @desc SATA device write/read test with with whatever fs in drive
+# @requires sata 
+# @setup_requires sata
+
+SATA_S_FUNC_DD_RW_10M source "common.sh"; install_modules.sh "sata"; do_cmd blk_device_dd_readwrite_test.sh -b "512K" -c "20" -d "sata"
+
+SATA_M_FUNC_DD_RW_100M source "common.sh"; install_modules.sh "sata"; do_cmd blk_device_dd_readwrite_test.sh -b "512K" -c "20" -d "sata" -l "10" -w

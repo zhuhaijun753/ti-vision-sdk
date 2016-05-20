@@ -1,0 +1,6 @@
+# @name Test usb driver while changing cpu frequency
+# @desc Test usb driver while the OPP is changed to cover all possible vallues
+# @requires usb
+# @setup_requires usbhostaudio_usbhostvideo
+
+SYSTEM_M_FUNC_OPP_USB_ISO source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/usbhost_iso -P $PLATFORM -s USBHOST_S_FUNC_AUDIO_LOOPBACK_WITH_VIDEO_CAPTURE # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC"

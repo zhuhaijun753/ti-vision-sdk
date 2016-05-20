@@ -1,0 +1,2059 @@
+******************************************************************************
+                   ARP32 Linker PC v1.0.7                      
+******************************************************************************
+>> Linked Wed Oct 07 00:48:04 2015
+
+OUTPUT FILE NAME:   <.\elf_out\test_eveRemapMerge.eve.out>
+ENTRY POINT SYMBOL: "_reset_handler"  address: 80000100
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  VECMEM                80000000   00000100  00000028  000000d8  RWIX
+  CMDMEM                80000100   00001000  00000028  00000fd8  RWIX
+  EXTMEM                80001100   0002ef00  00018f6c  00015f94  RWIX
+
+PAGE 1:
+  DATMEM                40020000   00008000  0000671d  000018e3  RWIX
+  WMEM                  40040000   00007fe0  00000000  00007fe0  RWIX
+  IMEMLA                40050000   00004000  00000000  00004000  RWIX
+  IMEMHA                40054000   00004000  00000000  00004000  RWIX
+  IMEMLB                40070000   00004000  00000000  00004000  RWIX
+  IMEMHB                40074000   00004000  00000000  00004000  RWIX
+  L3MEM                 40300000   00100000  00000000  00100000  RWIX
+  GEM0_L2_MEM           40800000   00008000  00000000  00008000  RWIX
+  EXTDMEM               80030000   02000000  01c6dc58  003923a8  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     1    40020000    00000000     UNINITIALIZED
+
+.init_array 
+*          1    40020000    00000000     UNINITIALIZED
+
+.intvecs   0    80000000    00000028     
+                  80000000    00000028     boot_arp32.obj (.intvecs)
+
+.inthandler 
+*          0    80000100    00000028     
+                  80000100    00000028     boot_arp32.obj (.inthandler)
+
+.bam_text 
+*          0    80001100    00000000     UNINITIALIZED
+
+.algo_text 
+*          0    80001100    00000000     UNINITIALIZED
+
+.starterware_text 
+*          0    80001100    00000000     UNINITIALIZED
+
+.text      0    80001100    00009d8c     
+                  80001100    00000f14     remap_merge_tb.obj (.text:remapMergeTest)
+                  80002014    00000d8c     ti_stats_collector.obj (.text:statCollectorControl)
+                  80002da0    00000c0c     libeveConvertMap.eve.lib : convert_map.obj (.text:convertMap_tileApproach)
+                  800039ac    00000810     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_initGraph)
+                  800041bc    00000788                                : bam_construct_int.obj (.text:BAM_autoAllocMemRec)
+                  80004944    000006fc     libeveConvertMap.eve.lib : convert_map.obj (.text:convertMap_bbApproach)
+                  80005040    000004c4     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:bilinearInterpolate_init)
+                  80005504    000004c4     remap_merge_natc.obj (.text:remapNatc)
+                  800059c8    0000047c     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_finaliseGraph)
+                  80005e44    00000450     libevekernels.eve.lib : bam_remap_helper_funcs.obj (.text:BAM_Remap_getMemRecFunc)
+                  80006294    00000414     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_optimizeGraph)
+                  800066a8    00000414     libeveConvertMap.eve.lib : convert_map.obj (.text:convertMap_tileApproach_getMemorysizeBlockMap)
+                  80006abc    000003e8     configparser.obj (.text:ParseContent)
+                  80006ea4    000003ac     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_setMemRecFunc)
+                  80007250    00000378     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_getMemRec)
+                  800075c8    00000378     libeveRemapMerge.eve.lib : remap_merge_graph.obj (.text:REMAP_MERGE_TI_graphCreate)
+                  80007940    0000034c     libevekernels.eve.lib : vcop_remap_bb_approach.obj (.text:bilinearInterpolate_init)
+                  80007c8c    00000308     configparser.obj (.text:printparams)
+                  80007f94    000002ec     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:nnInterpolate_init)
+                  80008280    000002c4     test_print.obj (.text:testPrintResults)
+                  80008544    0000029c     libeveRemapMerge.eve.lib : bam_remap_merge_helper_funcs.obj (.text:BAM_RemapMerge_setMemRecFunc)
+                  800087e0    00000234     eve_profile.obj (.text:profiler_end)
+                  80008a14    000001f0     libeveRemapMerge.eve.lib : bam_remap_merge_helper_funcs.obj (.text:BAM_RemapMerge_getMemRecFunc)
+                  80008c04    000001f0     remap_merge_tb.obj (.text:main)
+                  80008df4    000001cc     libevealgframework.eve.lib : bam_construct.obj (.text:BAM_createGraph)
+                  80008fc0    000001b8     libevekernels.eve.lib : vcop_remap_bb_approach.obj (.text:nnInterpolate_init)
+                  80009178    00000198     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_getMemRecFunc)
+                  80009310    00000158     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_updateNodes)
+                  80009468    00000154     report_utils.obj (.text:report_printAppletInfo)
+                  800095bc    00000150     libevealgframework.eve.lib : bam_memory.obj (.text:bam_mem_alloc)
+                  8000970c    00000140                                : bam_memory.obj (.text:bam_getMemPacket)
+                  8000984c    00000130     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_setMemRecFunc)
+                  8000997c    00000120     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_setNodeMemRec)
+                  80009a9c    0000010c                                : bam_construct_int.obj (.text:BAM_getGraphMemSize)
+                  80009ba8    000000f0     libeveRemapMerge.eve.lib : remap_merge_graph.obj (.text:REMAP_MERGE_TI_initKernelsArgs)
+                  80009c98    000000ec     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:deInterleaveYUV422I_init)
+                  80009d84    000000e8     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_fillKernelInfo)
+                  80009e6c    000000e8                                : bam_memory.obj (.text:bam_mem_free)
+                  80009f54    000000d8     configparser.obj (.text:readparamfile)
+                  8000a02c    000000d4     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_init)
+                  8000a100    000000c8     libevekernels.eve.lib : vcop_remap_bb_approach.obj (.text:deInterleaveYUV422I_init)
+                  8000a1c8    000000c4     eve_profile.obj (.text:profiler_init)
+                  8000a28c    000000ac     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_copyIntMemRec2ExtMem)
+                  8000a338    000000a8                                : bam_memory.obj (.text:bam_minit)
+                  8000a3e0    0000009c     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_alloc)
+                  8000a47c    00000090     libevealgframework.eve.lib : bam_memory.obj (.text:bam_releaseMemPacket)
+                  8000a50c    0000008c     libevekernels.eve.lib : bam_memcpy_helper_funcs.obj (.text:BAM_Memcpy_getMemRecFunc)
+                  8000a598    0000008c     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_copyNodeList)
+                  8000a624    00000084     libeveConvertMap.eve.lib : convert_map.obj (.text:convertMap_bbApproach_getMemorysizeBlockMap)
+                  8000a6a8    00000084     remap_merge_natc.obj (.text:remapBilinearInterpolate)
+                  8000a72c    00000084     test_print.obj (.text:testPrintHeader)
+                  8000a7b0    00000074     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_initGraphInstance)
+                  8000a824    00000070     ti_stats_collector.obj (.text:statCollectorInit)
+                  8000a894    0000006c     eve_profile.obj (.text:profiler_getStackDepth)
+                  8000a900    00000068     libevealgframework.eve.lib : bam_memory.obj (.text:bam_mcheck)
+                  8000a968    00000058     ti_mem_manager.obj (.text:TI_GetMemoryChunk)
+                  8000a9c0    00000050     eve_profile.obj (.text:profiler_testCaseInfo)
+                  8000aa10    00000048     libevestarterware_eve.lib : sctm.obj (.text:EVE_SCTM_CounterConfig)
+                  8000aa58    00000048     eve_profile.obj (.text:profiler_start)
+                  8000aaa0    00000038     libevealgframework.eve.lib : bam_construct_int.obj (.text:BAM_getMemPacket)
+                  8000aad8    00000038     libevestarterware_eve.lib : pcache.obj (.text:EVE_PROGCACHE_Prefetch)
+                  8000ab10    00000038     eve_profile.obj (.text:profiler_printStatus)
+                  8000ab48    00000038     test_print.obj (.text:testPrintFooter)
+                  8000ab80    00000030     libevealgframework.eve.lib : bam_construct.obj (.text:BAM_getStats)
+                  8000abb0    00000030     eve_profile.obj (.text:profiler_initStack)
+                  8000abe0    0000002c     libevekernels.eve.lib : bam_alpha_blend_yuv420nv12_helper_funcs.obj (.text:BAM_Alpha_Blend_YUV420nv12_getMemRecFunc)
+                  8000ac0c    0000002c                           : bam_yuv_422uyvy_to_420nv12_helper_funcs.obj (.text:BAM_Yuv_422uyvy_to_420nv12_getMemRecFunc)
+                  8000ac38    0000002c     libevestarterware_eve.lib : sctm.obj (.text:EVE_SCTM_CounterTimerEnable)
+                  8000ac64    0000002c                               : sctm.obj (.text:EVE_SCTM_InpEvtSelect)
+                  8000ac90    0000002c                               : sctm.obj (.text:EVE_SCTM_SamplingSelect)
+                  8000acbc    00000024     libevekernels.eve.lib : bam_alpha_blend_yuv422i_helper_funcs.obj (.text:BAM_Alpha_Blend_YUV422i_getMemRecFunc)
+                  8000ace0    00000024     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_getMemRecFunc)
+                  8000ad04    00000024     libevekernels.eve.lib : bam_yuv_420nv12_to_422uyvy_helper_funcs.obj (.text:BAM_Yuv_420nv12_to_422uyvy_getMemRecFunc)
+                  8000ad28    00000024     libevealgframework.eve.lib : alg_osal.obj (.text:PRINTF)
+                  8000ad4c    00000024                                : alg_osal.obj (.text:TEST_PRINTF)
+                  8000ad70    00000020     libevestarterware_eve.lib : edma_utils_state.obj (.text:DMA_utils_resetStateStruct)
+                  8000ad90    0000001c     libeveRemapMerge.eve.lib : remap_merge_graph.obj (.text:REMAP_MERGE_TI_getGraphMemReq)
+                  8000adac    00000018     libevestarterware_eve.lib : sctm.obj (.text:EVE_SCTM_OverflowCheck)
+                  8000adc4    00000018     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_free)
+                  8000addc    00000018     eve_profile.obj (.text:profiler_getSP)
+                  8000adf4    00000014     libevestarterware_eve.lib : sctm.obj (.text:EVE_SCTM_Enable)
+                  8000ae08    00000010     eve_profile.obj (.text:profiler_end_print)
+                  8000ae18    0000000c     libevekernels.eve.lib : bam_alpha_blend_yuv420nv12_exec_funcs.obj (.text:Bam_Alpha_Blend_YUV420nv12_compute)
+                  8000ae24    0000000c                           : bam_alpha_blend_yuv422i_exec_funcs.obj (.text:Bam_Alpha_Blend_YUV422i_compute)
+                  8000ae30    0000000c                           : bam_memcpy_exec_funcs.obj (.text:Bam_Memcpy_compute)
+                  8000ae3c    0000000c                           : bam_yuv_420nv12_to_422uyvy_exec_funcs.obj (.text:Bam_Yuv_420nv12_to_422uyvy_compute)
+                  8000ae48    0000000c                           : bam_yuv_422uyvy_to_420nv12_exec_funcs.obj (.text:Bam_Yuv_422uyvy_to_420nv12_compute)
+                  8000ae54    0000000c     libevestarterware_eve.lib : dma_resource_allocator.obj (.text:DMA_resourceAllocator_setEdma3RmHandle)
+                  8000ae60    0000000c     ti_mem_manager.obj (.text:TI_CreateMemoryHandle)
+                  8000ae6c    0000000c     ti_mem_manager.obj (.text:TI_ResetMemoryHandle)
+                  8000ae78    00000008     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_getContextSize)
+                  8000ae80    00000004                               : edma3lld_support.obj (.text:EDMA3LLD_SUPPORT_requestResources)
+                  8000ae84    00000004     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_control)
+                  8000ae88    00000004                              : remap_merge_alg.obj (.text:REMAP_MERGE_TI_numAlloc)
+
+.rts_text 
+*          0    8000ae8c    0000760c     
+                  8000ae8c    000004f8     rtsarp32_v200.lib : _scanfi.obj (.text:_scanfi)
+                  8000b384    000003a0                       : strtod.obj (.text:strtod)
+                  8000b724    0000039c                       : strtold.obj (.text:strtold)
+                  8000bac0    00000364                       : divf.obj (.text:__arp32abi_divf)
+                  8000be24    000002d8                       : strtoll.obj (.text:strtoll)
+                  8000c0fc    000002a0                       : _printfi.obj (.text:_setfield)
+                  8000c39c    00000268                       : _scanfi.obj (.text:_sproc_int)
+                  8000c604    00000260                       : _scanfi.obj (.text:_sset_arg)
+                  8000c864    0000025c                       : _printfi.obj (.text:_pproc_fge)
+                  8000cac0    0000025c                       : _printfi.obj (.text:ecvt)
+                  8000cd1c    00000258                       : _printfi.obj (.text:fcvt)
+                  8000cf74    0000024c                       : strtoull.obj (.text:strtoull)
+                  8000d1c0    0000022c                       : _printfi.obj (.text:_printfi)
+                  8000d3ec    00000224                       : addf.obj (.text:__arp32abi_addf)
+                  8000d610    00000220                       : _printfi.obj (.text:_pconv_e)
+                  8000d830    0000021c                       : fwrite.obj (.text:fwrite)
+                  8000da4c    00000208                       : _printfi.obj (.text:_getarg_diouxp)
+                  8000dc54    00000200                       : frcdivd.obj (.text:_frcdivd)
+                  8000de54    000001e4                       : divd.obj (.text:__arp32abi_divd)
+                  8000e038    000001cc                       : imath64.obj (.text:__arp32abi_divull)
+                  8000e204    000001cc                       : strtol.obj (.text:strtol)
+                  8000e3d0    000001c8                       : mpyd.obj (.text:__arp32abi_mpyd)
+                  8000e598    000001c8                       : fgets.obj (.text:_dofgets)
+                  8000e760    000001b8                       : addd.obj (.text:__arp32abi_addd)
+                  8000e918    000001a0                       : strtoul.obj (.text:strtoul)
+                  8000eab8    0000018c                       : _printfi.obj (.text:_pproc_diouxp)
+                  8000ec44    00000170                       : fputs.obj (.text:fputs)
+                  8000edb4    00000164                       : mpyf.obj (.text:__arp32abi_mpyf)
+                  8000ef18    00000160                       : frcaddd.obj (.text:_frcaddd)
+                  8000f078    0000015c                       : _scanfi.obj (.text:_sproc_float)
+                  8000f1d4    00000158                       : llmpy.obj (.text:__arp32abi_mpyll)
+                  8000f32c    00000144                       : fread.obj (.text:fread)
+                  8000f470    00000140                       : frcmpyd.obj (.text:_frcmpyd)
+                  8000f5b0    00000140                       : _scanfi.obj (.text:_sget_conv)
+                  8000f6f0    0000013c                       : _printfi.obj (.text:_pproc_fwp)
+                  8000f82c    0000012c                       : fopen.obj (.text:_openfile)
+                  8000f958    00000118                       : setvbuf.obj (.text:setvbuf)
+                  8000fa70    00000114                       : _printfi.obj (.text:_pconv_g)
+                  8000fb84    000000f4                       : _printfi.obj (.text:_pproc_str)
+                  8000fc78    000000ec                       : lowlev.obj (.text:open)
+                  8000fd64    000000e8                       : fputc.obj (.text:fputc)
+                  8000fe4c    000000dc                       : memcpy.obj (.text:memcpy)
+                  8000ff28    000000d4                       : fixfull.obj (.text:__arp32abi_fixfull)
+                  8000fffc    000000cc                       : cmpd.obj (.text:__arp32abi_cmpd)
+                  800100c8    000000c4                       : memory.obj (.text:mem_alloc)
+                  8001018c    000000bc                       : _printfi.obj (.text:_ltostr)
+                  80010248    000000bc                       : _scanfi.obj (.text:_sproc_str)
+                  80010304    000000b4                       : trgdrv.obj (.text:HOSTlseek)
+                  800103b8    000000b4                       : _scanfi.obj (.text:_sproc_lb)
+                  8001046c    000000ac                       : trgdrv.obj (.text:HOSTrename)
+                  80010518    000000a8                       : fopen.obj (.text:_search_fp)
+                  800105c0    000000a8                       : memset.obj (.text:memset)
+                  80010668    000000a0                       : lowlev.obj (.text:getdevice)
+                  80010708    0000009c                       : _bufread.obj (.text:_buff_read)
+                  800107a4    0000009c                       : _printfi.obj (.text:_mcpy)
+                  80010840    00000098                       : trgdrv.obj (.text:HOSTopen)
+                  800108d8    00000094                       : sscanf.obj (.text:_chkmbc)
+                  8001096c    00000094                       : memory.obj (.text:mem_free)
+                  80010a00    00000090                       : trgdrv.obj (.text:HOSTread)
+                  80010a90    00000090                       : cvtdf.obj (.text:__arp32abi_cvtdf)
+                  80010b20    00000090                       : _printfi.obj (.text:_pproc_fflags)
+                  80010bb0    00000090                       : _io_perm.obj (.text:_wrt_ok)
+                  80010c40    00000090                       : fseek.obj (.text:fseek)
+                  80010cd0    00000090                       : ftell.obj (.text:ftell)
+                  80010d60    0000008c                       : trgdrv.obj (.text:HOSTwrite)
+                  80010dec    00000088                       : lowlev.obj (.text:close)
+                  80010e74    00000084                       : _printfi.obj (.text:_ecpy)
+                  80010ef8    00000080                       : cvtfd.obj (.text:__arp32abi_cvtfd)
+                  80010f78    00000080                       : fixfu.obj (.text:__arp32abi_fixfu)
+                  80010ff8    00000080                       : _scanfi.obj (.text:_sget_scanset)
+                  80011078    00000080                       : printf.obj (.text:printf)
+                  800110f8    0000007c                       : fixdi.obj (.text:__arp32abi_fixdi)
+                  80011174    0000007c                       : fltullf.obj (.text:__arp32abi_fltullf)
+                  800111f0    0000007c                       : fclose.obj (.text:_closefile)
+                  8001126c    0000007c                       : atoi.obj (.text:atoi)
+                  800112e8    0000007c                       : fflush.obj (.text:fflush)
+                  80011364    00000078                       : trgdrv.obj (.text:HOSTunlink)
+                  800113dc    00000078                       : _printfi.obj (.text:_div)
+                  80011454    00000078                       : _printfi.obj (.text:_pconv_f)
+                  800114cc    00000078                       : memory.obj (.text:minit)
+                  80011544    00000074                       : trgdrv.obj (.text:HOSTclose)
+                  800115b8    00000074                       : cmpf.obj (.text:__arp32abi_cmpf)
+                  8001162c    00000074                       : fprintf.obj (.text:fprintf)
+                  800116a0    00000070                       : autoinit.obj (.text:_auto_init)
+                  80011710    00000070                       : vfprintf.obj (.text:vfprintf)
+                  80011780    0000006c                       : frcmpyf.obj (.text:_frcmpyf)
+                  800117ec    0000006c                       : _io_perm.obj (.text:_rd_ok)
+                  80011858    00000068                       : fltid.obj (.text:__arp32abi_fltid)
+                  800118c0    00000068                       : boot.obj (.text:_c_int00)
+                  80011928    00000068                       : lowlev.obj (.text:lseek)
+                  80011990    00000068                       : lowlev.obj (.text:read)
+                  800119f8    00000068                       : lowlev.obj (.text:write)
+                  80011a60    00000064                       : imath64.obj (.text:_subcull)
+                  80011ac4    00000064                       : ltoa.obj (.text:ltoa)
+                  80011b28    00000060                       : llshift.obj (.text:__arp32abi_llshl)
+                  80011b88    00000060                       : fflush.obj (.text:_doflush)
+                  80011be8    0000005c                       : isinf.obj (.text:__arp32abi_isinf)
+                  80011c44    0000005c                       : lowlev.obj (.text:tabinit)
+                  80011ca0    00000058                       : fltif.obj (.text:__arp32abi_fltif)
+                  80011cf8    00000054                       : _printfi.obj (.text:_fcpy)
+                  80011d4c    00000054                       : renormd.obj (.text:_renormd)
+                  80011da0    00000054                       : exit.obj (.text:exit)
+                  80011df4    00000050                       : fopen.obj (.text:_cleanup)
+                  80011e44    00000050                       : lowlev.obj (.text:finddevice)
+                  80011e94    0000004c                       : memory.obj (.text:malloc)
+                  80011ee0    00000048                       : frcmpyf_div.obj (.text:__arp32abi_frcmpyf_div)
+                  80011f28    00000048                       : trgmsg.obj (.text:readmsg)
+                  80011f70    00000048                       : lowlev.obj (.text:unlink)
+                  80011fb8    00000048                       : trgmsg.obj (.text:writemsg)
+                  80012000    00000040                       : args_main.obj (.text:_args_main)
+                  80012040    00000040                       : sprintf.obj (.text:sprintf)
+                  80012080    0000003c                       : fltuf.obj (.text:__arp32abi_fltuf)
+                  800120bc    0000003c                       : _printfi.obj (.text:__arp32abi_isnan)
+                  800120f8    0000003c                       : strasgi_c.obj (.text:__arp32abi_strasgi)
+                  80012134    0000003c                       : fopen.obj (.text:fopen)
+                  80012170    00000038                       : assert.obj (.text:__arp32abi_abort_msg)
+                  800121a8    00000038                       : imath64.obj (.text:__arp32abi_remull)
+                  800121e0    00000038                       : sscanf.obj (.text:sscanf)
+                  80012218    00000034                       : llshift.obj (.text:__arp32abi_llshru)
+                  8001224c    00000030                       : fclose.obj (.text:fclose)
+                  8001227c    0000002c                       : subd.obj (.text:__arp32abi_subd)
+                  800122a8    00000028                       : negd.obj (.text:__arp32abi_negd)
+                  800122d0    00000028                       : mult.obj (.text:_mpyl)
+                  800122f8    00000024                       : llcmp.obj (.text:__arp32abi_cmplls)
+                  8001231c    00000024                       : llcmp.obj (.text:__arp32abi_cmpllu)
+                  80012340    00000020                       : subf.obj (.text:__arp32abi_subf)
+                  80012360    00000020                       : memccpy.obj (.text:memccpy)
+                  80012380    0000001c                       : lladdsub.obj (.text:__arp32abi_addll)
+                  8001239c    0000001c                       : sprintf.obj (.text:_outs)
+                  800123b8    00000018                       : fgets.obj (.text:fgets)
+                  800123d0    00000014                       : lladdsub.obj (.text:__arp32abi_subll)
+                  800123e4    00000014                       : memory.obj (.text:free)
+                  800123f8    00000010                       : lladdsub.obj (.text:__arp32abi_negll)
+                  80012408    00000010                       : sscanf.obj (.text:_inpchar)
+                  80012418    00000010                       : sprintf.obj (.text:_outc)
+                  80012428    0000000c                       : fprintf.obj (.text:_outc)
+                  80012434    0000000c                       : printf.obj (.text:_outc)
+                  80012440    0000000c                       : vfprintf.obj (.text:_outc)
+                  8001244c    0000000c                       : fprintf.obj (.text:_outs)
+                  80012458    0000000c                       : printf.obj (.text:_outs)
+                  80012464    0000000c                       : vfprintf.obj (.text:_outs)
+                  80012470    0000000c                       : sscanf.obj (.text:_uninpchar)
+                  8001247c    0000000c                       : remove.obj (.text:remove)
+                  80012488    00000008                       : exit.obj (.text:abort)
+                  80012490    00000004                       : _lock.obj (.text:_nop)
+                  80012494    00000004                       : pre_init.obj (.text:_system_pre_init)
+
+.text:EVE_SCTM_CounterRead 
+*          0    80014000    00000018     
+                  80014000    00000018     libevestarterware_eve.lib : sctm.obj (.text:EVE_SCTM_CounterRead)
+
+.text:REMAP_MERGE_TI_process 
+*          0    80014018    00000164     
+                  80014018    00000164     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_process)
+
+.text:REMAP_MERGE_TI_activate 
+*          0    8001417c    00000064     
+                  8001417c    00000064     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_activate)
+
+.text:EDMA_UTILS_memcpy2D_init 
+*          0    800141e0    00000040     
+                  800141e0    00000040     libevestarterware_eve.lib : edma_utils_memcpy.obj (.text:EDMA_UTILS_memcpy2D_init)
+
+.text:EDMA_UTILS_memcpy2D 
+*          0    80014220    00000090     
+                  80014220    00000090     libevestarterware_eve.lib : edma_utils_memcpy.obj (.text:EDMA_UTILS_memcpy2D)
+
+.text:REMAP_MERGE_TI_graphDmaControl 
+*          0    800142b0    00000028     
+                  800142b0    00000028     libeveRemapMerge.eve.lib : remap_merge_graph.obj (.text:REMAP_MERGE_TI_graphDmaControl)
+
+.text:BAM_controlNode 
+*          0    800142d8    0000003c     
+                  800142d8    0000003c     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_controlNode)
+
+.text:REMAP_MERGE_TI_execute 
+*          0    80014314    00000020     
+                  80014314    00000020     libeveRemapMerge.eve.lib : remap_merge_graph.obj (.text:REMAP_MERGE_TI_execute)
+
+.text:BAM_process 
+*          0    80014334    00000130     
+                  80014334    00000130     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_process)
+
+.text:BAM_getKernelsExecCycles 
+*          0    80014464    00000010     
+                  80014464    00000010     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_getKernelsExecCycles)
+
+.text:BAM_getKernelsInitCycles 
+*          0    80014474    00000010     
+                  80014474    00000010     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_getKernelsInitCycles)
+
+.text:BAM_ARP32_computeWrapper 
+*          0    80014484    00000098     
+                  80014484    00000098     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_ARP32_computeWrapper)
+
+.text:EDMA_UTILS_globalReset 
+*          0    8001451c    00000040     
+                  8001451c    00000040     libevestarterware_eve.lib : edma_utils.obj (.text:EDMA_UTILS_globalReset)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_updateDDRptr 
+*          0    8001455c    00000194     
+                  8001455c    00000194     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_updateDDRptr)
+
+.text:EDMA_UTILS_autoIncrement_update 
+*          0    800146f0    00000288     
+                  800146f0    00000288     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_update)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_frameInitChannel 
+*          0    80014978    00000600     
+                  80014978    00000600     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_frameInitChannel)
+
+.text:EDMA_UTILS_autoIncrement1D_getContextSize 
+*          0    80014f78    00000008     
+                  80014f78    00000008     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_getContextSize)
+
+.text:EDMA_UTILS_autoIncrement1D_init 
+*          0    80014f80    000000b8     
+                  80014f80    000000b8     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_init)
+
+.text:EDMA_UTILS_autoIncrement1D_update 
+*          0    80015038    0000016c     
+                  80015038    0000016c     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_update)
+
+.text:EDMA_UTILS_autoIncrement1D_configure 
+*          0    800151a4    000004c4     
+                  800151a4    000004c4     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_configure)
+
+.text:EDMA_UTILS_scattherGather_getContextSize 
+*          0    80015668    00000008     
+                  80015668    00000008     libevestarterware_eve.lib : edma_utils_scatterGather.obj (.text:EDMA_UTILS_scattherGather_getContextSize)
+
+.text:EDMA_UTILS_scattherGather_init 
+*          0    80015670    00000178     
+                  80015670    00000178     libevestarterware_eve.lib : edma_utils_scatterGather.obj (.text:EDMA_UTILS_scattherGather_init)
+
+.text:EDMA_UTILS_autoIncrement_configure 
+*          0    800157e8    00000560     
+                  800157e8    00000560     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_configure)
+
+.text:DMA_resourceAllocator_initResources 
+*          0    80015d48    0000002c     
+                  80015d48    0000002c     libevestarterware_eve.lib : dma_resource_allocator.obj (.text:DMA_resourceAllocator_initResources)
+
+.text:DMA_resourceAllocator_allocateResources 
+*          0    80015d74    00000178     
+                  80015d74    00000178     libevestarterware_eve.lib : dma_resource_allocator.obj (.text:DMA_resourceAllocator_allocateResources)
+
+.text:DMA_funcs_hardwareRegSetup 
+*          0    80015eec    000001c4     
+                  80015eec    000001c4     libevestarterware_eve.lib : dma_funcs.obj (.text:DMA_funcs_hardwareRegSetup)
+
+.text:DMA_funcs_writeTransferParams 
+*          0    800160b0    00000074     
+                  800160b0    00000074     libevestarterware_eve.lib : dma_funcs.obj (.text:DMA_funcs_writeTransferParams)
+
+.text:DMA_utils_updateStateStruct 
+*          0    80016124    000000cc     
+                  80016124    000000cc     libevestarterware_eve.lib : edma_utils_state.obj (.text:DMA_utils_updateStateStruct)
+
+.text:Bam_RemapMerge_initFrame 
+*          0    800161f0    000000ac     
+                  800161f0    000000ac     libeveRemapMerge.eve.lib : bam_remap_merge_exec_funcs.obj (.text:Bam_RemapMerge_initFrame)
+
+.text:Bam_Memcpy_initFrame 
+*          0    8001629c    00000068     
+                  8001629c    00000068     libevekernels.eve.lib : bam_memcpy_exec_funcs.obj (.text:Bam_Memcpy_initFrame)
+
+.text:BAM_initKernelDB 
+*          0    80016304    0000004c     
+                  80016304    0000004c     libevealgframework.eve.lib : bam_construct.obj (.text:BAM_initKernelDB)
+
+.text:Bam_Remap_initFrame 
+*          0    80016350    000001d4     
+                  80016350    000001d4     libevekernels.eve.lib : bam_remap_exec_funcs.obj (.text:Bam_Remap_initFrame)
+
+.text:_deInterleaveYUV422I_init 
+*          0    80016524    00000000     UNINITIALIZED
+
+.text:vcop_deInterleaveYUV422IBE_init 
+*          0    80016524    00000060     
+                  80016524    00000060     libevekernels.eve.lib : vcop_deInterleaveYUV422IBE.obj (.text:vcop_deInterleaveYUV422IBE_init)
+
+.text:vcop_deInterleaveYUV422IBE_param_count 
+*          0    80016584    00000004     
+                  80016584    00000004     libevekernels.eve.lib : vcop_deInterleaveYUV422IBE.obj (.text:vcop_deInterleaveYUV422IBE_param_count)
+
+.text:vcop_deInterleaveYUV422ILE_init 
+*          0    80016588    00000060     
+                  80016588    00000060     libevekernels.eve.lib : vcop_deInterleaveYUV422ILE.obj (.text:vcop_deInterleaveYUV422ILE_init)
+
+.text:vcop_deInterleaveYUV422ILE_param_count 
+*          0    800165e8    00000004     
+                  800165e8    00000004     libevekernels.eve.lib : vcop_deInterleaveYUV422ILE.obj (.text:vcop_deInterleaveYUV422ILE_param_count)
+
+.text:_bilinearInterpolate_init 
+*          0    800165ec    00000000     UNINITIALIZED
+
+.text:vcop_bilinearInterpolate16b_init 
+*          0    800165ec    00000220     
+                  800165ec    00000220     libevekernels.eve.lib : vcop_bilinearInterpolate16b.obj (.text:vcop_bilinearInterpolate16b_init)
+
+.text:vcop_bilinearInterpolate16b_param_count 
+*          0    8001680c    00000008     
+                  8001680c    00000008     libevekernels.eve.lib : vcop_bilinearInterpolate16b.obj (.text:vcop_bilinearInterpolate16b_param_count)
+
+.text:vcop_bilinearInterpolate8b_init 
+*          0    80016814    00000214     
+                  80016814    00000214     libevekernels.eve.lib : vcop_bilinearInterpolate8b.obj (.text:vcop_bilinearInterpolate8b_init)
+
+.text:vcop_bilinearInterpolate8b_param_count 
+*          0    80016a28    00000008     
+                  80016a28    00000008     libevekernels.eve.lib : vcop_bilinearInterpolate8b.obj (.text:vcop_bilinearInterpolate8b_param_count)
+
+.text:vcop_bilinearInterpolateYUV422Ichroma_init 
+*          0    80016a30    00000260     
+                  80016a30    00000260     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Ichroma.obj (.text:vcop_bilinearInterpolateYUV422Ichroma_init)
+
+.text:vcop_bilinearInterpolateYUV422Ichroma_param_count 
+*          0    80016c90    00000008     
+                  80016c90    00000008     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Ichroma.obj (.text:vcop_bilinearInterpolateYUV422Ichroma_param_count)
+
+.text:vcop_bilinearInterpolateYUV422Iluma_init 
+*          0    80016c98    0000021c     
+                  80016c98    0000021c     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Iluma.obj (.text:vcop_bilinearInterpolateYUV422Iluma_init)
+
+.text:vcop_bilinearInterpolateYUV422Iluma_param_count 
+*          0    80016eb4    00000008     
+                  80016eb4    00000008     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Iluma.obj (.text:vcop_bilinearInterpolateYUV422Iluma_param_count)
+
+.text:_nnInterpolate_init 
+*          0    80016ebc    00000000     UNINITIALIZED
+
+.text:vcop_nnInterpolate420SPchroma_init 
+*          0    80016ebc    000000f4     
+                  80016ebc    000000f4     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchroma_init)
+
+.text:vcop_nnInterpolate420SPchroma_param_count 
+*          0    80016fb0    00000008     
+                  80016fb0    00000008     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchroma_param_count)
+
+.text:vcop_nnInterpolate422Ichroma_init 
+*          0    80016fb8    000000f0     
+                  80016fb8    000000f0     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422Ichroma_init)
+
+.text:vcop_nnInterpolate422Ichroma_param_count 
+*          0    800170a8    00000008     
+                  800170a8    00000008     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422Ichroma_param_count)
+
+.text:vcop_nnInterpolate8b_init 
+*          0    800170b0    00000110     
+                  800170b0    00000110     libevekernels.eve.lib : vcop_nnInterpolate8b.obj (.text:vcop_nnInterpolate8b_init)
+
+.text:vcop_nnInterpolate8b_param_count 
+*          0    800171c0    00000008     
+                  800171c0    00000008     libevekernels.eve.lib : vcop_nnInterpolate8b.obj (.text:vcop_nnInterpolate8b_param_count)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolate_init 
+*          0    800171c8    0000010c     
+                  800171c8    0000010c     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolate_init)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolate_param_count 
+*          0    800172d4    00000008     
+                  800172d4    00000008     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolate_param_count)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolate_init 
+*          0    800172dc    00000118     
+                  800172dc    00000118     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolate_init)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolate_param_count 
+*          0    800173f4    00000008     
+                  800173f4    00000008     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolate_param_count)
+
+.text:vcop_dsTLUindexAndFracBilInterpolate_init 
+*          0    800173fc    00000254     
+                  800173fc    00000254     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolate_init)
+
+.text:vcop_dsTLUindexAndFracBilInterpolate_param_count 
+*          0    80017650    00000008     
+                  80017650    00000008     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolate_param_count)
+
+.text:vcop_dsTLUindexAndFracNNInterpolate_init 
+*          0    80017658    00000168     
+                  80017658    00000168     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolate_init)
+
+.text:vcop_dsTLUindexAndFracNNInterpolate_param_count 
+*          0    800177c0    00000008     
+                  800177c0    00000008     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolate_param_count)
+
+.text:vcop_bilinearInterpolateYUV420SPchroma_init 
+*          0    800177c8    000002d8     
+                  800177c8    000002d8     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchroma_init)
+
+.text:vcop_bilinearInterpolateYUV420SPchroma_param_count 
+*          0    80017aa0    00000008     
+                  80017aa0    00000008     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchroma_param_count)
+
+.text:Bam_Yuv_420nv12_to_422uyvy_initFrame 
+*          0    80017aa8    0000002c     
+                  80017aa8    0000002c     libevekernels.eve.lib : bam_yuv_420nv12_to_422uyvy_exec_funcs.obj (.text:Bam_Yuv_420nv12_to_422uyvy_initFrame)
+
+.text:vcop_yuv_420nv12_to_422uyvy_init 
+*          0    80017ad4    00000094     
+                  80017ad4    00000094     libevekernels.eve.lib : vcop_yuv_420nv12_to_422uyvy_kernel.obj (.text:vcop_yuv_420nv12_to_422uyvy_init)
+
+.text:vcop_yuv_420nv12_to_422uyvy_param_count 
+*          0    80017b68    00000004     
+                  80017b68    00000004     libevekernels.eve.lib : vcop_yuv_420nv12_to_422uyvy_kernel.obj (.text:vcop_yuv_420nv12_to_422uyvy_param_count)
+
+.text:Bam_Yuv_422uyvy_to_420nv12_initFrame 
+*          0    80017b6c    0000002c     
+                  80017b6c    0000002c     libevekernels.eve.lib : bam_yuv_422uyvy_to_420nv12_exec_funcs.obj (.text:Bam_Yuv_422uyvy_to_420nv12_initFrame)
+
+.text:vcop_yuv_422uyvy_to_420nv12_init 
+*          0    80017b98    000000b8     
+                  80017b98    000000b8     libevekernels.eve.lib : vcop_yuv_422uyvy_to_420nv12_kernel.obj (.text:vcop_yuv_422uyvy_to_420nv12_init)
+
+.text:vcop_yuv_422uyvy_to_420nv12_param_count 
+*          0    80017c50    00000004     
+                  80017c50    00000004     libevekernels.eve.lib : vcop_yuv_422uyvy_to_420nv12_kernel.obj (.text:vcop_yuv_422uyvy_to_420nv12_param_count)
+
+.text:Bam_Alpha_Blend_YUV420nv12_initFrame 
+*          0    80017c54    00000040     
+                  80017c54    00000040     libevekernels.eve.lib : bam_alpha_blend_yuv420nv12_exec_funcs.obj (.text:Bam_Alpha_Blend_YUV420nv12_initFrame)
+
+.text:vcop_alpha_blend_yuv420nv12_init 
+*          0    80017c94    00000158     
+                  80017c94    00000158     libevekernels.eve.lib : vcop_alpha_blend_yuv420nv12_kernel.obj (.text:vcop_alpha_blend_yuv420nv12_init)
+
+.text:vcop_alpha_blend_yuv420nv12_param_count 
+*          0    80017dec    00000008     
+                  80017dec    00000008     libevekernels.eve.lib : vcop_alpha_blend_yuv420nv12_kernel.obj (.text:vcop_alpha_blend_yuv420nv12_param_count)
+
+.text:Bam_Alpha_Blend_YUV422i_initFrame 
+*          0    80017df4    00000040     
+                  80017df4    00000040     libevekernels.eve.lib : bam_alpha_blend_yuv422i_exec_funcs.obj (.text:Bam_Alpha_Blend_YUV422i_initFrame)
+
+.text:vcop_alpha_blend_yuv422i_init 
+*          0    80017e34    000000ac     
+                  80017e34    000000ac     libevekernels.eve.lib : vcop_alpha_blend_yuv422i_kernel.obj (.text:vcop_alpha_blend_yuv422i_init)
+
+.text:vcop_alpha_blend_yuv422i_param_count 
+*          0    80017ee0    00000004     
+                  80017ee0    00000004     libevekernels.eve.lib : vcop_alpha_blend_yuv422i_kernel.obj (.text:vcop_alpha_blend_yuv422i_param_count)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_updateDDRptr 
+*          0    80017ee4    00000080     
+                  80017ee4    00000080     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_updateDDRptr)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_frameInitChannel 
+*          0    80017f64    00000068     
+                  80017f64    00000068     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_frameInitChannel)
+
+.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_init 
+*          0    80017fcc    000000f0     
+                  80017fcc    000000f0     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_init)
+
+.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_init 
+*          0    800180bc    000000f0     
+                  800180bc    000000f0     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_init)
+
+.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_init 
+*          0    800181ac    000000d8     
+                  800181ac    000000d8     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_init)
+
+.text:vcop_bilinearInterpolateLumaPblockUpdate_init 
+*          0    80018284    00000098     
+                  80018284    00000098     libevekernels.eve.lib : vcop_bilinearInterpolateLumaPblockUpdate.obj (.text:vcop_bilinearInterpolateLumaPblockUpdate_init)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_init 
+*          0    8001831c    000000c4     
+                  8001831c    000000c4     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_init)
+
+.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_init 
+*          0    800183e0    000000a0     
+                  800183e0    000000a0     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_init)
+
+.text:vcop_nnInterpolate422IchromaVPblockUpdate_init 
+*          0    80018480    00000098     
+                  80018480    00000098     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaVPblockUpdate_init)
+
+.text:vcop_nnInterpolate420SPchromaPblockUpdate_init 
+*          0    80018518    0000008c     
+                  80018518    0000008c     libevekernels.eve.lib : vcop_nnInterpolate420SPchromaPblockUpdate.obj (.text:vcop_nnInterpolate420SPchromaPblockUpdate_init)
+
+.text:vcop_nnInterpolate422IchromaUPblockUpdate_init 
+*          0    800185a4    00000064     
+                  800185a4    00000064     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaUPblockUpdate_init)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_init 
+*          0    80018608    00000048     
+                  80018608    00000048     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_init)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_init 
+*          0    80018650    00000048     
+                  80018650    00000048     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_init)
+
+.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_param_count 
+*          0    80018698    00000008     
+                  80018698    00000008     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_param_count)
+
+.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_param_count 
+*          0    800186a0    00000008     
+                  800186a0    00000008     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_param_count)
+
+.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_param_count 
+*          0    800186a8    00000008     
+                  800186a8    00000008     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_param_count)
+
+.text:vcop_bilinearInterpolateLumaPblockUpdate_param_count 
+*          0    800186b0    00000004     
+                  800186b0    00000004     libevekernels.eve.lib : vcop_bilinearInterpolateLumaPblockUpdate.obj (.text:vcop_bilinearInterpolateLumaPblockUpdate_param_count)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_param_count 
+*          0    800186b4    00000004     
+                  800186b4    00000004     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_param_count)
+
+.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_param_count 
+*          0    800186b8    00000004     
+                  800186b8    00000004     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_param_count)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_param_count 
+*          0    800186bc    00000004     
+                  800186bc    00000004     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_param_count)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_param_count 
+*          0    800186c0    00000004     
+                  800186c0    00000004     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_param_count)
+
+.text:vcop_memcpy_param_count 
+*          0    800186c4    00000004     
+                  800186c4    00000004     libevekernels.eve.lib : vcop_memcpy.obj (.text:vcop_memcpy_param_count)
+
+.text:vcop_memcpy_init 
+*          0    800186c8    00000038     
+                  800186c8    00000038     libevekernels.eve.lib : vcop_memcpy.obj (.text:vcop_memcpy_init)
+
+.text:vcop_nnInterpolate420SPchromaPblockUpdate_param_count 
+*          0    80018700    00000004     
+                  80018700    00000004     libevekernels.eve.lib : vcop_nnInterpolate420SPchromaPblockUpdate.obj (.text:vcop_nnInterpolate420SPchromaPblockUpdate_param_count)
+
+.text:vcop_nnInterpolate422IchromaUPblockUpdate_param_count 
+*          0    80018704    00000004     
+                  80018704    00000004     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaUPblockUpdate_param_count)
+
+.text:vcop_nnInterpolate422IchromaVPblockUpdate_param_count 
+*          0    80018708    00000004     
+                  80018708    00000004     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaVPblockUpdate_param_count)
+
+.text:REMAP_MERGE_TI_deactivate 
+*          0    8001870c    00000058     
+                  8001870c    00000058     libeveRemapMerge.eve.lib : remap_merge_alg.obj (.text:REMAP_MERGE_TI_deactivate)
+
+.text:vcop_remap_tile_approach_init 
+*          0    80018764    000008ac     
+                  80018764    000008ac     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:vcop_remap_tile_approach_init)
+
+.text:vcop_remap_bb_approach_init 
+*          0    80019010    00000614     
+                  80019010    00000614     libevekernels.eve.lib : vcop_remap_bb_approach.obj (.text:vcop_remap_bb_approach_init)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaBB_init 
+*          0    80019624    00000224     
+                  80019624    00000224     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchromaBB_init)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolateBB_init 
+*          0    80019848    0000012c     
+                  80019848    0000012c     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolateBB_init)
+
+.text:vcop_dsTLUindexAndFracBilInterpolateBB_init 
+*          0    80019974    000000e0     
+                  80019974    000000e0     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolateBB_init)
+
+.text:vcop_nnInterpolate422IchromaBB_init 
+*          0    80019a54    000000c4     
+                  80019a54    000000c4     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422IchromaBB_init)
+
+.text:vcop_nnInterpolate420SPchromaBB_init 
+*          0    80019b18    00000068     
+                  80019b18    00000068     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchromaBB_init)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolateBB_param_count 
+*          0    80019b80    00000004     
+                  80019b80    00000004     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolateBB_param_count)
+
+.text:EDMA_UTILS_autoIncrement_init 
+*          0    80019b84    000000e8     
+                  80019b84    000000e8     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_init)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolateBB_init 
+*          0    80019c6c    000000c0     
+                  80019c6c    000000c0     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolateBB_init)
+
+.text:vcop_dsTLUindexAndFracNNInterpolateBB_init 
+*          0    80019d2c    0000008c     
+                  80019d2c    0000008c     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolateBB_init)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaBB_param_count 
+*          0    80019db8    00000008     
+                  80019db8    00000008     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchromaBB_param_count)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolateBB_param_count 
+*          0    80019dc0    00000008     
+                  80019dc0    00000008     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolateBB_param_count)
+
+.text:vcop_dsTLUindexAndFracBilInterpolateBB_param_count 
+*          0    80019dc8    00000008     
+                  80019dc8    00000008     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolateBB_param_count)
+
+.text:vcop_dsTLUindexAndFracNNInterpolateBB_param_count 
+*          0    80019dd0    00000004     
+                  80019dd0    00000004     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolateBB_param_count)
+
+.text:vcop_nnInterpolate420SPchromaBB_param_count 
+*          0    80019dd4    00000004     
+                  80019dd4    00000004     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchromaBB_param_count)
+
+.text:vcop_nnInterpolate422IchromaBB_param_count 
+*          0    80019dd8    00000004     
+                  80019dd8    00000004     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422IchromaBB_param_count)
+
+.text:BAM_execute 
+*          0    8001c000    00000544     
+                  8001c000    00000544     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_execute)
+
+.text:Bam_RemapMerge_compute 
+*          0    8001c544    00000054     
+                  8001c544    00000054     libeveRemapMerge.eve.lib : bam_remap_merge_exec_funcs.obj (.text:Bam_RemapMerge_compute)
+
+.text:Bam_Remap_compute 
+*          0    8001c598    00000010     
+                  8001c598    00000010     libevekernels.eve.lib : bam_remap_exec_funcs.obj (.text:Bam_Remap_compute)
+
+.text:VCOP_SET_MEM_VIEW 
+*          0    8001c5a8    00000018     
+                  8001c5a8    00000018     libevealgframework.eve.lib : bam_execute.obj (.text:VCOP_SET_MEM_VIEW)
+
+.text:BAM_dummyKernelFunc 
+*          0    8001c5c0    00000004     
+                  8001c5c0    00000004     libevealgframework.eve.lib : bam_execute.obj (.text:BAM_dummyKernelFunc)
+
+.text:EDMA_UTILS_autoIncrement_triggerOutChannel 
+*          0    8001c5c4    000000dc     
+                  8001c5c4    000000dc     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_triggerOutChannel)
+
+.text:EDMA_UTILS_autoIncrement1D_triggerInChannel 
+*          0    8001c6a0    0000001c     
+                  8001c6a0    0000001c     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_triggerInChannel)
+
+.text:EDMA_UTILS_autoIncrement_triggerInChannel 
+*          0    8001c6bc    000000c0     
+                  8001c6bc    000000c0     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_triggerInChannel)
+
+.text:EDMA_UTILS_scattherGather_updateNtrigger 
+*          0    8001c77c    00000080     
+                  8001c77c    00000080     libevestarterware_eve.lib : edma_utils_scatterGather.obj (.text:EDMA_UTILS_scattherGather_updateNtrigger)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_trigger 
+*          0    8001c7fc    00000094     
+                  8001c7fc    00000094     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_trigger)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_wait 
+*          0    8001c890    00000098     
+                  8001c890    00000098     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SINK_wait)
+
+.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_vloops 
+*          0    8001c928    00000088     
+                  8001c928    00000088     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_vloops)
+
+.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_vloops 
+*          0    8001c9b0    00000088     
+                  8001c9b0    00000088     libevekernels.eve.lib : vcop_dsTLUindexAndFracPblockUpdate.obj (.text:vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_vloops)
+
+.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_vloops 
+*          0    8001ca38    00000070     
+                  8001ca38    00000070     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_vloops)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_vloops 
+*          0    8001caa8    0000006c     
+                  8001caa8    0000006c     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_vloops)
+
+.text:vcop_nnInterpolate422IchromaVPblockUpdate_vloops 
+*          0    8001cb14    00000054     
+                  8001cb14    00000054     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaVPblockUpdate_vloops)
+
+.text:vcop_bilinearInterpolateLumaPblockUpdate_vloops 
+*          0    8001cb68    00000054     
+                  8001cb68    00000054     libevekernels.eve.lib : vcop_bilinearInterpolateLumaPblockUpdate.obj (.text:vcop_bilinearInterpolateLumaPblockUpdate_vloops)
+
+.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_vloops 
+*          0    8001cbbc    0000005c     
+                  8001cbbc    0000005c     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422IchromaPblockUpdate.obj (.text:vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_vloops)
+
+.text:vcop_nnInterpolate420SPchromaPblockUpdate_vloops 
+*          0    8001cc18    00000050     
+                  8001cc18    00000050     libevekernels.eve.lib : vcop_nnInterpolate420SPchromaPblockUpdate.obj (.text:vcop_nnInterpolate420SPchromaPblockUpdate_vloops)
+
+.text:vcop_nnInterpolate422IchromaUPblockUpdate_vloops 
+*          0    8001cc68    00000040     
+                  8001cc68    00000040     libevekernels.eve.lib : vcop_nnInterpolate422IchromaPblockUpdate.obj (.text:vcop_nnInterpolate422IchromaUPblockUpdate_vloops)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_vloops 
+*          0    8001cca8    00000034     
+                  8001cca8    00000034     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_vloops)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_vloops 
+*          0    8001ccdc    00000034     
+                  8001ccdc    00000034     libevekernels.eve.lib : vcop_chromaTLUIndexCalcPblockUpdate.obj (.text:vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_vloops)
+
+.text:vcop_memcpy_vloops 
+*          0    8001cd10    0000001c     
+                  8001cd10    0000001c     libevekernels.eve.lib : vcop_memcpy.obj (.text:vcop_memcpy_vloops)
+
+.text:vcop_remap_dummy 
+*          0    8001cd2c    00000004     
+                  8001cd2c    00000004     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:vcop_remap_dummy)
+
+.text:vcop_deInterleaveYUV422IBE_vloops 
+*          0    8001cd30    0000002c     
+                  8001cd30    0000002c     libevekernels.eve.lib : vcop_deInterleaveYUV422IBE.obj (.text:vcop_deInterleaveYUV422IBE_vloops)
+
+.text:vcop_deInterleaveYUV422ILE_vloops 
+*          0    8001cd5c    0000002c     
+                  8001cd5c    0000002c     libevekernels.eve.lib : vcop_deInterleaveYUV422ILE.obj (.text:vcop_deInterleaveYUV422ILE_vloops)
+
+.text:vcop_bilinearInterpolate16b_vloops 
+*          0    8001cd88    000000c0     
+                  8001cd88    000000c0     libevekernels.eve.lib : vcop_bilinearInterpolate16b.obj (.text:vcop_bilinearInterpolate16b_vloops)
+
+.text:vcop_bilinearInterpolate8b_vloops 
+*          0    8001ce48    000000c0     
+                  8001ce48    000000c0     libevekernels.eve.lib : vcop_bilinearInterpolate8b.obj (.text:vcop_bilinearInterpolate8b_vloops)
+
+.text:vcop_bilinearInterpolateYUV422Ichroma_vloops 
+*          0    8001cf08    000000bc     
+                  8001cf08    000000bc     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Ichroma.obj (.text:vcop_bilinearInterpolateYUV422Ichroma_vloops)
+
+.text:vcop_bilinearInterpolateYUV422Iluma_vloops 
+*          0    8001cfc4    000000c8     
+                  8001cfc4    000000c8     libevekernels.eve.lib : vcop_bilinearInterpolateYUV422Iluma.obj (.text:vcop_bilinearInterpolateYUV422Iluma_vloops)
+
+.text:vcop_bilinearInterpolateYUV420SPchroma_vloops 
+*          0    8001d08c    000000dc     
+                  8001d08c    000000dc     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchroma_vloops)
+
+.text:vcop_nnInterpolate420SPchroma_vloops 
+*          0    8001d168    00000050     
+                  8001d168    00000050     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchroma_vloops)
+
+.text:vcop_nnInterpolate422Ichroma_vloops 
+*          0    8001d1b8    00000048     
+                  8001d1b8    00000048     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422Ichroma_vloops)
+
+.text:vcop_nnInterpolate8b_vloops 
+*          0    8001d200    0000006c     
+                  8001d200    0000006c     libevekernels.eve.lib : vcop_nnInterpolate8b.obj (.text:vcop_nnInterpolate8b_vloops)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolate_vloops 
+*          0    8001d26c    000000a0     
+                  8001d26c    000000a0     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolate_vloops)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolate_vloops 
+*          0    8001d30c    000000c4     
+                  8001d30c    000000c4     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolate_vloops)
+
+.text:vcop_dsTLUindexAndFracBilInterpolate_vloops 
+*          0    8001d3d0    000000f4     
+                  8001d3d0    000000f4     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolate_vloops)
+
+.text:vcop_dsTLUindexAndFracNNInterpolate_vloops 
+*          0    8001d4c4    000000b8     
+                  8001d4c4    000000b8     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolate_vloops)
+
+.text:vcop_yuv_420nv12_to_422uyvy_vloops 
+*          0    8001d57c    00000034     
+                  8001d57c    00000034     libevekernels.eve.lib : vcop_yuv_420nv12_to_422uyvy_kernel.obj (.text:vcop_yuv_420nv12_to_422uyvy_vloops)
+
+.text:vcop_yuv_422uyvy_to_420nv12_vloops 
+*          0    8001d5b0    00000030     
+                  8001d5b0    00000030     libevekernels.eve.lib : vcop_yuv_422uyvy_to_420nv12_kernel.obj (.text:vcop_yuv_422uyvy_to_420nv12_vloops)
+
+.text:vcop_alpha_blend_yuv420nv12_vloops 
+*          0    8001d5e0    00000084     
+                  8001d5e0    00000084     libevekernels.eve.lib : vcop_alpha_blend_yuv420nv12_kernel.obj (.text:vcop_alpha_blend_yuv420nv12_vloops)
+
+.text:vcop_alpha_blend_yuv422i_vloops 
+*          0    8001d664    00000048     
+                  8001d664    00000048     libevekernels.eve.lib : vcop_alpha_blend_yuv422i_kernel.obj (.text:vcop_alpha_blend_yuv422i_vloops)
+
+.text:EDMA_UTILS_autoIncrement_waitOutChannel 
+*          0    8001d6ac    0000006c     
+                  8001d6ac    0000006c     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_waitOutChannel)
+
+.text:EDMA_UTILS_autoIncrement1D_waitInChannel 
+*          0    8001d718    00000034     
+                  8001d718    00000034     libevestarterware_eve.lib : edma_utils_autoincrement_1d.obj (.text:EDMA_UTILS_autoIncrement1D_waitInChannel)
+
+.text:EDMA_UTILS_autoIncrement_waitInChannel 
+*          0    8001d74c    00000050     
+                  8001d74c    00000050     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.text:EDMA_UTILS_autoIncrement_waitInChannel)
+
+.text:EDMA_UTILS_scattherGather_wait 
+*          0    8001d79c    0000001c     
+                  8001d79c    0000001c     libevestarterware_eve.lib : edma_utils_scatterGather.obj (.text:EDMA_UTILS_scattherGather_wait)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_TileApproach_wait 
+*          0    8001d7b8    00000154     
+                  8001d7b8    00000154     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_TileApproach_wait)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_TileApproach_trigger 
+*          0    8001d90c    00000058     
+                  8001d90c    00000058     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_TileApproach_trigger)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_BBApproach_trigger 
+*          0    8001d964    00000040     
+                  8001d964    00000040     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_BBApproach_trigger)
+
+.text:vcop_bilinearInterpolateYUV420SPchromaBB_vloops 
+*          0    8001d9a4    000000bc     
+                  8001d9a4    000000bc     libevekernels.eve.lib : vcop_bilinearInterpolateYUV420SPchroma.obj (.text:vcop_bilinearInterpolateYUV420SPchromaBB_vloops)
+
+.text:vcop_chromaTLUIndexCalcBilInterpolateBB_vloops 
+*          0    8001da60    0000008c     
+                  8001da60    0000008c     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcBilInterpolateBB_vloops)
+
+.text:vcop_chromaTLUIndexCalcNNInterpolateBB_vloops 
+*          0    8001daec    00000080     
+                  8001daec    00000080     libevekernels.eve.lib : vcop_chromaTLUIndexCalc.obj (.text:vcop_chromaTLUIndexCalcNNInterpolateBB_vloops)
+
+.text:vcop_dsTLUindexAndFracBilInterpolateBB_vloops 
+*          0    8001db6c    00000078     
+                  8001db6c    00000078     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracBilInterpolateBB_vloops)
+
+.text:vcop_dsTLUindexAndFracNNInterpolateBB_vloops 
+*          0    8001dbe4    00000064     
+                  8001dbe4    00000064     libevekernels.eve.lib : vcop_dsTLUindexAndFrac.obj (.text:vcop_dsTLUindexAndFracNNInterpolateBB_vloops)
+
+.text:vcop_nnInterpolate422IchromaBB_vloops 
+*          0    8001dc48    00000040     
+                  8001dc48    00000040     libevekernels.eve.lib : vcop_nnInterpolate422Ichroma.obj (.text:vcop_nnInterpolate422IchromaBB_vloops)
+
+.text:vcop_remap_tile_approach 
+*          0    8001dc88    00000038     
+                  8001dc88    00000038     libevekernels.eve.lib : vcop_remap_tile_approach.obj (.text:vcop_remap_tile_approach)
+
+.text:vcop_remap_bb_approach 
+*          0    8001dcc0    0000002c     
+                  8001dcc0    0000002c     libevekernels.eve.lib : vcop_remap_bb_approach.obj (.text:vcop_remap_bb_approach)
+
+.text:vcop_nnInterpolate420SPchromaBB_vloops 
+*          0    8001dcec    00000024     
+                  8001dcec    00000024     libevekernels.eve.lib : vcop_nnInterpolate420SPchroma.obj (.text:vcop_nnInterpolate420SPchromaBB_vloops)
+
+.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_BBApproach_wait 
+*          0    8001dd10    000000e8     
+                  8001dd10    000000e8     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.text:BAM_DMA_CUSTOM_REMAP_MERGE_SOURCE_BBApproach_wait)
+
+.stack     1    40020000    00004000     UNINITIALIZED
+                  40020000    00000004     rtsarp32_v200.lib : boot.obj (.stack)
+                  40020004    00003ffc     --HOLE--
+
+.dmemSect 
+*          1    40024000    00001e00     UNINITIALIZED
+                  40024000    00001e00     remap_merge_tb.obj (.dmemSect)
+
+.rts_neardata 
+*          1    40025e00    0000026e     
+                  40025e00    00000101     rtsarp32_v200.lib : ctype.obj (.const:.string:_ctypes_)
+                  40025f01    00000003                       : assert.obj (.const:.string)
+                  40025f04    00000050                       : strtod.obj (.const:digits)
+                  40025f54    00000050                       : strtold.obj (.const:digits)
+                  40025fa4    00000048                       : strtod.obj (.const:powerof10)
+                  40025fec    00000048                       : strtold.obj (.const:powerof10)
+                  40026034    00000023                       : _printfi.obj (.const:.string)
+                  40026057    00000001     --HOLE-- [fill = 0]
+                  40026058    00000008                       : divf.obj (.const:.string:initial_approx$1)
+                  40026060    00000007                       : _scanfi.obj (.const:.string:flit$1)
+                  40026067    00000001     --HOLE-- [fill = 0]
+                  40026068    00000006                       : _scanfi.obj (.const:.string:barr$2)
+
+.bam_neardata 
+*          1    40026070    000001e5     
+                  40026070    00000018     libevealgframework.eve.lib : bam_memory.obj (.bss) [fill = 0]
+                  40026088    00000005                                : bam_memory.obj (.data)
+                  4002608d    00000003     --HOLE-- [fill = 0]
+                  40026090    00000008                                : bam_construct_int.obj (.rodata)
+                  40026098    00000004                                : bam_execute.obj (.rodata)
+                  4002609c    00000004                                : bam_memory.obj (.rodata)
+                  400260a0    00000121                                : bam_construct_int.obj (.const:.string)
+                  400261c1    00000090                                : bam_execute.obj (.const:.string)
+                  40026251    00000001     --HOLE-- [fill = 0]
+                  40026252    00000003                                : bam_construct_int.obj (.const:.string:$P$T0$1)
+
+.algo_neardata 
+*          1    40026258    000001aa     
+                  40026258    00000001     libeveRemapMerge.eve.lib : bam_dma_custom_remap_merge_node.obj (.bss) [fill = 0]
+                  40026259    00000003     --HOLE-- [fill = 0]
+                  4002625c    00000004                              : bam_dma_custom_remap_merge_node.obj (.rodata)
+                  40026260    000000ec                              : remap_merge_graph.obj (.const:.string)
+                  4002634c    00000054                              : remap_merge_alg.obj (.const)
+                  400263a0    0000000e                              : bam_dma_custom_remap_merge_node.obj (.const:$P$T0$1)
+                  400263ae    00000002     --HOLE-- [fill = 0]
+                  400263b0    00000008     libevekernels.eve.lib : bam_remap_helper_funcs.obj (.rodata)
+                  400263b8    00000004                           : vcop_remap_tile_approach.obj (.rodata)
+                  400263bc    0000000e                           : bam_memcpy_exec_funcs.obj (.const:$P$T0$1)
+                  400263ca    0000000e                           : bam_memcpy_helper_funcs.obj (.const:$P$T0$1)
+                  400263d8    0000000e                           : bam_remap_helper_funcs.obj (.const:$P$T0$1)
+                  400263e6    0000000e                           : vcop_remap_bb_approach.obj (.const:$P$T0$1)
+                  400263f4    0000000e                           : vcop_remap_tile_approach.obj (.const:$P$T0$1)
+
+.cio       1    40026404    00000120     UNINITIALIZED
+                  40026404    00000120     rtsarp32_v200.lib : trgmsg.obj (.cio)
+
+.starterware_neardata 
+*          1    40026524    00000110     
+                  40026524    000000a8     libevestarterware_eve.lib : dma_resource_allocator.obj (.bss) [fill = 0]
+                  400265cc    00000060                               : edma_utils_state.obj (.bss) [fill = 0]
+                  4002662c    00000004                               : dma_resource_allocator.obj (.data)
+                  40026630    00000004                               : edma_utils.obj (.data)
+
+.bss       1    40026634    00000078     UNINITIALIZED
+                  40026634    00000048     eve_profile.obj (.bss)
+                  4002667c    00000028     remap_merge_tb.obj (.bss)
+                  400266a4    00000006     test_print.obj (.bss)
+                  400266aa    00000002     remap_merge_config.obj (.bss)
+
+.data      1    400266ac    00000024     
+                  400266ac    00000020     boot_arp32.obj (.data)
+                  400266cc    00000004     eve_profile.obj (.data)
+
+.rodata    1    400266d0    00000054     
+                  400266d0    00000028     ti_stats_collector.obj (.rodata)
+                  400266f8    0000000c     libeveConvertMap.eve.lib : convert_map.obj (.rodata)
+                  40026704    00000008     eve_profile.obj (.rodata)
+                  4002670c    00000008     test_print.obj (.rodata)
+                  40026714    00000004     libevestarterware_eve.lib : edma_utils_autoincrement.obj (.rodata)
+                  40026718    00000004                               : edma_utils_memcpy.obj (.rodata)
+                  4002671c    00000004                               : edma_utils_scatterGather.obj (.rodata)
+                  40026720    00000004     remap_merge_tb.obj (.rodata)
+
+.sysmem    1    80030000    01c00000     UNINITIALIZED
+                  80030000    00000008     rtsarp32_v200.lib : memory.obj (.sysmem)
+                  80030008    01bffff8     --HOLE--
+
+.const     1    81c30000    00065210     
+                  81c30000    00064000     remapCoordSmall_int.obj (.const:smallMap_int)
+                  81c94000    000003d2     eve_profile.obj (.const:.string)
+                  81c943d2    00000330     remap_merge_tb.obj (.const:.string)
+                  81c94702    00000275     test_print.obj (.const:.string)
+                  81c94977    00000252     configparser.obj (.const:.string)
+                  81c94bc9    0000017b     remap_merge_config.obj (.const:.string)
+                  81c94d44    00000175     libeveConvertMap.eve.lib : convert_map.obj (.const:.string)
+                  81c94eb9    00000003     --HOLE-- [fill = 0]
+                  81c94ebc    00000128     ti_stats_collector.obj (.const:.switchtab)
+                  81c94fe4    000000fd     report_utils.obj (.const:.string)
+                  81c950e1    00000073     remap_merge_natc.obj (.const:.string)
+                  81c95154    00000053     ti_mem_manager.obj (.const:.string)
+                  81c951a7    00000043     ti_stats_collector.obj (.const:.string)
+                  81c951ea    0000000f     remap_merge_tb.obj (.const:.string:__FUNCTION__$2)
+                  81c951f9    00000001     --HOLE-- [fill = 0]
+                  81c951fa    0000000e     remap_merge_tb.obj (.const:$P$T0$1)
+                  81c95208    00000008     configparser.obj (.const:.string:$P$T0$1)
+
+.far       1    81c95210    00006958     UNINITIALIZED
+                  81c95210    00006900     remap_merge_config.obj (.far)
+                  81c9bb10    00000028     ti_stats_collector.obj (.far)
+                  81c9bb38    00000020     eve_profile.obj (.far)
+                  81c9bb58    00000010     remap_merge_tb.obj (.far)
+
+.fardata   1    81c9bb68    00001800     
+                  81c9bb68    00001800     remap_merge_config.obj (.fardata:gsTokenMap_remapMerge)
+
+.algo_fardata 
+*          1    81c9d368    0000037c     
+                  81c9d368    00000004     libeveRemapMerge.eve.lib : bam_remap_merge_helper_funcs.obj (.far) [fill = 0]
+                  81c9d36c    000000c0                              : bam_dma_custom_remap_merge_node.obj (.fardata)
+                  81c9d42c    000000a0                              : remap_merge_graph.obj (.fardata:bamRemapMergeKernelExecFuncDB)
+                  81c9d4cc    000000a0                              : remap_merge_graph.obj (.fardata:bamRemapMergeKernelHostDB)
+                  81c9d56c    0000001c                              : bam_remap_merge_helper_funcs.obj (.fardata)
+                  81c9d588    00000018                              : bam_remap_merge_exec_funcs.obj (.fardata)
+                  81c9d5a0    0000000c                              : remap_merge_graph.obj (.fardata)
+                  81c9d5ac    0000001c     libevekernels.eve.lib : bam_alpha_blend_yuv420nv12_helper_funcs.obj (.fardata)
+                  81c9d5c8    0000001c                           : bam_alpha_blend_yuv422i_helper_funcs.obj (.fardata)
+                  81c9d5e4    0000001c                           : bam_memcpy_helper_funcs.obj (.fardata)
+                  81c9d600    0000001c                           : bam_remap_helper_funcs.obj (.fardata)
+                  81c9d61c    0000001c                           : bam_yuv_420nv12_to_422uyvy_helper_funcs.obj (.fardata)
+                  81c9d638    0000001c                           : bam_yuv_422uyvy_to_420nv12_helper_funcs.obj (.fardata)
+                  81c9d654    00000018                           : bam_alpha_blend_yuv420nv12_exec_funcs.obj (.fardata)
+                  81c9d66c    00000018                           : bam_alpha_blend_yuv422i_exec_funcs.obj (.fardata)
+                  81c9d684    00000018                           : bam_memcpy_exec_funcs.obj (.fardata)
+                  81c9d69c    00000018                           : bam_remap_exec_funcs.obj (.fardata)
+                  81c9d6b4    00000018                           : bam_yuv_420nv12_to_422uyvy_exec_funcs.obj (.fardata)
+                  81c9d6cc    00000018                           : bam_yuv_422uyvy_to_420nv12_exec_funcs.obj (.fardata)
+
+.rts_fardata 
+*          1    81c9d6e4    00000290     
+                  81c9d6e4    000000a0     rtsarp32_v200.lib : defs.obj (.far) [fill = 0]
+                  81c9d784    0000000c                       : memory.obj (.far) [fill = 0]
+                  81c9d790    00000008                       : boot.obj (.far) [fill = 0]
+                  81c9d798    00000008                       : trgdrv.obj (.far) [fill = 0]
+                  81c9d7a0    000000f0                       : defs.obj (.fardata:_ftable)
+                  81c9d890    00000078                       : lowlev.obj (.fardata:_device)
+                  81c9d908    00000050                       : lowlev.obj (.fardata:_stream)
+                  81c9d958    00000008                       : _lock.obj (.fardata)
+                  81c9d960    00000004                       : defs.obj (.fardata)
+                  81c9d964    00000004                       : errno.obj (.fardata)
+                  81c9d968    00000004                       : fopen.obj (.fardata)
+                  81c9d96c    00000004                       : lowlev.obj (.fardata)
+                  81c9d970    00000004                       : memory.obj (.fardata)
+
+.starterware_fardata 
+*          1    81c9d974    000001f4     
+                  81c9d974    000001f4     libevestarterware_eve.lib : cred.obj (.fardata:CRED_instVirtAddr)
+
+.bam_fardata 
+*          1    81c9db68    000000f0     
+                  81c9db68    00000078     libevealgframework.eve.lib : bam_memory.obj (.far) [fill = 0]
+                  81c9dbe0    0000000c                                : bam_execute.obj (.far) [fill = 0]
+                  81c9dbec    00000008                                : bam_construct.obj (.far) [fill = 0]
+                  81c9dbf4    00000064                                : bam_memory.obj (.fardata:vcop_mem)
+
+
+SEGMENT ATTRIBUTES
+
+    id tag      seg value
+    -- ---      --- -----
+     0 PHA_PAGE 5   1    
+     1 PHA_PAGE 6   1    
+     2 PHA_PAGE 7   1    
+     3 PHA_PAGE 8   1    
+     4 PHA_PAGE 9   1    
+     5 PHA_PAGE 10  1    
+     6 PHA_PAGE 11  1    
+     7 PHA_PAGE 12  1    
+     8 PHA_PAGE 13  1    
+     9 PHA_PAGE 14  1    
+    10 PHA_PAGE 15  1    
+    11 PHA_PAGE 16  1    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+400266a0   ALPHA
+80014484   BAM_ARP32_computeWrapper
+800142d8   BAM_controlNode
+8000a28c   BAM_copyIntMemRec2ExtMem
+8000a598   BAM_copyNodeList
+80008df4   BAM_createGraph
+8001c5c0   BAM_dummyKernelFunc
+80009d84   BAM_fillKernelInfo
+80009a9c   BAM_getGraphMemSize
+80014464   BAM_getKernelsExecCycles
+80014474   BAM_getKernelsInitCycles
+8000aaa0   BAM_getMemPacket
+8000ab80   BAM_getStats
+800039ac   BAM_initGraph
+8000a7b0   BAM_initGraphInstance
+80016304   BAM_initKernelDB
+80006294   BAM_optimizeGraph
+80014334   BAM_process
+80009310   BAM_updateNodes
+80012488   C$$EXIT
+80011ff8   C$$IO$$
+81c9d974   CRED_instVirtAddr
+80015eec   DMA_funcs_hardwareRegSetup
+800160b0   DMA_funcs_writeTransferParams
+80015d74   DMA_resourceAllocator_allocateResources
+80015d48   DMA_resourceAllocator_initResources
+8000ae54   DMA_resourceAllocator_setEdma3RmHandle
+8000ad70   DMA_utils_resetStateStruct
+80016124   DMA_utils_updateStateStruct
+40026684   DST
+40026688   DST_UV
+8000ae80   EDMA3LLD_SUPPORT_requestResources
+800151a4   EDMA_UTILS_autoIncrement1D_configure
+80014f78   EDMA_UTILS_autoIncrement1D_getContextSize
+80014f80   EDMA_UTILS_autoIncrement1D_init
+8001c6a0   EDMA_UTILS_autoIncrement1D_triggerInChannel
+80015038   EDMA_UTILS_autoIncrement1D_update
+8001d718   EDMA_UTILS_autoIncrement1D_waitInChannel
+800157e8   EDMA_UTILS_autoIncrement_configure
+8000ae78   EDMA_UTILS_autoIncrement_getContextSize
+80019b84   EDMA_UTILS_autoIncrement_init
+8001c6bc   EDMA_UTILS_autoIncrement_triggerInChannel
+8001c5c4   EDMA_UTILS_autoIncrement_triggerOutChannel
+800146f0   EDMA_UTILS_autoIncrement_update
+8001d74c   EDMA_UTILS_autoIncrement_waitInChannel
+8001d6ac   EDMA_UTILS_autoIncrement_waitOutChannel
+8001451c   EDMA_UTILS_globalReset
+80014220   EDMA_UTILS_memcpy2D
+80015668   EDMA_UTILS_scattherGather_getContextSize
+80015670   EDMA_UTILS_scattherGather_init
+8001c77c   EDMA_UTILS_scattherGather_updateNtrigger
+8001d79c   EDMA_UTILS_scattherGather_wait
+8000aad8   EVE_PROGCACHE_Prefetch
+8000aa10   EVE_SCTM_CounterConfig
+80014000   EVE_SCTM_CounterRead
+8000ac38   EVE_SCTM_CounterTimerEnable
+8000adf4   EVE_SCTM_Enable
+8000ac64   EVE_SCTM_InpEvtSelect
+8000adac   EVE_SCTM_OverflowCheck
+8000ac90   EVE_SCTM_SamplingSelect
+80011544   HOSTclose
+80010304   HOSTlseek
+80010840   HOSTopen
+80010a00   HOSTread
+8001046c   HOSTrename
+80011364   HOSTunlink
+80010d60   HOSTwrite
+00000000   IMEMH_SIZE
+00000000   IMEML_SIZE
+40026698   MERGE_FRAME
+4002669c   MERGE_FRAME_UV
+8000ad28   PRINTF
+4002668c   REF_DST
+40026690   REF_DST_UV
+40024000   REMAP_MERGE_DMEM_SCRATCH
+40026378   REMAP_MERGE_TI_IRES
+4002634c   REMAP_MERGE_TI_VISION_FXNS
+8001417c   REMAP_MERGE_TI_activate
+8000a3e0   REMAP_MERGE_TI_alloc
+8000ae84   REMAP_MERGE_TI_control
+8001870c   REMAP_MERGE_TI_deactivate
+80014314   REMAP_MERGE_TI_execute
+8000adc4   REMAP_MERGE_TI_free
+8000ad90   REMAP_MERGE_TI_getGraphMemReq
+800075c8   REMAP_MERGE_TI_graphCreate
+800142b0   REMAP_MERGE_TI_graphDmaControl
+8000a02c   REMAP_MERGE_TI_init
+8000ae88   REMAP_MERGE_TI_numAlloc
+80014018   REMAP_MERGE_TI_process
+4002667c   SRC
+40026694   SRC_BLK_MAP
+40026680   SRC_UV
+8000ad4c   TEST_PRINTF
+8000ae60   TI_CreateMemoryHandle
+8000a968   TI_GetMemoryChunk
+8000ae6c   TI_ResetMemoryHandle
+00000000   WMEM_SIZE
+40026404   __CIOBUF_
+UNDEFED    __TI_CINIT_Base
+UNDEFED    __TI_CINIT_Limit
+UNDEFED    __TI_Handler_Table_Base
+UNDEFED    __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+40024000   __TI_STACK_END
+00004000   __TI_STACK_SIZE
+40026070   __TI_STATIC_BASE
+01c00000   __TI_SYSMEM_SIZE
+00000001   __TI_args_main
+00000001   __TI_exit
+80012170   __arp32abi_abort_msg
+8000e760   __arp32abi_addd
+8000d3ec   __arp32abi_addf
+80012380   __arp32abi_addll
+8000fffc   __arp32abi_cmpd
+800115b8   __arp32abi_cmpf
+800122f8   __arp32abi_cmplls
+8001231c   __arp32abi_cmpllu
+80010a90   __arp32abi_cvtdf
+80010ef8   __arp32abi_cvtfd
+8000de54   __arp32abi_divd
+8000bac0   __arp32abi_divf
+8000e038   __arp32abi_divull
+800110f8   __arp32abi_fixdi
+80010f78   __arp32abi_fixfu
+8000ff28   __arp32abi_fixfull
+80011858   __arp32abi_fltid
+80011ca0   __arp32abi_fltif
+80012080   __arp32abi_fltuf
+80011174   __arp32abi_fltullf
+80011ee0   __arp32abi_frcmpyf_div
+80011be8   __arp32abi_isinf
+80011b28   __arp32abi_llshl
+80012218   __arp32abi_llshru
+8000e3d0   __arp32abi_mpyd
+8000edb4   __arp32abi_mpyf
+8000f1d4   __arp32abi_mpyll
+800122a8   __arp32abi_negd
+800123f8   __arp32abi_negll
+800121a8   __arp32abi_remull
+800120f8   __arp32abi_strasgi
+8001227c   __arp32abi_subd
+80012340   __arp32abi_subf
+800123d0   __arp32abi_subll
+ffffffff   __binit__
+ffffffff   __c_args__
+0000037c   _algo_fardata_size
+000001aa   _algo_neardata_size
+00000000   _algo_text_size
+80012000   _args_main
+800116a0   _auto_init
+000000f0   _bam_fardata_size
+000001e5   _bam_neardata_size
+00000000   _bam_text_size
+80010708   _buff_read
+800118c0   _c_int00
+80011df4   _cleanup
+81c9d790   _cleanup_ptr
+800111f0   _closefile
+40025e00   _ctypes_
+80011b88   _doflush
+81c9d794   _dtors_ptr
+80000120   _dummy_handler
+8000ef18   _frcaddd
+8000dc54   _frcdivd
+8000f470   _frcmpyd
+80011780   _frcmpyf
+81c9d960   _ft_end
+81c9d7a0   _ftable
+81c9d958   _lock
+800122d0   _mpyl
+400266ac   _my_stack
+80012490   _nop
+8000d1c0   _printfi
+800117ec   _rd_ok
+80011d4c   _renormd
+80000100   _reset_handler
+00000290   _rts_fardata_size
+0000026e   _rts_neardata_size
+0000760c   _rts_text_size
+8000ae8c   _scanfi
+40020000   _stack
+000001f4   _starterware_fardata_size
+00000110   _starterware_neardata_size
+00000000   _starterware_text_size
+80030000   _sys_memory
+80012494   _system_pre_init
+00009d8c   _text_size
+81c9d6e4   _tmpnams
+81c9d95c   _unlock
+80000000   _vec_table
+80010bb0   _wrt_ok
+80012488   abort
+8001126c   atoi
+8000970c   bam_getMemPacket
+8000a900   bam_mcheck
+800095bc   bam_mem_alloc
+80009e6c   bam_mem_free
+8000a338   bam_minit
+8000a47c   bam_releaseMemPacket
+4002607c   bam_stat_num_packets
+ffffffff   binit
+80010dec   close
+80004944   convertMap_bbApproach
+8000a624   convertMap_bbApproach_getMemorysizeBlockMap
+80002da0   convertMap_tileApproach
+800066a8   convertMap_tileApproach_getMemorysizeBlockMap
+81c9d964   errno
+80011da0   exit
+8001224c   fclose
+800112e8   fflush
+800123b8   fgets
+80012134   fopen
+8001162c   fprintf
+8000fd64   fputc
+8000ec44   fputs
+8000f32c   fread
+800123e4   free
+80010c40   fseek
+80010cd0   ftell
+8000d830   fwrite
+81c9d654   gBAM_TI_alphaBlendYUV420nv12ExecFunc
+81c9d5c0   gBAM_TI_alphaBlendYUV420nv12HelperFunc
+81c9d5ac   gBAM_TI_alphaBlendYUV420nv12Kernel
+81c9d66c   gBAM_TI_alphaBlendYUV422iExecFunc
+81c9d5dc   gBAM_TI_alphaBlendYUV422iHelperFunc
+81c9d5c8   gBAM_TI_alphaBlendYUV422iKernel
+81c9d380   gBAM_TI_dmaCustomRemapMergeBBApproachNodeReadKernel
+81c9d3b4   gBAM_TI_dmaCustomRemapMergeBBApproachNodeReadKernelExecFunc
+81c9d3e0   gBAM_TI_dmaCustomRemapMergeBBApproachNodeWriteKernel
+81c9d414   gBAM_TI_dmaCustomRemapMergeBBApproachNodeWriteKernelExecFunc
+81c9d394   gBAM_TI_dmaCustomRemapMergeNodeReadKernelHelperFunc
+81c9d3f4   gBAM_TI_dmaCustomRemapMergeNodeWriteKernelHelperFunc
+81c9d36c   gBAM_TI_dmaCustomRemapMergeTileApproachNodeReadKernel
+81c9d39c   gBAM_TI_dmaCustomRemapMergeTileApproachNodeReadKernelExecFunc
+81c9d3cc   gBAM_TI_dmaCustomRemapMergeTileApproachNodeWriteKernel
+81c9d3fc   gBAM_TI_dmaCustomRemapMergeTileApproachNodeWriteKernelExecFunc
+81c9d684   gBAM_TI_memcpyExecFunc
+81c9d5f8   gBAM_TI_memcpyHelperFunc
+81c9d5e4   gBAM_TI_memcpyKernel
+81c9d69c   gBAM_TI_remapExecFunc
+81c9d614   gBAM_TI_remapHelperFunc
+81c9d600   gBAM_TI_remapKernel
+81c9d588   gBAM_TI_remapMergeExecFunc
+81c9d580   gBAM_TI_remapMergeHelperFunc
+81c9d56c   gBAM_TI_remapMergeKernel
+81c9d6b4   gBAM_TI_yuv420nv12_to_422uyvyExecFunc
+81c9d630   gBAM_TI_yuv420nv12_to_422uyvyHelperFunc
+81c9d61c   gBAM_TI_yuv420nv12_to_422uyvyKernel
+81c9d6cc   gBAM_TI_yuv422uyvy_to_420nv12ExecFunc
+81c9d64c   gBAM_TI_yuv422uyvy_to_420nv12HelperFunc
+81c9d638   gBAM_TI_yuv422uyvy_to_420nv12Kernel
+81c95210   gConfig_remapMerge
+400265cc   gDmaUtilsStateStruct
+40026630   gEdmaCc
+81c9d5a0   gRemapMerge_TI_BAM_kernelDBdef
+81c9bb48   gTest_TI_profileSctm
+40026660   gTest_TI_profileTsc
+81c9bb68   gsTokenMap_remapMerge
+80011928   lseek
+80011ac4   ltoa
+80008c04   main
+80011e94   malloc
+81c9bb58   memObj_DMEM
+800100c8   mem_alloc
+8001096c   mem_free
+80012360   memccpy
+8000fe4c   memcpy
+800105c0   memset
+800114cc   minit
+8000fc78   open
+80011078   printf
+80007c8c   printparams
+800087e0   profiler_end
+8000ae08   profiler_end_print
+8000addc   profiler_getSP
+8000a894   profiler_getStackDepth
+8000a1c8   profiler_init
+8000abb0   profiler_initStack
+8000ab10   profiler_printStatus
+8000aa58   profiler_start
+8000a9c0   profiler_testCaseInfo
+80011990   read
+80011f28   readmsg
+80009f54   readparamfile
+8000a6a8   remapBilinearInterpolate
+80001100   remapMergeTest
+400266aa   remapMerge_numTestCases
+80005504   remapNatc
+40026258   remapNumTiles
+8001247c   remove
+80009468   report_printAppletInfo
+8000f958   setvbuf
+81c30000   smallMap_int
+80012040   sprintf
+800121e0   sscanf
+80002014   statCollectorControl
+8000a824   statCollectorInit
+8000b384   strtod
+8000e204   strtol
+8000b724   strtold
+8000be24   strtoll
+8000e918   strtoul
+8000cf74   strtoull
+8000ab48   testPrintFooter
+8000a72c   testPrintHeader
+80008280   testPrintResults
+4002663c   test_module_cyles
+80011f70   unlink
+80017c94   vcop_alpha_blend_yuv420nv12_init
+80017dec   vcop_alpha_blend_yuv420nv12_param_count
+8001d5e0   vcop_alpha_blend_yuv420nv12_vloops
+80017e34   vcop_alpha_blend_yuv422i_init
+80017ee0   vcop_alpha_blend_yuv422i_param_count
+8001d664   vcop_alpha_blend_yuv422i_vloops
+800165ec   vcop_bilinearInterpolate16b_init
+8001680c   vcop_bilinearInterpolate16b_param_count
+8001cd88   vcop_bilinearInterpolate16b_vloops
+80016814   vcop_bilinearInterpolate8b_init
+80016a28   vcop_bilinearInterpolate8b_param_count
+8001ce48   vcop_bilinearInterpolate8b_vloops
+80018284   vcop_bilinearInterpolateLumaPblockUpdate_init
+800186b0   vcop_bilinearInterpolateLumaPblockUpdate_param_count
+8001cb68   vcop_bilinearInterpolateLumaPblockUpdate_vloops
+80019624   vcop_bilinearInterpolateYUV420SPchromaBB_init
+80019db8   vcop_bilinearInterpolateYUV420SPchromaBB_param_count
+8001d9a4   vcop_bilinearInterpolateYUV420SPchromaBB_vloops
+8001831c   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_init
+800186b4   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_param_count
+8001caa8   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_vloops
+800177c8   vcop_bilinearInterpolateYUV420SPchroma_init
+80017aa0   vcop_bilinearInterpolateYUV420SPchroma_param_count
+8001d08c   vcop_bilinearInterpolateYUV420SPchroma_vloops
+800183e0   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_init
+800186b8   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_param_count
+8001cbbc   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_vloops
+800181ac   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_init
+80018698   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_param_count
+8001ca38   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_vloops
+80016a30   vcop_bilinearInterpolateYUV422Ichroma_init
+80016c90   vcop_bilinearInterpolateYUV422Ichroma_param_count
+8001cf08   vcop_bilinearInterpolateYUV422Ichroma_vloops
+80016c98   vcop_bilinearInterpolateYUV422Iluma_init
+80016eb4   vcop_bilinearInterpolateYUV422Iluma_param_count
+8001cfc4   vcop_bilinearInterpolateYUV422Iluma_vloops
+80019848   vcop_chromaTLUIndexCalcBilInterpolateBB_init
+80019dc0   vcop_chromaTLUIndexCalcBilInterpolateBB_param_count
+8001da60   vcop_chromaTLUIndexCalcBilInterpolateBB_vloops
+80018608   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_init
+800186bc   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_param_count
+8001cca8   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_vloops
+800171c8   vcop_chromaTLUIndexCalcBilInterpolate_init
+800172d4   vcop_chromaTLUIndexCalcBilInterpolate_param_count
+8001d26c   vcop_chromaTLUIndexCalcBilInterpolate_vloops
+80019c6c   vcop_chromaTLUIndexCalcNNInterpolateBB_init
+80019b80   vcop_chromaTLUIndexCalcNNInterpolateBB_param_count
+8001daec   vcop_chromaTLUIndexCalcNNInterpolateBB_vloops
+80018650   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_init
+800186c0   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_param_count
+8001ccdc   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_vloops
+800172dc   vcop_chromaTLUIndexCalcNNInterpolate_init
+800173f4   vcop_chromaTLUIndexCalcNNInterpolate_param_count
+8001d30c   vcop_chromaTLUIndexCalcNNInterpolate_vloops
+80016524   vcop_deInterleaveYUV422IBE_init
+80016584   vcop_deInterleaveYUV422IBE_param_count
+8001cd30   vcop_deInterleaveYUV422IBE_vloops
+80016588   vcop_deInterleaveYUV422ILE_init
+800165e8   vcop_deInterleaveYUV422ILE_param_count
+8001cd5c   vcop_deInterleaveYUV422ILE_vloops
+80019974   vcop_dsTLUindexAndFracBilInterpolateBB_init
+80019dc8   vcop_dsTLUindexAndFracBilInterpolateBB_param_count
+8001db6c   vcop_dsTLUindexAndFracBilInterpolateBB_vloops
+80017fcc   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_init
+800186a0   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_param_count
+8001c928   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_vloops
+800173fc   vcop_dsTLUindexAndFracBilInterpolate_init
+80017650   vcop_dsTLUindexAndFracBilInterpolate_param_count
+8001d3d0   vcop_dsTLUindexAndFracBilInterpolate_vloops
+80019d2c   vcop_dsTLUindexAndFracNNInterpolateBB_init
+80019dd0   vcop_dsTLUindexAndFracNNInterpolateBB_param_count
+8001dbe4   vcop_dsTLUindexAndFracNNInterpolateBB_vloops
+800180bc   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_init
+800186a8   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_param_count
+8001c9b0   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_vloops
+80017658   vcop_dsTLUindexAndFracNNInterpolate_init
+800177c0   vcop_dsTLUindexAndFracNNInterpolate_param_count
+8001d4c4   vcop_dsTLUindexAndFracNNInterpolate_vloops
+800186c8   vcop_memcpy_init
+800186c4   vcop_memcpy_param_count
+8001cd10   vcop_memcpy_vloops
+80019b18   vcop_nnInterpolate420SPchromaBB_init
+80019dd4   vcop_nnInterpolate420SPchromaBB_param_count
+8001dcec   vcop_nnInterpolate420SPchromaBB_vloops
+80018518   vcop_nnInterpolate420SPchromaPblockUpdate_init
+80018700   vcop_nnInterpolate420SPchromaPblockUpdate_param_count
+8001cc18   vcop_nnInterpolate420SPchromaPblockUpdate_vloops
+80016ebc   vcop_nnInterpolate420SPchroma_init
+80016fb0   vcop_nnInterpolate420SPchroma_param_count
+8001d168   vcop_nnInterpolate420SPchroma_vloops
+80019a54   vcop_nnInterpolate422IchromaBB_init
+80019dd8   vcop_nnInterpolate422IchromaBB_param_count
+8001dc48   vcop_nnInterpolate422IchromaBB_vloops
+800185a4   vcop_nnInterpolate422IchromaUPblockUpdate_init
+80018704   vcop_nnInterpolate422IchromaUPblockUpdate_param_count
+8001cc68   vcop_nnInterpolate422IchromaUPblockUpdate_vloops
+80018480   vcop_nnInterpolate422IchromaVPblockUpdate_init
+80018708   vcop_nnInterpolate422IchromaVPblockUpdate_param_count
+8001cb14   vcop_nnInterpolate422IchromaVPblockUpdate_vloops
+80016fb8   vcop_nnInterpolate422Ichroma_init
+800170a8   vcop_nnInterpolate422Ichroma_param_count
+8001d1b8   vcop_nnInterpolate422Ichroma_vloops
+800170b0   vcop_nnInterpolate8b_init
+800171c0   vcop_nnInterpolate8b_param_count
+8001d200   vcop_nnInterpolate8b_vloops
+8001dcc0   vcop_remap_bb_approach
+80019010   vcop_remap_bb_approach_init
+8001dc88   vcop_remap_tile_approach
+80018764   vcop_remap_tile_approach_init
+80017ad4   vcop_yuv_420nv12_to_422uyvy_init
+80017b68   vcop_yuv_420nv12_to_422uyvy_param_count
+8001d57c   vcop_yuv_420nv12_to_422uyvy_vloops
+80017b98   vcop_yuv_422uyvy_to_420nv12_init
+80017c50   vcop_yuv_422uyvy_to_420nv12_param_count
+8001d5b0   vcop_yuv_422uyvy_to_420nv12_vloops
+80011710   vfprintf
+800119f8   write
+80011fb8   writemsg
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IMEMH_SIZE
+00000000   IMEML_SIZE
+00000000   WMEM_SIZE
+00000000   _algo_text_size
+00000000   _bam_text_size
+00000000   _starterware_text_size
+00000001   __TI_args_main
+00000001   __TI_exit
+000000f0   _bam_fardata_size
+00000110   _starterware_neardata_size
+000001aa   _algo_neardata_size
+000001e5   _bam_neardata_size
+000001f4   _starterware_fardata_size
+0000026e   _rts_neardata_size
+00000290   _rts_fardata_size
+0000037c   _algo_fardata_size
+00004000   __TI_STACK_SIZE
+0000760c   _rts_text_size
+00009d8c   _text_size
+01c00000   __TI_SYSMEM_SIZE
+40020000   _stack
+40024000   REMAP_MERGE_DMEM_SCRATCH
+40024000   __TI_STACK_END
+40025e00   _ctypes_
+40026070   __TI_STATIC_BASE
+4002607c   bam_stat_num_packets
+40026258   remapNumTiles
+4002634c   REMAP_MERGE_TI_VISION_FXNS
+40026378   REMAP_MERGE_TI_IRES
+40026404   __CIOBUF_
+400265cc   gDmaUtilsStateStruct
+40026630   gEdmaCc
+4002663c   test_module_cyles
+40026660   gTest_TI_profileTsc
+4002667c   SRC
+40026680   SRC_UV
+40026684   DST
+40026688   DST_UV
+4002668c   REF_DST
+40026690   REF_DST_UV
+40026694   SRC_BLK_MAP
+40026698   MERGE_FRAME
+4002669c   MERGE_FRAME_UV
+400266a0   ALPHA
+400266aa   remapMerge_numTestCases
+400266ac   _my_stack
+80000000   _vec_table
+80000100   _reset_handler
+80000120   _dummy_handler
+80001100   remapMergeTest
+80002014   statCollectorControl
+80002da0   convertMap_tileApproach
+800039ac   BAM_initGraph
+80004944   convertMap_bbApproach
+80005504   remapNatc
+80006294   BAM_optimizeGraph
+800066a8   convertMap_tileApproach_getMemorysizeBlockMap
+800075c8   REMAP_MERGE_TI_graphCreate
+80007c8c   printparams
+80008280   testPrintResults
+800087e0   profiler_end
+80008c04   main
+80008df4   BAM_createGraph
+80009310   BAM_updateNodes
+80009468   report_printAppletInfo
+800095bc   bam_mem_alloc
+8000970c   bam_getMemPacket
+80009a9c   BAM_getGraphMemSize
+80009d84   BAM_fillKernelInfo
+80009e6c   bam_mem_free
+80009f54   readparamfile
+8000a02c   REMAP_MERGE_TI_init
+8000a1c8   profiler_init
+8000a28c   BAM_copyIntMemRec2ExtMem
+8000a338   bam_minit
+8000a3e0   REMAP_MERGE_TI_alloc
+8000a47c   bam_releaseMemPacket
+8000a598   BAM_copyNodeList
+8000a624   convertMap_bbApproach_getMemorysizeBlockMap
+8000a6a8   remapBilinearInterpolate
+8000a72c   testPrintHeader
+8000a7b0   BAM_initGraphInstance
+8000a824   statCollectorInit
+8000a894   profiler_getStackDepth
+8000a900   bam_mcheck
+8000a968   TI_GetMemoryChunk
+8000a9c0   profiler_testCaseInfo
+8000aa10   EVE_SCTM_CounterConfig
+8000aa58   profiler_start
+8000aaa0   BAM_getMemPacket
+8000aad8   EVE_PROGCACHE_Prefetch
+8000ab10   profiler_printStatus
+8000ab48   testPrintFooter
+8000ab80   BAM_getStats
+8000abb0   profiler_initStack
+8000ac38   EVE_SCTM_CounterTimerEnable
+8000ac64   EVE_SCTM_InpEvtSelect
+8000ac90   EVE_SCTM_SamplingSelect
+8000ad28   PRINTF
+8000ad4c   TEST_PRINTF
+8000ad70   DMA_utils_resetStateStruct
+8000ad90   REMAP_MERGE_TI_getGraphMemReq
+8000adac   EVE_SCTM_OverflowCheck
+8000adc4   REMAP_MERGE_TI_free
+8000addc   profiler_getSP
+8000adf4   EVE_SCTM_Enable
+8000ae08   profiler_end_print
+8000ae54   DMA_resourceAllocator_setEdma3RmHandle
+8000ae60   TI_CreateMemoryHandle
+8000ae6c   TI_ResetMemoryHandle
+8000ae78   EDMA_UTILS_autoIncrement_getContextSize
+8000ae80   EDMA3LLD_SUPPORT_requestResources
+8000ae84   REMAP_MERGE_TI_control
+8000ae88   REMAP_MERGE_TI_numAlloc
+8000ae8c   _scanfi
+8000b384   strtod
+8000b724   strtold
+8000bac0   __arp32abi_divf
+8000be24   strtoll
+8000cf74   strtoull
+8000d1c0   _printfi
+8000d3ec   __arp32abi_addf
+8000d830   fwrite
+8000dc54   _frcdivd
+8000de54   __arp32abi_divd
+8000e038   __arp32abi_divull
+8000e204   strtol
+8000e3d0   __arp32abi_mpyd
+8000e760   __arp32abi_addd
+8000e918   strtoul
+8000ec44   fputs
+8000edb4   __arp32abi_mpyf
+8000ef18   _frcaddd
+8000f1d4   __arp32abi_mpyll
+8000f32c   fread
+8000f470   _frcmpyd
+8000f958   setvbuf
+8000fc78   open
+8000fd64   fputc
+8000fe4c   memcpy
+8000ff28   __arp32abi_fixfull
+8000fffc   __arp32abi_cmpd
+800100c8   mem_alloc
+80010304   HOSTlseek
+8001046c   HOSTrename
+800105c0   memset
+80010708   _buff_read
+80010840   HOSTopen
+8001096c   mem_free
+80010a00   HOSTread
+80010a90   __arp32abi_cvtdf
+80010bb0   _wrt_ok
+80010c40   fseek
+80010cd0   ftell
+80010d60   HOSTwrite
+80010dec   close
+80010ef8   __arp32abi_cvtfd
+80010f78   __arp32abi_fixfu
+80011078   printf
+800110f8   __arp32abi_fixdi
+80011174   __arp32abi_fltullf
+800111f0   _closefile
+8001126c   atoi
+800112e8   fflush
+80011364   HOSTunlink
+800114cc   minit
+80011544   HOSTclose
+800115b8   __arp32abi_cmpf
+8001162c   fprintf
+800116a0   _auto_init
+80011710   vfprintf
+80011780   _frcmpyf
+800117ec   _rd_ok
+80011858   __arp32abi_fltid
+800118c0   _c_int00
+80011928   lseek
+80011990   read
+800119f8   write
+80011ac4   ltoa
+80011b28   __arp32abi_llshl
+80011b88   _doflush
+80011be8   __arp32abi_isinf
+80011ca0   __arp32abi_fltif
+80011d4c   _renormd
+80011da0   exit
+80011df4   _cleanup
+80011e94   malloc
+80011ee0   __arp32abi_frcmpyf_div
+80011f28   readmsg
+80011f70   unlink
+80011fb8   writemsg
+80011ff8   C$$IO$$
+80012000   _args_main
+80012040   sprintf
+80012080   __arp32abi_fltuf
+800120f8   __arp32abi_strasgi
+80012134   fopen
+80012170   __arp32abi_abort_msg
+800121a8   __arp32abi_remull
+800121e0   sscanf
+80012218   __arp32abi_llshru
+8001224c   fclose
+8001227c   __arp32abi_subd
+800122a8   __arp32abi_negd
+800122d0   _mpyl
+800122f8   __arp32abi_cmplls
+8001231c   __arp32abi_cmpllu
+80012340   __arp32abi_subf
+80012360   memccpy
+80012380   __arp32abi_addll
+800123b8   fgets
+800123d0   __arp32abi_subll
+800123e4   free
+800123f8   __arp32abi_negll
+8001247c   remove
+80012488   C$$EXIT
+80012488   abort
+80012490   _nop
+80012494   _system_pre_init
+80014000   EVE_SCTM_CounterRead
+80014018   REMAP_MERGE_TI_process
+8001417c   REMAP_MERGE_TI_activate
+80014220   EDMA_UTILS_memcpy2D
+800142b0   REMAP_MERGE_TI_graphDmaControl
+800142d8   BAM_controlNode
+80014314   REMAP_MERGE_TI_execute
+80014334   BAM_process
+80014464   BAM_getKernelsExecCycles
+80014474   BAM_getKernelsInitCycles
+80014484   BAM_ARP32_computeWrapper
+8001451c   EDMA_UTILS_globalReset
+800146f0   EDMA_UTILS_autoIncrement_update
+80014f78   EDMA_UTILS_autoIncrement1D_getContextSize
+80014f80   EDMA_UTILS_autoIncrement1D_init
+80015038   EDMA_UTILS_autoIncrement1D_update
+800151a4   EDMA_UTILS_autoIncrement1D_configure
+80015668   EDMA_UTILS_scattherGather_getContextSize
+80015670   EDMA_UTILS_scattherGather_init
+800157e8   EDMA_UTILS_autoIncrement_configure
+80015d48   DMA_resourceAllocator_initResources
+80015d74   DMA_resourceAllocator_allocateResources
+80015eec   DMA_funcs_hardwareRegSetup
+800160b0   DMA_funcs_writeTransferParams
+80016124   DMA_utils_updateStateStruct
+80016304   BAM_initKernelDB
+80016524   vcop_deInterleaveYUV422IBE_init
+80016584   vcop_deInterleaveYUV422IBE_param_count
+80016588   vcop_deInterleaveYUV422ILE_init
+800165e8   vcop_deInterleaveYUV422ILE_param_count
+800165ec   vcop_bilinearInterpolate16b_init
+8001680c   vcop_bilinearInterpolate16b_param_count
+80016814   vcop_bilinearInterpolate8b_init
+80016a28   vcop_bilinearInterpolate8b_param_count
+80016a30   vcop_bilinearInterpolateYUV422Ichroma_init
+80016c90   vcop_bilinearInterpolateYUV422Ichroma_param_count
+80016c98   vcop_bilinearInterpolateYUV422Iluma_init
+80016eb4   vcop_bilinearInterpolateYUV422Iluma_param_count
+80016ebc   vcop_nnInterpolate420SPchroma_init
+80016fb0   vcop_nnInterpolate420SPchroma_param_count
+80016fb8   vcop_nnInterpolate422Ichroma_init
+800170a8   vcop_nnInterpolate422Ichroma_param_count
+800170b0   vcop_nnInterpolate8b_init
+800171c0   vcop_nnInterpolate8b_param_count
+800171c8   vcop_chromaTLUIndexCalcBilInterpolate_init
+800172d4   vcop_chromaTLUIndexCalcBilInterpolate_param_count
+800172dc   vcop_chromaTLUIndexCalcNNInterpolate_init
+800173f4   vcop_chromaTLUIndexCalcNNInterpolate_param_count
+800173fc   vcop_dsTLUindexAndFracBilInterpolate_init
+80017650   vcop_dsTLUindexAndFracBilInterpolate_param_count
+80017658   vcop_dsTLUindexAndFracNNInterpolate_init
+800177c0   vcop_dsTLUindexAndFracNNInterpolate_param_count
+800177c8   vcop_bilinearInterpolateYUV420SPchroma_init
+80017aa0   vcop_bilinearInterpolateYUV420SPchroma_param_count
+80017ad4   vcop_yuv_420nv12_to_422uyvy_init
+80017b68   vcop_yuv_420nv12_to_422uyvy_param_count
+80017b98   vcop_yuv_422uyvy_to_420nv12_init
+80017c50   vcop_yuv_422uyvy_to_420nv12_param_count
+80017c94   vcop_alpha_blend_yuv420nv12_init
+80017dec   vcop_alpha_blend_yuv420nv12_param_count
+80017e34   vcop_alpha_blend_yuv422i_init
+80017ee0   vcop_alpha_blend_yuv422i_param_count
+80017fcc   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_init
+800180bc   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_init
+800181ac   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_init
+80018284   vcop_bilinearInterpolateLumaPblockUpdate_init
+8001831c   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_init
+800183e0   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_init
+80018480   vcop_nnInterpolate422IchromaVPblockUpdate_init
+80018518   vcop_nnInterpolate420SPchromaPblockUpdate_init
+800185a4   vcop_nnInterpolate422IchromaUPblockUpdate_init
+80018608   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_init
+80018650   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_init
+80018698   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_param_count
+800186a0   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_param_count
+800186a8   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_param_count
+800186b0   vcop_bilinearInterpolateLumaPblockUpdate_param_count
+800186b4   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_param_count
+800186b8   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_param_count
+800186bc   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_param_count
+800186c0   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_param_count
+800186c4   vcop_memcpy_param_count
+800186c8   vcop_memcpy_init
+80018700   vcop_nnInterpolate420SPchromaPblockUpdate_param_count
+80018704   vcop_nnInterpolate422IchromaUPblockUpdate_param_count
+80018708   vcop_nnInterpolate422IchromaVPblockUpdate_param_count
+8001870c   REMAP_MERGE_TI_deactivate
+80018764   vcop_remap_tile_approach_init
+80019010   vcop_remap_bb_approach_init
+80019624   vcop_bilinearInterpolateYUV420SPchromaBB_init
+80019848   vcop_chromaTLUIndexCalcBilInterpolateBB_init
+80019974   vcop_dsTLUindexAndFracBilInterpolateBB_init
+80019a54   vcop_nnInterpolate422IchromaBB_init
+80019b18   vcop_nnInterpolate420SPchromaBB_init
+80019b80   vcop_chromaTLUIndexCalcNNInterpolateBB_param_count
+80019b84   EDMA_UTILS_autoIncrement_init
+80019c6c   vcop_chromaTLUIndexCalcNNInterpolateBB_init
+80019d2c   vcop_dsTLUindexAndFracNNInterpolateBB_init
+80019db8   vcop_bilinearInterpolateYUV420SPchromaBB_param_count
+80019dc0   vcop_chromaTLUIndexCalcBilInterpolateBB_param_count
+80019dc8   vcop_dsTLUindexAndFracBilInterpolateBB_param_count
+80019dd0   vcop_dsTLUindexAndFracNNInterpolateBB_param_count
+80019dd4   vcop_nnInterpolate420SPchromaBB_param_count
+80019dd8   vcop_nnInterpolate422IchromaBB_param_count
+8001c5c0   BAM_dummyKernelFunc
+8001c5c4   EDMA_UTILS_autoIncrement_triggerOutChannel
+8001c6a0   EDMA_UTILS_autoIncrement1D_triggerInChannel
+8001c6bc   EDMA_UTILS_autoIncrement_triggerInChannel
+8001c77c   EDMA_UTILS_scattherGather_updateNtrigger
+8001c928   vcop_dsTLUindexAndFracBilInterpolatePblockUpdate_vloops
+8001c9b0   vcop_dsTLUindexAndFracNNInterpolatePblockUpdate_vloops
+8001ca38   vcop_bilinearInterpolateYUV422IchromaVPblockUpdate_vloops
+8001caa8   vcop_bilinearInterpolateYUV420SPchromaPblockUpdate_vloops
+8001cb14   vcop_nnInterpolate422IchromaVPblockUpdate_vloops
+8001cb68   vcop_bilinearInterpolateLumaPblockUpdate_vloops
+8001cbbc   vcop_bilinearInterpolateYUV422IchromaUPblockUpdate_vloops
+8001cc18   vcop_nnInterpolate420SPchromaPblockUpdate_vloops
+8001cc68   vcop_nnInterpolate422IchromaUPblockUpdate_vloops
+8001cca8   vcop_chromaTLUIndexCalcBilInterpolatePblockUpdate_vloops
+8001ccdc   vcop_chromaTLUIndexCalcNNInterpolatePblockUpdate_vloops
+8001cd10   vcop_memcpy_vloops
+8001cd30   vcop_deInterleaveYUV422IBE_vloops
+8001cd5c   vcop_deInterleaveYUV422ILE_vloops
+8001cd88   vcop_bilinearInterpolate16b_vloops
+8001ce48   vcop_bilinearInterpolate8b_vloops
+8001cf08   vcop_bilinearInterpolateYUV422Ichroma_vloops
+8001cfc4   vcop_bilinearInterpolateYUV422Iluma_vloops
+8001d08c   vcop_bilinearInterpolateYUV420SPchroma_vloops
+8001d168   vcop_nnInterpolate420SPchroma_vloops
+8001d1b8   vcop_nnInterpolate422Ichroma_vloops
+8001d200   vcop_nnInterpolate8b_vloops
+8001d26c   vcop_chromaTLUIndexCalcBilInterpolate_vloops
+8001d30c   vcop_chromaTLUIndexCalcNNInterpolate_vloops
+8001d3d0   vcop_dsTLUindexAndFracBilInterpolate_vloops
+8001d4c4   vcop_dsTLUindexAndFracNNInterpolate_vloops
+8001d57c   vcop_yuv_420nv12_to_422uyvy_vloops
+8001d5b0   vcop_yuv_422uyvy_to_420nv12_vloops
+8001d5e0   vcop_alpha_blend_yuv420nv12_vloops
+8001d664   vcop_alpha_blend_yuv422i_vloops
+8001d6ac   EDMA_UTILS_autoIncrement_waitOutChannel
+8001d718   EDMA_UTILS_autoIncrement1D_waitInChannel
+8001d74c   EDMA_UTILS_autoIncrement_waitInChannel
+8001d79c   EDMA_UTILS_scattherGather_wait
+8001d9a4   vcop_bilinearInterpolateYUV420SPchromaBB_vloops
+8001da60   vcop_chromaTLUIndexCalcBilInterpolateBB_vloops
+8001daec   vcop_chromaTLUIndexCalcNNInterpolateBB_vloops
+8001db6c   vcop_dsTLUindexAndFracBilInterpolateBB_vloops
+8001dbe4   vcop_dsTLUindexAndFracNNInterpolateBB_vloops
+8001dc48   vcop_nnInterpolate422IchromaBB_vloops
+8001dc88   vcop_remap_tile_approach
+8001dcc0   vcop_remap_bb_approach
+8001dcec   vcop_nnInterpolate420SPchromaBB_vloops
+80030000   _sys_memory
+81c30000   smallMap_int
+81c95210   gConfig_remapMerge
+81c9bb48   gTest_TI_profileSctm
+81c9bb58   memObj_DMEM
+81c9bb68   gsTokenMap_remapMerge
+81c9d36c   gBAM_TI_dmaCustomRemapMergeTileApproachNodeReadKernel
+81c9d380   gBAM_TI_dmaCustomRemapMergeBBApproachNodeReadKernel
+81c9d394   gBAM_TI_dmaCustomRemapMergeNodeReadKernelHelperFunc
+81c9d39c   gBAM_TI_dmaCustomRemapMergeTileApproachNodeReadKernelExecFunc
+81c9d3b4   gBAM_TI_dmaCustomRemapMergeBBApproachNodeReadKernelExecFunc
+81c9d3cc   gBAM_TI_dmaCustomRemapMergeTileApproachNodeWriteKernel
+81c9d3e0   gBAM_TI_dmaCustomRemapMergeBBApproachNodeWriteKernel
+81c9d3f4   gBAM_TI_dmaCustomRemapMergeNodeWriteKernelHelperFunc
+81c9d3fc   gBAM_TI_dmaCustomRemapMergeTileApproachNodeWriteKernelExecFunc
+81c9d414   gBAM_TI_dmaCustomRemapMergeBBApproachNodeWriteKernelExecFunc
+81c9d56c   gBAM_TI_remapMergeKernel
+81c9d580   gBAM_TI_remapMergeHelperFunc
+81c9d588   gBAM_TI_remapMergeExecFunc
+81c9d5a0   gRemapMerge_TI_BAM_kernelDBdef
+81c9d5ac   gBAM_TI_alphaBlendYUV420nv12Kernel
+81c9d5c0   gBAM_TI_alphaBlendYUV420nv12HelperFunc
+81c9d5c8   gBAM_TI_alphaBlendYUV422iKernel
+81c9d5dc   gBAM_TI_alphaBlendYUV422iHelperFunc
+81c9d5e4   gBAM_TI_memcpyKernel
+81c9d5f8   gBAM_TI_memcpyHelperFunc
+81c9d600   gBAM_TI_remapKernel
+81c9d614   gBAM_TI_remapHelperFunc
+81c9d61c   gBAM_TI_yuv420nv12_to_422uyvyKernel
+81c9d630   gBAM_TI_yuv420nv12_to_422uyvyHelperFunc
+81c9d638   gBAM_TI_yuv422uyvy_to_420nv12Kernel
+81c9d64c   gBAM_TI_yuv422uyvy_to_420nv12HelperFunc
+81c9d654   gBAM_TI_alphaBlendYUV420nv12ExecFunc
+81c9d66c   gBAM_TI_alphaBlendYUV422iExecFunc
+81c9d684   gBAM_TI_memcpyExecFunc
+81c9d69c   gBAM_TI_remapExecFunc
+81c9d6b4   gBAM_TI_yuv420nv12_to_422uyvyExecFunc
+81c9d6cc   gBAM_TI_yuv422uyvy_to_420nv12ExecFunc
+81c9d6e4   _tmpnams
+81c9d790   _cleanup_ptr
+81c9d794   _dtors_ptr
+81c9d7a0   _ftable
+81c9d958   _lock
+81c9d95c   _unlock
+81c9d960   _ft_end
+81c9d964   errno
+81c9d974   CRED_instVirtAddr
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_CINIT_Base
+UNDEFED    __TI_CINIT_Limit
+UNDEFED    __TI_Handler_Table_Base
+UNDEFED    __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[427 symbols]

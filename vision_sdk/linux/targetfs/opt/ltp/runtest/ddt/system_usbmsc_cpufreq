@@ -1,0 +1,7 @@
+# @name Test usb driver while changing cpu frequency
+# @desc Test usb driver while the OPP is changed to cover all possible vallues
+# @requires usb 
+# @setup_requires usbhostmsc 
+
+SYSTEM_L_FUNC_OPP_USB_MSC source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/usbhost_dd_rw_ext2 -P $PLATFORM -s USBHOST_L_FUNC_EXT2_DD_RW_0001 # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC"
+SYSTEM_L_STRESS_OPP_USB_MSC source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -P $PLATFORM -f ddt/usbhost_dd_rw_ext2 -s USBHOST_M_FUNC_EXT2_DD_RW_0007 # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_cpufreq -s POWERMGR_S_FUNC_CPUFREQ_BASIC"

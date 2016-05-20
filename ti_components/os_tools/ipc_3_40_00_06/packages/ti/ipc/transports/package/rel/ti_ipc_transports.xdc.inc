@@ -1,0 +1,17 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+package.bld
+_TransportRpmsg.h
+package/package.cfg.xdc.inc
+lib/debug/ti.ipc.transports.aem4
+package/package_ti.ipc.transports.c
+TransportRpmsgSetup.c
+TransportRpmsg.c
+lib/debug/ti.ipc.transports_rpmsg2.aem4
+lib/release/ti.ipc.transports.aem4
+lib/release/ti.ipc.transports_rpmsg2.aem4
+lib/debug/ti.ipc.transports.ae66
+lib/debug/ti.ipc.transports_rpmsg2.ae66
+lib/release/ti.ipc.transports.ae66
+lib/release/ti.ipc.transports_rpmsg2.ae66

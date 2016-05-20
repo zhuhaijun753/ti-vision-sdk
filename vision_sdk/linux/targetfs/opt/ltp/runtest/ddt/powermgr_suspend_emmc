@@ -1,0 +1,8 @@
+# @name eMMC plus suspend/resume
+# @desc eMMC read write test with whatever fs in card while doing power suspend/resume operations
+# @requires emmc && power_mgr 
+# @setup_requires 
+
+POWERMGR_S_FUNC_EMMC_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/emmc_dd_rw -P $PLATFORM -s 'EMMC_S_FUNC_DD_RW_QUICK '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SIMPLE_SUSPEND ' "
+
+POWERMGR_M_FUNC_EMMC_SUSPEND source "common.sh"; run_processes.sh -c " /opt/ltp/runltp -f ddt/emmc_dd_rw -P $PLATFORM -s 'EMMC_M_FUNC_DD_RW_20TIMES '  # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_L_STRESS_SIMPLE_SUSPEND ' "

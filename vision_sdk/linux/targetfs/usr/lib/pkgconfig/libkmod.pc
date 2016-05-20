@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libkmod
+Description: Library to deal with kernel modules
+Version: 16
+Libs: -L${libdir} -lkmod
+Libs.private:  -L/sdk/glsdk/workdir/glsdk-nightly/release/dra7xx/yocto/tisdk/build/arago-tmp-external-linaro-toolchain/sysroots/dra7xx-evm/usr/lib -lz 
+Cflags: -I${includedir}

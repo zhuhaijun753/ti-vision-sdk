@@ -1,0 +1,16 @@
+Package: m4
+Version: 1.4.9-r2.0
+Description: Traditional Unix macro processor
+ GNU m4 is an implementation of the traditional Unix macro processor.  It
+ is mostly SVR4 compatible although it has some extensions (for example,
+ handling more than 9 positional parameters to macros). GNU M4 also has
+ built-in functions for including files, running shell commands, doing
+ arithmetic, etc.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: m4
+Depends: libgcc-s1 (>= 4.7.3), libc6 (>= 2.15)
+Source: ftp://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz file://fix_for_circular_dependency.patch

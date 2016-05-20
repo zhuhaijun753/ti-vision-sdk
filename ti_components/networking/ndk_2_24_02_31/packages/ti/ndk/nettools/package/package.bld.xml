@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.ndk.nettools" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="config/config.c"/>
+        <srcFile name="daemon/daemon.c"/>
+        <srcFile name="dhcp/dhcpbild.c"/>
+        <srcFile name="dhcp/dhcpmain.c"/>
+        <srcFile name="dhcp/dhcppkt.c"/>
+        <srcFile name="dhcp/dhcpsm.c"/>
+        <srcFile name="dhcp/dhcpsock.c"/>
+        <srcFile name="dhcp/dhcptags.c"/>
+        <srcFile name="dhcps/dhcps.c"/>
+        <srcFile name="dns/dnsclnt.c"/>
+        <srcFile name="dns/dnscomn.c"/>
+        <srcFile name="dns/dnspkt.c"/>
+        <srcFile name="dns/dnssrvr.c"/>
+        <srcFile name="http/http.c"/>
+        <srcFile name="http/httpclie.c"/>
+        <srcFile name="http/httppars.c"/>
+        <srcFile name="http/httpsend.c"/>
+        <srcFile name="http/httpstr.c"/>
+        <srcFile name="inet/inetaddr.c"/>
+        <srcFile name="ipaddr/ipaddr.c"/>
+        <srcFile name="mytime/mytime.c"/>
+        <srcFile name="nat/natsrv.c"/>
+        <srcFile name="sntp/sntp.c"/>
+        <srcFile name="telnet/telnetd.c"/>
+        <srcFile name="tftp/tftp.c"/>
+        <srcFile name="tftp/tftp6.c"/>
+    </sources>
+    <configscripts>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/nettool.ae66.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oe66.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oe66.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oe66.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oe66.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oe66.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oe66.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oe66.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oe66.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oe66.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oe66.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oe66.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oe66.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oe66.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oe66.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oe66.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oe66.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oe66.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oe66.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oe66.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oe66.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oe66.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oe66.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oe66.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oe66.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oe66.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oe66.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oe66.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.ae66.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oe66.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oe66.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oe66.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oe66.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oe66.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oe66.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oe66.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oe66.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oe66.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oe66.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oe66.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oe66.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oe66.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oe66.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oe66.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oe66.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oe66.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oe66.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oe66.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oe66.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oe66.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oe66.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oe66.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oe66.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oe66.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oe66.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oe66.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.ae66e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oe66e.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oe66e.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oe66e.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oe66e.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oe66e.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oe66e.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oe66e.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oe66e.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oe66e.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oe66e.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oe66e.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oe66e.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oe66e.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oe66e.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oe66e.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oe66e.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oe66e.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oe66e.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oe66e.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oe66e.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oe66e.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oe66e.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oe66e.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oe66e.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oe66e.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oe66e.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oe66e.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.ae66e.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oe66e.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oe66e.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oe66e.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oe66e.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oe66e.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oe66e.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oe66e.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oe66e.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oe66e.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oe66e.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oe66e.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oe66e.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oe66e.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oe66e.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oe66e.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oe66e.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oe66e.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oe66e.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oe66e.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oe66e.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oe66e.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oe66e.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oe66e.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oe66e.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oe66e.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oe66e.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oe66e.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oe674.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oe674.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oe674.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oe674.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oe674.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oe674.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oe674.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oe674.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oe674.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oe674.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oe674.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oe674.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oe674.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oe674.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oe674.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oe674.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oe674.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oe674.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oe674.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oe674.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oe674.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oe674.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oe674.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oe674.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oe674.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oe674.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oe674.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.ae674.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oe674.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oe674.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oe674.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oe674.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oe674.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oe674.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oe674.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oe674.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oe674.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oe674.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oe674.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oe674.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oe674.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oe674.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oe674.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oe674.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oe674.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oe674.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oe674.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oe674.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oe674.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oe674.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oe674.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oe674.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oe674.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oe674.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oe674.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.ae9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oe9.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oe9.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oe9.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oe9.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oe9.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oe9.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oe9.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oe9.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oe9.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oe9.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oe9.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oe9.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oe9.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oe9.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oe9.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oe9.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oe9.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oe9.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oe9.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oe9.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oe9.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oe9.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oe9.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oe9.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oe9.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oe9.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oe9.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.ae9.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oe9.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oe9.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oe9.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oe9.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oe9.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oe9.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oe9.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oe9.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oe9.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oe9.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oe9.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oe9.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oe9.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oe9.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oe9.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oe9.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oe9.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oe9.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oe9.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oe9.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oe9.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oe9.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oe9.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oe9.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oe9.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oe9.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oe9.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oea8f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oea8f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oea8f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oea8f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oea8f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oea8f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oea8f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oea8f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oea8f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oea8f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oea8f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oea8f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oea8f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oea8f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oea8f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oea8f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oea8f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oea8f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oea8f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oea8f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oea8f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oea8f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oea8f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oea8f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oea8f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oea8f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oea8f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aea8f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oea8f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oea8f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oea8f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oea8f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oea8f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oea8f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oea8f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oea8f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oea8f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oea8f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oea8f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oea8f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oea8f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oea8f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oea8f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oea8f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oea8f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oea8f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oea8f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oea8f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oea8f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oea8f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oea8f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oea8f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oea8f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oea8f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oea8f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aea8fnv.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oea8fnv.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oea8fnv.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oea8fnv.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oea8fnv.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oea8fnv.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oea8fnv.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oea8fnv.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oea8fnv.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oea8fnv.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oea8fnv.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oea8fnv.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oea8fnv.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oea8fnv.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oea8fnv.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oea8fnv.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oea8fnv.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oea8fnv.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oea8fnv.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oea8fnv.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oea8fnv.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oea8fnv.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oea8fnv.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oea8fnv.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oea8fnv.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oea8fnv.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oea8fnv.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oea8fnv.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aea8fnv.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oea8fnv.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oea8fnv.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oea8fnv.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oea8fnv.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oea8fnv.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oea8fnv.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oea8fnv.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oea8fnv.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oea8fnv.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oea8fnv.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oea8fnv.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oea8fnv.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oea8fnv.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oea8fnv.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oea8fnv.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oea8fnv.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oea8fnv.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oea8fnv.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oea8fnv.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oea8fnv.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oea8fnv.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oea8fnv.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oea8fnv.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oea8fnv.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oea8fnv.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oea8fnv.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oea8fnv.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oem3.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oem3.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oem3.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oem3.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oem3.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oem3.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oem3.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oem3.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oem3.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oem3.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oem3.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oem3.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oem3.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oem3.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oem3.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oem3.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oem3.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oem3.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oem3.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oem3.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oem3.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oem3.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oem3.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oem3.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oem3.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oem3.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oem3.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aem3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oem3.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oem3.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oem3.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oem3.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oem3.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oem3.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oem3.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oem3.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oem3.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oem3.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oem3.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oem3.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oem3.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oem3.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oem3.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oem3.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oem3.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oem3.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oem3.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oem3.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oem3.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oem3.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oem3.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oem3.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oem3.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oem3.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oem3.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oem4.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oem4.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oem4.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oem4.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oem4.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oem4.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oem4.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oem4.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oem4.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oem4.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oem4.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oem4.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oem4.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oem4.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oem4.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oem4.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oem4.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oem4.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oem4.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oem4.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oem4.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oem4.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oem4.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oem4.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oem4.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oem4.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oem4.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aem4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oem4.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oem4.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oem4.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oem4.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oem4.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oem4.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oem4.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oem4.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oem4.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oem4.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oem4.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oem4.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oem4.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oem4.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oem4.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oem4.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oem4.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oem4.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oem4.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oem4.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oem4.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oem4.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oem4.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oem4.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oem4.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oem4.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oem4.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aem4f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oem4f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oem4f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oem4f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oem4f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oem4f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oem4f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oem4f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oem4f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oem4f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oem4f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oem4f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oem4f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oem4f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oem4f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oem4f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oem4f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oem4f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oem4f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oem4f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oem4f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oem4f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oem4f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oem4f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oem4f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oem4f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oem4f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oem4f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aem4f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oem4f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oem4f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oem4f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oem4f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oem4f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oem4f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oem4f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oem4f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oem4f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oem4f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oem4f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oem4f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oem4f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oem4f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oem4f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oem4f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oem4f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oem4f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oem4f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oem4f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oem4f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oem4f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oem4f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oem4f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oem4f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oem4f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oem4f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.am3g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.om3g.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.om3g.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.om3g.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.om3g.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.om3g.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.om3g.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.om3g.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.om3g.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.om3g.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.om3g.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.om3g.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.om3g.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.om3g.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.om3g.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.om3g.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.om3g.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.om3g.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.om3g.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.om3g.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.om3g.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.om3g.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.om3g.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.om3g.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.om3g.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.om3g.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.om3g.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.om3g.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.am3g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.om3g.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.om3g.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.om3g.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.om3g.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.om3g.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.om3g.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.om3g.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.om3g.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.om3g.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.om3g.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.om3g.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.om3g.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.om3g.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.om3g.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.om3g.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.om3g.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.om3g.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.om3g.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.om3g.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.om3g.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.om3g.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.om3g.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.om3g.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.om3g.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.om3g.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.om3g.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.om3g.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.am4g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.om4g.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.om4g.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.om4g.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.om4g.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.om4g.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.om4g.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.om4g.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.om4g.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.om4g.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.om4g.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.om4g.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.om4g.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.om4g.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.om4g.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.om4g.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.om4g.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.om4g.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.om4g.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.om4g.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.om4g.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.om4g.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.om4g.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.om4g.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.om4g.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.om4g.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.om4g.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.om4g.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.am4g.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.om4g.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.om4g.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.om4g.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.om4g.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.om4g.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.om4g.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.om4g.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.om4g.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.om4g.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.om4g.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.om4g.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.om4g.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.om4g.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.om4g.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.om4g.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.om4g.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.om4g.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.om4g.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.om4g.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.om4g.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.om4g.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.om4g.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.om4g.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.om4g.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.om4g.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.om4g.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.om4g.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.am4fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.om4fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.om4fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.om4fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.om4fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.om4fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.om4fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.om4fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.om4fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.om4fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.om4fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.om4fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.om4fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.om4fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.om4fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.om4fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.om4fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.om4fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.om4fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.om4fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.om4fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.om4fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.om4fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.om4fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.om4fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.om4fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.om4fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.om4fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.am4fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.om4fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.om4fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.om4fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.om4fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.om4fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.om4fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.om4fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.om4fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.om4fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.om4fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.om4fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.om4fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.om4fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.om4fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.om4fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.om4fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.om4fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.om4fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.om4fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.om4fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.om4fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.om4fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.om4fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.om4fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.om4fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.om4fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.om4fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aa8fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oa8fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oa8fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oa8fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oa8fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oa8fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oa8fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oa8fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oa8fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oa8fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oa8fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oa8fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oa8fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oa8fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oa8fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oa8fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oa8fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oa8fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oa8fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oa8fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oa8fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oa8fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oa8fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oa8fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oa8fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oa8fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oa8fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oa8fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aa8fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oa8fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oa8fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oa8fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oa8fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oa8fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oa8fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oa8fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oa8fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oa8fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oa8fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oa8fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oa8fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oa8fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oa8fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oa8fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oa8fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oa8fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oa8fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oa8fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oa8fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oa8fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oa8fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oa8fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oa8fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oa8fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oa8fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oa8fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aa9fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oa9fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oa9fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oa9fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oa9fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oa9fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oa9fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oa9fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oa9fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oa9fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oa9fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oa9fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oa9fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oa9fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oa9fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oa9fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oa9fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oa9fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oa9fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oa9fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oa9fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oa9fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oa9fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oa9fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oa9fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oa9fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oa9fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oa9fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aa9fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oa9fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oa9fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oa9fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oa9fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oa9fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oa9fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oa9fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oa9fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oa9fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oa9fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oa9fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oa9fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oa9fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oa9fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oa9fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oa9fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oa9fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oa9fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oa9fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oa9fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oa9fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oa9fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oa9fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oa9fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oa9fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oa9fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oa9fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.oa15fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.oa15fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.oa15fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.oa15fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.oa15fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.oa15fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.oa15fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.oa15fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.oa15fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.oa15fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.oa15fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.oa15fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.oa15fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.oa15fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.oa15fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.oa15fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.oa15fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.oa15fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.oa15fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.oa15fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.oa15fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.oa15fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.oa15fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.oa15fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.oa15fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.oa15fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.oa15fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.aa15fg.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.oa15fg.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.oa15fg.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.oa15fg.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.oa15fg.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.oa15fg.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.oa15fg.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.oa15fg.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.oa15fg.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.oa15fg.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.oa15fg.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.oa15fg.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.oa15fg.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.oa15fg.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.oa15fg.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.oa15fg.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.oa15fg.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.oa15fg.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.oa15fg.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.oa15fg.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.oa15fg.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.oa15fg.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.oa15fg.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.oa15fg.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.oa15fg.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.oa15fg.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.oa15fg.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.oa15fg.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.arm3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.orm3.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.orm3.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.orm3.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.orm3.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.orm3.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.orm3.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.orm3.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.orm3.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.orm3.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.orm3.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.orm3.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.orm3.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.orm3.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.orm3.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.orm3.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.orm3.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.orm3.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.orm3.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.orm3.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.orm3.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.orm3.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.orm3.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.orm3.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.orm3.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.orm3.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.orm3.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.orm3.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.arm3.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.orm3.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.orm3.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.orm3.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.orm3.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.orm3.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.orm3.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.orm3.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.orm3.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.orm3.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.orm3.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.orm3.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.orm3.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.orm3.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.orm3.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.orm3.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.orm3.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.orm3.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.orm3.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.orm3.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.orm3.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.orm3.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.orm3.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.orm3.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.orm3.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.orm3.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.orm3.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.orm3.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.arm4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.orm4.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.orm4.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.orm4.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.orm4.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.orm4.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.orm4.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.orm4.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.orm4.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.orm4.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.orm4.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.orm4.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.orm4.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.orm4.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.orm4.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.orm4.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.orm4.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.orm4.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.orm4.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.orm4.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.orm4.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.orm4.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.orm4.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.orm4.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.orm4.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.orm4.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.orm4.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.orm4.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.arm4.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.orm4.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.orm4.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.orm4.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.orm4.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.orm4.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.orm4.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.orm4.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.orm4.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.orm4.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.orm4.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.orm4.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.orm4.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.orm4.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.orm4.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.orm4.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.orm4.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.orm4.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.orm4.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.orm4.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.orm4.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.orm4.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.orm4.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.orm4.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.orm4.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.orm4.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.orm4.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.orm4.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool.arm4f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool/package/package_ti.ndk.nettools.orm4f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool/config/config.orm4f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool/daemon/daemon.orm4f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpbild.orm4f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpmain.orm4f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcppkt.orm4f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsm.orm4f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcpsock.orm4f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcp/dhcptags.orm4f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool/dhcps/dhcps.orm4f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnsclnt.orm4f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnscomn.orm4f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnspkt.orm4f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool/dns/dnssrvr.orm4f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool/http/http.orm4f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpclie.orm4f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httppars.orm4f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpsend.orm4f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool/http/httpstr.orm4f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool/inet/inetaddr.orm4f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/ipaddr/ipaddr.orm4f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool/mytime/mytime.orm4f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool/nat/natsrv.orm4f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool/sntp/sntp.orm4f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool/telnet/telnetd.orm4f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp.orm4f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool/tftp/tftp6.orm4f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="lib/nettool_ipv4.arm4f.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/package/package_ti.ndk.nettools.orm4f.dep" src="package/package_ti.ndk.nettools.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/config/config.orm4f.dep" src="config/config.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/daemon/daemon.orm4f.dep" src="daemon/daemon.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpbild.orm4f.dep" src="dhcp/dhcpbild.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpmain.orm4f.dep" src="dhcp/dhcpmain.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcppkt.orm4f.dep" src="dhcp/dhcppkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsm.orm4f.dep" src="dhcp/dhcpsm.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcpsock.orm4f.dep" src="dhcp/dhcpsock.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcp/dhcptags.orm4f.dep" src="dhcp/dhcptags.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dhcps/dhcps.orm4f.dep" src="dhcps/dhcps.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnsclnt.orm4f.dep" src="dns/dnsclnt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnscomn.orm4f.dep" src="dns/dnscomn.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnspkt.orm4f.dep" src="dns/dnspkt.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/dns/dnssrvr.orm4f.dep" src="dns/dnssrvr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/http.orm4f.dep" src="http/http.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpclie.orm4f.dep" src="http/httpclie.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httppars.orm4f.dep" src="http/httppars.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpsend.orm4f.dep" src="http/httpsend.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/http/httpstr.orm4f.dep" src="http/httpstr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/inet/inetaddr.orm4f.dep" src="inet/inetaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/ipaddr/ipaddr.orm4f.dep" src="ipaddr/ipaddr.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/mytime/mytime.orm4f.dep" src="mytime/mytime.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/nat/natsrv.orm4f.dep" src="nat/natsrv.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/sntp/sntp.orm4f.dep" src="sntp/sntp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/telnet/telnetd.orm4f.dep" src="telnet/telnetd.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp.orm4f.dep" src="tftp/tftp.c"/>
+        <srcFile name="package/lib/lib/nettool_ipv4/tftp/tftp6.orm4f.dep" src="tftp/tftp6.c"/>
+        <srcFile name="package/rel/ti_ndk_nettools.tar.dep" src="package/rel/ti_ndk_nettools.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,7.2,0"
+            rawVersion="7.2.0"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="/db/vendors/ti/c6x/7.2.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C66_big_endian"
+            version="ti.targets.elf.C66_big_endian{1,0,7.2,0"
+            rawVersion="7.2.0"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66e"
+            rootDir="/db/vendors/ti/c6x/7.2.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="big"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.2,0"
+            rawVersion="7.2.0"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="/db/vendors/ti/c6x/7.2.0/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.Arm9"
+            version="ti.targets.arm.elf.Arm9{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.evmDM6446:testInst"
+            isa="v5T"
+            suffix="e9"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.A8F"
+            version="ti.targets.arm.elf.A8F{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.sdp3430"
+            isa="v7A"
+            suffix="ea8f"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.A8Fnv"
+            version="ti.targets.arm.elf.A8Fnv{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.sdp3430"
+            isa="v7A"
+            suffix="ea8fnv"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M3"
+            version="ti.targets.arm.elf.M3{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.evmLM3S9B92"
+            isa="v7M"
+            suffix="em3"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4"
+            version="ti.targets.arm.elf.M4{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.arm.elf.M4F"
+            version="ti.targets.arm.elf.M4F{1,0,5.0,1"
+            rawVersion="5.0.1"
+            platform="ti.platforms.stellaris:LM4FSXLH5BB:1"
+            isa="v7M4"
+            suffix="em4f"
+            rootDir="/db/vendors/ti/arm/5.0.1/Linux"
+            os="undefined"
+            rts="ti.targets.arm.rtsarm">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M3"
+            version="gnu.targets.arm.M3{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.tiva:LM3S9B90"
+            isa="v7M"
+            suffix="m3g"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4"
+            version="gnu.targets.arm.M4{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.tiva:LM4F232H5QD"
+            isa="v7M4"
+            suffix="m4g"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.M4F"
+            version="gnu.targets.arm.M4F{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.tiva:LM4F232H5QD"
+            isa="v7M4"
+            suffix="m4fg"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7M">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A8F"
+            version="gnu.targets.arm.A8F{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.beaglebone"
+            isa="v7A8"
+            suffix="a8fg"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A9F"
+            version="gnu.targets.arm.A9F{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.sdp4430"
+            isa="v7A9"
+            suffix="a9fg"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.arm.A15F"
+            version="gnu.targets.arm.A15F{1,0,4.7,3"
+            rawVersion="4.7.3"
+            platform="ti.platforms.simVayu"
+            isa="v7A15"
+            suffix="a15fg"
+            rootDir="/db/vendors/linaro/gcc-arm-none-eabi-4_7-2012q4"
+            os="undefined"
+            rts="gnu.targets.arm.rtsv7A">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M3"
+            version="iar.targets.arm.M3{1,0,6.60,1"
+            rawVersion="6.60.1.00"
+            platform="ti.platforms.tiva:LM3S9B92:1"
+            isa="v7M"
+            suffix="rm3"
+            rootDir="/db/vendors/iar/arm/6.60/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4"
+            version="iar.targets.arm.M4{1,0,6.60,1"
+            rawVersion="6.60.1.00"
+            platform="ti.platforms.tiva:LM4F120H5QR:1"
+            isa="v7M4"
+            suffix="rm4"
+            rootDir="/db/vendors/iar/arm/6.60/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+        <target name="iar.targets.arm.M4F"
+            version="iar.targets.arm.M4F{1,0,6.60,1"
+            rawVersion="6.60.1.00"
+            platform="ti.platforms.tiva:LM4F120H5QR:1"
+            isa="v7M4"
+            suffix="rm4f"
+            rootDir="/db/vendors/iar/arm/6.60/Linux"
+            os="undefined"
+            rts="iar.targets.arm.rts">
+            <model endian="little"
+                codeModel="thumb2"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/nettool"
+        pname="lib/nettool.ae66"
+        profile="release"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.ae66"
+        profile="release"
+        target="ti.targets.elf.C66"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.ae66e"
+        profile="release"
+        target="ti.targets.elf.C66_big_endian"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.ae66e"
+        profile="release"
+        target="ti.targets.elf.C66_big_endian"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.ae674"
+        profile="release"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.ae674"
+        profile="release"
+        target="ti.targets.elf.C674"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.ae9"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.ae9"
+        profile="release"
+        target="ti.targets.arm.elf.Arm9"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aea8f"
+        profile="release"
+        target="ti.targets.arm.elf.A8F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aea8fnv"
+        profile="release"
+        target="ti.targets.arm.elf.A8Fnv"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aea8fnv"
+        profile="release"
+        target="ti.targets.arm.elf.A8Fnv"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aem3"
+        profile="release"
+        target="ti.targets.arm.elf.M3"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aem4"
+        profile="release"
+        target="ti.targets.arm.elf.M4"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aem4f"
+        profile="release"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aem4f"
+        profile="release"
+        target="ti.targets.arm.elf.M4F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.am3g"
+        profile="release"
+        target="gnu.targets.arm.M3"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.am3g"
+        profile="release"
+        target="gnu.targets.arm.M3"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.am4g"
+        profile="release"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.am4g"
+        profile="release"
+        target="gnu.targets.arm.M4"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.am4fg"
+        profile="release"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.am4fg"
+        profile="release"
+        target="gnu.targets.arm.M4F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aa8fg"
+        profile="release"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aa8fg"
+        profile="release"
+        target="gnu.targets.arm.A8F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aa9fg"
+        profile="release"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aa9fg"
+        profile="release"
+        target="gnu.targets.arm.A9F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.aa15fg"
+        profile="release"
+        target="gnu.targets.arm.A15F"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.arm3"
+        profile="release"
+        target="iar.targets.arm.M3"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.arm3"
+        profile="release"
+        target="iar.targets.arm.M3"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.arm4"
+        profile="release"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.arm4"
+        profile="release"
+        target="iar.targets.arm.M4"/>
+    <library name="lib/nettool"
+        pname="lib/nettool.arm4f"
+        profile="release"
+        target="iar.targets.arm.M4F"/>
+    <library name="lib/nettool_ipv4"
+        pname="lib/nettool_ipv4.arm4f"
+        profile="release"
+        target="iar.targets.arm.M4F"/>
+    </libraries>
+    <configurations>
+    </configurations>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_ndk_nettools"
+        pname="../../..//../exports/ti_ndk_nettools.tar"
+        label="default"
+        relScript="scripts/copyright_xml.rel">
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package.bld"/>
+        <file name="config/config.h"/>
+        <file name="dhcp/dhcp.h"/>
+        <file name="dhcps/dhcps.h"/>
+        <file name="dns/dns.h"/>
+        <file name="http/http.h"/>
+        <file name="mytime/mytime.h"/>
+        <file name="sntp/sntp.h"/>
+        <file name="telnet/telnet.h"/>
+        <file name="tftp/tftp.h"/>
+        <file name="tftp/tftpinc.h"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="lib/nettool.ae66"/>
+        <file name="package/package_ti.ndk.nettools.c"/>
+        <file name="config/config.c"/>
+        <file name="daemon/daemon.c"/>
+        <file name="dhcp/dhcpbild.c"/>
+        <file name="dhcp/dhcpmain.c"/>
+        <file name="dhcp/dhcppkt.c"/>
+        <file name="dhcp/dhcpsm.c"/>
+        <file name="dhcp/dhcpsock.c"/>
+        <file name="dhcp/dhcptags.c"/>
+        <file name="dhcps/dhcps.c"/>
+        <file name="dns/dnsclnt.c"/>
+        <file name="dns/dnscomn.c"/>
+        <file name="dns/dnspkt.c"/>
+        <file name="dns/dnssrvr.c"/>
+        <file name="http/http.c"/>
+        <file name="http/httpclie.c"/>
+        <file name="http/httppars.c"/>
+        <file name="http/httpsend.c"/>
+        <file name="http/httpstr.c"/>
+        <file name="inet/inetaddr.c"/>
+        <file name="ipaddr/ipaddr.c"/>
+        <file name="mytime/mytime.c"/>
+        <file name="nat/natsrv.c"/>
+        <file name="sntp/sntp.c"/>
+        <file name="telnet/telnetd.c"/>
+        <file name="tftp/tftp.c"/>
+        <file name="tftp/tftp6.c"/>
+        <file name="lib/nettool_ipv4.ae66"/>
+        <file name="lib/nettool.ae66e"/>
+        <file name="lib/nettool_ipv4.ae66e"/>
+        <file name="lib/nettool.ae674"/>
+        <file name="lib/nettool_ipv4.ae674"/>
+        <file name="lib/nettool.ae9"/>
+        <file name="lib/nettool_ipv4.ae9"/>
+        <file name="lib/nettool.aea8f"/>
+        <file name="lib/nettool_ipv4.aea8f"/>
+        <file name="lib/nettool.aea8fnv"/>
+        <file name="lib/nettool_ipv4.aea8fnv"/>
+        <file name="lib/nettool.aem3"/>
+        <file name="lib/nettool_ipv4.aem3"/>
+        <file name="lib/nettool.aem4"/>
+        <file name="lib/nettool_ipv4.aem4"/>
+        <file name="lib/nettool.aem4f"/>
+        <file name="lib/nettool_ipv4.aem4f"/>
+        <file name="lib/nettool.am3g"/>
+        <file name="lib/nettool_ipv4.am3g"/>
+        <file name="lib/nettool.am4g"/>
+        <file name="lib/nettool_ipv4.am4g"/>
+        <file name="lib/nettool.am4fg"/>
+        <file name="lib/nettool_ipv4.am4fg"/>
+        <file name="lib/nettool.aa8fg"/>
+        <file name="lib/nettool_ipv4.aa8fg"/>
+        <file name="lib/nettool.aa9fg"/>
+        <file name="lib/nettool_ipv4.aa9fg"/>
+        <file name="lib/nettool.aa15fg"/>
+        <file name="lib/nettool_ipv4.aa15fg"/>
+        <file name="lib/nettool.arm3"/>
+        <file name="lib/nettool_ipv4.arm3"/>
+        <file name="lib/nettool.arm4"/>
+        <file name="lib/nettool_ipv4.arm4"/>
+        <file name="lib/nettool.arm4f"/>
+        <file name="lib/nettool_ipv4.arm4f"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,14 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+package.bld
+InterruptProxy.h
+InterruptDsp.h
+InterruptIpu.h
+VirtQueue.h
+package/package.cfg.xdc.inc
+lib/debug/ti.ipc.family.omap54xx_smp.aem4
+package/package_ti.ipc.family.omap54xx.c
+VirtQueue.c
+InterruptIpu.c
+lib/release/ti.ipc.family.omap54xx_smp.aem4

@@ -1,0 +1,39 @@
+From a6e0c46f96798a922a6c3e6bccd766447cf47ab6 Mon Sep 17 00:00:00 2001
+From: Subhajit Paul <a0132170@ti.com>
+Date: Mon, 12 Oct 2015 20:37:36 +0530
+Subject: [PATCH 12/12] omapdrm : fix cache_flush issue for paddr gem
+
+If OMAP_BO_EXT_MEM is not included in the flags, omapdrm
+considers this to be a DMA buffer in the free_gem path and
+flushes TLB for that area unconditionally. This was corrupting
+the video frame buffers and other data in non-linux memory.
+
+Also, added the mm_list locking.
+
+Change-Id: I1bb4276108a1ee2fda06bb11af8fa77e24e72809
+Signed-off-by: Subhajit Paul <a0132170@ti.com>
+---
+ drivers/gpu/drm/omapdrm/omap_gem.c |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/omapdrm/omap_gem.c b/drivers/gpu/drm/omapdrm/omap_gem.c
+index 66ac857..9303451 100644
+--- a/drivers/gpu/drm/omapdrm/omap_gem.c
++++ b/drivers/gpu/drm/omapdrm/omap_gem.c
+@@ -1417,10 +1417,12 @@ struct drm_gem_object *omap_gem_new_paddr(struct drm_device *dev,
+ 		goto fail;
+ 	}
+ 
++	spin_lock(&priv->list_lock);
+ 	list_add(&omap_obj->mm_list, &priv->obj_list);
++	spin_unlock(&priv->list_lock);
+ 
+ 	obj = &omap_obj->base;
+-	omap_obj->flags = flags | OMAP_BO_DMA;
++	omap_obj->flags = flags | (OMAP_BO_DMA|OMAP_BO_EXT_MEM);
+ 	omap_obj->paddr = paddr;
+ 
+ 	drm_gem_private_object_init(dev, obj, size);
+-- 
+1.7.9.5
+

@@ -1,0 +1,148 @@
+%%{
+/*
+ * Copyright (c) 2015, Texas Instruments Incorporated
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+%%}
+%%{
+/*
+ *  ======== Core.xdt ========
+ */
+%%}
+
+#define IMM_FLAG_REG                  0xFFF7AC18
+#define IMM_REG_RW32(X)               (*(volatile UInt32*)(X))
+
+%var Core = xdc.module("ti.sysbios.family.arm.v7r.tms570.Core");
+%
+% if (Core.oscFailureResetFunc != null) {
+extern Void `String(Core.oscFailureResetFunc).substr(1)`();
+%}
+%
+% if (Core.watchdogResetFunc != null) {
+extern Void `String(Core.watchdogResetFunc).substr(1)`();
+%}
+%
+% if (Core.watchdog2ResetFunc != null) {
+extern Void `String(Core.watchdog2ResetFunc).substr(1)`();
+%}
+%
+% if (Core.interconnectResetFunc != null) {
+extern Void `String(Core.interconnectResetFunc).substr(1)`();
+% }
+%
+% if (Core.cpu0ResetFunc != null) {
+extern Void `String(Core.cpu0ResetFunc).substr(1)`();
+% }
+%
+% if (Core.cpu1ResetFunc != null) {
+extern Void `String(Core.cpu1ResetFunc).substr(1)`();
+% }
+%
+% if (Core.swResetFunc != null) {
+extern Void `String(Core.swResetFunc).substr(1)`();
+% }
+
+extern Void _c_int00();
+
+Void ti_sysbios_family_arm_v7r_tms570_Core_resetC__I()
+{
+    volatile UInt32 dummy;
+    ti_sysbios_family_arm_v7r_tms570_Core_ResetFuncPtr resetFunc = NULL;
+    ti_sysbios_family_arm_v7r_tms570_Core_ResetSource resetSource =
+        ti_sysbios_family_arm_v7r_tms570_Core_getResetSource__I();
+
+    switch (resetSource) {
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_POWERON:
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_DEBUG:
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_EXT:
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_NO_RESET:
+            if (ti_sysbios_family_arm_v7r_tms570_Core_getId() != 0) {
+                /* Wait for Core 0 to write word0 */
+                while (!(IMM_REG_RW32(IMM_FLAG_REG) & 0x1));
+
+                /* Clear the flag for word0 */
+                IMM_REG_RW32(IMM_FLAG_REG) = 0x1;
+
+                /* Call startup routine now */
+                _c_int00();
+            }
+            else {
+                /* Call startup routine */
+                _c_int00();
+            }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_OSC_FAILURE:
+% if (Core.oscFailureResetFunc != null) {
+            resetFunc = `Core.oscFailureResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_WATCHDOG:
+% if (Core.watchdogResetFunc != null) {
+            resetFunc = `Core.watchdogResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_WATCHDOG2:
+% if (Core.watchdog2ResetFunc != null) {
+            resetFunc = `Core.watchdog2ResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_INTERCONNECT:
+% if (Core.interconnectResetFunc != null) {
+            resetFunc = `Core.interconnectResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_CPU1:
+% if (Core.cpu1ResetFunc != null) {
+            resetFunc = `Core.cpu1ResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_CPU0:
+% if (Core.cpu0ResetFunc != null) {
+            resetFunc = `Core.cpu0ResetFunc`;
+% }
+            break;
+        case ti_sysbios_family_arm_v7r_tms570_Core_ResetSource_SW:
+% if (Core.swResetFunc != null) {
+            resetFunc = `Core.swResetFunc`;
+% }
+            break;
+        default:
+            break;
+    }
+
+    if (resetFunc != NULL) {
+        resetFunc();
+    }
+    else {
+        while (1);
+    }
+}

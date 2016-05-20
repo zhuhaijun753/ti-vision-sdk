@@ -1,0 +1,12 @@
+Package: yavta
+Version: 0.0-r2-arago0.0
+Description: Yet Another V4L2 Test Application
+ Yet Another V4L2 Test Application.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: yavta
+Depends: libc6 (>= 2.15)
+Source: git://git.ideasonboard.org/yavta.git file://0001-Add-stdout-mode-to-allow-streaming-over-the-network-.patch

@@ -1,0 +1,7 @@
+# @name Test system use cases
+# @desc Test system use cases
+# @requires net && usb/host && sound && mmc_host/sdhc
+# @setup_requires usbhostmsc
+SYSTEM_L_FUNC_ETH-USB-0001 source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s ETH_S_PERF_IPERF_TCP_128K_1448B # /opt/ltp/runltp -f ddt/usbhost_perf_vfat -P $PLATFORM -s USBHOST_M_PERF_VFAT_0001"
+
+SYSTEM_L_STRESS_ETH-USB-ALSA-MMC-0001 source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s ETH_S_PERF_IPERF_TCP_128K_1448B # /opt/ltp/runltp -f ddt/usbhost_perf_vfat -P $PLATFORM -s USBHOST_M_PERF_VFAT_0001 # /opt/ltp/runltp -P $PLATFORM -f ddt/alsa_opmode -s ALSA_S_FUNC_LOOPBK_OPMODE_BLK_02 # /opt/ltp/runltp -f ddt/mmc_sdhccard_dd_rw_ext2 -P $PLATFORM -s MMC_S_FUNC_SDHC_EXT2_DD_RW_100M"

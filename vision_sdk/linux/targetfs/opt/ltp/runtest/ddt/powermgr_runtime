@@ -1,0 +1,19 @@
+# @name Power Manager Runtime Tests
+# @desc Tests to validate that drivers use runtime_pm
+# @requires i2c && mmc_host && gpio && /net/eth/* && usb
+# @setup_requires 
+
+POWERMGR_S_FUNC_RUNTIME_TIMERS source 'pm_runtime.sh'; is_pm_runtime_enabled wdt || die "pm_runtime is not enabled for WDT"; is_pm_runtime_suspending_device wdt || die "pm_runtime is not suspending WDT"
+
+POWERMGR_S_FUNC_RUNTIME_I2C source 'pm_runtime.sh'; is_pm_runtime_enabled i2c || die "pm_runtime is not enabled for I2C"; is_pm_runtime_suspending_device i2c || die "pm_runtime is not suspending I2C"
+                                                              
+POWERMGR_S_FUNC_RUNTIME_MMC source 'pm_runtime.sh'; notify_and_wait "Please make sure at least one MMC interface is idle before test starts in 20 seconds" 20; notify_and_wait "Starting Test..." 0; is_pm_runtime_enabled mmc || die "pm_runtime is not enabled for MMC"; is_pm_runtime_suspending_device mmc || die "pm_runtime is not suspending MMC"
+                                                       
+POWERMGR_S_FUNC_RUNTIME_SERIAL source 'pm_runtime.sh'; is_pm_runtime_enabled serial || die "pm_runtime is not enabled for SERIAL"; is_pm_runtime_suspending_device serial || die "pm_runtime is not suspending SERIAL"
+                                                        
+POWERMGR_S_FUNC_RUNTIME_GPIO source 'pm_runtime.sh'; is_pm_runtime_enabled gpio || die "pm_runtime is not enabled for GPIO"; is_pm_runtime_suspending_device gpio || die "pm_runtime is not suspending GPIO"
+                                                        
+POWERMGR_S_FUNC_RUNTIME_ETHERNET source 'pm_runtime.sh'; notify_and_wait "Please make sure at least one ETH interface is idle before test starts in 20 seconds" 20; notify_and_wait "Starting Test..." 0; is_pm_runtime_enabled ethernet || die "pm_runtime is not enabled for ETH"; is_pm_runtime_suspending_device ethernet || die "pm_runtime is not suspending ETH"
+                                                             
+POWERMGR_S_FUNC_RUNTIME_USB source 'pm_runtime.sh'; notify_and_wait "Please make sure at least one USB interface is idle before test starts in 20 seconds" 20; notify_and_wait "Starting Test..." 0; is_pm_runtime_enabled '\.usb' || die "pm_runtime is not enabled for USB"; is_pm_runtime_suspending_device '\.usb' || die "pm_runtime is not suspending USB"
+

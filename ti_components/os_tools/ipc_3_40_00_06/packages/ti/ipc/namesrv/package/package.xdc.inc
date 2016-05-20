@@ -1,0 +1,16 @@
+package.xdc
+package.xs
+NameServerRemoteRpmsg.xdc
+NameServerRemoteRpmsg.xs
+package/ti.ipc.namesrv.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b160
+package/.xdc-A75
+package/ti_ipc_namesrv.java
+package/ti_ipc_namesrv.class
+package/package_ti.ipc.namesrv.c
+package/package.defs.h
+NameServerRemoteRpmsg.h
+package/internal/NameServerRemoteRpmsg.xdc.h
+package/ti.ipc.namesrv.ccs

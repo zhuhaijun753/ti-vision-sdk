@@ -1,0 +1,17 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+package.bld
+MmRpc.h
+MmRpc.c
+MmServiceMgr.h
+MmType.h
+package/package.cfg.xdc.inc
+lib/debug/ti_ipc_mm.aem4
+package/package_ti.ipc.mm.c
+MmServiceMgr.c
+lib/release/ti_ipc_mm.aem4
+lib/debug/ti_ipc_mm.ae66
+lib/release/ti_ipc_mm.ae66
+lib/debug/ti_ipc_mm.aearp32
+lib/release/ti_ipc_mm.aearp32

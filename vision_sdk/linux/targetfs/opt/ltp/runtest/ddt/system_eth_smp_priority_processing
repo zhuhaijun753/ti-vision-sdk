@@ -1,0 +1,7 @@
+# @name ETH Priority Processing with SMP CPU Affinity
+# @desc Check that processes can run on ethernet device based on priority assigned and
+# cpu affinity for those processes can be set
+# @requires smp && net
+# @setup_requires
+ETH_S_FUNC_PRIORITY_PROCESSING_SMP_NO-LB_CORE1 source 'common.sh'; prepare_nfs_mount.sh "/mnt/nfs_mount"|| die "Mounting NFS Failed"; num_cores=`cat /sys/devices/system/cpu/online`; echo $num_cores | grep -E '[[:digit:]]+\-' > /dev/null ; log_info=`multi_run_processes.sh -s "time -p dd if=/dev/urandom of=/mnt/nfs_mount/dd1_test bs=1M count=100" -l "-n 1 -d 0 -p -19" -s "time -p dd if=/dev/urandom of=/mnt/nfs_mount/dd2_test bs=1M count=100" -l "-n 1 -d 0 -p 19"` || die "Priority Test multi_run_processes.sh failed" && verify_priority.sh "$log_info" || die "Priority Test verify_priority.sh failed"; unmount_nfs.sh "/mnt/nfs_mount"
+

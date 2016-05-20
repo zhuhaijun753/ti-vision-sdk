@@ -1,0 +1,38 @@
+/*
+ *  ======== config.bld ========
+ *  Sample Build configuration script
+ */
+
+/* load the required modules for the configuration */
+var C674 = xdc.useModule('ti.targets.elf.C674');
+
+
+/* compiler paths for the CCS4.0                   */
+var rootDirPre = java.lang.System.getenv("CGTOOLS_DSP");
+var rootDirPost = "";
+
+/**********************************c674******************************/
+
+/* configure the options for the c674 targets      */
+
+/* c674 compiler directory path                    */
+C674.rootDir = rootDirPre + rootDirPost;
+
+/* compiler options                                */
+C674.ccOpts.suffix += " -mi10 -mo ";
+
+/* set default platform and list of all interested *
+ * platforms for c674                              */
+
+C674.platforms = [
+                     "ti.platforms.evmDM8148",
+                     "ti.platforms.evmTI811X",
+                 ];
+/* select the default platform                     */
+C674.platform = C674.platforms[0];
+
+
+/* list interested targets in Build.targets array  */
+Build.targets = [
+                    C674,
+                ];

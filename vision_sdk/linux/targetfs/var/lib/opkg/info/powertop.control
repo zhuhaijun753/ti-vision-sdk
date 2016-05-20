@@ -1,0 +1,14 @@
+Package: powertop
+Version: 2.5-r0-arago0.0
+Description: Power usage tool
+ Linux tool to diagnose issues with power consumption and power
+ management.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: powertop
+Homepage: http://01.org/powertop/
+Depends: libtinfo5 (>= 5.9), libstdc++6 (>= 4.7.3), libpci3 (>= 3.2.1), libnl-route-3-200 (>= 3.2.24), libnl-3-200 (>= 3.2.24), libnl-3-genl (>= 3.2.24), libc6 (>= 2.15), update-alternatives-opkg, libnl-nf-3-200 (>= 3.2.24), libncurses5 (>= 5.9), libgcc-s1 (>= 4.7.3)
+Source: http://01.org/powertop/sites/default/files/downloads/powertop-2.5.tar.gz

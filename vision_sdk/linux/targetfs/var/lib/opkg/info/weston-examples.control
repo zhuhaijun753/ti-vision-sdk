@@ -1,0 +1,13 @@
+Package: weston-examples
+Version: 1.6.0-r0-arago4-arago11.0
+Description: Weston, a Wayland compositor
+ Weston is the reference implementation of a Wayland compositor
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: weston
+Homepage: http://wayland.freedesktop.org
+Depends: libz1 (>= 1.2.8), libpng16-16 (>= 1.6.8), libpixman-1-0 (>= 0.32.4), libdrm2 (>= 2.4.41), libffi6 (>= 3.0.13), omap5-sgx-ddk-um-linux (>= 1.9.0.12), wayland (>= 1.6.0), libharfbuzz0 (>= 0.9.26), libfontconfig1 (>= 2.11.0), libcairo2 (>= 1.12.16), libc6 (>= 2.15), libglib-2.0-0 (>= 2.38.2), libdrm-omap1 (>= 2.4.41), pango (>= 1.36.2), libfreetype6 (>= 2.5.2), libxkbcommon0 (>= 0.4.0), libjpeg8 (>= 8d+1.3.1), libexpat1 (>= 2.1.0)
+Source: http://wayland.freedesktop.org/releases/weston-1.6.0.tar.xz file://weston.png file://weston.desktop file://disable-wayland-scanner-pkg-check.patch file://make-lcms-explicitly-configurable.patch file://make-libwebp-explicitly-configurable.patch file://wayland_env.sh file://weston.ini file://0001-weston-Enabling-DRM-backend-with-multiple-displays.patch file://weston.ini file://0001-support-for-surface-positioning-added.patch

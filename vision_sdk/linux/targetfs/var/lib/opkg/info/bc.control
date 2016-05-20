@@ -1,0 +1,13 @@
+Package: bc
+Version: 1.06-r2.0
+Description: Arbitrary precision calculator language
+ Arbitrary precision calculator language.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2.1
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: bc
+Homepage: http://www.gnu.org/software/bc/bc.html
+Depends: flex (>= 2.5.38), update-alternatives-opkg, libc6 (>= 2.15)
+Source: ftp://ftp.gnu.org/gnu/bc/bc-1.06.tar.gz file://fix-segment-fault.patch

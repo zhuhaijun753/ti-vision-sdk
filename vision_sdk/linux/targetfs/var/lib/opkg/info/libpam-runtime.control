@@ -1,0 +1,15 @@
+Package: libpam-runtime
+Version: 1.1.6-r5.0
+Description: Linux-PAM (Pluggable Authentication Modules)
+ Linux-PAM (Pluggable Authentication Modules for Linux), a flexible
+ mechanism for authenticating users
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ | BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libpam
+Homepage: https://fedorahosted.org/linux-pam/
+Depends: libpam-suffix, pam-plugin-permit-suffix, pam-plugin-deny-suffix, pam-plugin-unix-suffix, pam-plugin-warn-suffix
+Provides: libpam-runtime-suffix
+Source: http://linux-pam.org/library/Linux-PAM-1.1.6.tar.bz2 file://99_pam file://pam.d/common-account file://pam.d/common-auth file://pam.d/common-password file://pam.d/common-session file://pam.d/common-session-noninteractive file://pam.d/other file://libpam-xtests.patch file://destdirfix.patch file://fixsepbuild.patch file://reflect-the-enforce_for_root-semantics-change-in-pam.patch file://add-checks-for-crypt-returning-NULL.patch file://libpam-fix-for-CVE-2010-4708.patch file://pam-security-abstract-securetty-handling.patch file://pam-unix-nullok-secure.patch file://pam_timestamp-fix-potential-directory-traversal-issu.patch

@@ -1,0 +1,8 @@
+# @name ETH PM related tests 
+# @desc Check the pm counters after ethernet test and suspend resume test and check if the counter increases 
+# @requires net && power_mgr
+
+ETH_L_FUNC_PWR_PER_PWRDM_COUNTERS source "super-pm-tests.sh"; do_cmd log_pm_count "per_pwrdm" "RET,RET-LOGIC-OFF,OFF" "," "per_pwrdm_before.log" && run_processes.sh -c " /opt/ltp/runltp -f ddt/eth_ping -P $MACHINE -s "ETH_S_FUNC_PING" # /opt/ltp/runltp -f ddt/powermgr_suspend -P $MACHINE -s "POWERMGR_S_FUNC_SIMPLE_SUSPEND "" && do_cmd log_pm_count "per_pwrdm" "RET,RET-LOGIC-OFF,OFF" "," "per_pwrdm_after.log" && do_cmd compare_pm_count "per_pwrdm" "RET,RET-LOGIC-OFF,OFF" "," "per_pwrdm_before.log" "per_pwrdm_after.log"
+ETH_S_FUNC_SUSPEND_IPADDR_CONSISTENCY source "super-pm-tests.sh"; iface_name=`get_eth_iface_name.sh`;pre_ipaddr=`get_eth_ipaddr.sh $iface_name`; /opt/ltp/runltp -P $MACHINE -f ddt/powermgr_suspend -s "POWERMGR_S_FUNC_SIMPLE_SUSPEND "; iface_name=`get_eth_iface_name.sh`; post_ipaddr=`get_eth_ipaddr.sh $iface_name`; if [[ "$pre_ipaddr" != "$post_ipaddr" ]]; then die "Test Failed because IP Address is not retained across suspend/resume cycles"; fi
+ETH_S_FUNC_SUSPEND_LINKSPEED_CONSISTENCY source "super-pm-tests.sh"; iface_name=`get_eth_iface_name.sh`;pre_linkspeed=`get_eth_link_speed.sh $iface_name`; /opt/ltp/runltp -P $MACHINE -f ddt/powermgr_suspend -s "POWERMGR_S_FUNC_SIMPLE_SUSPEND "; iface_name=`get_eth_iface_name.sh`; post_linkspeed=`get_eth_link_speed.sh $iface_name`; if [[ "$pre_linkspeed" != "$post_linkspeed" ]]; then die "Test Failed because link speed is not retained across suspend/resume cycles"; fi
+

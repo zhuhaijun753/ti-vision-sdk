@@ -1,0 +1,17 @@
+Package: hostap-daemon-wl18xx
+Version: R8.5-devel-ti+git0+2710d0ae31-r6c.0
+Description: hostap-daemon-wl18xx version R8.5-devel-ti+gitAUTOINC+2710d0ae31-r6c
+ User space daemon for extended IEEE 802.11 management
+Section: kernel/userland
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: hostap-daemon-wl18xx
+Homepage: http://hostap.epitest.fi
+Depends: libcrypto1.0.0 (>= 1.0.1p), libnl-3-200 (>= 3.2.24), libnl-3-genl (>= 3.2.24), libc6 (>= 2.15)
+Recommends: update-rc.d
+Provides: hostap-daemon
+Replaces: hostap-daemon
+Conflicts: hostap-daemon
+Source: git://git.ti.com/wilink8-wlan/hostap.git;protocol=git;branch=ap_p2p file://defconfig file://init

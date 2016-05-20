@@ -1,0 +1,757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>module ti.sysbios.smp.Load</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/*
+</span>     2    <span class="comment"> * Copyright (c) 2014, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> */</span>
+    32    <span class="comment">/*
+</span>    33    <span class="comment"> *  ======== Load.xdc ========
+</span>    34    <span class="comment"> *
+</span>    35    <span class="comment"> */</span>
+    36    
+    37    <span class=key>package</span> ti.sysbios.smp;
+    38    
+    39    import xdc.rov.ViewInfo;
+    40    
+    41    import ti.sysbios.knl.Queue;
+    42    import ti.sysbios.knl.Task;
+    43    import ti.sysbios.knl.Swi;
+    44    import ti.sysbios.gates.GateMutex;
+    45    import ti.sysbios.interfaces.IHwi;
+    46    
+    47    import xdc.rov.ViewInfo;
+    48    import xdc.runtime.Diags;
+    49    import xdc.runtime.Log;
+    50    import xdc.runtime.Error;
+    51    
+    52    <span class="xdoc">/*!
+</span>    53    <span class="xdoc"> *  ======== Load ========
+</span>    54    <span class="xdoc"> *  The Load module reports execution times and load information for threads
+</span>    55    <span class="xdoc"> *  in a system.
+</span>    56    <span class="xdoc"> *
+</span>    57    <span class="xdoc"> *  SYS/BIOS manages four distinct levels of execution threads: hardware
+</span>    58    <span class="xdoc"> *  interrupt service routines, software interrupt routines, tasks, and
+</span>    59    <span class="xdoc"> *  background idle functions. This module reports execution time and load on a
+</span>    60    <span class="xdoc"> *  per-task basis, and also provides information globally for hardware
+</span>    61    <span class="xdoc"> *  interrupt service routines, software interrupt routines and idle functions
+</span>    62    <span class="xdoc"> *  (in the form of the idle task). It can also report an estimate of the
+</span>    63    <span class="xdoc"> *  global CPU load, which is computed as the percentage of time in the
+</span>    64    <span class="xdoc"> *  benchmark window which was NOT spent in the idle loop.
+</span>    65    <span class="xdoc"> *  More specifically, the load is computed as follows:
+</span>    66    <span class="xdoc"> *
+</span>    67    <span class="xdoc"> *  global CPU load = 100 * (1 - (min. time for a trip around idle loop *
+</span>    68    <span class="xdoc"> *      # times in idle loop)/(benchmark time window) )
+</span>    69    <span class="xdoc"> *
+</span>    70    <span class="xdoc"> *  Any work done in the idle loop is included in the CPU load - in other
+</span>    71    <span class="xdoc"> *  words, any time spent in the loop beyond the shortest trip around the idle
+</span>    72    <span class="xdoc"> *  loop is counted as non-idle time.
+</span>    73    <span class="xdoc"> *
+</span>    74    <span class="xdoc"> *  Execution time is reported in units of
+</span>    75    <span class="xdoc"> *  {<b>@link</b> xdc.runtime.Timestamp Timestamp} counts, and load is reported
+</span>    76    <span class="xdoc"> *  in percentages.
+</span>    77    <span class="xdoc"> *
+</span>    78    <span class="xdoc"> *  By default, load data is gathered in all threads.
+</span>    79    <span class="xdoc"> *  {<b>@link</b> #hwiEnabled hwiEnabled}, {<b>@link</b> #swiEnabled swiEnabled}
+</span>    80    <span class="xdoc"> *  and {<b>@link</b> #taskEnabled taskEnabled} can be used to select which
+</span>    81    <span class="xdoc"> *  type(s) of threads are monitored. These statistics are automatically
+</span>    82    <span class="xdoc"> *  recorded to the load module's logger instance. Users can also choose
+</span>    83    <span class="xdoc"> *  to call {<b>@link</b> #getTaskLoad}, {<b>@link</b> #getGlobalSwiLoad},
+</span>    84    <span class="xdoc"> *  {<b>@link</b> #getGlobalHwiLoad} and {<b>@link</b> #getCPULoad} at any time to obtain the
+</span>    85    <span class="xdoc"> *  statistics at runtime.
+</span>    86    <span class="xdoc"> *
+</span>    87    <span class="xdoc"> *  The module relies on {<b>@link</b> #update} to be called to compute load and
+</span>    88    <span class="xdoc"> *  execution times from the time when {<b>@link</b> #update} was last called. This
+</span>    89    <span class="xdoc"> *  is automatically done for every period specified by
+</span>    90    <span class="xdoc"> *  {<b>@link</b> #windowInMs windowInMs} in an {<b>@link</b> ti.sysbios.knl.Idle Idle}
+</span>    91    <span class="xdoc"> *  function when {<b>@link</b> #updateInIdle updateInIdle} is
+</span>    92    <span class="xdoc"> *  set to true. The time between 2 calls to {<b>@link</b> #update} is called the
+</span>    93    <span class="xdoc"> *  benchmark time window.
+</span>    94    <span class="xdoc"> *
+</span>    95    <span class="xdoc"> *  By passing in a function pointer of type
+</span>    96    <span class="xdoc"> *  Void(*{<b>@link</b> #postUpdate})(Void) through the
+</span>    97    <span class="xdoc"> *  {<b>@link</b> #postUpdate postUpdate} config parameter, one can specify a
+</span>    98    <span class="xdoc"> *  {<b>@link</b> #postUpdate postUpdate} function that is
+</span>    99    <span class="xdoc"> *  automatically called by {<b>@link</b> #update} immediately after the statistics
+</span>   100    <span class="xdoc"> *  have been computed at the end of a benchmark time window.  Setting this
+</span>   101    <span class="xdoc"> *  function allows the user to optionally post-process the thread statistics
+</span>   102    <span class="xdoc"> *  once and only once per benchmark window.
+</span>   103    <span class="xdoc"> *
+</span>   104    <span class="xdoc"> *  Advanced users could optionally omit calling {<b>@link</b> #update} in the idle
+</span>   105    <span class="xdoc"> *  loop by setting {<b>@link</b> #updateInIdle updateInIdle} to false. They can
+</span>   106    <span class="xdoc"> *  then call {<b>@link</b> #update} somewhere else (e.g. in a periodic higher
+</span>   107    <span class="xdoc"> *  priority Task) instead to ensure statistics are computed even when the
+</span>   108    <span class="xdoc"> *  system is never idle.
+</span>   109    <span class="xdoc"> *
+</span>   110    <span class="xdoc"> *  <b>@a(Examples)</b>
+</span>   111    <span class="xdoc"> *  Configuration example: The following statements configure the Load module
+</span>   112    <span class="xdoc"> *  to obtain output in the CCS output window. This is useful for early
+</span>   113    <span class="xdoc"> *  development without RTA tools support in SYS/BIOS:
+</span>   114    <span class="xdoc"> *
+</span>   115    <span class="xdoc"> *  <b>@p(code)</b>
+</span>   116    <span class="xdoc"> *  var System = xdc.useModule('xdc.runtime.System');
+</span>   117    <span class="xdoc"> *  var SysStd = xdc.useModule('xdc.runtime.SysStd');
+</span>   118    <span class="xdoc"> *  System.SupportProxy = SysStd;
+</span>   119    <span class="xdoc"> *
+</span>   120    <span class="xdoc"> *  var Load = xdc.useModule('ti.sysbios.utils.Load');
+</span>   121    <span class="xdoc"> *  var LoggerSys = xdc.useModule('xdc.runtime.LoggerSys');
+</span>   122    <span class="xdoc"> *  var Defaults = xdc.useModule('xdc.runtime.Defaults');
+</span>   123    <span class="xdoc"> *  var Diags = xdc.useModule('xdc.runtime.Diags');
+</span>   124    <span class="xdoc"> *
+</span>   125    <span class="xdoc"> *  // Turn on statistics log messages for Load module
+</span>   126    <span class="xdoc"> *  Load.common$.diags_USER4 = Diags.ALWAYS_ON;
+</span>   127    <span class="xdoc"> *  // Define a program-wide logger to be the System Logger
+</span>   128    <span class="xdoc"> *  Defaults.common$.logger = LoggerSys.create();
+</span>   129    <span class="xdoc"> *  <b>@p</b>
+</span>   130    <span class="xdoc"> *
+</span>   131    <span class="xdoc"> *  Notes on above example:
+</span>   132    <span class="xdoc"> *  <b>@p(blist)</b>
+</span>   133    <span class="xdoc"> *  - When using the {<b>@link</b> xdc.runtime.LoggerSys System Logger},
+</span>   134    <span class="xdoc"> *  {<b>@link</b> xdc.runtime.System#printf System_printf} calls are made to produce
+</span>   135    <span class="xdoc"> *  the output in the output window. These calls are highly intrusive
+</span>   136    <span class="xdoc"> *  and are only suited for early development.
+</span>   137    <span class="xdoc"> *
+</span>   138    <span class="xdoc"> *  - Also make sure your task stack sizes are large enough when using the
+</span>   139    <span class="xdoc"> *  {<b>@link</b> xdc.runtime.LoggerSys System Logger} - particularly the idle task
+</span>   140    <span class="xdoc"> *  stack size since logging is done in the idle task by default.
+</span>   141    <span class="xdoc"> *  <b>@p</b>
+</span>   142    <span class="xdoc"> *
+</span>   143    <span class="xdoc"> *  <b>@a(Caveats)</b>
+</span>   144    <span class="xdoc"> *  <b>@p(nlist)</b>
+</span>   145    <span class="xdoc"> *  - For the module to return accurate load values, the {<b>@link</b> #update}
+</span>   146    <span class="xdoc"> *  function must be run at least once before the Timestamp count gets to
+</span>   147    <span class="xdoc"> *  wrap around. This means on a platform with a 32-bit
+</span>   148    <span class="xdoc"> *  {<b>@link</b> xdc.runtime.Timestamp Timestamp} frequency that runs at 200 MHz,
+</span>   149    <span class="xdoc"> *  the function must be called at least once every 21 sec. With faster
+</span>   150    <span class="xdoc"> *  {<b>@link</b> xdc.runtime.Timestamp Timestamp} frequencies it would have to be
+</span>   151    <span class="xdoc"> *  called even more frequently.
+</span>   152    <span class="xdoc"> *
+</span>   153    <span class="xdoc"> *  - If the {<b>@link</b> #updateInIdle updateInIdle} option is enabled, the
+</span>   154    <span class="xdoc"> *  module will call {<b>@link</b> #update} periodically according to
+</span>   155    <span class="xdoc"> *  {<b>@link</b> #windowInMs windowInMs}. The latter must be set to a time
+</span>   156    <span class="xdoc"> *  interval that is below
+</span>   157    <span class="xdoc"> *  (2^32) * 1000 / ({<b>@link</b> xdc.runtime.Timestamp Timestamp} Frequency)
+</span>   158    <span class="xdoc"> *  milliseconds
+</span>   159    <span class="xdoc"> *
+</span>   160    <span class="xdoc"> *  - If the {<b>@link</b> #updateInIdle updateInIdle} option is disabled, the user is
+</span>   161    <span class="xdoc"> *  then responsible for calling {<b>@link</b> #update} more often than the above
+</span>   162    <span class="xdoc"> *  time interval.
+</span>   163    <span class="xdoc"> *
+</span>   164    <span class="xdoc"> *  - Load values might not add up to 100%. Because the module minimizes
+</span>   165    <span class="xdoc"> *  its interrupt latency and avoids locking up the system to compute all
+</span>   166    <span class="xdoc"> *  thread loads at once, each thread's execution time is evaluated separately
+</span>   167    <span class="xdoc"> *  over its own time window, which could be slightly different to that of
+</span>   168    <span class="xdoc"> *  another thread.
+</span>   169    <span class="xdoc"> *
+</span>   170    <span class="xdoc"> *  - When disabling monitoring of a thread type of higher priority, the
+</span>   171    <span class="xdoc"> *  time spent in that thread type will be counted towards time spent in
+</span>   172    <span class="xdoc"> *  threads of lower priority. E.g. if {<b>@link</b> #hwiEnabled hwiEnabled} and
+</span>   173    <span class="xdoc"> *  {<b>@link</b> #swiEnabled swiEnabled} are both false, then time spent in Hwi's and
+</span>   174    <span class="xdoc"> *  Swi's will be counted towards the Tasks in which the interrupts happened.
+</span>   175    <span class="xdoc"> *  Thus, for better accuracy, it is best to leave monitoring on for threads of
+</span>   176    <span class="xdoc"> *  a higher priority relative to the thread type of interest.
+</span>   177    <span class="xdoc"> *
+</span>   178    <span class="xdoc"> *  - The implementation of {<b>@link</b> #getCPULoad()} self-calibrates the shortest
+</span>   179    <span class="xdoc"> *  path through the idle loop. It does this by keeping track of the shortest
+</span>   180    <span class="xdoc"> *  time between invocations of an idle function automatically inserted by the
+</span>   181    <span class="xdoc"> *  Load module, and assumes that to be the time it takes for one iteration
+</span>   182    <span class="xdoc"> *  through the idle loop. Because of this, the CPU load value is only an
+</span>   183    <span class="xdoc"> *  estimate since the idle loop might occasionally take longer to run
+</span>   184    <span class="xdoc"> *  (e.g. due to caching effects, stalls). The reported CPU load tends to be
+</span>   185    <span class="xdoc"> *  slightly higher than reality, especially when the load is low.
+</span>   186    <span class="xdoc"> *
+</span>   187    <span class="xdoc"> *  - If {<b>@link</b> #taskEnabled taskEnabled} is set to true,
+</span>   188    <span class="xdoc"> *  task name support will be automatically turned on so that the Load module
+</span>   189    <span class="xdoc"> *  can print out the task names in its log output.
+</span>   190    <span class="xdoc"> *
+</span>   191    <span class="xdoc"> *  - Currently does not support {<b>@link</b> xdc.runtime.Timestamp Timestamp}
+</span>   192    <span class="xdoc"> *  frequencies over 4 GHz.
+</span>   193    <span class="xdoc"> *  <b>@p</b>
+</span>   194    <span class="xdoc"> *
+</span>   195    <span class="xdoc"> *  <b>@p(html)</b>
+</span>   196    <span class="xdoc"> *  &lt;h3&gt; Calling Context &lt;/h3&gt;
+</span>   197    <span class="xdoc"> *  &lt;table border="1" cellpadding="3"&gt;
+</span>   198    <span class="xdoc"> *    &lt;colgroup span="1"&gt;&lt;/colgroup&gt; &lt;colgroup span="5" align="center"&gt;
+</span>   199    <span class="xdoc"> *    &lt;/colgroup&gt;
+</span>   200    <span class="xdoc"> *
+</span>   201    <span class="xdoc"> *    &lt;tr&gt;&lt;th&gt; Function                 &lt;/th&gt;&lt;th&gt;  Hwi   &lt;/th&gt;&lt;th&gt;  Swi   &lt;/th&gt;
+</span>   202    <span class="xdoc"> *    &lt;th&gt;  Task  &lt;/th&gt;&lt;th&gt;  Main  &lt;/th&gt;&lt;th&gt;  Startup  &lt;/th&gt;&lt;/tr&gt;
+</span>   203    <span class="xdoc"> *    &lt;!--                                                          --&gt;
+</span>   204    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #getCPULoad}      &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;
+</span>   205    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   206    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #getGlobalHwiLoad}&lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;
+</span>   207    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   208    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #getGlobalSwiLoad}&lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;
+</span>   209    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   210    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #getTaskLoad}     &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;
+</span>   211    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   212    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #reset}           &lt;/td&gt;&lt;td&gt;   Y*   &lt;/td&gt;&lt;td&gt;   Y*   &lt;/td&gt;
+</span>   213    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   214    <span class="xdoc"> *    &lt;tr&gt;&lt;td&gt; {<b>@link</b> #update}          &lt;/td&gt;&lt;td&gt;   Y*   &lt;/td&gt;&lt;td&gt;   Y*   &lt;/td&gt;
+</span>   215    <span class="xdoc"> *    &lt;td&gt;   Y    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;td&gt;   N    &lt;/td&gt;&lt;/tr&gt;
+</span>   216    <span class="xdoc"> *    &lt;tr&gt;&lt;td colspan="6"&gt; Definitions: &lt;br /&gt;
+</span>   217    <span class="xdoc"> *       &lt;ul&gt;
+</span>   218    <span class="xdoc"> *         &lt;li&gt; &lt;b&gt;Hwi&lt;/b&gt;: API is callable from a Hwi thread. &lt;/li&gt;
+</span>   219    <span class="xdoc"> *         &lt;li&gt; &lt;b&gt;Swi&lt;/b&gt;: API is callable from a Swi thread. &lt;/li&gt;
+</span>   220    <span class="xdoc"> *         &lt;li&gt; &lt;b&gt;Task&lt;/b&gt;: API is callable from a Task thread. &lt;/li&gt;
+</span>   221    <span class="xdoc"> *         &lt;li&gt; &lt;b&gt;Main&lt;/b&gt;: API is callable during any of these phases: &lt;/li&gt;
+</span>   222    <span class="xdoc"> *           &lt;ul&gt;
+</span>   223    <span class="xdoc"> *             &lt;li&gt; In your module startup after this module is started
+</span>   224    <span class="xdoc"> *    (e.g. Load_Module_startupDone() returns TRUE). &lt;/li&gt;
+</span>   225    <span class="xdoc"> *             &lt;li&gt; During xdc.runtime.Startup.lastFxns. &lt;/li&gt;
+</span>   226    <span class="xdoc"> *             &lt;li&gt; During main().&lt;/li&gt;
+</span>   227    <span class="xdoc"> *             &lt;li&gt; During BIOS.startupFxns.&lt;/li&gt;
+</span>   228    <span class="xdoc"> *           &lt;/ul&gt;
+</span>   229    <span class="xdoc"> *         &lt;li&gt; &lt;b&gt;Startup&lt;/b&gt;: API is callable during any of these phases:&lt;/li&gt;
+</span>   230    <span class="xdoc"> *           &lt;ul&gt;
+</span>   231    <span class="xdoc"> *             &lt;li&gt; During xdc.runtime.Startup.firstFxns.&lt;/li&gt;
+</span>   232    <span class="xdoc"> *             &lt;li&gt; In your module startup before this module is started
+</span>   233    <span class="xdoc"> *    (e.g. Load_Module_startupDone() returns FALSE).&lt;/li&gt;
+</span>   234    <span class="xdoc"> *           &lt;/ul&gt;
+</span>   235    <span class="xdoc"> *       &lt;li&gt; &lt;b&gt;*&lt;/b&gt;: Indicates only when {<b>@link</b> #taskEnabled taskEnabled}
+</span>   236    <span class="xdoc"> *    is set to false. &lt;/li&gt;
+</span>   237    <span class="xdoc"> *       &lt;/ul&gt;
+</span>   238    <span class="xdoc"> *    &lt;/td&gt;&lt;/tr&gt;
+</span>   239    <span class="xdoc"> *  &lt;/table&gt;
+</span>   240    <span class="xdoc"> *  <b>@p</b>
+</span>   241    <span class="xdoc"> */</span>
+   242    @DirectCall
+   243    <span class=key>module</span> Load
+   244    {
+   245        <span class="xdoc">/*!
+</span>   246    <span class="xdoc">     *  ======== ModuleView ========
+</span>   247    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   248    <span class="xdoc">     */</span>
+   249        <span class=key>metaonly</span> <span class=key>struct</span> ModuleView {
+   250            String cpuLoad;     <span class="comment">/* total cpu load, in percent */</span>
+   251            String swiLoad;     <span class="comment">/* cpu load due to Swi's, in percent */</span>
+   252            String hwiLoad;     <span class="comment">/* cpu load due to Hwi's, in percent */</span>
+   253            String idleError;   <span class="comment">/* estimated measurement error in one pass of idle
+</span>   254    <span class="comment">                             * loop, in percent
+</span>   255    <span class="comment">                             */</span>
+   256        }
+   257    
+   258        <span class="xdoc">/*!
+</span>   259    <span class="xdoc">     *  ======== rovViewInfo ========
+</span>   260    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   261    <span class="xdoc">     */</span>
+   262        @Facet
+   263        <span class=key>metaonly</span> <span class=key>config</span> ViewInfo.Instance rovViewInfo =
+   264            ViewInfo.create({
+   265                viewMap: [
+   266                [
+   267                    <span class="string">'Module'</span>,
+   268                    {
+   269                        type: ViewInfo.MODULE,
+   270                        viewInitFxn: <span class="string">'viewInitModule'</span>,
+   271                        structName: <span class="string">'ModuleView'</span>
+   272                    }
+   273                ],
+   274                ]
+   275            });
+   276    
+   277    
+   278        <span class="comment">/* -------- Module Types -------- */</span>
+   279    
+   280        <span class="xdoc">/*!
+</span>   281    <span class="xdoc">     *  ======== FuncPtr ========
+</span>   282    <span class="xdoc">     *  Callback function type
+</span>   283    <span class="xdoc">     */</span>
+   284        <span class=key>typedef</span> Void (*FuncPtr)();
+   285    
+   286        <span class="xdoc">/*!
+</span>   287    <span class="xdoc">     *  ======== Stat ========
+</span>   288    <span class="xdoc">     *  Load statistics info
+</span>   289    <span class="xdoc">     */</span>
+   290        <span class=key>struct</span> Stat {
+   291            UInt32 threadTime;
+   292            UInt32 totalTime;
+   293        };
+   294    
+   295    
+   296        <span class="comment">/* -------- Module Configuration Parameters -------- */</span>
+   297    
+   298        <span class="xdoc">/*!
+</span>   299    <span class="xdoc">     *  ======== LS_cpuLoad ========
+</span>   300    <span class="xdoc">     *  This event logs the global CPU load as a percentage
+</span>   301    <span class="xdoc">     *
+</span>   302    <span class="xdoc">     *  This event is logged whenever the Diags.USER4 level is enabled
+</span>   303    <span class="xdoc">     *  and the load is measured.
+</span>   304    <span class="xdoc">     *
+</span>   305    <span class="xdoc">     */</span>
+   306        <span class=key>config</span> Log.Event LS_cpuLoad = {
+   307            mask: Diags.USER4,
+   308            msg: <span class="string">"LS_cpuLoad: %d%%"</span>
+   309        };
+   310    
+   311        <span class="xdoc">/*!
+</span>   312    <span class="xdoc">     *  ======== LS_hwiLoad ========
+</span>   313    <span class="xdoc">     *  This event logs the Hwi load
+</span>   314    <span class="xdoc">     *
+</span>   315    <span class="xdoc">     *  This event is logged whenever the Diags.USER4 level is enabled
+</span>   316    <span class="xdoc">     *  {<b>@link</b> #hwiEnabled} is true, and the load is measured.
+</span>   317    <span class="xdoc">     *
+</span>   318    <span class="xdoc">     *  This event logs the Hwi load, with the form:
+</span>   319    <span class="xdoc">     *  &lt;load time&gt;,&lt;measurement time&gt;
+</span>   320    <span class="xdoc">     *
+</span>   321    <span class="xdoc">     *  Percentage load = &lt;load time&gt; / &lt;measurement time&gt; x 100%
+</span>   322    <span class="xdoc">     */</span>
+   323        <span class=key>config</span> Log.Event LS_hwiLoad = {
+   324            mask: Diags.USER4,
+   325            msg: <span class="string">"LS_hwiLoad: %d,%d"</span>
+   326        };
+   327    
+   328        <span class="xdoc">/*!
+</span>   329    <span class="xdoc">     *  ======== LS_swiLoad ========
+</span>   330    <span class="xdoc">     *  This event logs the Swi load
+</span>   331    <span class="xdoc">     *
+</span>   332    <span class="xdoc">     *  This event is logged whenever the Diags.USER4 level is enabled
+</span>   333    <span class="xdoc">     *  {<b>@link</b> #swiEnabled} is true, and the load is measured.
+</span>   334    <span class="xdoc">     *
+</span>   335    <span class="xdoc">     *  This event logs the Swi load, with the form:
+</span>   336    <span class="xdoc">     *  &lt;load time&gt;,&lt;measurement time&gt;
+</span>   337    <span class="xdoc">     *
+</span>   338    <span class="xdoc">     *  Percentage load = &lt;load time&gt; / &lt;measurement time&gt; x 100%
+</span>   339    <span class="xdoc">     */</span>
+   340        <span class=key>config</span> Log.Event LS_swiLoad = {
+   341            mask: Diags.USER4,
+   342            msg: <span class="string">"LS_swiLoad: %d,%d"</span>
+   343        };
+   344    
+   345        <span class="xdoc">/*!
+</span>   346    <span class="xdoc">     *  ======== LS_taskLoad ========
+</span>   347    <span class="xdoc">     *  This event logs Task thread loads
+</span>   348    <span class="xdoc">     *
+</span>   349    <span class="xdoc">     *  This event is logged whenever the Diags.USER4 level is enabled,
+</span>   350    <span class="xdoc">     *  {<b>@link</b> #taskEnabled} is true, and the load is measured.
+</span>   351    <span class="xdoc">     *
+</span>   352    <span class="xdoc">     *  This event logs Task thread loads, with the form:
+</span>   353    <span class="xdoc">     *  &lt;Task handle&gt;,&lt;load time&gt;,&lt;measurement time&gt;,&lt;Task function pointer&gt;
+</span>   354    <span class="xdoc">     *
+</span>   355    <span class="xdoc">     *  Percentage load = &lt;load time&gt; / &lt;measurement time&gt; x 100%
+</span>   356    <span class="xdoc">     */</span>
+   357        <span class=key>config</span> Log.Event LS_taskLoad = {
+   358            mask: Diags.USER4,
+   359            msg: <span class="string">"LS_taskLoad: 0x%x,%d,%d,0x%x"</span>
+   360        };
+   361    
+   362        <span class="xdoc">/*!
+</span>   363    <span class="xdoc">     *  ======== postUpdate ========
+</span>   364    <span class="xdoc">     *  User function called after each load update
+</span>   365    <span class="xdoc">     *
+</span>   366    <span class="xdoc">     *  If non-NULL, postUpdate is run immediately after each update.
+</span>   367    <span class="xdoc">     */</span>
+   368        <span class=key>config</span> FuncPtr postUpdate = <span class=key>null</span>;
+   369    
+   370        <span class="xdoc">/*!
+</span>   371    <span class="xdoc">     *  ======== updateInIdle ========
+</span>   372    <span class="xdoc">     *  Automatically call {<b>@link</b> #update} in Idle loop
+</span>   373    <span class="xdoc">     *
+</span>   374    <span class="xdoc">     *  If this parameter is set to `true`, an {<b>@link</b> ti.sysbios.knl.Idle Idle}
+</span>   375    <span class="xdoc">     *  function, which computes and updates the CPU load, is added to the
+</span>   376    <span class="xdoc">     *  {<b>@link</b> ti.sysbios.knl.Idle#run Idle loop}.
+</span>   377    <span class="xdoc">     */</span>
+   378        <span class=key>config</span> Bool updateInIdle = <span class=key>true</span>;
+   379    
+   380        <span class="xdoc">/*!
+</span>   381    <span class="xdoc">     *  ======== minIdle ========
+</span>   382    <span class="xdoc">     *  Specifies the minimum time used to compute idle time
+</span>   383    <span class="xdoc">     *
+</span>   384    <span class="xdoc">     *  During CPU load measurement, the minimum time observed executing
+</span>   385    <span class="xdoc">     *  the idle loop together with the count of the number of times the idle
+</span>   386    <span class="xdoc">     *  loop runs id used to compute the total idle time.  However, since the
+</span>   387    <span class="xdoc">     *  _actual_ time spent in the idle loop will almost always be greater
+</span>   388    <span class="xdoc">     *  then the observed minimum, the idle time is almost always under
+</span>   389    <span class="xdoc">     *  estimated.
+</span>   390    <span class="xdoc">     *
+</span>   391    <span class="xdoc">     *  This configuration parameter can be used to compensate for this
+</span>   392    <span class="xdoc">     *  underestimate by placing a lower bound on the minimum time used in
+</span>   393    <span class="xdoc">     *  the CPU measurements.  The minimum idle time used to compute CPU
+</span>   394    <span class="xdoc">     *  load is guarenteed to be greater than or equal to `minIdle`.
+</span>   395    <span class="xdoc">     */</span>
+   396        <span class=key>metaonly</span> <span class=key>config</span> UInt32 minIdle = 0;
+   397    
+   398        <span class="xdoc">/*!
+</span>   399    <span class="xdoc">     *  ======== windowInMs ========
+</span>   400    <span class="xdoc">     *  Load averaging period
+</span>   401    <span class="xdoc">     *
+</span>   402    <span class="xdoc">     *  When {<b>@link</b> #updateInIdle} is enabled, this period determines the
+</span>   403    <span class="xdoc">     *  minimum elapsed time between updates of the load statistics in the
+</span>   404    <span class="xdoc">     *  idle loop.
+</span>   405    <span class="xdoc">     */</span>
+   406        <span class=key>config</span> UInt windowInMs = 500;
+   407    
+   408        <span class="xdoc">/*!
+</span>   409    <span class="xdoc">     *  ======== hwiEnabled ========
+</span>   410    <span class="xdoc">     *  Enables Hwi time monitoring
+</span>   411    <span class="xdoc">     *
+</span>   412    <span class="xdoc">     *  When this parameter is set to `true`, {<b>@link</b> ti.sysbios.hal.Hwi Hwi}
+</span>   413    <span class="xdoc">     *  processing time is accumulated between successive calls of
+</span>   414    <span class="xdoc">     *  {<b>@link</b> #update} and, as part of Load_update, an
+</span>   415    <span class="xdoc">     *  {<b>@link</b> #LS_hwiLoad event} with this cumulative time is logged.  This
+</span>   416    <span class="xdoc">     *  time, together with the total elapsed time, is used to estimate the
+</span>   417    <span class="xdoc">     *  CPU load due to any Hwi instances run between these updates.
+</span>   418    <span class="xdoc">     */</span>
+   419        <span class=key>config</span> Bool hwiEnabled = <span class=key>false</span>;
+   420    
+   421        <span class="xdoc">/*!
+</span>   422    <span class="xdoc">     *  ======== swiEnabled ========
+</span>   423    <span class="xdoc">     *  Enables Swi time monitoring
+</span>   424    <span class="xdoc">     *
+</span>   425    <span class="xdoc">     *  When this parameter is set to `true`, Swi processing time is
+</span>   426    <span class="xdoc">     *  accumulated between successive calls of {<b>@link</b> #update} and, as
+</span>   427    <span class="xdoc">     *  part of Load_update, an {<b>@link</b> #LS_swiLoad event} with this
+</span>   428    <span class="xdoc">     *  cumulative time is logged.  This time together with the total
+</span>   429    <span class="xdoc">     *  elapsed time is used to estimate the CPU load due to any Swi
+</span>   430    <span class="xdoc">     *  instances run between these updates.
+</span>   431    <span class="xdoc">     */</span>
+   432        <span class=key>config</span> Bool swiEnabled = <span class=key>false</span>;
+   433    
+   434        <span class="xdoc">/*!
+</span>   435    <span class="xdoc">     *  ======== taskEnabled ========
+</span>   436    <span class="xdoc">     *  Enables Task time monitoring
+</span>   437    <span class="xdoc">     *
+</span>   438    <span class="xdoc">     *  When this parameter is set to `true`, each Task's processing time is
+</span>   439    <span class="xdoc">     *  accumulated between successive calls of {<b>@link</b> #update} and, as
+</span>   440    <span class="xdoc">     *  part of Load_update, an {<b>@link</b> #LS_taskLoad event} with this
+</span>   441    <span class="xdoc">     *  cumulative time is logged for each task.  This time together with the
+</span>   442    <span class="xdoc">     *  total elapsed time is used to estimate the CPU load due to each Task
+</span>   443    <span class="xdoc">     *  run between these updates.
+</span>   444    <span class="xdoc">     */</span>
+   445        <span class=key>config</span> Bool taskEnabled = <span class=key>true</span>;
+   446    
+   447        <span class="comment">/* -------- Module Functions -------- */</span>
+   448    
+   449        <span class="xdoc">/*!
+</span>   450    <span class="xdoc">     *  ======== getTaskLoad ========
+</span>   451    <span class="xdoc">     *  Return the load and time spent in a specific task
+</span>   452    <span class="xdoc">     *
+</span>   453    <span class="xdoc">     *  This function returns the load and time spent in a specific task
+</span>   454    <span class="xdoc">     *  along with the duration over which the measurement was done. Numbers
+</span>   455    <span class="xdoc">     *  are reported in  {<b>@link</b> xdc.runtime.Timestamp Timestamp} counts.
+</span>   456    <span class="xdoc">     *
+</span>   457    <span class="xdoc">     *  Task handle must be valid and have been registered with Load.
+</span>   458    <span class="xdoc">     *
+</span>   459    <span class="xdoc">     *  <b>@param(task)</b> Handle of the Task which time we are interested in.
+</span>   460    <span class="xdoc">     *  <b>@param(stat)</b> Load and time statistics info
+</span>   461    <span class="xdoc">     *  <b>@b(returns)</b> TRUE if success, FALSE if failure
+</span>   462    <span class="xdoc">     *
+</span>   463    <span class="xdoc">     */</span>
+   464        Bool getTaskLoad(Task.Handle task, Stat *stat);
+   465    
+   466        <span class="xdoc">/*!
+</span>   467    <span class="xdoc">     *  ======== update ========
+</span>   468    <span class="xdoc">     *  Record thread statistics and reset all counters
+</span>   469    <span class="xdoc">     *
+</span>   470    <span class="xdoc">     *  If {<b>@link</b> #taskEnabled taskEnabled} is set to true, this function can
+</span>   471    <span class="xdoc">     *  only be called in task context.
+</span>   472    <span class="xdoc">     */</span>
+   473        Void update();
+   474    
+   475        <span class="xdoc">/*!
+</span>   476    <span class="xdoc">     *  ======== reset ========
+</span>   477    <span class="xdoc">     *  Reset all internal load counters
+</span>   478    <span class="xdoc">     *
+</span>   479    <span class="xdoc">     *  If {<b>@link</b> #taskEnabled taskEnabled} is set to true, this function can
+</span>   480    <span class="xdoc">     *  only be called in task context.
+</span>   481    <span class="xdoc">     */</span>
+   482        Void reset();
+   483    
+   484        <span class="xdoc">/*!
+</span>   485    <span class="xdoc">     *  ======== getGlobalSwiLoad ========
+</span>   486    <span class="xdoc">     *  Return the load and time spent in Swi's
+</span>   487    <span class="xdoc">     *
+</span>   488    <span class="xdoc">     *  This function returns the load and time spent in Swi's along with
+</span>   489    <span class="xdoc">     *  the time duration over which the measurement was done. Numbers are
+</span>   490    <span class="xdoc">     *  reported in  {<b>@link</b> xdc.runtime.Timestamp Timestamp} counts.
+</span>   491    <span class="xdoc">     *
+</span>   492    <span class="xdoc">     *  <b>@param(stat)</b> Load and time statistics info
+</span>   493    <span class="xdoc">     *  <b>@b(returns)</b> TRUE if success, FALSE if failure
+</span>   494    <span class="xdoc">     *
+</span>   495    <span class="xdoc">     */</span>
+   496        Bool getGlobalSwiLoad(Stat *stat);
+   497    
+   498        <span class="xdoc">/*!
+</span>   499    <span class="xdoc">     *  ======== getGlobalHwiLoad ========
+</span>   500    <span class="xdoc">     *  Return the load and time spent in hwi's
+</span>   501    <span class="xdoc">     *
+</span>   502    <span class="xdoc">     *  This function computes the load and time spent in Hwi's along
+</span>   503    <span class="xdoc">     *  with the time duration over which the measurement was done. Numbers
+</span>   504    <span class="xdoc">     *  are reported in  {<b>@link</b> xdc.runtime.Timestamp Timestamp} counts.
+</span>   505    <span class="xdoc">     *
+</span>   506    <span class="xdoc">     *  <b>@param(stat)</b> Load and time statistics info
+</span>   507    <span class="xdoc">     *
+</span>   508    <span class="xdoc">     *  <b>@b(returns)</b> TRUE if success, FALSE if failure
+</span>   509    <span class="xdoc">     */</span>
+   510        Bool getGlobalHwiLoad(Stat *stat);
+   511    
+   512        <span class="xdoc">/*!
+</span>   513    <span class="xdoc">     *  ======== getCPULoad ========
+</span>   514    <span class="xdoc">     *  Return an estimate of the global CPU load
+</span>   515    <span class="xdoc">     *
+</span>   516    <span class="xdoc">     *  This function returns an estimate of CPU load (% utilization of the
+</span>   517    <span class="xdoc">     *  CPU), with the idle time determined based on number of trips through
+</span>   518    <span class="xdoc">     *  the idle loop multiplied by the shortest amount of time through the
+</span>   519    <span class="xdoc">     *  loop.
+</span>   520    <span class="xdoc">     *
+</span>   521    <span class="xdoc">     *  This function requires the idle loop to be run during a benchmark time
+</span>   522    <span class="xdoc">     *  window.
+</span>   523    <span class="xdoc">     *
+</span>   524    <span class="xdoc">     *  Note: Time spent in kernel while switching to a Hwi/Swi/Task is
+</span>   525    <span class="xdoc">     *        considered non-idle time.
+</span>   526    <span class="xdoc">     *
+</span>   527    <span class="xdoc">     *  <b>@b(returns)</b> CPU load in %
+</span>   528    <span class="xdoc">     *
+</span>   529    <span class="xdoc">     */</span>
+   530        UInt32 getCPULoad();
+   531    
+   532        <span class="xdoc">/*!
+</span>   533    <span class="xdoc">     *  ======== calculateLoad ========
+</span>   534    <span class="xdoc">     *  Compute total CPU load from a Load_Stat structure
+</span>   535    <span class="xdoc">     *
+</span>   536    <span class="xdoc">     *  This function computes percent load from the
+</span>   537    <span class="xdoc">     *  values in a Load_Stat structure.
+</span>   538    <span class="xdoc">     *
+</span>   539    <span class="xdoc">     *  <b>@a(returns)</b> Load value of a Load_Stat structure in %.
+</span>   540    <span class="xdoc">     */</span>
+   541        UInt32 calculateLoad(Stat *stat);
+   542    
+   543        <span class="xdoc">/*!
+</span>   544    <span class="xdoc">     *  ======== setMinIdle ========
+</span>   545    <span class="xdoc">     *  Set lower bound on idle loop time used to compute CPU load
+</span>   546    <span class="xdoc">     *
+</span>   547    <span class="xdoc">     *  <b>@see</b> #minIdle
+</span>   548    <span class="xdoc">     */</span>
+   549        UInt32 setMinIdle(UInt32 newMinIdleTime);
+   550    
+   551        <span class="xdoc">/*! <b>@_nodoc</b>
+</span>   552    <span class="xdoc">     *  ======== addTask ========
+</span>   553    <span class="xdoc">     *  Add a task to the list for benchmarking
+</span>   554    <span class="xdoc">     *
+</span>   555    <span class="xdoc">     *  Returns TRUE if task is successfully added to the list.
+</span>   556    <span class="xdoc">     *
+</span>   557    <span class="xdoc">     *  If {<b>@link</b> #taskEnabled} is set to true, this function can only be
+</span>   558    <span class="xdoc">     *  called in task context.
+</span>   559    <span class="xdoc">     *
+</span>   560    <span class="xdoc">     *  <b>@param(task)</b> Handle of the Task to be added to the list.
+</span>   561    <span class="xdoc">     *  <b>@param(env)</b> Handle of context structure to be used by the Task
+</span>   562    <span class="xdoc">     *  <b>@b(returns)</b> TRUE if success, FALSE if failure
+</span>   563    <span class="xdoc">     *
+</span>   564    <span class="xdoc">     */</span>
+   565        Bool addTask(Task.Handle task, HookContext *env);
+   566    
+   567        <span class="xdoc">/*! <b>@_nodoc</b>
+</span>   568    <span class="xdoc">     *  ======== removeTask ========
+</span>   569    <span class="xdoc">     *  Remove a task from the list for benchmarking
+</span>   570    <span class="xdoc">     *
+</span>   571    <span class="xdoc">     *  Returns TRUE if task is successfully removed from the list.
+</span>   572    <span class="xdoc">     *
+</span>   573    <span class="xdoc">     *  If {<b>@link</b> #taskEnabled} is set to true, this funciton can only be
+</span>   574    <span class="xdoc">     *  called in task context.
+</span>   575    <span class="xdoc">     *
+</span>   576    <span class="xdoc">     *  <b>@param(taskHandle)</b> Handle of the Task to be removed from the list.
+</span>   577    <span class="xdoc">     *  <b>@b(returns)</b> TRUE if success, FALSE if failure
+</span>   578    <span class="xdoc">     *
+</span>   579    <span class="xdoc">     */</span>
+   580        Bool removeTask(Task.Handle task);
+   581    
+   582        <span class="xdoc">/*!
+</span>   583    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   584    <span class="xdoc">     *  ======== idleFxn ========
+</span>   585    <span class="xdoc">     *  Idle function used to periodically update the Task time values
+</span>   586    <span class="xdoc">     *
+</span>   587    <span class="xdoc">     */</span>
+   588        Void idleFxn();
+   589    
+   590        <span class="comment">/* -------- Hook Functions -------- */</span>
+   591    
+   592        <span class="xdoc">/*!
+</span>   593    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   594    <span class="xdoc">     *  ======== taskCreateHook ========
+</span>   595    <span class="xdoc">     *  Create hook function used to initialize all task's hook context
+</span>   596    <span class="xdoc">     *  to NULL during creation time. Also adds the task's hook context
+</span>   597    <span class="xdoc">     *  when {<b>@link</b> #autoAddTasks} is set to true.
+</span>   598    <span class="xdoc">     *
+</span>   599    <span class="xdoc">     *  <b>@param(task)</b> Handle of the Task to initialize.
+</span>   600    <span class="xdoc">     *  <b>@param(eb)</b> Error block.
+</span>   601    <span class="xdoc">     *
+</span>   602    <span class="xdoc">     */</span>
+   603        Void taskCreateHook(Task.Handle task, Error.Block *eb);
+   604    
+   605        <span class="xdoc">/*!
+</span>   606    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   607    <span class="xdoc">     *  ======== taskDeleteHook ========
+</span>   608    <span class="xdoc">     *  Delete hook function used to remove the task's hook context
+</span>   609    <span class="xdoc">     *  when {<b>@link</b> #autoAddTasks} is set to true.
+</span>   610    <span class="xdoc">     *
+</span>   611    <span class="xdoc">     *  <b>@param(task)</b> Handle of the Task to delete.
+</span>   612    <span class="xdoc">     *
+</span>   613    <span class="xdoc">     */</span>
+   614        Void taskDeleteHook(Task.Handle task);
+   615    
+   616        <span class="xdoc">/*!
+</span>   617    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   618    <span class="xdoc">     *  ======== taskSwitchHook ========
+</span>   619    <span class="xdoc">     *  Switch hook function used to perform benchmarks
+</span>   620    <span class="xdoc">     *
+</span>   621    <span class="xdoc">     *  <b>@param(curTask)</b> Handle of currently executing Task.
+</span>   622    <span class="xdoc">     *  <b>@param(nextTask)</b> Handle of the next Task to run
+</span>   623    <span class="xdoc">     *
+</span>   624    <span class="xdoc">     */</span>
+   625        Void taskSwitchHook(Task.Handle curTask, Task.Handle nextTask);
+   626    
+   627        <span class="xdoc">/*!
+</span>   628    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   629    <span class="xdoc">     *  ======== swiBeginHook ========
+</span>   630    <span class="xdoc">     *  Swi begin hook function used to perform benchmarks
+</span>   631    <span class="xdoc">     *
+</span>   632    <span class="xdoc">     *  <b>@param(swi)</b> Handle of Swi to begin execution.
+</span>   633    <span class="xdoc">     *
+</span>   634    <span class="xdoc">     */</span>
+   635        Void swiBeginHook(Swi.Handle swi);
+   636    
+   637        <span class="xdoc">/*!
+</span>   638    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   639    <span class="xdoc">     *  ======== swiEndHook ========
+</span>   640    <span class="xdoc">     *  Swi end hook function used to perform benchmarks
+</span>   641    <span class="xdoc">     *
+</span>   642    <span class="xdoc">     *  <b>@param(swi)</b> Handle of Swi to end execution.
+</span>   643    <span class="xdoc">     *
+</span>   644    <span class="xdoc">     */</span>
+   645        Void swiEndHook(Swi.Handle swi);
+   646    
+   647        <span class="xdoc">/*!
+</span>   648    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   649    <span class="xdoc">     *  ======== hwiBeginHook ========
+</span>   650    <span class="xdoc">     *  Hwi begin hook function used to perform benchmarks
+</span>   651    <span class="xdoc">     *
+</span>   652    <span class="xdoc">     *  <b>@param</b> hwi Handle of Hwi to begin execution.
+</span>   653    <span class="xdoc">     *
+</span>   654    <span class="xdoc">     */</span>
+   655        Void hwiBeginHook(IHwi.Handle hwi);
+   656    
+   657        <span class="xdoc">/*!
+</span>   658    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   659    <span class="xdoc">     *  ======== hwiEndHook ========
+</span>   660    <span class="xdoc">     *  Hwi end hook function used to perform benchmarks
+</span>   661    <span class="xdoc">     *
+</span>   662    <span class="xdoc">     *  <b>@param</b> hwi Handle of Hwi to end execution.
+</span>   663    <span class="xdoc">     *
+</span>   664    <span class="xdoc">     */</span>
+   665        Void hwiEndHook(IHwi.Handle hwi);
+   666    
+   667        <span class="xdoc">/*!
+</span>   668    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   669    <span class="xdoc">     *  ======== taskRegHook ========
+</span>   670    <span class="xdoc">     *  Registration function for the module's hook
+</span>   671    <span class="xdoc">     *
+</span>   672    <span class="xdoc">     *  Moved out of the internal section for ROM purposes. This function
+</span>   673    <span class="xdoc">     *  is not referenced directly, so it must be a "public" function so
+</span>   674    <span class="xdoc">     *  that the linker does not drop it when creating a ROM image.
+</span>   675    <span class="xdoc">     *
+</span>   676    <span class="xdoc">     *  <b>@param(id)</b> The id of the hook for use in load.
+</span>   677    <span class="xdoc">     *
+</span>   678    <span class="xdoc">     */</span>
+   679        Void taskRegHook(Int id);
+   680    
+   681    <span class=key>internal</span>:   <span class="comment">/* not for client use */</span>
+   682    
+   683        <span class="comment">/* -------- Internal Module Types -------- */</span>
+   684    
+   685        <span class="xdoc">/*!
+</span>   686    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   687    <span class="xdoc">     *  Hook Context
+</span>   688    <span class="xdoc">     */</span>
+   689        <span class=key>struct</span> HookContext {
+   690            Queue.Elem qElem;        <span class="xdoc">/*! Queue element */</span>
+   691            UInt32 totalTimeElapsed; <span class="xdoc">/*! Total amount of time elapsed */</span>
+   692            UInt32 totalTime;        <span class="xdoc">/*! time spent in thread */</span>
+   693            UInt32 nextTotalTime;    <span class="xdoc">/*! working counter of time spent in thread */</span>
+   694            UInt32 timeOfLastUpdate; <span class="xdoc">/*! time when update was last called */</span>
+   695            Ptr threadHandle;        <span class="xdoc">/*! handle to thread whose context this is */</span>
+   696        };
+   697    
+   698        <span class="comment">/* -------- Internal Module Parameters -------- */</span>
+   699    
+   700        <span class="xdoc">/*! <b>@_nodoc</b>
+</span>   701    <span class="xdoc">     *  Automatically add all tasks
+</span>   702    <span class="xdoc">     */</span>
+   703        <span class=key>config</span> Bool autoAddTasks = <span class=key>true</span>;
+   704    
+   705        <span class="comment">/* -------- Internal Module Functions -------- */</span>
+   706    
+   707        <span class="xdoc">/*!
+</span>   708    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>   709    <span class="xdoc">     *  ======== logLoads ========
+</span>   710    <span class="xdoc">     *  Logs load values for all monitored threads.
+</span>   711    <span class="xdoc">     *  Statistics messages from the kernel must be enabled
+</span>   712    <span class="xdoc">     *  (via Load.common$.diags_USER4) in order to see the output.
+</span>   713    <span class="xdoc">     *
+</span>   714    <span class="xdoc">     *  If {<b>@link</b> #taskEnabled} is set to TRUE, this function can only be
+</span>   715    <span class="xdoc">     *  called in task context.
+</span>   716    <span class="xdoc">     */</span>
+   717        Void logLoads();
+   718    
+   719    
+   720        <span class=key>struct</span> Module_State {
+   721            Queue.Object taskList;   <span class="comment">/* List to hold registered task instances */</span>
+   722    
+   723            Int taskHId;             <span class="comment">/* Task Hook Context Id for this module */</span>
+   724    
+   725            UInt32 taskStartTime[];  <span class="comment">/* The start time of the current task */</span>
+   726            UInt32 timeElapsed;      <span class="comment">/* Working count of time elapsed */</span>
+   727            Task.Handle runningTask[]; <span class="comment">/* Currently running task */</span>
+   728            Bool firstSwitchDone;    <span class="comment">/* Flag for first task switch */</span>
+   729    
+   730            UInt32 swiStartTime;     <span class="comment">/* Start time of the current Swi */</span>
+   731            HookContext swiEnv;      <span class="comment">/* Singleton hook context for swi's */</span>
+   732            UInt32 swiCnt;           <span class="comment">/* number of Swi's currently executing */</span>
+   733    
+   734            UInt32 hwiStartTime;     <span class="comment">/* Start time of the current Hwi */</span>
+   735            HookContext hwiEnv;      <span class="comment">/* Singleton hook context for hwi's */</span>
+   736            UInt32 hwiCnt;           <span class="comment">/* number of Hwi's currently executing */</span>
+   737    
+   738            UInt32 timeSlotCnt;      <span class="comment">/* count of number of time windows printed */</span>
+   739    
+   740            UInt32 minLoop;          <span class="comment">/* shortest time thru the idle loop */</span>
+   741            UInt32 minIdle;          <span class="comment">/* minLoop is never set below this value */</span>
+   742            UInt32 t0;               <span class="comment">/* start time of previous call to idle fxn */</span>
+   743            UInt32 idleCnt;          <span class="comment">/* number of times through idle loop */</span>
+   744            UInt32 cpuLoad;          <span class="comment">/* CPU load in previous time window */</span>
+   745    
+   746            GateMutex.Object gate;   <span class="comment">/* Gate to Task list */</span>
+   747        };
+   748    }
+</pre>
+</body></html>

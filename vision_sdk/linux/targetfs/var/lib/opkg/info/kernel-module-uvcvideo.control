@@ -1,0 +1,12 @@
+Package: kernel-module-uvcvideo
+Version: 3.14.49-r7d+gitrAUTOINC+2a6c025156.1
+Description: uvcvideo kernel module
+ uvcvideo kernel module; USB Video Class driver
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: dra7xx_evm
+OE: linux-ti-glsdk
+Depends: kernel-3.14.49, kernel-module-videobuf2-vmalloc
+Source: git://git.omapzoom.org/kernel/omap.git;protocol=git;branch=p-ti-linux-3.14.y-common file://defconfig

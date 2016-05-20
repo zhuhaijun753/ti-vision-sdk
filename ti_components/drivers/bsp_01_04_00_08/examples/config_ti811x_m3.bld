@@ -1,0 +1,377 @@
+/*
+ *  ======== config.bld ========
+ *  Build configuration script for HDVPSS drivers
+ */
+
+/* load the required modules for the configuration */
+
+var M3 = xdc.useModule('ti.targets.arm.elf.M3');
+
+
+/* M3 compiler directory path                    */
+M3.rootDir = java.lang.System.getenv("CGTOOLS");
+
+
+/*
+Memory map for both "evmSi" and "sim"
+
+DDR: 0x80000000 (Total 512MB , first 416MB)
++-----------------+
+|                 |
+| Linux           | 364MB
+|                 |
++-----------------+
+| DSP_SIZE        | 52MB
++-----------------+
+
+(First large Page of size 32MB , cached section)
++-----------------+
+|                 |
+| DSS M3 Data     | 13MB
+|                 |
++-----------------+
+| DSS M3 Code     | 2MB
++-----------------+
+| Video M3 Data   | 13MB
++-----------------+
+| Video M3 Code   | 1MB
++-----------------+
+| Debug           | 1MB
++-----------------+
+| SYSLINK_SR0     | 1MB
++-----------------+
+
+(Second and third large Page of size 32MB each ,non- cached section)
++-----------------+
+|                 |
+|FRAME BUFFER     | 57MB
++-----------------+
+| Notify Shared   | 1MB
+|      Mem        |
++-----------------+
+| VPDMA Desc Mem  | 2MB
++-----------------+
+| HDVPSS Shared   | 2MB
+|      Mem        |
++-----------------+
+|  MEMCFG SPACE   | 2MB
+|                 |
++-----------------+
+
+
+
+OCMC: 0x00300000
++-----------------+
+| OCMC0 (Not used)| 128KB
++-----------------+
+
+*/
+
+var KB=1024;
+var MB=KB*KB;
+
+var DDR3_ADDR_0;
+
+var DDR3_SIZE;
+
+var OCMC0_ADDR;
+var OCMC1_ADDR;
+var OCMC_SIZE;
+
+var LINUX_ADDR;
+var LINUX_SIZE;
+
+var SYSLINK_SR0_ADDR;
+var SYSLINK_SR0_SIZE;
+
+var DSS_M3_DATA_ADDR;
+var DSS_M3_DATA_SIZE;
+
+var DSS_M3_CODE_ADDR;
+var DSS_M3_CODE_SIZE;
+
+var DEBUG_ADDR;
+var DEBUG_SIZE;
+
+var FRAME_BUFFER_ADDR;
+var FRAME_BUFFER_SIZE;
+
+var HDVPSS_DESC_ADDR;
+var HDVPSS_DESC_SIZE;
+
+var HDVPSS_SHARED_ADDR;
+var HDVPSS_SHARED_SIZE;
+
+DDR3_ADDR_0               = 0x80000000;
+
+
+/* DDR size is only 512MB and there is no DMM in J5-Eco,
+ * Each large page size can be of either 512 MB or 32MB,
+ * we cannot use large page size as 512MB as we need pages
+ * with different cache policy (cached and non-cached), so
+ * using cache page of size 32 MB
+ */
+DDR3_SIZE               = 2048*MB;
+
+OCMC0_ADDR              = 0x00300000;
+OCMC1_ADDR              = 0x00400000;
+OCMC_SIZE               = 128*KB;
+
+LINUX_SIZE              = 364*MB;
+DSP_SIZE                = 52*MB;
+DSS_M3_DATA_SIZE        = 13*MB;
+DSS_M3_CODE_SIZE        = 2*MB;
+VIDEO_M3_DATA_SIZE      = 13*MB;
+VIDEO_M3_CODE_SIZE      = 1*MB;
+DEBUG_SIZE              = 1*MB;
+SYSLINK_SR0_SIZE        = 2*MB;
+
+
+FRAME_BUFFER_SIZE       = 57*MB;
+NOTIFY_SHARED_SIZE      = 2*MB;
+HDVPSS_DESC_SIZE        = 2*MB;
+HDVPSS_SHARED_SIZE      = 2*MB;
+MEMCFG_SPACE_SIZE       = 1*MB;
+
+
+
+LINUX_ADDR              = DDR3_ADDR_0;
+DSP_ADDR                = LINUX_ADDR            + LINUX_SIZE;
+DSS_M3_DATA_ADDR        = DSP_ADDR              + DSP_SIZE;
+DSS_M3_CODE_ADDR        = DSS_M3_DATA_ADDR      + DSS_M3_DATA_SIZE;
+VIDEO_M3_DATA_ADDR      = DSS_M3_CODE_ADDR      + DSS_M3_CODE_SIZE;
+VIDEO_M3_CODE_ADDR      = VIDEO_M3_DATA_ADDR    + VIDEO_M3_DATA_SIZE;
+DEBUG_ADDR              = VIDEO_M3_CODE_ADDR    + VIDEO_M3_CODE_SIZE;
+SYSLINK_SR0_ADDR        = DEBUG_ADDR            + DEBUG_SIZE;
+
+FRAME_BUFFER_ADDR       = SYSLINK_SR0_ADDR      + SYSLINK_SR0_SIZE;
+NOTIFY_SHARED_ADDR      = FRAME_BUFFER_ADDR     + FRAME_BUFFER_SIZE;
+HDVPSS_DESC_ADDR        = NOTIFY_SHARED_ADDR    + NOTIFY_SHARED_SIZE;
+HDVPSS_SHARED_ADDR      = HDVPSS_DESC_ADDR      + HDVPSS_DESC_SIZE;
+MEMCFG_SPACE_ADDR       = HDVPSS_SHARED_ADDR    + HDVPSS_SHARED_SIZE;
+
+
+Build.platformTable["ti.platforms.evmTI814X:core1"] =
+{
+    externalMemoryMap:
+    [
+        ["DDR3_RAM", {
+            comment: "DDR3_RAM",
+            name: "DDR3_RAM",
+            base: DDR3_ADDR_0,
+            len:  DDR3_SIZE
+        }],
+        ["OCMC0_RAM", {
+            comment: "OCMC0_RAM",
+            name: "OCMC0_RAM",
+            base: OCMC0_ADDR,
+            len:  OCMC_SIZE
+        }],
+        ["OCMC1_RAM", {
+            comment: "OCMC1_RAM",
+            name: "OCMC1_RAM",
+            base: OCMC1_ADDR,
+            len:  OCMC_SIZE
+        }],
+    ],
+    customMemoryMap:
+    [
+        ["LINUX_MEM", {
+            comment : "LINUX_MEM",
+            name    : "LINUX_MEM",
+            base    : LINUX_ADDR,
+            len     : LINUX_SIZE
+        }],
+        ["DSP_MEM", {
+            comment : "DSP_MEM",
+            name    : "DSP_MEM",
+            base    : DSP_ADDR,
+            len     : DSP_SIZE
+        }],
+        ["SR0", {
+            comment : "SR0 - Shared Region 0 required by IPC",
+            name    : "SR0",
+            base    : SYSLINK_SR0_ADDR,
+            len     : SYSLINK_SR0_SIZE
+        }],
+        ["DSS_M3_CODE_MEM", {
+            comment : "DSS_M3_CODE_MEM",
+            name    : "DSS_M3_CODE_MEM",
+            base    : DSS_M3_CODE_ADDR,
+            len     : DSS_M3_CODE_SIZE
+        }],
+        ["DDR3_M3", {
+            comment : "DDR3_M3",
+            name    : "DDR3_M3",
+            base    : DSS_M3_DATA_ADDR,
+            len     : DSS_M3_DATA_SIZE
+        }],
+        ["DEBUG_MEM", {
+            comment : "DEBUG_MEM",
+            name    : "DEBUG_MEM",
+            base    : DEBUG_ADDR,
+            len     : DEBUG_SIZE
+        }],
+        ["HDVPSS_DESC_MEM", {
+            comment : "HDVPSS_DESC_MEM",
+            name    : "HDVPSS_DESC_MEM",
+            base    : HDVPSS_DESC_ADDR,
+            len     : HDVPSS_DESC_SIZE
+        }],
+        ["HDVPSS_SHARED_MEM", {
+            comment : "HDVPSS_SHARED_MEM",
+            name    : "HDVPSS_SHARED_MEM",
+            base    : HDVPSS_SHARED_ADDR,
+            len     : HDVPSS_SHARED_SIZE
+        }],
+        ["HOST_VPSS_NOITFYMEM", {
+            comment : "HOST_VPSS_NOITFYMEM",
+            name    : "HOST_VPSS_NOITFYMEM",
+            base    : NOTIFY_SHARED_ADDR,
+            len     : NOTIFY_SHARED_SIZE
+        }],
+        ["FRAME_BUFFER_MEM", {
+            comment : "FRAME_BUFFER_MEM",
+            name    : "FRAME_BUFFER_MEM",
+            base    : FRAME_BUFFER_ADDR,
+            len     : FRAME_BUFFER_SIZE
+        }],
+        ["MEMCFG_SPACE", {
+            comment : "MEMCFG_SPACE",
+            name    : "MEMCFG_SPACE",
+            base    : MEMCFG_SPACE_ADDR,
+            len     : MEMCFG_SPACE_SIZE
+        }],
+        ["L2_RAM", {
+            comment: "L2_RAM",
+            name: "L2_RAM",
+            base: 0x20004000,
+            len:  0x00010000
+        }],
+        ["L2_ROM", {
+            comment: "L2_ROM",
+            name: "L2_ROM",
+            base: 0x00000000,
+            len:  0x00004000
+        }],
+        ["OCMC0_RAM", {
+            comment: "OCMC0_RAM",
+            name: "OCMC0_RAM",
+            base: OCMC0_ADDR,
+            len:  OCMC_SIZE
+        }],
+        ["OCMC1_RAM", {
+            comment: "OCMC1_RAM",
+            name: "OCMC1_RAM",
+            base: OCMC1_ADDR,
+            len:  OCMC_SIZE
+        }],
+    ]
+};
+
+
+Build.platformTable["ti.platforms.evmTI814X:core0"] =
+{
+    externalMemoryMap:
+    [
+        ["DDR3_RAM", {
+            comment: "DDR3_RAM",
+            name: "DDR3_RAM",
+            base: DDR3_ADDR_0,
+            len:  DDR3_SIZE
+        }],
+        ["OCMC0_RAM", {
+            comment: "OCMC0_RAM",
+            name: "OCMC0_RAM",
+            base: OCMC0_ADDR,
+            len:  OCMC_SIZE
+        }],
+        ["OCMC1_RAM", {
+            comment: "OCMC1_RAM",
+            name: "OCMC1_RAM",
+            base: OCMC1_ADDR,
+            len:  OCMC_SIZE
+        }],
+    ],
+    customMemoryMap:
+    [
+        ["LINUX_MEM", {
+            comment : "LINUX_MEM",
+            name    : "LINUX_MEM",
+            base    : LINUX_ADDR,
+            len     : LINUX_SIZE
+        }],
+        ["DSP_MEM", {
+            comment : "DSP_MEM",
+            name    : "DSP_MEM",
+            base    : DSP_ADDR,
+            len     : DSP_SIZE
+        }],
+        ["SR0", {
+            comment : "SR0 - Shared Region 0 required by IPC",
+            name    : "SR0",
+            base    : SYSLINK_SR0_ADDR,
+            len     : SYSLINK_SR0_SIZE
+        }],
+        ["VIDEO_M3_CODE_MEM", {
+            comment : "VIDEO_M3_CODE_MEM",
+            name    : "VIDEO_M3_CODE_MEM",
+            base    : VIDEO_M3_CODE_ADDR,
+            len     : VIDEO_M3_CODE_SIZE
+        }],
+        ["DDR3_M3", {
+            comment : "DDR3_M3",
+            name    : "DDR3_M3",
+            base    : VIDEO_M3_DATA_ADDR,
+            len     : VIDEO_M3_DATA_SIZE
+        }],
+        ["DSS_M3_CODE_MEM", {
+            comment : "DSS_M3_CODE_MEM",
+            name    : "DSS_M3_CODE_MEM",
+            base    : DSS_M3_CODE_ADDR,
+            len     : DSS_M3_CODE_SIZE
+        }],
+        ["DDR3_M3", {
+            comment : "DDR3_M3",
+            name    : "DDR3_M3",
+            base    : DSS_M3_DATA_ADDR,
+            len     : DSS_M3_DATA_SIZE
+        }],
+        ["DEBUG_MEM", {
+            comment : "DEBUG_MEM",
+            name    : "DEBUG_MEM",
+            base    : DEBUG_ADDR,
+            len     : DEBUG_SIZE
+        }],
+        ["HDVPSS_DESC_MEM", {
+            comment : "HDVPSS_DESC_MEM",
+            name    : "HDVPSS_DESC_MEM",
+            base    : HDVPSS_DESC_ADDR,
+            len     : HDVPSS_DESC_SIZE
+        }],
+        ["FRAME_BUFFER_MEM", {
+            comment : "FRAME_BUFFER_MEM",
+            name    : "FRAME_BUFFER_MEM",
+            base    : FRAME_BUFFER_ADDR,
+            len     : FRAME_BUFFER_SIZE
+        }],
+        ["MEMCFG_SPACE", {
+            comment : "MEMCFG_SPACE",
+            name    : "MEMCFG_SPACE",
+            base    : MEMCFG_SPACE_ADDR,
+            len     : MEMCFG_SPACE_SIZE
+        }],
+        ["L2_RAM", {
+            comment : "L2_RAM",
+            name    : "L2_RAM",
+            base    : 0x20004000,
+            len     : 0x00010000
+        }],
+        ["L2_ROM", {
+            comment : "L2_ROM",
+            name    : "L2_ROM",
+            base    : 0x00000000,
+            len     : 0x00004000
+        }],
+    ]
+};

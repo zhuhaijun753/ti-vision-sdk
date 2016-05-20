@@ -1,0 +1,13 @@
+Package: libgstegl-1.0-0
+Version: 1.2.3-r0-arago5.0
+Description: gstreamer gstegl-1.0 library
+ gstreamer gstegl-1.0 library
+Section: multimedia
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2+ & LGPLv2.1+ 
+Architecture: dra7xx_evm
+OE: gstreamer1.0-plugins-bad
+Homepage: http://gstreamer.freedesktop.org/
+Depends: libgstvideo-1.0-0 (>= 1.2.3), libdrm2 (>= 2.4.41), libffi6 (>= 3.0.13), omap5-sgx-ddk-um-linux (>= 1.9.0.12), libc6 (>= 2.15), libglib-2.0-0 (>= 2.38.2), libdrm-omap1 (>= 2.4.41), liborc-0.4-0 (>= 0.4.18), gstreamer1.0 (>= 1.2.3)
+Source: git://git.ti.com/glsdk/gstreamer1-0-plugins-bad.git;protocol=git

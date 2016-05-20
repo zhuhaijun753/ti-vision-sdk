@@ -1,0 +1,16 @@
+Package: libc6-dev
+Version: 2.15-r2-arago11.0
+Description: external-linaro-toolchain version 2013.03-r2-arago11 - Development files
+ external-linaro-toolchain version 2013.03-r2-arago11.  This package
+ contains symbolic links, header files, and related items necessary for
+ software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: external-linaro-toolchain
+Depends: libthread-db1, libcidn1, libc6 (= 2.15-r2-arago11.0)
+Recommends: linux-libc-headers-dev
+Provides: virtual-libc-dev, libc6-dev, glibc-dev, libc-dev
+Source: file://SUPPORTED

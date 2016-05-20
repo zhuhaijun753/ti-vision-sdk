@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>module ti.sysbios.family.arm.v7r.tms570.Core</title>
+<meta name="googlebot" content="noindex,nofollow">
+<link rel="stylesheet" type="text/css" href="../../../../../../src.css"/>
+</head>
+<body>
+<pre class=src>
+     1    <span class="comment">/*
+</span>     2    <span class="comment"> * Copyright (c) 2015, Texas Instruments Incorporated
+</span>     3    <span class="comment"> * All rights reserved.
+</span>     4    <span class="comment"> *
+</span>     5    <span class="comment"> * Redistribution and use in source and binary forms, with or without
+</span>     6    <span class="comment"> * modification, are permitted provided that the following conditions
+</span>     7    <span class="comment"> * are met:
+</span>     8    <span class="comment"> *
+</span>     9    <span class="comment"> * *  Redistributions of source code must retain the above copyright
+</span>    10    <span class="comment"> *    notice, this list of conditions and the following disclaimer.
+</span>    11    <span class="comment"> *
+</span>    12    <span class="comment"> * *  Redistributions in binary form must reproduce the above copyright
+</span>    13    <span class="comment"> *    notice, this list of conditions and the following disclaimer in the
+</span>    14    <span class="comment"> *    documentation and/or other materials provided with the distribution.
+</span>    15    <span class="comment"> *
+</span>    16    <span class="comment"> * *  Neither the name of Texas Instruments Incorporated nor the names of
+</span>    17    <span class="comment"> *    its contributors may be used to endorse or promote products derived
+</span>    18    <span class="comment"> *    from this software without specific prior written permission.
+</span>    19    <span class="comment"> *
+</span>    20    <span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+</span>    21    <span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+</span>    22    <span class="comment"> * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+</span>    23    <span class="comment"> * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+</span>    24    <span class="comment"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+</span>    25    <span class="comment"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+</span>    26    <span class="comment"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+</span>    27    <span class="comment"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+</span>    28    <span class="comment"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+</span>    29    <span class="comment"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+</span>    30    <span class="comment"> * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</span>    31    <span class="comment"> */</span>
+    32    <span class="comment">/*
+</span>    33    <span class="comment"> *  ======== Core.xdc ========
+</span>    34    <span class="comment"> */</span>
+    35    
+    36    import xdc.runtime.Error;
+    37    
+    38    <span class="xdoc">/*!
+</span>    39    <span class="xdoc"> *  ======== Core ========
+</span>    40    <span class="xdoc"> *  Core Identification Module.
+</span>    41    <span class="xdoc"> *
+</span>    42    <span class="xdoc"> *  The Core module is used to define which core within a dual core
+</span>    43    <span class="xdoc"> *  "R5" subsystem an application is being built for.
+</span>    44    <span class="xdoc"> *
+</span>    45    <span class="xdoc"> *  At runtime, a comparison is made between the configured Core.id
+</span>    46    <span class="xdoc"> *  and the value of MPIDR (bits 7:0). If they do not agree, an Error
+</span>    47    <span class="xdoc"> *  is raised.
+</span>    48    <span class="xdoc"> *
+</span>    49    <span class="xdoc"> *  Core 0's vector table is placed at 0x100 and Core 1's vector table
+</span>    50    <span class="xdoc"> *  is placed at 0x20000.
+</span>    51    <span class="xdoc"> *
+</span>    52    <span class="xdoc"> *  <b>@a(Bootup sequence)</b>
+</span>    53    <span class="xdoc"> *  When each Cortex-R5 core comes out of reset, it runs a routine that
+</span>    54    <span class="xdoc"> *  determines the source of reset and depending on the source either
+</span>    55    <span class="xdoc"> *  continues executing the bootup sequence or calls a reset callback
+</span>    56    <span class="xdoc"> *  function corresponding to the detected reset source.
+</span>    57    <span class="xdoc"> *
+</span>    58    <span class="xdoc"> *  In case the reset source is a PowerOn/Debug/External reset signal,
+</span>    59    <span class="xdoc"> *  the normal bootup sequence is continued (i.e. data section init
+</span>    60    <span class="xdoc"> *  and execution of various kernel module startup functions before
+</span>    61    <span class="xdoc"> *  calling main() function).
+</span>    62    <span class="xdoc"> *
+</span>    63    <span class="xdoc"> *  For other reset sources, the callback functions corresponding to
+</span>    64    <span class="xdoc"> *  the reset source are called. Here's an example showing how to register
+</span>    65    <span class="xdoc"> *  a software reset callback function:
+</span>    66    <span class="xdoc"> *
+</span>    67    <span class="xdoc"> *  <b>@p(code)</b>
+</span>    68    <span class="xdoc"> *  var Core = xdc.useModule('ti.sysbios.family.arm.v7r.tms570.Core');
+</span>    69    <span class="xdoc"> *  Core.swResetFunc = '&amp;myfunc';
+</span>    70    <span class="xdoc"> *  <b>@p</b>
+</span>    71    <span class="xdoc"> */</span>
+    72    
+    73    @ModuleStartup          <span class="comment">/* to configure static timers */</span>
+    74    @Template (<span class="string">"./Core.xdt"</span>)
+    75    
+    76    <span class=key>module</span> Core <span class=key>inherits</span> ti.sysbios.interfaces.ICore
+    77    {
+    78        <span class="xdoc">/*! Reset function type definition. */</span>
+    79        <span class=key>typedef</span> Void (*ResetFuncPtr)(<span class=key>void</span>);
+    80    
+    81        <span class="xdoc">/*!
+</span>    82    <span class="xdoc">     *  <b>@_nodoc</b>
+</span>    83    <span class="xdoc">     *  Reset sources
+</span>    84    <span class="xdoc">     */</span>
+    85        <span class=key>enum</span> ResetSource
+    86        {
+    87            ResetSource_POWERON       =   0x8000U,
+    88            ResetSource_OSC_FAILURE   =   0x4000U,
+    89            ResetSource_WATCHDOG      =   0x2000U,
+    90            ResetSource_WATCHDOG2     =   0x1000U,
+    91            ResetSource_DEBUG         =   0x0800U,
+    92            ResetSource_INTERCONNECT  =   0x0080U,
+    93            ResetSource_CPU1          =   0x0040U,
+    94            ResetSource_CPU0          =   0x0020U,
+    95            ResetSource_SW            =   0x0010U,
+    96            ResetSource_EXT           =   0x0008U,
+    97            ResetSource_NO_RESET      =   0x0000U
+    98        };
+    99    
+   100        <span class="xdoc">/*!
+</span>   101    <span class="xdoc">     *  Error raised if Core.id does not match the contents
+</span>   102    <span class="xdoc">     *  of MPIDR [7:0] register.
+</span>   103    <span class="xdoc">     */</span>
+   104        <span class=key>config</span> Error.Id E_mismatchedIds = {
+   105            msg: <span class="string">"E_mismatchedIds: Core_Id: %d does not match hardware core Id: %d"</span>
+   106        };
+   107    
+   108        <span class=key>override</span> <span class=key>config</span> UInt numCores;
+   109    
+   110        <span class="xdoc">/*!
+</span>   111    <span class="xdoc">     *  R5 Core ID, default is Core 0
+</span>   112    <span class="xdoc">     *
+</span>   113    <span class="xdoc">     *  Used for making static decisions based on Core ID
+</span>   114    <span class="xdoc">     */</span>
+   115        <span class=key>config</span> UInt id = 0;
+   116    
+   117        <span class="xdoc">/*!
+</span>   118    <span class="xdoc">     *  ======== cpu0ResetFunc ========
+</span>   119    <span class="xdoc">     *  CPU0 reset function pointer
+</span>   120    <span class="xdoc">     */</span>
+   121        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr cpu0ResetFunc = <span class=key>null</span>;
+   122    
+   123        <span class="xdoc">/*!
+</span>   124    <span class="xdoc">     *  ======== cpu1ResetFunc ========
+</span>   125    <span class="xdoc">     *  CPU1 reset function pointer
+</span>   126    <span class="xdoc">     */</span>
+   127        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr cpu1ResetFunc = <span class=key>null</span>;
+   128    
+   129        <span class="xdoc">/*!
+</span>   130    <span class="xdoc">     *  ======== interconnectResetFunc ========
+</span>   131    <span class="xdoc">     *  Interconnect reset function pointer
+</span>   132    <span class="xdoc">     */</span>
+   133        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr interconnectResetFunc = <span class=key>null</span>;
+   134    
+   135        <span class="xdoc">/*!
+</span>   136    <span class="xdoc">     *  ======== oscFailureResetFunc ========
+</span>   137    <span class="xdoc">     *  Oscillator failure reset function pointer
+</span>   138    <span class="xdoc">     */</span>
+   139        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr oscFailureResetFunc = <span class=key>null</span>;
+   140    
+   141        <span class="xdoc">/*!
+</span>   142    <span class="xdoc">     *  ======== swResetFunc ========
+</span>   143    <span class="xdoc">     *  Software reset function pointer
+</span>   144    <span class="xdoc">     */</span>
+   145        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr swResetFunc = <span class=key>null</span>;
+   146    
+   147        <span class="xdoc">/*!
+</span>   148    <span class="xdoc">     *  ======== watchdogResetFunc ========
+</span>   149    <span class="xdoc">     *  Watchdog reset function pointer
+</span>   150    <span class="xdoc">     */</span>
+   151        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr watchdogResetFunc = <span class=key>null</span>;
+   152    
+   153        <span class="xdoc">/*!
+</span>   154    <span class="xdoc">     *  ======== watchdog2ResetFunc ========
+</span>   155    <span class="xdoc">     *  Watchdog2 reset function pointer
+</span>   156    <span class="xdoc">     */</span>
+   157        <span class=key>metaonly</span> <span class=key>config</span> ResetFuncPtr watchdog2ResetFunc = <span class=key>null</span>;
+   158    
+   159        @Macro
+   160        <span class=key>override</span> UInt hwiDisable();
+   161    
+   162        @Macro
+   163        <span class=key>override</span> UInt hwiEnable();
+   164    
+   165        @Macro
+   166        <span class=key>override</span> Void hwiRestore(UInt key);
+   167    
+   168    <span class=key>internal</span>:
+   169    
+   170        <span class="comment">/*
+</span>   171    <span class="comment">     *  ======== syncStartup ========
+</span>   172    <span class="comment">     *  Sync Core0 and Core1 during startup.
+</span>   173    <span class="comment">     */</span>
+   174        Void syncStartup();
+   175    
+   176        <span class="comment">/*
+</span>   177    <span class="comment">     *  ======== getResetSource ========
+</span>   178    <span class="comment">     */</span>
+   179        ResetSource getResetSource();
+   180    
+   181        <span class="comment">/*
+</span>   182    <span class="comment">     *  ======== resetC ========
+</span>   183    <span class="comment">     */</span>
+   184        Void resetC();
+   185    }
+</pre>
+</body></html>

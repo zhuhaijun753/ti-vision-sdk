@@ -1,0 +1,16 @@
+Package: libav-dev
+Version: 0.8.9-r0-arago0.0
+Description: A complete, cross-platform solution to record, convert and stream audio and video - Development files
+ A complete, cross-platform solution to record, convert and stream audio
+ and video.  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libav
+Homepage: http://libav.org/
+Depends: libav (= 0.8.9-r0-arago0.0)
+Recommends: libtheora-dev, libgcc-s-dev, libavcodec-dev, libavfilter-dev, libpostproc-dev, libavutil-dev, libvorbis-dev, libc6-dev, libogg-dev, libswscale-dev, libz-dev, libavformat-dev, bzip2-dev, libavdevice-dev
+Source: http://libav.org/releases/libav-0.8.9.tar.xz file://0001-configure-enable-pic-for-AArch64.patch

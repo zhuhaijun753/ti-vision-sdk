@@ -1,0 +1,13 @@
+Package: gstreamer1.0-plugins-base-meta
+Version: 1.2.3-r0-arago1.0
+Description: Plugins for the GStreamer multimedia framework 1.x
+ gstreamer1.0-plugins-base meta package
+Section: multimedia
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2+
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: gstreamer1.0-plugins-base
+Homepage: http://gstreamer.freedesktop.org/
+Depends: gstreamer1.0-plugins-base-subparse, libgstrtp-1.0-0, gstreamer1.0-plugins-base-videorate, gstreamer1.0-plugins-base-theora, gstreamer1.0-plugins-base-tcp, gstreamer1.0-plugins-base-videoscale, gstreamer1.0-plugins-base-volume, libgstvideo-1.0-0, libgstaudio-1.0-0, gstreamer1.0-plugins-base-vorbis, gstreamer1.0-plugins-base-ogg, gstreamer1.0-plugins-base-gio, gstreamer1.0-plugins-base-audioresample, gstreamer1.0-plugins-base-videotestsrc, gstreamer1.0-plugins-base-typefindfunctions, gstreamer1.0-plugins-base-videoconvert, gstreamer1.0-plugins-base-ivorbisdec, libgstallocators-1.0-0, gstreamer1.0-plugins-base-audioconvert, libgstrtsp-1.0-0, gstreamer1.0-plugins-base-alsa, gstreamer1.0-plugins-base-adder, libgstriff-1.0-0, libgstpbutils-1.0-0, gstreamer1.0-plugins-base-audiotestsrc, gstreamer1.0-plugins-base-encodebin, libgstfft-1.0-0, gstreamer1.0-plugins-base-playback, gstreamer1.0-plugins-base-apps, libgsttag-1.0-0, gstreamer1.0-plugins-base-audiorate, libgstdmabuf-1.0-0, libgstapp-1.0-0, gstreamer1.0-plugins-base-app, libgstsdp-1.0-0
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.2.3.tar.xz file://0001-Added-GstMetaDmaBuf-features.patch file://0002-videoconvert-use-videoconvert-from-version-1.3.1-to-.patch

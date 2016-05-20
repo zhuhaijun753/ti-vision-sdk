@@ -1,0 +1,143 @@
+clean::
+	$(RM) package/ti.sdo.ipc.family.ti81xx.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b160
+	$(RM) package/.xdc-A75
+	$(RM) package/ti_sdo_ipc_family_ti81xx.java
+	$(RM) package/ti_sdo_ipc_family_ti81xx.class
+	$(RM) package/package_ti.sdo.ipc.family.ti81xx.c
+	$(RM) package/package.defs.h
+	$(RM) NotifySetup.h
+	$(RM) package/internal/NotifySetup.xdc.h
+	$(RM) NotifyMbxSetup.h
+	$(RM) package/internal/NotifyMbxSetup.xdc.h
+	$(RM) NotifyCircSetup.h
+	$(RM) package/internal/NotifyCircSetup.xdc.h
+	$(RM) InterruptDsp.h
+	$(RM) package/internal/InterruptDsp.xdc.h
+	$(RM) InterruptDucati.h
+	$(RM) package/internal/InterruptDucati.xdc.h
+	$(RM) InterruptHost.h
+	$(RM) package/internal/InterruptHost.xdc.h
+	$(RM) NotifyDriverMbx.h
+	$(RM) package/internal/NotifyDriverMbx.xdc.h
+	$(RM) package/ti.sdo.ipc.family.ti81xx.ccs
+
+.interfaces: package/ti.sdo.ipc.family.ti81xx.sch package/.vers_g180 package/.vers_r170 package/.vers_b160 package/.xdc-A75 package/ti_sdo_ipc_family_ti81xx.java package/package_ti.sdo.ipc.family.ti81xx.c package/package.defs.h NotifySetup.h package/internal/NotifySetup.xdc.h NotifyMbxSetup.h package/internal/NotifyMbxSetup.xdc.h NotifyCircSetup.h package/internal/NotifyCircSetup.xdc.h InterruptDsp.h package/internal/InterruptDsp.xdc.h InterruptDucati.h package/internal/InterruptDucati.xdc.h InterruptHost.h package/internal/InterruptHost.xdc.h NotifyDriverMbx.h package/internal/NotifyDriverMbx.xdc.h package/ti.sdo.ipc.family.ti81xx.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b160
+package/.vers_b160:
+
+.interfaces: NotifySetup.xdc NotifyMbxSetup.xdc NotifyCircSetup.xdc InterruptDsp.xdc InterruptDucati.xdc InterruptHost.xdc NotifyDriverMbx.xdc 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.inc: package.xs
+NotifySetup.xs:
+package/package.xdc.inc: NotifySetup.xs
+NotifyMbxSetup.xs:
+package/package.xdc.inc: NotifyMbxSetup.xs
+NotifyCircSetup.xs:
+package/package.xdc.inc: NotifyCircSetup.xs
+InterruptDsp.xs:
+package/package.xdc.inc: InterruptDsp.xs
+InterruptDucati.xs:
+package/package.xdc.inc: InterruptDucati.xs
+InterruptHost.xs:
+package/package.xdc.inc: InterruptHost.xs
+NotifyDriverMbx.xs:
+package/package.xdc.inc: NotifyDriverMbx.xs
+
+# schema update dependencies
+package/package.xdc.inc: NotifySetup.xdc
+package/package.xdc.inc: NotifyMbxSetup.xdc
+package/package.xdc.inc: NotifyCircSetup.xdc
+package/package.xdc.inc: InterruptDsp.xdc
+package/package.xdc.inc: InterruptDucati.xdc
+package/package.xdc.inc: InterruptHost.xdc
+package/package.xdc.inc: NotifyDriverMbx.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/MultiProc.xdc
+ti/sdo/utils/MultiProc.xdc:
+vpath ti/sdo/utils/MultiProc.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/runtime/Assert.xdc
+xdc/runtime/Assert.xdc:
+vpath xdc/runtime/Assert.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INotifySetup.xdc
+ti/sdo/ipc/interfaces/INotifySetup.xdc:
+vpath ti/sdo/ipc/interfaces/INotifySetup.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/notifyDrivers/IInterrupt.xdc
+ti/sdo/ipc/notifyDrivers/IInterrupt.xdc:
+vpath ti/sdo/ipc/notifyDrivers/IInterrupt.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/interfaces/INotifyDriver.xdc
+ti/sdo/ipc/interfaces/INotifyDriver.xdc:
+vpath ti/sdo/ipc/interfaces/INotifyDriver.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/ipc/Notify.xdc
+ti/sdo/ipc/Notify.xdc:
+vpath ti/sdo/ipc/Notify.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sdo/utils/List.xdc
+ti/sdo/utils/List.xdc:
+vpath ti/sdo/utils/List.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/hal/Hwi.xdc
+ti/sysbios/hal/Hwi.xdc:
+vpath ti/sysbios/hal/Hwi.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/sysbios/interfaces/IHwi.xdc
+ti/sysbios/interfaces/IHwi.xdc:
+vpath ti/sysbios/interfaces/IHwi.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/cmd/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/tar.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/xsr/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/global/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/js.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/antlr.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/intern/gen/java/package.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/shelf/java/ecj.jar
+/datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: /datalocal1/ti_components/os_tools/linux/xdctools_3_31_02_38_core/packages/xdc/services/spec/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+package/package.xdc.inc: NotifySetup.h
+NotifySetup.h:
+package/package.xdc.inc: package/internal/NotifySetup.xdc.h
+package/internal/NotifySetup.xdc.h:
+package/package.xdc.inc: NotifyMbxSetup.h
+NotifyMbxSetup.h:
+package/package.xdc.inc: package/internal/NotifyMbxSetup.xdc.h
+package/internal/NotifyMbxSetup.xdc.h:
+package/package.xdc.inc: NotifyCircSetup.h
+NotifyCircSetup.h:
+package/package.xdc.inc: package/internal/NotifyCircSetup.xdc.h
+package/internal/NotifyCircSetup.xdc.h:
+package/package.xdc.inc: InterruptDsp.h
+InterruptDsp.h:
+package/package.xdc.inc: package/internal/InterruptDsp.xdc.h
+package/internal/InterruptDsp.xdc.h:
+package/package.xdc.inc: InterruptDucati.h
+InterruptDucati.h:
+package/package.xdc.inc: package/internal/InterruptDucati.xdc.h
+package/internal/InterruptDucati.xdc.h:
+package/package.xdc.inc: InterruptHost.h
+InterruptHost.h:
+package/package.xdc.inc: package/internal/InterruptHost.xdc.h
+package/internal/InterruptHost.xdc.h:
+package/package.xdc.inc: NotifyDriverMbx.h
+NotifyDriverMbx.h:
+package/package.xdc.inc: package/internal/NotifyDriverMbx.xdc.h
+package/internal/NotifyDriverMbx.xdc.h:
+

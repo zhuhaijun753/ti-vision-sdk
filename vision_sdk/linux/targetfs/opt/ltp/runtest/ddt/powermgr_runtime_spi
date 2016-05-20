@@ -1,0 +1,7 @@
+# @name Power Manager Runtime Tests for SPI
+# @desc Tests to validate that SPI driver use runtime_pm
+# @requires spi_master
+# @setup_requires 
+
+POWERMGR_S_FUNC_RUNTIME_SPI source 'pm_runtime.sh'; is_pm_runtime_enabled '\.spi\/' || die "pm_runtime is not enabled for SPI"; is_pm_runtime_suspending_device '\.spi\/' || die "pm_runtime is not suspending SPI"
+

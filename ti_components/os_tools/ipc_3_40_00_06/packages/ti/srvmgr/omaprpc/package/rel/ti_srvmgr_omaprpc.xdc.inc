@@ -1,0 +1,12 @@
+package/package.bld.xml
+package/build.cfg
+package/package.xdc.inc
+OmapRpc.h
+package.bld
+package/package.cfg.xdc.inc
+lib/debug/ti.srvmgr.omaprpc_smp.aem4
+package/package_ti.srvmgr.omaprpc.c
+OmapRpc.c
+lib/release/ti.srvmgr.omaprpc_smp.aem4
+lib/debug/ti.srvmgr.omaprpc.ae66
+lib/release/ti.srvmgr.omaprpc.ae66

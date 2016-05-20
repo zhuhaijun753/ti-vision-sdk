@@ -1,0 +1,8 @@
+# @name Storage plus suspend-standby/resume 
+# @desc Test storage devices while doing suspend-standby/resume operations
+# @requires net && usb/host && nand && ubifs && mmc_host/sdhc && power_mgr
+# @setup_requires usbhostmsc && sdhc
+
+SYSTEM_M_FUNC_SUSPEND_ETH-USB-MMC source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s 'ETH_S_PERF_IPERF_TCP_128K_1448B ' # /opt/ltp/runltp -f ddt/usbhost_perf_vfat -P $PLATFORM -s 'USBHOST_M_PERF_VFAT_0001 ' # /opt/ltp/runltp -f ddt/mmc_sdhccard_dd_rw_ext2 -P $PLATFORM -s 'MMC_S_FUNC_SDHC_EXT2_DD_RW_100M ' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SUSPEND_STANDBY '"
+
+SYSTEM_M_FUNC_SUSPEND_ETH-USB-NAND-MMC source 'common.sh'; run_processes.sh -c "/opt/ltp/runltp -f ddt/eth_iperf_tcp -P $PLATFORM -s 'ETH_S_PERF_IPERF_TCP_128K_1448B ' # /opt/ltp/runltp -f ddt/usbhost_perf_vfat -P $PLATFORM -s 'USBHOST_M_PERF_VFAT_0001 ' # /opt/ltp/runltp -f ddt/mmc_sdhccard_dd_rw_ext2 -P $PLATFORM -s 'MMC_S_FUNC_SDHC_EXT2_DD_RW_100M ' # /opt/ltp/runltp  -f ddt/nand_perf_ubifs -P $PLATFORM -s 'NAND_L_PERF_UBIFS ' # /opt/ltp/runltp -P $PLATFORM -f ddt/powermgr_suspend -s 'POWERMGR_S_FUNC_SUSPEND_STANDBY '"

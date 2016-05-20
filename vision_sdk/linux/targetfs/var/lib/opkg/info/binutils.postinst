@@ -1,0 +1,20 @@
+#!/bin/sh
+	update-alternatives --install /usr/bin/addr2line addr2line /usr/bin/arm-linux-gnueabihf-addr2line 100
+	update-alternatives --install /usr/bin/ar ar /usr/bin/arm-linux-gnueabihf-ar 100
+	update-alternatives --install /usr/bin/as as /usr/bin/arm-linux-gnueabihf-as 100
+	update-alternatives --install /usr/bin/c++filt c++filt /usr/bin/arm-linux-gnueabihf-c++filt 100
+	update-alternatives --install /usr/bin/elfedit elfedit /usr/bin/arm-linux-gnueabihf-elfedit 100
+	update-alternatives --install /usr/bin/gprof gprof /usr/bin/arm-linux-gnueabihf-gprof 100
+	update-alternatives --install /usr/bin/ld ld /usr/bin/arm-linux-gnueabihf-ld 100
+	update-alternatives --install /usr/bin/ld.bfd ld.bfd /usr/bin/arm-linux-gnueabihf-ld.bfd 100
+	update-alternatives --install /usr/bin/nm nm /usr/bin/arm-linux-gnueabihf-nm 100
+	update-alternatives --install /usr/bin/objcopy objcopy /usr/bin/arm-linux-gnueabihf-objcopy 100
+	update-alternatives --install /usr/bin/objdump objdump /usr/bin/arm-linux-gnueabihf-objdump 100
+	update-alternatives --install /usr/bin/ranlib ranlib /usr/bin/arm-linux-gnueabihf-ranlib 100
+	update-alternatives --install /usr/bin/readelf readelf /usr/bin/arm-linux-gnueabihf-readelf 100
+	update-alternatives --install /usr/bin/size size /usr/bin/arm-linux-gnueabihf-size 100
+	update-alternatives --install /usr/bin/strings strings /usr/bin/arm-linux-gnueabihf-strings 100
+	update-alternatives --install /usr/bin/strip strip /usr/bin/arm-linux-gnueabihf-strip 100
+if [ x"$D" = "x" ]; then
+	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
+fi

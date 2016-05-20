@@ -1,0 +1,14 @@
+# @name SATA Raw Write/Read Performance test
+# @desc Using dd command to read/write to sata device and calculte the throughput
+# @requires sata
+# @setup_requires sata
+
+SATA_S_PERF_RAW_PERF_100M_BS256K source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '256K' -c '400'
+SATA_S_PERF_RAW_PERF_100M_BS1M source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '1M' -c '100'
+SATA_S_PERF_RAW_PERF_100M_BS5M source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '5M' -c '20'
+SATA_M_PERF_RAW_PERF_1G_BS256K source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '256K' -c '4000'
+SATA_M_PERF_RAW_PERF_1G_BS1M source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '1M' -c '1000'
+SATA_M_PERF_RAW_PERF_1G_BS5M source "common.sh"; install_modules.sh "sata"; dd_raw_perf.sh -d 'sata' -b '5M' -c '200'
+
+
+

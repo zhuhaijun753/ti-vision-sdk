@@ -1,0 +1,12 @@
+Package: libdce1
+Version: 3.00.08.02-r0.0
+Description: libdce version 3.00.08.02-r0
+ Library used for remotely invoking the hw accelerated codec on IVA-HD
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: cortexa15t2hf-vfp-neon-3.14
+OE: libdce
+Depends: libdrm2 (>= 2.4.41), ti-ipc (>= 3.36.01.11), libc6 (>= 2.15), libdrm-omap1 (>= 2.4.41)
+Source: git://git.omapzoom.org/repo/libdce.git;protocol=git

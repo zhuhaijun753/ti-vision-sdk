@@ -1,0 +1,8 @@
+# @name HWRNG Tests. 
+# @desc Test cases for HWRNG - includes FIPS-140-2 tests and rng r/w performance tests. 
+# @requires hwrng
+
+RNG_S_FUNC_1000 source 'common.sh'; rng_device=`get_rng_device.sh` || die "error finding hardware rng device"; echo "RNG is $rng_device"; do_cmd 'rngtest -c 1000 < $rng_device'
+RNG_M_FUNC_10000 source 'common.sh'; rng_device=`get_rng_device.sh` || die "error finding hardware rng device"; echo "RNG is $rng_device"; do_cmd 'rngtest -c 10000 < $rng_device' 
+RNG_S_PERF_128_10240 source 'common.sh'; rng_device=`get_rng_device.sh` || die "error finding hardware rng device"; `echo 3 > /proc/sys/vm/drop_caches`; do_cmd 'rng_read_test.sh $rng_device 128 10240'
+RNG_S_PERF_512_10240 source 'common.sh'; rng_device=`get_rng_device.sh` || die "error finding hardware rng device"; `echo 3 > /proc/sys/vm/drop_caches`; do_cmd 'rng_read_test.sh $rng_device 512 10240'

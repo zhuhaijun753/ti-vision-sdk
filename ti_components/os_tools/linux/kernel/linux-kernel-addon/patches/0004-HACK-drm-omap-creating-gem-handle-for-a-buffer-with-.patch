@@ -1,0 +1,176 @@
+From 33847329bedbd8ad63ad1dd90d0b3c4f2a741faf Mon Sep 17 00:00:00 2001
+From: Subhajit Paul <subhajit_paul@ti.com>
+Date: Thu, 22 Jan 2015 12:23:55 +0530
+Subject: [PATCH 04/12] HACK: drm: omap: creating gem handle for a buffer with
+ physical address
+
+Change-Id: Ibbc56f2c7ff6259dcfae33b87e0d00fefac239ef
+Signed-off-by: Subhajit Paul <subhajit_paul@ti.com>
+Signed-off-by: Somnath Mukherjee <somnath@ti.com>
+Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
+---
+ drivers/gpu/drm/omapdrm/omap_drv.c |   12 +++++++
+ drivers/gpu/drm/omapdrm/omap_drv.h |    4 +++
+ drivers/gpu/drm/omapdrm/omap_gem.c |   62 ++++++++++++++++++++++++++++++++++++
+ include/uapi/drm/omap_drm.h        |   12 ++++++-
+ 4 files changed, 89 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/omapdrm/omap_drv.c b/drivers/gpu/drm/omapdrm/omap_drv.c
+index ae629f2..3024eb8 100644
+--- a/drivers/gpu/drm/omapdrm/omap_drv.c
++++ b/drivers/gpu/drm/omapdrm/omap_drv.c
+@@ -431,6 +431,17 @@ static int ioctl_gem_new(struct drm_device *dev, void *data,
+ 			args->flags, &args->handle);
+ }
+ 
++static int ioctl_gem_new_paddr(struct drm_device *dev, void *data,
++		struct drm_file *file_priv)
++{
++	struct drm_omap_gem_new_paddr *args = data;
++	VERB("%p:%p: size=0x%08x, flags=%08x, paddr=0x%08x", dev, file_priv,
++			args->size.bytes, args->flags, args->paddr);
++	return omap_gem_new_paddr_handle(dev, file_priv, args->size,
++			args->flags, args->paddr, &args->handle);
++}
++
++
+ static int ioctl_gem_cpu_prep(struct drm_device *dev, void *data,
+ 		struct drm_file *file_priv)
+ {
+@@ -507,6 +518,7 @@ static struct drm_ioctl_desc ioctls[DRM_COMMAND_END - DRM_COMMAND_BASE] = {
+ 	DRM_IOCTL_DEF_DRV(OMAP_GEM_CPU_PREP, ioctl_gem_cpu_prep, DRM_UNLOCKED|DRM_AUTH|DRM_RENDER_ALLOW),
+ 	DRM_IOCTL_DEF_DRV(OMAP_GEM_CPU_FINI, ioctl_gem_cpu_fini, DRM_UNLOCKED|DRM_AUTH|DRM_RENDER_ALLOW),
+ 	DRM_IOCTL_DEF_DRV(OMAP_GEM_INFO, ioctl_gem_info, DRM_UNLOCKED|DRM_AUTH|DRM_RENDER_ALLOW),
++	DRM_IOCTL_DEF_DRV(OMAP_GEM_NEW_PADDR, ioctl_gem_new_paddr, DRM_UNLOCKED|DRM_AUTH),
+ };
+ 
+ /*
+diff --git a/drivers/gpu/drm/omapdrm/omap_drv.h b/drivers/gpu/drm/omapdrm/omap_drv.h
+index d3394503..17bddca 100644
+--- a/drivers/gpu/drm/omapdrm/omap_drv.h
++++ b/drivers/gpu/drm/omapdrm/omap_drv.h
+@@ -231,8 +231,12 @@ void omap_gem_deinit(struct drm_device *dev);
+ 
+ struct drm_gem_object *omap_gem_new(struct drm_device *dev,
+ 		union omap_gem_size gsize, uint32_t flags);
++struct drm_gem_object *omap_gem_new_paddr(struct drm_device *dev,
++		union omap_gem_size gsize, uint32_t flags, uint32_t paddr);
+ int omap_gem_new_handle(struct drm_device *dev, struct drm_file *file,
+ 		union omap_gem_size gsize, uint32_t flags, uint32_t *handle);
++int omap_gem_new_paddr_handle(struct drm_device *dev, struct drm_file *file,
++	union omap_gem_size gsize, uint32_t flags, uint32_t paddr, uint32_t *handle);
+ void omap_gem_free_object(struct drm_gem_object *obj);
+ void *omap_gem_vaddr(struct drm_gem_object *obj);
+ int omap_gem_dumb_map_offset(struct drm_file *file, struct drm_device *dev,
+diff --git a/drivers/gpu/drm/omapdrm/omap_gem.c b/drivers/gpu/drm/omapdrm/omap_gem.c
+index a3fd6d6..66ac857 100644
+--- a/drivers/gpu/drm/omapdrm/omap_gem.c
++++ b/drivers/gpu/drm/omapdrm/omap_gem.c
+@@ -1371,6 +1371,68 @@ int omap_gem_new_handle(struct drm_device *dev, struct drm_file *file,
+ 	return 0;
+ }
+ 
++/* convenience method to construct a GEM buffer object, and userspace handle */
++int omap_gem_new_paddr_handle(struct drm_device *dev, struct drm_file *file,
++		union omap_gem_size gsize, uint32_t flags, uint32_t paddr, uint32_t *handle)
++{
++	struct drm_gem_object *obj;
++	int ret;
++
++	obj = omap_gem_new_paddr(dev, gsize, flags, paddr);
++	if (!obj)
++		return -ENOMEM;
++
++	ret = drm_gem_handle_create(file, obj, handle);
++	if (ret) {
++		drm_gem_object_release(obj);
++		kfree(obj); /* TODO isn't there a dtor to call? just copying i915 */
++		return ret;
++	}
++
++	/* drop reference from allocate - handle holds it now */
++	drm_gem_object_unreference_unlocked(obj);
++
++	return 0;
++}
++
++/* GEM buffer object constructor */
++struct drm_gem_object *omap_gem_new_paddr(struct drm_device *dev,
++		union omap_gem_size gsize, uint32_t flags, uint32_t paddr)
++{
++	struct omap_drm_private *priv = dev->dev_private;
++	struct omap_gem_object *omap_obj;
++	struct drm_gem_object *obj = NULL;
++	size_t size;
++
++	if (flags & OMAP_BO_TILED)
++		goto fail;
++
++	if (!paddr)
++		goto fail;
++
++	size = PAGE_ALIGN(gsize.bytes);
++	omap_obj = kzalloc(sizeof(*omap_obj), GFP_KERNEL);
++	if (!omap_obj) {
++		dev_err(dev->dev, "could not allocate GEM object\n");
++		goto fail;
++	}
++
++	list_add(&omap_obj->mm_list, &priv->obj_list);
++
++	obj = &omap_obj->base;
++	omap_obj->flags = flags | OMAP_BO_DMA;
++	omap_obj->paddr = paddr;
++
++	drm_gem_private_object_init(dev, obj, size);
++
++	return obj;
++
++fail:
++	if (obj)
++		omap_gem_free_object(obj);
++	return NULL;
++}
++
+ /* GEM buffer object constructor */
+ struct drm_gem_object *omap_gem_new(struct drm_device *dev,
+ 		union omap_gem_size gsize, uint32_t flags)
+diff --git a/include/uapi/drm/omap_drm.h b/include/uapi/drm/omap_drm.h
+index 5292b93..6e5343b 100644
+--- a/include/uapi/drm/omap_drm.h
++++ b/include/uapi/drm/omap_drm.h
+@@ -69,6 +69,14 @@ struct drm_omap_gem_new {
+ 	uint32_t __pad;
+ };
+ 
++struct drm_omap_gem_new_paddr {
++	union omap_gem_size size;	/* in */
++	uint32_t flags;			/* in */
++	uint32_t handle;		/* out */
++	uint32_t paddr;			/* in*/
++	uint32_t __pad;
++};
++
+ /* mask of operations: */
+ enum omap_gem_op {
+ 	OMAP_GEM_READ = 0x01,
+@@ -112,7 +120,8 @@ struct drm_omap_gem_info {
+ #define DRM_OMAP_GEM_CPU_PREP		0x04
+ #define DRM_OMAP_GEM_CPU_FINI		0x05
+ #define DRM_OMAP_GEM_INFO		0x06
+-#define DRM_OMAP_NUM_IOCTLS		0x07
++#define DRM_OMAP_GEM_NEW_PADDR		0x07
++#define DRM_OMAP_NUM_IOCTLS		0x08
+ 
+ #define DRM_IOCTL_OMAP_GET_PARAM	DRM_IOWR(DRM_COMMAND_BASE + DRM_OMAP_GET_PARAM, struct drm_omap_param)
+ #define DRM_IOCTL_OMAP_SET_PARAM	DRM_IOW (DRM_COMMAND_BASE + DRM_OMAP_SET_PARAM, struct drm_omap_param)
+@@ -121,5 +130,6 @@ struct drm_omap_gem_info {
+ #define DRM_IOCTL_OMAP_GEM_CPU_PREP	DRM_IOW (DRM_COMMAND_BASE + DRM_OMAP_GEM_CPU_PREP, struct drm_omap_gem_cpu_prep)
+ #define DRM_IOCTL_OMAP_GEM_CPU_FINI	DRM_IOW (DRM_COMMAND_BASE + DRM_OMAP_GEM_CPU_FINI, struct drm_omap_gem_cpu_fini)
+ #define DRM_IOCTL_OMAP_GEM_INFO		DRM_IOWR(DRM_COMMAND_BASE + DRM_OMAP_GEM_INFO, struct drm_omap_gem_info)
++#define DRM_IOCTL_OMAP_GEM_NEW_PADDR	DRM_IOWR(DRM_COMMAND_BASE + DRM_OMAP_GEM_NEW_PADDR, struct drm_omap_gem_new_paddr)
+ 
+ #endif /* __OMAP_DRM_H__ */
+-- 
+1.7.9.5
+
